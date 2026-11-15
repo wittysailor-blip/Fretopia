@@ -1,42 +1,37 @@
-# Fretopia (phone app preview)
+# Fretopia
 
-A phone app for learning Indian instruments: harmonium, bansuri, vocals, sitar and tabla. It's an installable web app (PWA), so one codebase runs on a laptop, an Android phone and an iPhone.
+A phone app for learning Indian music and guitar: pick an instrument, play along with songs, and get live feedback through your mic.
 
-## Run it on your Mac
+**Live:** https://fretopia.vercel.app. Open it on your phone and use *Add to Home Screen*. The mic works because the link is https.
 
-1. Double-click **start.command** in this folder. If macOS blocks it, right-click it, choose Open, then Open again.
-2. Your browser opens at `http://localhost:8000`. On a laptop the app sits inside a phone frame.
-3. Allow the microphone when a lesson or the tuner asks. Use headphones so the tanpura doesn't leak into the mic.
+## The flow
 
-To stop it, close the Terminal window.
+1. **Landing:** the fretopia wordmark over a guitar neck. Strum the strings; each one responds to how hard and where you strike it.
+2. **Pick your instrument:** swipe through guitar, sitar, harmonium, tabla, bansuri and vocals (tanpura). Each card is playable.
+3. **Instrument home:** what to play next, *Songs for you* and *Warm-ups*, with stars for each.
+4. **Play-along** (Yousician-style):
+   - Notes scroll toward a line, after a 4-beat count-in.
+   - **Guitar:** a tab view with fret numbers on six strings.
+   - **Sitar, harmonium, bansuri, vocals:** sargam rows.
+   - **Tabla:** bayan and dayan lanes.
+   - **Mic mode:** pitch detection (YIN) scores each note.
+   - **Tap mode:** for when there's no instrument nearby.
+   - **Options:** *Wait for me* pauses until you hit the note. You can also slow it to 50% or 75%, turn on the melody guide, or tap *Hear it first*.
+   - **After a song:** stars, accuracy, best streak and a note-by-note chart.
 
-**Test as a real phone app:** in Chrome, open the address bar menu and choose *Install Fretopia*. It then opens in its own window with no browser bar.
+`classic.html` is the earlier light-theme app (lesson path, tanpura, tuner, taal loops).
 
-**On your phone:** start.command prints a `http://192.168…` address. Open it on a phone on the same Wi-Fi to try the design and the on-screen keys. Phones only allow the microphone over https, so for mic testing on a phone, put the folder on any https host (Netlify Drop, Vercel or GitHub Pages) and use *Add to Home Screen*.
+## Files
 
-## Shortcuts on a laptop
+- `index.html`: the app (no build step)
+- `sounds/guitar/`: acoustic guitar note samples
+- `fonts/`: Petaluma Script wordmark and Petaluma music glyphs (subset)
+- `manifest.webmanifest`, `sw.js`, `icon-*.png`: installable and works offline
+- `start.command`: double-click on a Mac to run locally at http://localhost:8000
 
-- Drag the photo cards with the mouse or trackpad to swipe
-- Space plays or pauses a lesson; Esc closes it
-- A W S E D F T G Y H U J K play the on-screen harmonium (A = Sa); Z X C = mandra Pa, Dha, Ni
-- F and J are bayan and dayan in tabla lessons
+## Credits
 
-## What's inside
-
-- `index.html`: the whole app (UI, lessons, pitch detection, synthesised tanpura, harmonium and tabla)
-- `img/`: instrument photos from Wikimedia Commons. Credits are in the app under You → Photo credits.
-- `manifest.webmanifest`, `sw.js`, `icon-*.png`: what makes it installable and usable offline
-
-## Next steps toward the app stores
-
-Wrap the same folder with Capacitor (`npx cap add android`, `npx cap add ios`) to ship to the Play Store and the App Store. For production mic access on Android, add `RECORD_AUDIO` to the manifest.
-
-## Photo credits
-
-- Harmonium: Niranjan Arminius, CC BY-SA 2.0
-- Bansuri set: Vamsivadrevu, CC BY-SA 4.0
-- Tanpura (Miraj): Martin Spaink, CC BY-SA 3.0
-- Sitar (Miraj): Jan Kraus, public domain
-- Tabla: Lestat, GFDL / CC BY-SA 3.0
-
-All photos are from Wikimedia Commons and were cropped for the app.
+- Guitar samples: University of Iowa Electronic Music Studios recordings, edited by Nicholas Brosowsky ([tonejs-instruments](https://github.com/nbrosowsky/tonejs-instruments)), CC BY 3.0
+- Fonts: Petaluma and Petaluma Script © Steinberg Media Technologies, SIL Open Font License 1.1 (`fonts/OFL-Petaluma.txt`)
+- Classic app instrument photos: Wikimedia Commons (credits inside `classic.html`)
+- Guitar line art: Fretopia
