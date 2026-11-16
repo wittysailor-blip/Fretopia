@@ -1064,7 +1064,14 @@ let toastT;function toast(m){chime();$('.toast')?.remove();const t=document.crea
 /* ================= loop + layout ================= */
 function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);if(!$('#picker').hidden){Car.update(Math.min(.05,t-(loop.p||t)));Car.draw(t);}
-  if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;requestAnimationFrame(loop);}
+  if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
+/* ================= always the latest version on the same link ================= */
+const APP_V='7';
+function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
+  fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
+    try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
+checkUpdate();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate();});
+requestAnimationFrame(loop);}
 function layout(){const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone,framed=!standalone&&innerWidth>=640&&innerHeight>=560;
   document.documentElement.classList.toggle('framed',framed);$('.device').style.setProperty('--s',framed?Math.min(1,(innerHeight-28)/868,(innerWidth-28)/414):1);
   Landing.layout();if(!$('#picker').hidden)Car.layout();}
