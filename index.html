@@ -755,14 +755,14 @@ const DEVAF="'Kohinoor Devanagari','Noto Sans Devanagari','Devanagari Sangam MN'
 const AMPK=.48;
 VString.prototype.excite=function(amp,s,vel,delay){s=clamp(s,.04,.96);this.modes=[];this.ph=[];
   for(let n=1;n<=4;n++){this.modes.push(2*amp*Math.sin(n*Math.PI*s)/(n*n*Math.PI*Math.PI*s*(1-s)));this.ph.push(Math.random()*6.283);}
-  this.t0=now()+delay;this.s0=s;this.amp=Math.abs(amp);this.tn=this.tau*(.7+.5*vel);this.fvj=(4.2+(1-this.gauge)*4.6)*(.95+Math.random()*.1);};
+  this.t0=now()+delay;this.s0=s;this.amp=Math.abs(amp);this.tn=(.22+this.gauge*.36)*(.75+.45*vel);this.tEnd=this.tn*Math.log(Math.max(1.2,this.amp/.06));this.fvj=(4.2+(1-this.gauge)*4.6)*(.95+Math.random()*.1);};
 VString.prototype.mask=function(s,dt){const k=clamp((dt/.18-Math.abs(s-this.s0))/.22,0,1);return k*k*(3-2*k);};
-VString.prototype.envAt=function(n,dt){return Math.exp(-dt/this.tn*(1+1.2*(n-1)));};
+VString.prototype.envAt=function(n,dt){const f=dt>this.tEnd-.2?Math.max(0,(this.tEnd-dt)/.2):1;return Math.exp(-dt/this.tn*(1+1.5*(n-1)))*f;};
 VString.prototype.disp=function(s,t){let d=0;const dt=t-this.t0,M=this.modes;
-  if(M.length&&dt>0&&dt<this.tn*7){const m=this.mask(s,dt);if(m>0){let v=0;for(let n=1;n<=M.length;n++)v+=M[n-1]*this.envAt(n,dt)*Math.sin(n*Math.PI*s)*Math.cos(6.2832*this.fvj*n*dt+this.ph[n-1]);d=v*m;}}
+  if(M.length&&dt>0&&dt<this.tEnd){const m=this.mask(s,dt);if(m>0){let v=0;for(let n=1;n<=M.length;n++)v+=M[n-1]*this.envAt(n,dt)*Math.sin(n*Math.PI*s)*Math.cos(6.2832*this.fvj*n*dt+this.ph[n-1]);d=v*m;}}
   if(this.held){const p=this.bendP;d+=this.bend*(s<p?s/p:(1-s)/(1-p));}return d;};
-VString.prototype.spread=function(s,t){const dt=t-this.t0,M=this.modes;if(!M.length||dt<=0||dt>this.tn*7)return 0;const m=this.mask(s,dt);if(!m)return 0;let e=0;for(let n=1;n<=M.length;n++)e+=Math.abs(M[n-1]*this.envAt(n,dt)*Math.sin(n*Math.PI*s));return e*m;};
-VString.prototype.energy=function(t){const dt=t-this.t0,v=this.modes.length&&dt>0?Math.min(1,this.amp/2)*Math.exp(-dt/this.tn):0;return Math.max(this.held?Math.min(1,Math.abs(this.bend)/6):0,v);};
+VString.prototype.spread=function(s,t){const dt=t-this.t0,M=this.modes;if(!M.length||dt<=0||dt>this.tEnd)return 0;const m=this.mask(s,dt);if(!m)return 0;let e=0;for(let n=1;n<=M.length;n++)e+=Math.abs(M[n-1]*this.envAt(n,dt)*Math.sin(n*Math.PI*s));return e*m;};
+VString.prototype.energy=function(t){const dt=t-this.t0,v=this.modes.length&&dt>0&&dt<this.tEnd?Math.min(1,this.amp/2)*this.envAt(1,dt):0;return Math.max(this.held?Math.min(1,Math.abs(this.bend)/6):0,v);};
 VString.prototype.pluck=function(amp,s,vel,delay=0){amp*=(.85+Math.random()*.3)*AMPK;this.excite(amp,s,vel,delay);playString(this,vel,clamp(s,.04,.96),delay);
   const o=this.owner,tn=now();if(o&&o.strings)o.strings.forEach(x=>{const d=Math.abs(x.idx-this.idx);if(x!==this&&d<=2&&!x.held&&tn-x.t0>.6&&x.energy(tn)<.05)x.excite(amp*(d===1?.14:.06),.5,.25,delay+.08*d);});
   if(o&&o.onPluck)o.onPluck(this,vel);if(vel>.55)buzz(4);};
@@ -1066,7 +1066,7 @@ function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);if(!$('#picker').hidden){Car.update(Math.min(.05,t-(loop.p||t)));Car.draw(t);}
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='7';
+const APP_V='8';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
