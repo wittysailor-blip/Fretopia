@@ -31,7 +31,27 @@ Popular rock, pop and Bollywood songs are copyrighted and aren't bundled. Users 
 
 ## Listening
 
-YIN pitch detection on the microphone, octave-agnostic, ±60 cents. Tested with recorded guitar notes through a fake microphone: correct notes score 99–100%, notes a whole tone off score 0%.
+The listening engine (`src/listen.js` in the build workspace) is written for Fretopia from published music-analysis methods. It contains no third-party code, models or reverse-engineered material.
+
+- Capture: an AudioWorklet (ScriptProcessor fallback), with every 512-sample hop analysed and timestamped.
+- Onsets: log-magnitude spectral flux with adaptive peak picking. A spectral-flatness gate ignores claps, taps and breath for pitched instruments.
+- Pitch: YIN computed with FFT cross-correlation, refined to cents.
+- Chords: semitone spectrum, local whitening, non-negative note activations against harmonic templates, chroma, and cosine match against a chord vocabulary.
+- Muted strings: the activation of each string's own note in the chord shape.
+- Tabla: low-band versus mid-band energy at each onset (bayan, dayan or both).
+- Latency: measured from the count-in clicks.
+
+Fake-microphone tests with recorded guitar notes:
+
+| Test | Result |
+|---|---|
+| Correct notes | 98–100% |
+| Notes a whole tone off | 14% |
+| Wrong chords | 0% |
+| 150 ms late | Scored about 70% and flagged as late |
+| 40 cents flat | Measured as 37 cents flat |
+| Muted G string in C | Reported as muted |
+| Clean chords | No false muted-string reports |
 
 ## Files
 
