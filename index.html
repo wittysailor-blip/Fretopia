@@ -70,7 +70,8 @@ svg{display:block}
 /* landing */
 #lc{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:default}
 .brand{position:absolute;left:0;right:0;text-align:center;font-weight:600;font-size:44px;line-height:1;letter-spacing:-.055em;pointer-events:none}
-.hint{position:absolute;left:0;right:0;text-align:center;font-size:13px;color:var(--ink-3);transition:opacity .8s;pointer-events:none}
+.hint{position:absolute;left:0;right:0;text-align:center;font-size:13px;color:var(--ink-3);transition:opacity .5s,color .3s;pointer-events:none}
+.hint.ask{color:var(--ink);font-weight:550}
 #begin{position:absolute;left:20px;right:20px;bottom:calc(24px + env(safe-area-inset-bottom,0px))}
 .framed #begin{bottom:36px}
 
@@ -144,7 +145,7 @@ svg{display:block}
 .pl-meta b{color:var(--ink);font-weight:550}
 .pl-stage{position:relative;flex:1;min-height:180px;margin:6px 0}
 .pl-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.pl-msg{position:absolute;left:16px;right:16px;bottom:8px;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:13px}
+.pl-msg{position:absolute;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);width:max-content;text-align:center;bottom:8px;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:13px}
 .pl-ctrl{display:flex;justify-content:center;align-items:center;gap:28px;padding:4px 0 14px;flex:none}
 .round{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:transform .15s,background .2s,color .2s}
 .round svg{width:20px;height:20px}
@@ -793,12 +794,13 @@ const Landing={strings:[],parts:[],push:3,plucks:0,ptr:null,W:0,H:0,
     const gap=this.gap=clamp(W*.046,15,19),br=$('#brand'),bh=br.offsetHeight||44,top=Math.round(H*.43-(bh+40+5*gap)/2);
     br.style.top=top+'px';const y0=this.top=top+bh+40;this.bot=y0+5*gap;$('#hint').style.top=(this.bot+28)+'px';
     this.strings=GTR.map((n,i)=>{const gauge=1-i/5,s=new VString({sample:n,kind:'guitar',freq:[98,123.47,146.83,196,246.94,392][i],gauge,w:.7+gauge*1.5,pan:(i-2.5)*.08,owner:this,idx:i,wound:i<4});s.setLine(-2,y0+i*gap,W+2,y0+i*gap);return s;});},
-  onPluck(){this.plucks++;if(this.plucks===1){$('#hint').style.opacity=0;setTimeout(()=>{if(!ctx||ctx.state!=='running')toast('Tap again to turn the sound on. Check your volume too.');},900);}},
+  onPluck(){this.plucks++;if(this.plucks===1&&soundOn())$('#hint').style.opacity=0;},
+  checkSound(){setTimeout(()=>{const h=$('#hint');if(soundOn()){if(this.plucks)h.style.opacity=0;return;}h.textContent='Tap for sound';h.classList.add('ask');h.style.opacity=1;},150);},
   draw(t){const f=fitCanvas($('#lc'));if(!f)return;const{g,W,H}=f;if(!this.strings.length||this.W!==W||this.H!==H)this.layout();g.clearRect(0,0,W,H);this.strings.forEach(st=>st.draw(g,t));}};
 (function wireLanding(){const c=$('#lc');const pt=e=>{const r=c.getBoundingClientRect(),k=r.width/c.clientWidth;return{x:(e.clientX-r.left)/k,y:(e.clientY-r.top)/k,t:performance.now()};};
-  c.addEventListener('pointerdown',e=>{const p=pt(e);Landing.ptr=p;Landing.strings.forEach(st=>{st.side=Math.sign(st.local(p).d)||1;});tapString(Landing.strings,p,6);c.setPointerCapture?.(e.pointerId);});
+  c.addEventListener('pointerdown',e=>{const p=pt(e);Landing.ptr=p;Landing.strings.forEach(st=>{st.side=Math.sign(st.local(p).d)||1;});tapString(Landing.strings,p,6);try{c.setPointerCapture(e.pointerId);}catch(_){}});
   c.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'&&!e.buttons){Landing.ptr=null;return;}const evs=e.getCoalescedEvents?e.getCoalescedEvents():[];for(const ev of (evs.length?evs:[e])){const p=pt(ev),p0=Landing.ptr||p;strum(Landing.strings,p0,p,p.t-(p0.t||p.t),Landing.push);Landing.ptr=p;}});
-  ['pointerup','pointercancel'].forEach(ev=>c.addEventListener(ev,e=>{if(e.pointerType!=='mouse'){releaseAll(Landing.strings);Landing.ptr=null;}}));
+  ['pointerup','pointercancel'].forEach(ev=>c.addEventListener(ev,e=>{Landing.checkSound();if(e.pointerType!=='mouse'){releaseAll(Landing.strings);Landing.ptr=null;}}));
   c.addEventListener('pointerleave',()=>{releaseAll(Landing.strings);Landing.ptr=null;});})();
 
 /* ================= icons ================= */
@@ -837,7 +839,7 @@ function renderList(){let L=HOME.cat.filter(s=>HV.coll==='all'||s.coll===HV.coll
   $('#songlist').innerHTML=L.length?L.map(row).join(''):`<p class="empty">${HV.coll==='mine'&&!q?'Import a MIDI file below to add your own songs.':'No songs match.'}</p>`;}
 async function importMidi(f){if(!f)return;try{const r=parseMidi(await f.arrayBuffer());const title=f.name.replace(/\.(mid|midi)$/i,'').replace(/[_-]+/g,' ').trim()||'My song';
     const mine=userSongs();mine.push({id:'u'+Date.now().toString(36),title,by:'Imported',coll:'mine',lvl:2,bpm:clamp(r.bpm,40,200),notes:r.notes});localStorage.setItem('fretopia.mysongs',JSON.stringify(mine));
-    buildLibrary();HV.coll='mine';HV.q='';renderHome();toast('Added “'+title+'”');}catch(e){toast('Couldn’t read that file: '+(e.message||'not a MIDI file'));}}
+    buildLibrary();HV.coll='mine';HV.q='';renderHome();toast('Added “'+title+'”');}catch(e){toast('Not a MIDI file');}}
 $('#hscroll').addEventListener('click',e=>{const b=e.target.closest('[data-song]');if(!b)return;const pool=b.classList.contains('next')?HOME.cat:HOME.list,s=pool.find(x=>x.id===b.dataset.song);if(s)Player.open(s,pool);});
 function parseSong(song){let t=0;const out=[];
   if(song.kind==='bols'){let seq=[],dur=1;if(song.bols)seq=song.bols.split(/\s+/);else{const T=TAALS[song.taal];for(let r=0;r<song.cycles*(song.dugun?2:1);r++)seq.push(...T.bols);dur=song.dugun?.5:1;}
@@ -864,7 +866,7 @@ const Player={open(song,list){if($('#player'))this.close(true);ac();this.song=so
     $('#plListen').onclick=()=>{const was=this.running&&this.listen;this.pause();this.reset();if(!was)this.start(true);};
     $('#plRestart').onclick=()=>{const was=this.running&&!this.listen;this.pause();this.reset();if(was)this.start(false);};
     $('#plOpts').onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;const c=b.dataset.c;
-      if(c==='mic'){this.mode='mic';S.input='mic';saveS();Mic.start().then(ok=>{if(!ok){this.mode='tap';this.msg(micWhy());}else this.msg('Listening. Play your instrument near the phone.');this.opts();this.pad();});}
+      if(c==='mic'){this.mode='mic';S.input='mic';saveS();Mic.start().then(ok=>{if(!ok){this.mode='tap';this.msg(micWhy());}else this.msg('Listening');this.opts();this.pad();});}
       if(c==='tap'){this.mode='tap';S.input='tap';saveS();Mic.stop();}if(c==='wait')this.wait=!this.wait;if(c==='guide')this.guide=!this.guide;if(c==='speed')this.speed=this.speed===1?.75:this.speed===.75?.5:1;this.opts();this.pad();this.hud();};
     $('.pl-stage').addEventListener('pointerdown',e=>{if(this.kind==='tab'&&this.mode==='tap'){e.preventDefault();this.tap({any:true});}});},
   opts(){const o=[],b=(c,l,on)=>`<button class="opt" data-c="${c}" aria-pressed="${on}">${l}</button>`;
@@ -877,11 +879,11 @@ const Player={open(song,list){if($('#player'))this.close(true);ac();this.song=so
     const semis=[...new Set(this.notes.filter(n=>!n.rest).map(n=>n.semi))].sort((a,b)=>a-b);
     P.innerHTML=`<div class="swaras">${semis.map((s,i)=>{const pc=((s%12)+12)%12,oct=Math.floor(s/12);return `<button data-s="${s}"><span style="${KOMAL[pc]?'text-decoration:underline':''}">${DEVA[pc]}${oct>0?'̇':''}</span><small>${oct<0?'low':oct>0?'high':i+1}</small></button>`;}).join('')}</div>`;
     P.querySelectorAll('[data-s]').forEach(b=>b.addEventListener('pointerdown',e=>{e.preventDefault();this.tap({semi:+b.dataset.s,btn:b});}));},
-  msg(m){const el=$('#plMsg');if(!el)return;el.textContent=m;el.hidden=false;chime();clearTimeout(this.mt);this.mt=setTimeout(()=>el.hidden=true,Math.max(4000,m.length*70));},
+  msg(m){const el=$('#plMsg');if(!el)return;el.textContent=m;el.hidden=false;chime();clearTimeout(this.mt);this.mt=setTimeout(()=>el.hidden=true,3500);},
   reset(){this.t=-4;this.ended=false;this.trail=[];this.pops=[];this.nextTick=-4;this.nextIdx=0;this.matchAcc=0;this.floor=[];this.elapsed=0;this.streak=0;this.best=0;this.heard=null;
     this.notes.forEach(n=>Object.assign(n,{frames:0,good:0,judged:false,state:null,unlocked:false,byMic:false,hits:{},score:0}));this.hud();this.btn();},
   async start(listen=false){ac();if(this.running){this.pause();return;}if(this.ended)this.reset();this.listen=listen;
-    if(!listen&&this.mode==='mic'){const ok=await Mic.start();if(!ok){this.mode='tap';this.opts();this.pad();this.msg(micWhy()+' Tapping along for now.');}else this.pad();}
+    if(!listen&&this.mode==='mic'){const ok=await Mic.start();if(!ok){this.mode='tap';this.opts();this.pad();this.msg(micWhy());}else this.pad();}
     this.running=true;this.lastAudio=ctx.currentTime;this.btn();},
   pause(){this.running=false;this.btn();},
   btn(){const b=$('#plPlay');if(!b)return;b.innerHTML=this.running&&!this.listen?IC.pause:IC.play;$('#plListen').classList.toggle('on',!!(this.running&&this.listen));},
@@ -921,7 +923,7 @@ const Player={open(song,list){if($('#player'))this.close(true);ac();this.song=so
   scores(){return this.notes.filter(n=>!n.rest&&n.judged&&n.state!=='demo').map(n=>n.score);},
   hud(){if(!$('#plAcc'))return;const s=this.scores();$('#plAcc').textContent=s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length*100)+'%':'–';
     $('#plCount').textContent=`${this.notes.filter(n=>n.state==='hit').length}/${this.notes.filter(n=>!n.rest).length}`;},
-  finish(){this.running=false;this.ended=true;this.btn();if(this.listen){this.listen=false;this.reset();toast('Your turn. Press play when ready.');return;}
+  finish(){this.running=false;this.ended=true;this.btn();if(this.listen){this.listen=false;this.reset();toast('Your turn');return;}
     const tot=this.notes.filter(n=>!n.rest),pct=Math.round(tot.reduce((a,n)=>a+n.score,0)/Math.max(1,tot.length)*100),stars=pct>=90?3:pct>=70?2:pct>=45?1:0,prev=starsOf(this.song);
     if(stars>prev){S.stars[sk(this.song)]=stars;saveS();}const all=this.list||[],ix=all.findIndex(x=>x.id===this.song.id),nx=ix>=0?all[ix+1]:null;const m=Math.floor(this.elapsed/60),s=Math.round(this.elapsed%60);
     sheet(`<span class="grab"></span><div style="display:flex;justify-content:space-between;align-items:flex-end"><div><p class="eyebrow">${['Keep practising','Good start','Bahut badhiya','Shabash'][stars]}</p><h2>${this.song.title}</h2></div><div class="bigstars">${starStr2(stars)}</div></div>
@@ -993,7 +995,13 @@ function silentWav(){const n=800,b=new Uint8Array(44+n),v=new DataView(b.buffer)
   return URL.createObjectURL(new Blob([b],{type:'audio/wav'}));}
 function unmute(){if(!ctx)ac();if(ctx.state!=='running'){try{ctx.resume();}catch(e){}}
   if(!keepAlive&&!navigator.audioSession&&/iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)&&'ontouchend' in document){try{keepAlive=new Audio(silentWav());keepAlive.setAttribute('playsinline','');keepAlive.loop=true;keepAlive.play().catch(()=>{keepAlive=null;});}catch(e){keepAlive=null;}}}
-['touchend','click','pointerup','keydown'].forEach(ev=>addEventListener(ev,unmute,{capture:true,passive:true}));
+['touchstart','touchend','pointerdown','click','pointerup','keydown'].forEach(ev=>addEventListener(ev,unmute,{capture:true,passive:true}));
+const soundOn=()=>!!ctx&&ctx.state==='running';
+/* iPhone only starts audio after a tap, not a swipe. Notes played while audio is still off are queued;
+   when it starts, any queued for more than half a second are dropped so you never get a late burst. */
+const PENDING=[];[window.AudioBufferSourceNode,window.OscillatorNode].forEach(C=>{if(!C)return;const st=C.prototype.start;C.prototype.start=function(...a){if(this.context&&this.context.state!=='running')PENDING.push([this,performance.now()]);return st.apply(this,a);};});
+function onAudioState(){if(!soundOn())return;const t=performance.now();while(PENDING.length){const[n,at]=PENDING.shift();if(t-at>450){try{n.stop();}catch(e){}}}
+  const h=$('#hint');if(h&&h.classList.contains('ask')){h.style.opacity=0;setTimeout(()=>{h.classList.remove('ask');h.textContent='Run a finger across the strings';},800);}}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ctx){try{ctx.resume();}catch(e){}if(keepAlive)keepAlive.play().catch(()=>{});}});
 /* a short, cute two-note chime for alerts */
 function chime(){try{ac();const t=ctx.currentTime+.02;[[1318.5,0,.11],[1975.5,.09,.09]].forEach(([f,d,a])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(f,t+d);o.frequency.exponentialRampToValueAtTime(f*1.015,t+d+.15);
@@ -1011,9 +1019,7 @@ Mic.start=async function(){if(this.active)return true;this.err=null;
   catch(e){this.err='other';this.stop();return false;}};
 Mic.stop=function(){try{this.stream&&this.stream.getTracks().forEach(t=>t.stop());}catch(e){}try{this.src&&this.src.disconnect();}catch(e){}this.stream=null;this.src=null;this.active=false;this.hist=[];this.level=0;
   try{if(navigator.audioSession)navigator.audioSession.type='playback';}catch(e){}};
-function micWhy(){const host=location.host||'this site';return{denied:`The microphone is blocked. Allow it for ${host} in your browser’s site settings (iPhone: Settings › Apps › Safari › Microphone), then press play again.`,
-  inapp:`This in-app browser can’t use the microphone. Open ${host} in Safari or Chrome.`,insecure:'The microphone needs a secure (https) link.',unsupported:'This browser can’t use the microphone. Try Safari or Chrome.',
-  nomic:'No microphone was found.',busy:'Another app is using the microphone. Close it and try again.',other:'Couldn’t start the microphone. Tap Mic to try again.'}[Mic.err||'other'];}
+function micWhy(){return{denied:'Mic blocked. Allow it in settings.',inapp:'Open in Safari or Chrome to use the mic.',insecure:'The mic needs https.',unsupported:'Mic not supported here.',nomic:'No mic found.',busy:'Mic in use by another app.',other:'Mic didn’t start. Try again.'}[Mic.err||'other'];}
 
 /* ================= picker: swipe anywhere, sound only when you play ================= */
 I.harmonium.how='Press the keys';
@@ -1064,7 +1070,7 @@ function layout(){const standalone=matchMedia('(display-mode: standalone)').matc
   Landing.layout();if(!$('#picker').hidden)Car.layout();}
 addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
-loadSamples();Car.build();layout();Car.go(0);Car.cards[0].el.classList.add('active');
+loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}Car.build();layout();Car.go(0);Car.cards[0].el.classList.add('active');
 (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();Car.cards.forEach(c=>{c.W=0;});});
 try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);
