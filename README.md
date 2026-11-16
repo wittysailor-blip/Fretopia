@@ -31,7 +31,7 @@ Popular rock, pop and Bollywood songs are copyrighted and aren't bundled. Users 
 
 ## Listening
 
-The listening engine (`src/listen.js` in the build workspace) is written for Fretopia from published music-analysis methods. It contains no third-party code, models or reverse-engineered material.
+The listening engine (`src/listen.js`) is written for Fretopia from published music-analysis methods. It contains no third-party code, models or reverse-engineered material.
 
 - Capture: an AudioWorklet (ScriptProcessor fallback), with every 512-sample hop analysed and timestamped.
 - Onsets: log-magnitude spectral flux with adaptive peak picking. A spectral-flatness gate ignores claps, taps and breath for pitched instruments.
@@ -53,13 +53,60 @@ Fake-microphone tests with recorded guitar notes:
 | Muted G string in C | Reported as muted |
 | Clean chords | No false muted-string reports |
 
-## Files
+## Code layout
 
-- `index.html`: the app (no build step)
-- `sounds/guitar/`: acoustic guitar note samples
-- `fonts/`: Inter (main app); Petaluma Script and Petaluma (constellation version)
-- `manifest.webmanifest`, `sw.js`, `icon-*.png`: installable and works offline
-- `start.command`: double-click on a Mac to run locally at http://localhost:8000
+The app is one HTML file with no dependencies, built from the files in `src/`:
+
+| File | What's in it |
+|---|---|
+| `src/head.html` | CSS and page markup |
+| `src/new.js` | Sound engine (samples, synths), mic setup, song format |
+| `src/lib.js` | Song library, chord lessons, MIDI import |
+| `src/listen.js` | Listening engine: onsets, pitch, chords, tabla strokes, latency |
+| `src/game.js` | Riyaz: XP, levels, streaks, daily goal, trophies, results animations |
+| `src/min.js` | App logic: landing, instrument picker, home, player, landscape mode |
+| `src/base.html`, `src/guitar.svg` | Page shell and guitar line art |
+
+Other files:
+
+- `index.html`: the built app. **Don't edit it by hand**; edit `src/` and rebuild.
+- `build.py`: joins `src/` into `index.html`.
+- `tests/mic_test.py`: plays recorded guitar into Chrome's fake mic and checks the scores.
+- `sounds/guitar/`: acoustic guitar note samples.
+- `fonts/`: Inter (main app); Petaluma Script and Petaluma (constellation version).
+- `manifest.webmanifest`, `sw.js`, `icon-*.png`: installable and works offline.
+- `version.json`: open apps check it and reload when it changes.
+- `start.command`: double-click on a Mac to run locally at http://localhost:8000.
+
+## Working on it
+
+```
+python3 build.py                 # rebuild index.html after editing src/
+python3 -m http.server 8000      # then open http://localhost:8000
+```
+
+The mic needs https or localhost, so test on a laptop at localhost. Branch previews on Vercel only build for the repo owner (see below).
+
+**Listening tests** (run after any change to `listen.js` or mic scoring in `min.js`):
+
+```
+pip install playwright numpy scipy && python -m playwright install chromium   # once; ffmpeg needed too
+python3 tests/mic_test.py quick   # 4 cases, about 2 minutes
+python3 tests/mic_test.py         # all 10 cases
+```
+
+Each case renders the song from the guitar samples, with room echo, hiss, the count-in clicks, a distant guitar, strumming during the count-in, wrong notes or wrong chords, and checks the accuracy lands in the expected range.
+
+**Releasing a change.** Bump the version in three places so phones pick it up: `APP_V` in `src/min.js`, `version.json`, and `CACHE` in `sw.js`. Then rebuild.
+
+## Contributing
+
+1. Make a branch: `git checkout -b my-change`.
+2. Edit `src/`, run `python3 build.py`, test locally (and run the mic tests if you touched listening).
+3. Push and open a pull request into `main`.
+4. Once it's reviewed, merge with **Create a merge commit**. Every push to `main` goes live on https://fretopia.vercel.app.
+
+The site runs on Vercel's free Hobby plan with a private repo. On that plan Vercel only deploys commits made by the repo owner, so a commit pushed straight to `main` by a collaborator is blocked. Merging a pull request with a merge commit from the owner's account makes the owner the author of the commit Vercel builds, which normally deploys. If Vercel still blocks it, the options are making the repo public (Hobby deploys anyone's commits on public repos) or moving to Vercel Pro.
 
 ## Credits
 

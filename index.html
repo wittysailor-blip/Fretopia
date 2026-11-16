@@ -959,13 +959,14 @@ const Ear={active:false,sr:48000,N:16384,ring:new Float32Array(16384),w:0,next:4
     this.onsets.push({raw:t,t:t-this.lat,str:v-med,lo,hi,flat});if(this.onsets.length>32)this.onsets.shift();},
   /* YIN with FFT cross-correlation: W=1024, tau up to ~1/60 s */
   pitchAt(end){const sr=this.sr,x=this.copy(end,2048,this.buf),W=1024,maxT=Math.min(1000,Math.floor(sr/62)),minT=Math.floor(sr/1500);
-    if(this.rms<((typeof Mic!=='undefined'&&Mic.gate)||.01)){this.pitch={f:null,t:this.timeOf(end-1024)};return;}
+    if(this.rms<((typeof Mic!=='undefined'&&Mic.gate)||.008)*.6){this.pitch={f:null,t:this.timeOf(end-1024)};return;}
     const A=this.re4,Ai=this.im4,Bm=this.ra,Bi=this.ia;for(let k=0;k<4096;k++){A[k]=k<2048?x[k]:0;Ai[k]=0;Bm[k]=k<W?x[k]:0;Bi[k]=0;}
     this.f4(A,Ai,false);this.f4(Bm,Bi,false);for(let k=0;k<4096;k++){const r=A[k]*Bm[k]+Ai[k]*Bi[k],i=Ai[k]*Bm[k]-A[k]*Bi[k];A[k]=r;Ai[k]=i;}this.f4(A,Ai,true);
     let e0=0;for(let k=0;k<W;k++)e0+=x[k]*x[k];const d=new Float32Array(maxT+2);let et=e0;d[0]=0;
     for(let t=1;t<=maxT+1;t++){et+=x[t+W-1]*x[t+W-1]-x[t-1]*x[t-1];d[t]=Math.max(0,e0+et-2*A[t]);}
     let run=0,tau=-1;const c=new Float32Array(maxT+2);c[0]=1;for(let t=1;t<=maxT+1;t++){run+=d[t];c[t]=run?d[t]*t/run:1;}
     for(let t=minT;t<=maxT;t++){if(c[t]<.15){while(t+1<=maxT&&c[t+1]<c[t])t++;tau=t;break;}}
+    if(tau<2){let bm=.3,bt=-1;for(let t=minT;t<=maxT;t++)if(c[t]<bm){bm=c[t];bt=t;}if(bt>0){tau=bt;while(tau+1<=maxT&&c[tau+1]<c[tau])tau++;}}
     if(tau<2){this.pitch={f:null,t:this.timeOf(end-1024)};return;}const a=c[tau-1],m=c[tau],z=c[tau+1],den=a+z-2*m,off=den?(a-z)/(2*den):0;
     this.pitch={f:sr/(tau+off),clar:1-m,t:this.timeOf(end-1024)-this.lat};},
   /* note activations and chroma from an 8192 frame */
@@ -1324,7 +1325,7 @@ const Player={open(song,list){const cont=!!$('#player');if(cont)this.close(true,
     P.querySelectorAll('[data-s]').forEach(b=>b.addEventListener('pointerdown',e=>{e.preventDefault();this.tap({semi:+b.dataset.s,btn:b});}));},
   msg(m){const el=$('#plMsg');if(!el)return;el.textContent=m;el.hidden=false;chime();clearTimeout(this.mt);this.mt=setTimeout(()=>el.hidden=true,3500);},
   reset(){this.flushTime();this.clicks=[];this.calib=[];this.pulse=0;this.t=-4;this.ended=false;this.trail=[];this.pops=[];this.nextTick=-4;this.nextIdx=0;this.matchAcc=0;this.floor=[];this.elapsed=0;this.streak=0;this.best=0;this.heard=null;
-    this.notes.forEach(n=>Object.assign(n,{frames:0,good:0,judged:false,state:null,unlocked:false,byMic:false,hits:{},score:0,onsetOff:null,off:null,offs:null,cw:0,cs:0,cents:null,other:0}));this.hud();this.btn();},
+    this.notes.forEach(n=>Object.assign(n,{frames:0,good:0,judged:false,state:null,unlocked:false,byMic:false,hits:{},score:0,onsetOff:null,off:null,offs:null,cw:0,cs:0,cents:null,other:0,early:0}));this.hud();this.btn();},
   async start(listen=false){ac();if(this.running){this.pause();return;}if(this.ended)this.reset();this.listen=listen;
     if(!listen&&this.mode==='mic'){const ok=await Mic.start();if(!ok){this.mode='tap';this.opts();this.pad();this.msg(micWhy());}else this.pad();}
     this.running=true;this.lastAudio=ctx.currentTime;this.btn();},
@@ -1335,7 +1336,7 @@ const Player={open(song,list){const cont=!!$('#player');if(cont)this.close(true,
   matches(v,n){if(v==null)return false;const ref=this.kind==='tab'?n.midi:n.semi;return Math.abs((((v-ref)%12)+18)%12-6)<=.6;},
   current(){return this.notes.find(n=>!n.rest&&this.t>=n.start&&this.t<n.start+n.beats);},
   sound(n,v=.35){if(!n||n.rest)return;if(this.kind==='chords'){n.midis.forEach((m,i)=>guitarNote(m,v*.8,i*.024,n.beats/this.bps()));return;}if(this.kind==='tab')guitarNote(n.midi,v,0,n.beats/this.bps());else if(this.kind==='sargam')playSwara(this.key,n.semi,Math.min(1.4,n.beats/this.bps()*.9),v);else n.lanes.forEach(l=>l==='b'?ready()&&bayan(v*.7,86):tablaHit(n.bol.toLowerCase()==='tin'||n.bol.toLowerCase()==='dhin'?'tin':'na',v*.7));},
-  hears(det,pv,n){if(this.kind==='chords'){if(!det||!det.chroma||det.rms<Mic.gate)return false;const f=chordFit(det.chroma.c,n.chord);this.chordHeard=f.best;this.noteMissing(det.chroma,n);return f.ok;}return this.matches(pv,n);},
+  hears(det,pv,n){if(this.kind==='chords'){if(!det||!det.chroma||det.rms<Mic.gate*.6)return false;const f=chordFit(det.chroma.c,n.chord);this.chordHeard=f.best;this.noteMissing(det.chroma,n);return f.ok;}return this.matches(pv,n);},
   /* per string: how strongly its own note sounds while the chord rings (only strings whose note name is unique in the shape) */
   noteMissing(ch,n){const sh=CHORD_SHAPES[n.chord];if(!sh||!ch||!ch.act)return;const OPEN=[40,45,50,55,59,64],ms=sh.map((f,i)=>f<0?null:OPEN[i]+f);
     if(!n.uniq){n.uniq=ms.map((m,i)=>m!=null&&ms.filter(x=>x!=null&&x%12===m%12).length===1);n.strSum=[0,0,0,0,0,0];n.heardN=0;}
@@ -1346,13 +1347,13 @@ const Player={open(song,list){const cont=!!$('#player');if(cont)this.close(true,
     return{chord:ch,string:NAMES[+si],num:6-si,count:bc};},
   beatAt(T){return this.t+(T-this.lastAudio)*this.bps();},
   frame(t){if(!this.running)return;const now_=ctx.currentTime;let dt=Math.min(.1,now_-this.lastAudio);this.lastAudio=now_;const bps=this.bps(),mic=this.mode==='mic'&&!this.listen;
-    const det=mic?Mic.read():null,pv=this.kind==='chords'?null:this.pitchVal(det);if(det&&this.t<0&&det.rms!=null)this.floor.push(det.rms);this.heard=pv;
+    const det=mic?Mic.read():null,pv=this.kind==='chords'?null:this.pitchVal(det);if(det&&this.t<0&&det.rms!=null&&!this.clicks.some(c=>now_-c>-.02&&now_-c<.18))this.floor.push(det.rms);this.heard=pv;
     let adv=true;this.waitFor=null;
     if(this.wait&&!this.listen&&this.kind!=='bols'&&this.t>=0){const pend=this.notes.find(n=>!n.rest&&!n.unlocked&&this.t>=n.start);
-      if(pend){if(this.mode==='mic'){if(this.hears(det,pv,pend)){this.matchAcc+=dt;if(this.matchAcc>.1){pend.unlocked=true;pend.byMic=true;this.matchAcc=0;}}else this.matchAcc=0;}if(!pend.unlocked){adv=false;this.t=pend.start;this.waitFor=pend;}}}
+      if(pend){if(this.mode==='mic'){if(this.hears(det,pv,pend)){this.matchAcc+=dt;if(this.matchAcc>.08){pend.unlocked=true;pend.byMic=true;this.matchAcc=0;}}else this.matchAcc=Math.max(0,this.matchAcc-dt*.4);}if(!pend.unlocked){adv=false;this.t=pend.start;this.waitFor=pend;}}}
     const prev=this.t;if(adv)this.t+=dt*bps;if(this.t>=0&&!this.listen)this.elapsed+=dt;
     while(this.nextTick<0&&this.t>=this.nextTick){click(now_,this.nextTick===-4);this.clicks.push(now_);this.nextTick++;}
-    if(prev<0&&this.t>=0){if(this.floor.length){const f=[...this.floor].sort((a,b)=>a-b)[this.floor.length>>1];Mic.gate=clamp(f*2.5,.008,.08);}this.calibrate();}
+    if(prev<0&&this.t>=0){if(this.floor.length>=5){const f=[...this.floor].sort((a,b)=>a-b)[Math.floor(this.floor.length*.1)];Mic.gate=clamp(f*3,.004,.02);}else Mic.gate=.008;this.calibrate();}
     while(this.nextIdx<this.notes.length&&this.t>=this.notes[this.nextIdx].start){const n=this.notes[this.nextIdx];if(this.listen||this.guide)this.sound(n,this.listen?.4:.22);this.nextIdx++;}
     /* onsets: latency calibration during the count-in, timing per note afterwards, strokes for tabla */
     if(det&&det.onsets)for(const o of det.onsets){if(this.beatAt(o.t)<-.4){const c=this.clicks.find(c=>o.raw-c>.008&&o.raw-c<.4);if(c!=null)this.calib.push(o.raw-c);continue;}
@@ -1362,6 +1363,7 @@ const Player={open(song,list){const cont=!!$('#player');if(cont)this.close(true,
       if(best&&(best.onsetOff==null||bd<Math.abs(best.onsetOff)))best.onsetOff=adv?(bt-best.start)/bps:0;}
     const cur=this.current();
     if(mic&&this.kind!=='bols'&&cur&&adv){cur.frames+=dt;if(this.hears(det,pv,cur)){cur.good+=dt;if(pv!=null){const ref=this.kind==='tab'?cur.midi:cur.semi,c=((((pv-ref)%12)+18)%12-6)*100;cur.cw+=dt;cur.cs+=c*dt;}}else if(pv!=null||(det&&det.rms>Mic.gate*1.5))cur.other+=dt;}
+    if(this.mode==='mic'&&this.kind!=='bols'&&adv&&!this.listen&&det){const nx=this.notes.find(n=>!n.rest&&!n.judged&&n.start>this.t&&n!==cur);if(nx&&(nx.start-this.t)/bps<.25&&!(cur&&this.hears(det,pv,cur))&&this.hears(det,pv,nx))nx.early=(nx.early||0)+dt;}
     this.notes.forEach(n=>{if(n.rest||n.judged)return;
       if(this.listen){if(this.t>=n.start+n.beats){n.judged=true;n.state='demo';}return;}
       if(this.mode==='mic'&&this.kind!=='bols'){if(this.t>=n.start+n.beats)this.judgeMic(n);}
@@ -1373,7 +1375,7 @@ const Player={open(song,list){const cont=!!$('#player');if(cont)this.close(true,
     $('#plProg').style.width=clamp(this.t/this.total*100,0,100)+'%';
     if(this.t>=this.total+.6)this.finish();},
   /* score one note from what the microphone heard: right pitch (or chord) for enough of the note, plus timing of its attack */
-  judgeMic(n){n.judged=true;const pp=clamp((n.frames?n.good/n.frames:0)/.6,0,1),off=n.onsetOff,a=off==null?null:Math.abs(off),tp=a==null?null:a<=.06?1:a<=.12?.8:a<=.2?.5:.3,tw=this.kind==='sargam'?.15:.35;
+  judgeMic(n){n.judged=true;const need=Math.min(.16,Math.max(.06,.35*n.beats/this.bps())),pp=clamp((n.good+(n.early||0))/need,0,1)*(n.other>n.good*2.5&&n.other>.3?.6:1),off=n.onsetOff,a=off==null?null:Math.abs(off),tp=a==null?null:a<=.06?1:a<=.12?.8:a<=.2?.5:.3,tw=this.kind==='sargam'?.15:.35;
     let sc=tp==null||pp<=.3?pp*(tp==null?1:1-tw):pp*(1-tw)+tp*tw;if(n.byMic)sc=Math.max(sc,.85);n.score=clamp(sc,0,1);n.state=n.score>=.5?'hit':'miss';if(n.state==='hit'&&off!=null)n.off=off;
     n.cents=n.cw>.05?n.cs/n.cw:null;let txt;
     if(n.state==='hit'){if(off!=null&&off<-.06&&!n.byMic)txt='Early';else if(off!=null&&off>.06&&!n.byMic)txt='Late';else if(this.kind!=='chords'&&n.cents!=null&&Math.abs(n.cents)>22)txt=n.cents>0?'Sharp':'Flat';else txt=n.score>=.9?'Perfect':'Good';}
@@ -1592,7 +1594,7 @@ function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);if(!$('#picker').hidden){Car.update(Math.min(.05,t-(loop.p||t)));Car.draw(t);}
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='12';
+const APP_V='13';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
