@@ -23,6 +23,16 @@ The main app (`index.html`) is the minimal design: Inter type, ink line art on o
 
 Earlier versions: `constellation.html` (glowing night-sky design) and `classic.html` (first light-theme app with lesson path, tanpura, tuner, taal loops).
 
+## Song library
+
+Every melody is stored once as a compact line of movable sargam (`S R G m P D N`, komal in lower case, `.` lower octave, `'` upper octave, `:2` beats). The app turns it into sargam for sitar, harmonium, bansuri and vocals, and into guitar tab in open position. Raag practice (aaroh-avaroh and alankars for 15 raags) is generated from each raag's scale. Rhymes, folk, festive, Western classical and Indian pieces are public-domain melodies.
+
+Popular rock, pop and Bollywood songs are copyrighted and aren't bundled. Users can import their own MIDI files (melody is extracted, key detected, stored on the device).
+
+## Listening
+
+YIN pitch detection on the microphone, octave-agnostic, ±60 cents. Tested with recorded guitar notes through a fake microphone: correct notes score 99–100%, notes a whole tone off score 0%.
+
 ## Files
 
 - `index.html`: the app (no build step)
