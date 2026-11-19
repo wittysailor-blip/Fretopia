@@ -36,6 +36,8 @@ static class Layer1Smoke
             var st = cap.GetStats();
             cap.PollEvents(e => Console.WriteLine("event: " + e));
             cap.Stop();
+            var end = cap.GetStats();
+            if ((ulong)frames != end.FramesDelivered || end.FramesDelivered != end.FramesReceived) { Console.WriteLine($"undelivered: received {end.FramesReceived} delivered {end.FramesDelivered} seen {frames}"); fails++; }
             Console.WriteLine($"frames {frames}, mismatches {mismatches}, gaps {gaps}, epoch {epoch}, state {st.State}, rate {st.SampleRateHz}, p99 cb {st.CallbackP99Us:F0} us");
             if (frames < 90000 || mismatches != 0 || gaps != 0 || epoch != 1 || st.SampleRateHz != 48000) fails++;
         }

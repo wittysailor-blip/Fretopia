@@ -122,7 +122,8 @@ std::string csv(const std::string& s) {
 struct Args {
     std::string cmd, test = "T02", mic, device, wav, csvp = "l1_results.csv", route = "none", ambient, notes, log;
     double seconds = 30, distance = 0;
-    uint32_t rate = 0, period = 0, frame = 256, capacity = 8192, fps = 0, stall_ms = 0, load = 0;
+    uint32_t rate = 0, period = 0, frame = 256, capacity = 8192, fps = 0, stall_ms = 0, load = 0, hum = 0, hum_harm = 1;
+    bool dc_block = false; float gain_db = 0;
     bool raw = true, sim = false, expect_hotplug = false, quiet = false;
     l1_channel_mode chmode = L1_CHANNELS_ALL; uint32_t sel = 0;
 };
@@ -143,6 +144,8 @@ void usage() {
         "  --stall-ms N       with --fps: one extra stall of N ms every second (T13)\n"
         "  --load N           run N busy CPU threads during capture (T14)\n"
         "  --hotplug          T06: unplug and replug the mic during the run\n"
+        "  --dc-block         optional DC blocker   --hum 50|60  mains notch   --hum-harmonics N   --gain-db G\n"
+        "                     (--wav then holds the conditioned audio)\n"
         "  --wav FILE         write delivered audio (float32 WAV) + FILE.gaps.csv\n"
         "  --log FILE         per-frame log CSV\n"
         "  --csv FILE         append results row (default l1_results.csv)\n"
@@ -178,6 +181,10 @@ bool parse(int argc, char** argv, Args& a) {
         else if (k == "--stall-ms") a.stall_ms = (uint32_t)std::atoi(val("--stall-ms").c_str());
         else if (k == "--load") a.load = (uint32_t)std::atoi(val("--load").c_str());
         else if (k == "--hotplug") a.expect_hotplug = true;
+        else if (k == "--dc-block") a.dc_block = true;
+        else if (k == "--hum") a.hum = (uint32_t)std::atoi(val("--hum").c_str());
+        else if (k == "--hum-harmonics") a.hum_harm = (uint32_t)std::atoi(val("--hum-harmonics").c_str());
+        else if (k == "--gain-db") a.gain_db = (float)std::atof(val("--gain-db").c_str());
         else if (k == "--wav") a.wav = val("--wav");
         else if (k == "--log") a.log = val("--log");
         else if (k == "--csv") a.csvp = val("--csv");
@@ -227,6 +234,10 @@ int capture(const Args& a) {
     cfg.select_channel = a.sel;
     cfg.frame_size = a.frame;
     cfg.transport_capacity_frames = a.capacity;
+    cfg.dc_block = a.dc_block ? 1 : 0;
+    cfg.hum_notch_hz = a.hum;
+    cfg.hum_notch_harmonics = a.hum_harm;
+    cfg.digital_gain_db = a.gain_db;
     l1_engine* e = nullptr;
     int32_t r = l1_create(&cfg, &e);
     if (r != L1_OK) { std::printf("l1_create failed: %s (%d)\n", l1_result_string(r), r); return 1; }
@@ -338,8 +349,8 @@ int capture(const Args& a) {
         }
     }
     l1_stats s; l1_get_stats(e, &s);
-    stop = true;
-    l1_stop(e);
+    l1_stop(e);      // stop capture first: the engine flushes the last partial frame,
+    stop = true;     // then the reader drains everything that is left
     reader.join();
     while (l1_poll_event(e, &ev) == L1_OK) std::printf("[event] %s %s\n", event_name(ev.kind), ev.message);
     burn = false; for (auto& t : burners) t.join();

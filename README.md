@@ -108,6 +108,10 @@ Each case renders the song from the guitar samples, with room echo, hiss, the co
 
 The site runs on Vercel's free Hobby plan with a private repo. On that plan Vercel only deploys commits made by the repo owner, so a commit pushed straight to `main` by a collaborator is blocked. Merging a pull request with a merge commit from the owner's account makes the owner the author of the commit Vercel builds, which normally deploys. If Vercel still blocks it, the options are making the repo public (Hobby deploys anyone's commits on public repos) or moving to Vercel Pro.
 
+## Native microphone engine (Layer 1)
+
+`layer1/` holds an independent C++ microphone capture engine for a future Unity/native app: Windows WASAPI capture, a lock-free transport, timestamped frames with gap reporting, a C API and a Unity C# bridge. It is separate from the web app and is not served by Vercel. See [layer1/README.md](layer1/README.md).
+
 ## Credits
 
 - Guitar samples: University of Iowa Electronic Music Studios recordings, edited by Nicholas Brosowsky ([tonejs-instruments](https://github.com/nbrosowsky/tonejs-instruments)), CC BY 3.0

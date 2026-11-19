@@ -1,0 +1,100 @@
+=== job 135520546731
+[T11] Ring buffer wraps: exact sequence through many wraps
+  PASS  52M items across capacities 3/1000/4097 + 10M paired sample/descriptor frames, 0 corrupted
+[ABI] Struct sizes match the Unity C# bridge
+  PASS  config 88, frame_info 128, stats 232, event 184, device_info 396 bytes
+[P1] Contiguous capture: exact samples, indices and timestamps
+  PASS  216250 frames in 350 packets, max timestamp error 1 ns, 0 gaps
+[T08] Silent packet flag
+  PASS  480 silent frames delivered as zeros with SILENT flag; timeline continuous (1440 frames, 0 gaps)
+[T09] Timestamp-error flag
+  PASS  no-anchor frames INVALID (time 0); 2 frame(s) after a bad timestamp ESTIMATED, error 0 ns vs truth
+[T10] Packet discontinuity: dropped, duplicated and glitched frames
+  PASS  220 skipped frames reported as a gap of 220; 180 repeated frames removed and flagged; OS glitch flagged as unknown-length gap; no frame spans a gap
+[T12] Producer outruns consumer (transport level)
+  PASS  capacity 4096, 9600 pushed: 4096 kept (oldest), 5504 newest dropped, one gap record of 5504; delivered + dropped = captured
+  PASS  restart flushes the partial frame (LAST_OF_EPOCH), next epoch starts at index 0 with NEW_EPOCH + DISCONTINUITY + new rate; backward device position > 1 s becomes a DEVICE_RESET epoch
+[T04] Stereo / mic array: channels preserved or explicitly chosen
+  PASS  ALL keeps both phase-opposed channels exactly (RMS 0.354/0.354); SELECT delivers channel 1 exactly; AVERAGE cancels them (RMS 0.0e+00) so it is opt-in only
+  PASS  1.2x overload: 1796 clipped samples flagged, peak 1.6 dBFS; NaN/Inf counted (2) and replaced by 0
+[API-1] Too-small buffer keeps the frame for a retry
+  PASS  frame retained and delivered intact on retry
+[T16] Clean guitar plucks: waveform and transients delivered bit-exact (default settings)
+  PASS  E2 exact; A2 exact; D3 exact; G3 exact; B3 exact; E4 exact; 6 open strings, 201600 samples each, through capture->transport->frames
+[T17] Quiet and sustained notes: no gate, no truncation
+  PASS  -50 dBFS pluck bit-exact; 10 s low-E sustain bit-exact, last-second level -41.2 dB in = -41.2 dB out; with DC blocker + 50 Hz notch -41.25 dB (82.4 Hz component -0.018 dB)
+[D08-DC] Optional DC blocker (5 Hz): removes offset, keeps low strings and attacks
+  PASS  E2 f0 -0.052 dB attack +0.28 dB; A2 f0 +0.002 dB attack +0.22 dB; D3 f0 -0.006 dB attack -0.15 dB; G3 f0 -0.002 dB attack +0.28 dB; B3 f0 -0.001 dB attack +0.26 dB; E4 f0 -0.010 dB attack -0.41 dB; 0.05 DC offset removed (<1e-3 afte
+[T21] 50 Hz mains hum: bypass vs targeted notch, low strings preserved
+  PASS  single 50 Hz notch: hum -36.5 -> -81.6 dB (-45.2 dB), E2 fundamental +0.00 dB, 2nd harmonic -0.00 dB. Harmonic notches cost G2 (98 Hz) -2.26 dB, B2 (123.5 Hz, 60 Hz mains) -1.28 dB, A2 -0.14 dB -> default 1 notch, harmonics opt-in
+  PASS  peak -40 dBFS: 0 clipped; peak -6 dBFS: 0 clipped; peak +12 dBFS: 6675 clipped; 
+[T30] Adversarial buffering: random packet sizes, all device faults, consumer stalls
+  PASS  30M frames x2ch, packets 1-2000: 4020181 delivered bit-exact; 25936465 overflow + 88428 device-lost frames all reported (gap sum matches); 43354 duplicates removed; 27 glitches flagged; 0 index/time/order errors; 0 allocations on ca
+[T12] Producer outruns consumer: Layer 2 stalled for 300 ms
+  PASS  300 ms stall, 8192-frame transport (170.7 ms): 6592 frames dropped (expected ~6208), one gap record, capture callback max 34 us, stream continued
+[T13] Render stutter: consumer drains once per game frame; capacity sweep (D04)
+  PASS  cap 2048 (42.7 ms) frame 16 ms (longest measured 47.6 ms): lost 352; cap 2048 (42.7 ms) frame 33 ms (longest measured 47.9 ms): lost 5280; cap 2048 (42.7 ms) frame 66 ms (longest measured 79.5 ms): lost 39744; cap 4096 (85.3 ms) fra
+[T15] Missed callback deadlines
+  PASS  14 callbacks over the 10 ms period flagged (max 15.3 ms); stream recovered with no sample loss
+[T29] Device clock drift and timestamp jitter estimate (simulated clock)
+  PASS  true drift +150 ppm, estimated +148.9 ppm; true jitter 300 us RMS, estimated 287 us
+  PASS  no jitter: |error| p50 0.0 us, p95 0.0 us, p99 0.0 us, max 0.0 us, 0 estimated; 200 us jitter: |error| p50 17.1 us, p95 55.1 us, p99 152.7 us, max 440.3 us, 0 estimated; 200 us jitter, 20% bad timestamps: |error| p50 28.2 us, p95 72
+[T06] Device unplugged while recording: graceful stop, new epoch on reconnect
+  PASS  loss posts DEVICE_LOST, last frame flagged LAST_OF_EPOCH, reconnect starts epoch 2 at index 0 with DISCONTINUITY; without auto-reconnect: no phantom frames, state FAILED, restart works
+[T07] Device sample-rate change 48k -> 44.1k
+  PASS  FORMAT_CHANGED event, reopened as epoch 2 at 44100 Hz, every frame labelled with its own rate
+  PASS  denied open returns L1_ERR_PERMISSION + ERROR event, no frames; retry after grant starts cleanly
+  PASS  100 requested -> 128 reported + PERIOD_ADJUSTED; 500 -> 512; unsupported rate -> L1_ERR_FORMAT, no half-open stream
+  PASS  last sample captured -> frame returned: p50 4.88 ms, p95 9.62 ms, p99 9.88 ms, max 9.90 ms (10 ms packets; excludes OS/driver delay); callback p50 8 us p99 28 us
+[LIFE] Start/stop cycles, stop while reading, destroy while running
+  PASS  40 start/stop cycles = 40 epochs, double start rejected, blocked reader released by stop, destroy while running, bad struct_size rejected
+=== job 135522697113
+[T11] Ring buffer wraps: exact sequence through many wraps
+  PASS  52M items across capacities 3/1000/4097 + 10M paired sample/descriptor frames, 0 corrupted
+[ABI] Struct sizes match the Unity C# bridge
+  PASS  config 88, frame_info 128, stats 232, event 184, device_info 396 bytes
+[P1] Contiguous capture: exact samples, indices and timestamps
+  PASS  216250 frames in 350 packets, max timestamp error 1 ns, 0 gaps
+[T08] Silent packet flag
+  PASS  480 silent frames delivered as zeros with SILENT flag; timeline continuous (1440 frames, 0 gaps)
+[T09] Timestamp-error flag
+  PASS  no-anchor frames INVALID (time 0); 2 frame(s) after a bad timestamp ESTIMATED, error 0 ns vs truth
+[T10] Packet discontinuity: dropped, duplicated and glitched frames
+  PASS  220 skipped frames reported as a gap of 220; 180 repeated frames removed and flagged; OS glitch flagged as unknown-length gap; no frame spans a gap
+[T12] Producer outruns consumer (transport level)
+  PASS  capacity 4096, 9600 pushed: 4096 kept (oldest), 5504 newest dropped, one gap record of 5504; delivered + dropped = captured
+  PASS  restart flushes the partial frame (LAST_OF_EPOCH), next epoch starts at index 0 with NEW_EPOCH + DISCONTINUITY + new rate; backward device position > 1 s becomes a DEVICE_RESET epoch
+[T04] Stereo / mic array: channels preserved or explicitly chosen
+  PASS  ALL keeps both phase-opposed channels exactly (RMS 0.354/0.354); SELECT delivers channel 1 exactly; AVERAGE cancels them (RMS 0.0e+00) so it is opt-in only
+  PASS  1.2x overload: 1796 clipped samples flagged, peak 1.6 dBFS; NaN/Inf counted (2) and replaced by 0
+[API-1] Too-small buffer keeps the frame for a retry
+  PASS  frame retained and delivered intact on retry
+[T16] Clean guitar plucks: waveform and transients delivered bit-exact (default settings)
+  PASS  E2 exact; A2 exact; D3 exact; G3 exact; B3 exact; E4 exact; 6 open strings, 201600 samples each, through capture->transport->frames
+[T17] Quiet and sustained notes: no gate, no truncation
+  PASS  -50 dBFS pluck bit-exact; 10 s low-E sustain bit-exact, last-second level -41.2 dB in = -41.2 dB out; with DC blocker + 50 Hz notch -41.25 dB (82.4 Hz component -0.018 dB)
+[D08-DC] Optional DC blocker (5 Hz): removes offset, keeps low strings and attacks
+  PASS  E2 f0 -0.052 dB attack +0.28 dB; A2 f0 +0.002 dB attack +0.22 dB; D3 f0 -0.006 dB attack -0.15 dB; G3 f0 -0.002 dB attack +0.28 dB; B3 f0 -0.001 dB attack +0.26 dB; E4 f0 -0.010 dB attack -0.41 dB; 0.05 DC offset removed (<1e-3 afte
+[T21] 50 Hz mains hum: bypass vs targeted notch, low strings preserved
+  PASS  single 50 Hz notch: hum -36.5 -> -81.6 dB (-45.2 dB), E2 fundamental +0.00 dB, 2nd harmonic -0.00 dB. Harmonic notches cost G2 (98 Hz) -2.26 dB, B2 (123.5 Hz, 60 Hz mains) -1.28 dB, A2 -0.14 dB -> default 1 notch, harmonics opt-in
+  PASS  peak -40 dBFS: 0 clipped; peak -6 dBFS: 0 clipped; peak +12 dBFS: 6675 clipped; 
+[T30] Adversarial buffering: random packet sizes, all device faults, consumer stalls
+  PASS  30M frames x2ch, packets 1-2000: 5370059 delivered bit-exact; 24586587 overflow + 88428 device-lost frames all reported (gap sum matches); 43354 duplicates removed; 31 glitches flagged; 0 index/time/order errors; 0 allocations on ca
+[T12] Producer outruns consumer: Layer 2 stalled for 300 ms
+  PASS  300 ms stall, 8192-frame transport (170.7 ms): 6592 frames dropped (expected ~6208), one gap record, capture callback max 46 us, stream continued
+[T13] Render stutter: consumer drains once per game frame; capacity sweep (D04)
+  PASS  cap 2048 (42.7 ms) frame 16 ms (longest measured 45.7 ms): lost 0; cap 2048 (42.7 ms) frame 33 ms (longest measured 60.1 ms): lost 11040; cap 2048 (42.7 ms) frame 66 ms (longest measured 100.0 ms): lost 44800; cap 4096 (85.3 ms) fra
+[T15] Missed callback deadlines
+  PASS  14 callbacks over the 10 ms period flagged (max 15.3 ms); stream recovered with no sample loss
+[T29] Device clock drift and timestamp jitter estimate (simulated clock)
+  PASS  true drift +150 ppm, estimated +148.9 ppm; true jitter 300 us RMS, estimated 286 us
+  PASS  no jitter: |error| p50 0.0 us, p95 0.0 us, p99 0.0 us, max 0.0 us, 0 estimated; 200 us jitter: |error| p50 16.1 us, p95 47.1 us, p99 218.6 us, max 440.3 us, 0 estimated; 200 us jitter, 20% bad timestamps: |error| p50 24.7 us, p95 60
+[T06] Device unplugged while recording: graceful stop, new epoch on reconnect
+  PASS  loss posts DEVICE_LOST, last frame flagged LAST_OF_EPOCH, reconnect starts epoch 2 at index 0 with DISCONTINUITY; without auto-reconnect: no phantom frames, state FAILED, restart works
+[T07] Device sample-rate change 48k -> 44.1k
+  PASS  FORMAT_CHANGED event, reopened as epoch 2 at 44100 Hz, every frame labelled with its own rate
+  PASS  denied open returns L1_ERR_PERMISSION + ERROR event, no frames; retry after grant starts cleanly
+  PASS  100 requested -> 128 reported + PERIOD_ADJUSTED; 500 -> 512; unsupported rate -> L1_ERR_FORMAT, no half-open stream
+  PASS  last sample captured -> frame returned: p50 4.88 ms, p95 9.62 ms, p99 9.88 ms, max 9.93 ms (10 ms packets; excludes OS/driver delay); callback p50 12 us p99 22 us
+[LIFE] Start/stop cycles, stop while reading, destroy while running
+  PASS  40 start/stop cycles = 40 epochs, double start rejected, blocked reader released by stop, destroy while running, bad struct_size rejected

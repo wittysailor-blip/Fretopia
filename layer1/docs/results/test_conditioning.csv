@@ -1,0 +1,6 @@
+id,name,result,metrics
+T16,"Clean plucks",PASS,"E2 exact; A2 exact; D3 exact; G3 exact; B3 exact; E4 exact; 6 open strings, 201600 samples each, through capture->transport->frames"
+T17,"Quiet/sustained",PASS,"-50 dBFS pluck bit-exact; 10 s low-E sustain bit-exact, last-second level -41.2 dB in = -41.2 dB out; with DC blocker + 50 Hz notch -41.25 dB (82.4 Hz component -0.018 dB)"
+D08-DC,"DC blocker",PASS,"E2 f0 -0.052 dB attack +0.28 dB; A2 f0 +0.002 dB attack +0.22 dB; D3 f0 -0.006 dB attack -0.15 dB; G3 f0 -0.002 dB attack +0.28 dB; B3 f0 -0.001 dB attack +0.26 dB; E4 f0 -0.010 dB attack -0.41 dB; 0.05 DC offset removed (<1e-3 after 3 s)"
+T21,"Mains hum",PASS,"single 50 Hz notch: hum -36.5 -> -81.6 dB (-45.2 dB), E2 fundamental +0.00 dB, 2nd harmonic -0.00 dB. Harmonic notches cost G2 (98 Hz) -2.26 dB, B2 (123.5 Hz, 60 Hz mains) -1.28 dB, A2 -0.14 dB -> default 1 notch, harmonics opt-in"
+T24-levels,"Levels",PASS,"peak -40 dBFS: 0 clipped; peak -6 dBFS: 0 clipped; peak +12 dBFS: 6675 clipped; "

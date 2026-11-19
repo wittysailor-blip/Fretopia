@@ -124,25 +124,27 @@ namespace Fretopia.Audio.Layer1
         public void Stop()
         {
             if (_engine == IntPtr.Zero) return;
-            _running = false;
-            Layer1Native.l1_stop(_engine);   // also releases a reader blocked in l1_read_frame
+            Layer1Native.l1_stop(_engine);   // capture stops; the last partial frame becomes readable
+            _running = false;                // reader leaves its loop, then drains what is left
             _reader?.Join();
             _reader = null;
         }
 
         void ReaderLoop()
         {
-            while (_running)
-            {
-                int r = Layer1Native.l1_read_frame(_engine, out FrameInfo info, _buf, (uint)_buf.Length, null, 0, 100);
-                if (r == (int)L1Result.Ok)
-                {
-                    Interlocked.Add(ref _frames, info.FrameCount);
-                    if (info.DroppedFramesBefore > 0) Interlocked.Add(ref _lostFrames, (long)info.DroppedFramesBefore);
-                    try { FrameReceived?.Invoke(in info, _buf); }
-                    catch (Exception e) { OnHandlerException?.Invoke(e); }
-                }
-            }
+            while (_running) ReadOne(100);
+            while (ReadOne(0)) { }           // after Stop(): deliver every remaining frame
+        }
+
+        bool ReadOne(int timeoutMs)
+        {
+            int r = Layer1Native.l1_read_frame(_engine, out FrameInfo info, _buf, (uint)_buf.Length, null, 0, timeoutMs);
+            if (r != (int)L1Result.Ok) return false;
+            Interlocked.Add(ref _frames, info.FrameCount);
+            if (info.DroppedFramesBefore > 0) Interlocked.Add(ref _lostFrames, (long)info.DroppedFramesBefore);
+            try { FrameReceived?.Invoke(in info, _buf); }
+            catch (Exception e) { OnHandlerException?.Invoke(e); }
+            return true;
         }
 
         /// <summary>Raised (reader thread) if a FrameReceived handler throws.</summary>

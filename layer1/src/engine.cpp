@@ -55,7 +55,6 @@ struct l1_engine final : BackendListener {
     std::thread ctl;
     bool want_running = false;       // control thread only
     uint32_t epoch_counter = 0;      // control thread only
-    bool follow_default_now = false; // control thread only
 
     std::mutex evmu;
     std::deque<l1_event> events;
@@ -88,6 +87,7 @@ struct l1_engine final : BackendListener {
         req.sample_rate = cfg.requested_sample_rate_hz;
         req.period_frames = cfg.requested_period_frames;
         req.raw = cfg.request_raw_mode != 0;
+        req.follow_default = cfg.follow_default_device != 0;
         OpenResult res;
         int32_t r = be->open(req, res, this);
         if (r != L1_OK) { be->close(); last_error.store(r); return r; }

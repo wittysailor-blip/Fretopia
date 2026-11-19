@@ -16,6 +16,7 @@ struct OpenRequest {
     uint32_t sample_rate = 0;     // 0 = device mix rate
     uint32_t period_frames = 0;   // 0 = device default
     bool raw = false;
+    bool follow_default = true;   // only meaningful when device_id is empty
 };
 
 struct OpenResult {

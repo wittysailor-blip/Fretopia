@@ -1,0 +1,11 @@
+id,name,result,metrics
+ABI,"Struct sizes",PASS,"config 88, frame_info 128, stats 232, event 184, device_info 396 bytes"
+P1,"Contiguous capture",PASS,"216250 frames in 350 packets, max timestamp error 1 ns, 0 gaps"
+T08,"Silent packet flag",PASS,"480 silent frames delivered as zeros with SILENT flag; timeline continuous (1440 frames, 0 gaps)"
+T09,"Timestamp-error flag",PASS,"no-anchor frames INVALID (time 0); 2 frame(s) after a bad timestamp ESTIMATED, error 0 ns vs truth"
+T10,"Packet discontinuity",PASS,"220 skipped frames reported as a gap of 220; 180 repeated frames removed and flagged; OS glitch flagged as unknown-length gap; no frame spans a gap"
+T12,"Producer outruns consumer",PASS,"capacity 4096, 9600 pushed: 4096 kept (oldest), 5504 newest dropped, one gap record of 5504; delivered + dropped = captured"
+T06/T07-logic,"Epochs",PASS,"restart flushes the partial frame (LAST_OF_EPOCH), next epoch starts at index 0 with NEW_EPOCH + DISCONTINUITY + new rate; backward device position > 1 s becomes a DEVICE_RESET epoch"
+T04,"Channels",PASS,"ALL keeps both phase-opposed channels exactly (RMS 0.354/0.354); SELECT delivers channel 1 exactly; AVERAGE cancels them (RMS 0.0e+00) so it is opt-in only"
+T24-detect,"Clipping detection",PASS,"1.2x overload: 1796 clipped samples flagged, peak 1.6 dBFS; NaN/Inf counted (2) and replaced by 0"
+API-1,"Buffer too small",PASS,"frame retained and delivered intact on retry"

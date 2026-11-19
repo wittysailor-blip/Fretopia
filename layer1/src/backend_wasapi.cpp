@@ -257,7 +257,7 @@ public:
         // Device notifications.
         notifier_ = new NotificationClient();
         notifier_->device_id = dev_id_w_;
-        notifier_->follow_default = req.device_id.empty();
+        notifier_->follow_default = req.device_id.empty() && req.follow_default;
         notifier_->listener = listener;
         enumr_->RegisterEndpointNotificationCallback(notifier_);
 
