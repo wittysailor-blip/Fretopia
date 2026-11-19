@@ -2,3 +2,5 @@ src/
 tests/
 build.py
 CONTRIBUTING.md
+layer1/
+.github/

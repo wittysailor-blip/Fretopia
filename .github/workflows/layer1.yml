@@ -1,0 +1,98 @@
+name: layer1
+
+on:
+  push:
+    paths: ["layer1/**", ".github/workflows/layer1.yml"]
+  pull_request:
+    paths: ["layer1/**"]
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MinGW
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq mingw-w64 ninja-build
+      - name: Build and test (Linux, simulated device)
+        working-directory: layer1
+        run: |
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build
+          mkdir -p tests/results
+          cd tests && ../build/test_spsc && ../build/test_pipeline && ../build/test_conditioning && ../build/test_engine quick
+      - name: ThreadSanitizer
+        working-directory: layer1
+        run: |
+          cmake -S . -B build-tsan -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DL1_SANITIZE=thread
+          cmake --build build-tsan
+          cd tests && TSAN_OPTIONS=halt_on_error=1 ../build-tsan/test_spsc && TSAN_OPTIONS=halt_on_error=1 ../build-tsan/test_pipeline
+      - name: Cross-compile for Windows (MinGW)
+        working-directory: layer1
+        run: |
+          cmake -S . -B build-win -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=cmake/mingw-w64-x86_64.cmake
+          cmake --build build-win
+      - uses: actions/upload-artifact@v4
+        with:
+          name: layer1-mingw
+          path: |
+            layer1/build-win/*.exe
+            layer1/build-win/*.dll
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results-linux
+          path: layer1/tests/results/
+
+  windows-mingw-binaries:
+    needs: linux
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: layer1-mingw, path: layer1/bin }
+      - name: Run the cross-compiled tests on Windows
+        shell: bash
+        working-directory: layer1/tests
+        run: |
+          mkdir -p results
+          ../bin/test_spsc.exe
+          ../bin/test_pipeline.exe
+          ../bin/test_conditioning.exe
+          ../bin/test_engine.exe quick
+      - name: WASAPI smoke test (runner has no microphone; expect a clean error, not a crash)
+        shell: bash
+        working-directory: layer1/tests
+        run: |
+          ../bin/l1probe.exe list || true
+          ../bin/l1probe.exe capture --test T01 --seconds 3 --csv results/wasapi_smoke.csv --notes "GitHub Actions runner" ; echo "l1probe exit $?"
+          cat results/wasapi_smoke.csv || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results-windows-mingw
+          path: layer1/tests/results/
+
+  windows-msvc:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with MSVC
+        working-directory: layer1
+        run: |
+          cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+          cmake --build build --config Release
+      - name: Test with MSVC build
+        shell: bash
+        working-directory: layer1/tests
+        run: |
+          mkdir -p results
+          ../build/Release/test_spsc.exe
+          ../build/Release/test_pipeline.exe
+          ../build/Release/test_conditioning.exe
+          ../build/Release/test_engine.exe quick
+      - uses: actions/upload-artifact@v4
+        with:
+          name: layer1-msvc
+          path: |
+            layer1/build/Release/*.dll
+            layer1/build/Release/*.exe
+            layer1/tests/results/

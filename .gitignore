@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 tests/.cache/
 __pycache__/
+layer1/build*/
+layer1/tests/results/
