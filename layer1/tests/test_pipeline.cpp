@@ -3,6 +3,7 @@
 // Covers T04, T08, T09, T10, T12 (transport level), T24 (detection) and the
 // epoch logic behind T06/T07.
 #include <atomic>
+#include <cstddef>
 #include <cmath>
 #include <vector>
 
@@ -353,7 +354,22 @@ static void small_buffer() {
     t::end("API-1", "Buffer too small", "frame retained and delivered intact on retry");
 }
 
+// The C# bridge (unity/Layer1Native.cs) hard-codes these sizes; they must hold
+// on every compiler/platform the DLL is built for.
+static void abi() {
+    t::begin("ABI", "Struct sizes match the Unity C# bridge");
+    CHECK(sizeof(l1_config) == 88);
+    CHECK(sizeof(l1_frame_info) == 128);
+    CHECK(sizeof(l1_stats) == 232);
+    CHECK(sizeof(l1_event) == 184);
+    CHECK(sizeof(l1_device_info) == 396);
+    CHECK(offsetof(l1_frame_info, capture_time_ns) == 48 && offsetof(l1_frame_info, rms_dbfs) == 96);
+    CHECK(offsetof(l1_stats, callback_p50_us) == 160);
+    t::end("ABI", "Struct sizes", "config 88, frame_info 128, stats 232, event 184, device_info 396 bytes");
+}
+
 int main() {
+    abi();
     basic();
     silent_packets();
     timestamp_errors();

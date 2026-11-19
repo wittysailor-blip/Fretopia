@@ -50,8 +50,25 @@ void Signal::wake() {
     seq_.fetch_add(1, std::memory_order_seq_cst);
     if (waiting_.load(std::memory_order_seq_cst)) WakeByAddressSingle((PVOID)&seq_);
 }
+#ifndef CREATE_WAITABLE_TIMER_HIGH_RESOLUTION
+#define CREATE_WAITABLE_TIMER_HIGH_RESOLUTION 0x00000002
+#endif
+// Sleep() and std::this_thread::sleep_for round up to the system timer tick
+// (15.6 ms by default). A high-resolution waitable timer (Windows 10 1803+)
+// sleeps to ~0.5 ms without changing the global timer resolution.
 void sleep_us(int64_t us) {
     if (us <= 0) return;
+    struct Timer {
+        HANDLE h;
+        Timer() { h = CreateWaitableTimerExW(nullptr, nullptr, CREATE_WAITABLE_TIMER_HIGH_RESOLUTION, TIMER_ALL_ACCESS); }
+        ~Timer() { if (h) CloseHandle(h); }
+    };
+    static thread_local Timer t;
+    if (t.h) {
+        LARGE_INTEGER due;
+        due.QuadPart = -(LONGLONG)(us * 10);   // relative, 100 ns units
+        if (SetWaitableTimer(t.h, &due, 0, nullptr, nullptr, FALSE)) { WaitForSingleObject(t.h, INFINITE); return; }
+    }
     std::this_thread::sleep_for(std::chrono::microseconds(us));
 }
 #else

@@ -18,7 +18,6 @@
 #include <windows.h>
 #include <audioclient.h>
 #include <avrt.h>
-#include <functiondiscoverykeys_devpkey.h>
 #include <ksmedia.h>
 #include <mmdeviceapi.h>
 #include <mmreg.h>
@@ -80,6 +79,10 @@ int32_t map_hr(HRESULT hr) {
     default: return L1_ERR_BACKEND;
     }
 }
+
+// PKEY_Device_FriendlyName (public value from functiondiscoverykeys_devpkey.h),
+// defined here because that header's include order differs between SDKs.
+const PROPERTYKEY kDeviceFriendlyName = {{0xa45c254e, 0xdf1c, 0x4efd, {0x80, 0x20, 0x67, 0xd1, 0x46, 0xa8, 0x50, 0xe0}}, 14};
 
 // KSDATAFORMAT subtypes (public values from ksmedia.h), defined here so the
 // build does not depend on ksuser.lib providing the symbols.
@@ -351,7 +354,7 @@ private:
         std::string name;
         if (SUCCEEDED(d->OpenPropertyStore(STGM_READ, &ps))) {
             PROPVARIANT v; PropVariantInit(&v);
-            if (SUCCEEDED(ps->GetValue(PKEY_Device_FriendlyName, &v)) && v.vt == VT_LPWSTR) name = utf8(v.pwszVal);
+            if (SUCCEEDED(ps->GetValue(kDeviceFriendlyName, &v)) && v.vt == VT_LPWSTR) name = utf8(v.pwszVal);
             PropVariantClear(&v);
             release(ps);
         }

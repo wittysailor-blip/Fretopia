@@ -11,9 +11,9 @@ jobs:
   linux:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Install MinGW
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq mingw-w64 ninja-build
+      - uses: actions/checkout@v5
+      - name: Install MinGW and Mono
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq mingw-w64 ninja-build mono-mcs mono-runtime
       - name: Build and test (Linux, simulated device)
         working-directory: layer1
         run: |
@@ -21,6 +21,11 @@ jobs:
           cmake --build build
           mkdir -p tests/results
           cd tests && ../build/test_spsc && ../build/test_pipeline && ../build/test_conditioning && ../build/test_engine quick
+      - name: Unity C# bridge against the native library (Mono)
+        working-directory: layer1/unity
+        run: |
+          mcs -unsafe -langversion:experimental -out:smoke.exe Layer1Native.cs Layer1Capture.cs tests/Layer1Smoke.cs
+          LD_LIBRARY_PATH=../build mono smoke.exe
       - name: ThreadSanitizer
         working-directory: layer1
         run: |
@@ -32,13 +37,13 @@ jobs:
         run: |
           cmake -S . -B build-win -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=cmake/mingw-w64-x86_64.cmake
           cmake --build build-win
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: layer1-mingw
           path: |
             layer1/build-win/*.exe
             layer1/build-win/*.dll
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: results-linux
           path: layer1/tests/results/
@@ -47,8 +52,8 @@ jobs:
     needs: linux
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
         with: { name: layer1-mingw, path: layer1/bin }
       - name: Run the cross-compiled tests on Windows
         shell: bash
@@ -66,7 +71,7 @@ jobs:
           ../bin/l1probe.exe list || true
           ../bin/l1probe.exe capture --test T01 --seconds 3 --csv results/wasapi_smoke.csv --notes "GitHub Actions runner" ; echo "l1probe exit $?"
           cat results/wasapi_smoke.csv || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: results-windows-mingw
           path: layer1/tests/results/
@@ -74,7 +79,7 @@ jobs:
   windows-msvc:
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build with MSVC
         working-directory: layer1
         run: |
@@ -89,7 +94,7 @@ jobs:
           ../build/Release/test_pipeline.exe
           ../build/Release/test_conditioning.exe
           ../build/Release/test_engine.exe quick
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: layer1-msvc
           path: |

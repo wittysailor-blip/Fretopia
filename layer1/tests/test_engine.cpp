@@ -161,11 +161,13 @@ static void consumer_stall() {
 
 // --------------------------------------------------------------- T13 / D04
 // Unity-style consumer: wakes at a frame rate and drains whatever is queued.
+// The stall is measured, not assumed: on Windows a sleep overshoots by up to a
+// timer tick, exactly as a real game frame does.
 static void unity_stutter() {
-    t::begin("T13", "Render stutter: consumer polls at 15-60 FPS with stalls; capacity sweep (D04)");
-    struct Case { uint32_t cap; int stall_ms; uint64_t lost; } cases[] = {
-        {2048, 16, 0}, {2048, 33, 0}, {2048, 66, 0}, {4096, 33, 0}, {4096, 66, 0}, {4096, 100, 0},
-        {8192, 66, 0}, {8192, 100, 0}, {8192, 150, 0}};
+    t::begin("T13", "Render stutter: consumer drains once per game frame; capacity sweep (D04)");
+    struct Case { uint32_t cap; int stall_ms; uint64_t lost; double max_gap_ms; } cases[] = {
+        {2048, 16, 0, 0}, {2048, 33, 0, 0}, {2048, 66, 0, 0}, {4096, 33, 0, 0}, {4096, 66, 0, 0}, {4096, 100, 0, 0},
+        {8192, 66, 0, 0}, {8192, 100, 0, 0}, {8192, 150, 0, 0}};
     std::string table;
     bool expected_ok = true;
     for (auto& c : cases) {
@@ -175,10 +177,14 @@ static void unity_stutter() {
         r.sim.seed = c.cap + c.stall_ms;
         CHECK(r.create() == L1_OK);
         CHECK(l1_start(r.e) == L1_OK);
+        int64_t last = l1_now_ns();
         for (;;) {
             msleep(c.stall_ms);                   // a slow render frame
+            const int64_t now = l1_now_ns();
+            c.max_gap_ms = std::max(c.max_gap_ms, (now - last) / 1e6);
             int got = 0;
             while (r.read(0) == L1_OK) ++got;     // drain on the "main thread"
+            last = l1_now_ns();
             r.drain_events();
             if (r.has_event(L1_EVENT_STOPPED) && got == 0) break;
         }
@@ -187,10 +193,12 @@ static void unity_stutter() {
         CHECK(r.v.clean());
         CHECK(r.v.dropped_sum == s.frames_dropped_overflow);   // any loss is reported
         const double cap_ms = c.cap * 1000.0 / 48000.0;
-        // A stall shorter than capacity minus one packet must lose nothing.
-        if (c.stall_ms + 15 < cap_ms && c.lost != 0) expected_ok = false;
-        char row[160];
-        std::snprintf(row, sizeof row, "cap %u (%.1f ms) stall %d ms: lost %llu; ", c.cap, cap_ms, c.stall_ms, (unsigned long long)c.lost);
+        // If the longest measured gap between drains plus one packet (10 ms) fits
+        // in the transport, nothing may be lost.
+        if (c.max_gap_ms + 10.0 < cap_ms && c.lost != 0) expected_ok = false;
+        char row[200];
+        std::snprintf(row, sizeof row, "cap %u (%.1f ms) frame %d ms (longest measured %.1f ms): lost %llu; ",
+                      c.cap, cap_ms, c.stall_ms, c.max_gap_ms, (unsigned long long)c.lost);
         table += row;
         std::printf("    %s\n", row);
     }
