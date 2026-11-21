@@ -87,6 +87,18 @@ python3 -m http.server 8000      # then open http://localhost:8000
 
 The mic needs https or localhost, so test on a laptop at localhost. Branch previews on Vercel only build for the repo owner (see below).
 
+### Keyboard controls
+
+The play-along screen can be tested without a touchscreen or instrument:
+
+- **Space:** play or pause the song.
+- **Escape:** close the player.
+- **J** or **Enter:** tap a guitar note or chord in tap mode.
+- **1–9:** play the corresponding sargam note in tap mode.
+- **F** / **J:** play the bayan / dayan in tabla tap mode.
+
+These shortcuts are available while the player is open and are useful for quick desktop checks. They do not replace microphone testing.
+
 **Listening tests** (run after any change to `listen.js` or mic scoring in `min.js`):
 
 ```
