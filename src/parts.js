@@ -259,7 +259,7 @@ Parts.decorate=function(P,el){const p=P.part,a=p.a,r=p.r;if(p.yt&&noVideo(r)){p.
   prog.addEventListener('pointerup',()=>{if(!drag)return;Parts.seekTo(P,drag.f*P.total);drag=null;});};
 Parts.videoFail=function(P,er){const p=P.part,v=$('#plVid');p.err=er;if(!v)return;P.pause();
   v.innerHTML=`<div class="vfail"><p>${esc(er)}</p><div><button class="vbtn" data-vretry>Try again</button><button class="vbtn pri" data-vnone>Play without video</button></div></div>`;
-  v.querySelector('[data-vretry]').onclick=()=>{p.err=null;p.media&&p.media.destroy();p.media=ytMedia(v,p.r.vid,{state:s=>Parts.ytState(P,s),error:e=>Parts.videoFail(P,e)});p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(Math.max(-4,P.t)));m.pause();}});};
+  v.querySelector('[data-vretry]').onclick=()=>{p.stallOffer=false;p.stallAt=0;p.err=null;p.media&&p.media.destroy();p.media=ytMedia(v,p.r.vid,{state:s=>Parts.ytState(P,s),error:e=>Parts.videoFail(P,e)});p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(Math.max(-4,P.t)));m.pause();}});};
   v.querySelector('[data-vnone]').onclick=()=>{p.media&&p.media.destroy();p.media=null;p.yt=false;p.novideo=true;v.remove();$('#player').classList.remove('has-vid');P.msg('Timing follows the tempo, not the recording');};};
 Parts.ytState=function(P,s){const p=P.part;if(!p||!$('#player'))return;const mine=performance.now()-(p.own||0)<700;
   if(s===2&&P.running&&!mine){P.running=false;P.btn();}
@@ -288,6 +288,11 @@ Parts.resync=function(P,t){P.part.seeked=true;P.notes.forEach(n=>{if(n.rest)retu
 Parts.seekTo=function(P,t){const p=P.part;t=clamp(t,0,P.total-.01);if(p.yt&&p.media){p.own=performance.now();p.media.seek(p.map.t(t));}P.t=t;Parts.resync(P,t);P.ended=false;Parts.timeLabel(P);toast('This run won’t be scored');};
 /* each frame: the demo's own backing, the time label, how much the mic heard */
 Parts.tick=function(P,prev){const p=P.part;if(!p)return;Parts.timeLabel(P);
+  /* pressed play but the video hasn't started (phones often want a tap on the video itself) */
+  if(p.yt&&P.running&&p.media&&p.media.ready&&!p.media.err){if(p.media.playing()){p.stallAt=0;if(p.stalled){p.stalled=false;$('#plVid .vhint')?.remove();}}
+    else{const n=performance.now();if(!p.stallAt)p.stallAt=n;const w=n-p.stallAt;
+      if(w>1800&&!p.stalled){p.stalled=true;const v=$('#plVid');if(v&&!v.querySelector('.vhint'))v.insertAdjacentHTML('beforeend','<div class="vhint">Tap the video to start it</div>');}
+      if(w>7000&&!p.stallOffer){p.stallOffer=true;Parts.videoFail(P,'The video hasn’t started. Tap Try again, or play the chords on the tempo instead.');}}}
   if(!p.yt&&p.r.src==='demo'&&p.song&&P.running&&!P.listen){const D=DEMO_SONGS[p.r.demo],spb=60/D.bpm,off=p.a.start/spb;for(const e of demoEvents(p.r.demo)){const bb=e.b-off;if(bb>=prev&&bb<P.t&&P.t>=-4)playDemoEv(e,spb/P.speed,.85);}}
   if(P.mode==='mic'&&P.t>=0){p.frames++;if(Mic.level>Mic.gate*1.2)p.heard++;}};
 /* the end of the passage: loop or finish */
