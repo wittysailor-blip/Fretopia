@@ -98,14 +98,39 @@ function tmap(a){const A=(PS.timing[a.id]||a.anchors||[]).slice().sort((x,y)=>x.
 /* ---------- media: a YouTube recording or a demo the app plays itself ---------- */
 const YTM={p:null,load(){if(this.p)return this.p;this.p=new Promise((res,rej)=>{if(window.YT&&YT.Player)return res(YT);const prev=window.onYouTubeIframeAPIReady;
     window.onYouTubeIframeAPIReady=()=>{try{prev&&prev();}catch(e){}res(YT);};const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=()=>{this.p=null;rej(new Error('offline'));};document.head.appendChild(s);
-    setTimeout(()=>{if(!(window.YT&&YT.Player)){this.p=null;rej(new Error('timeout'));}},15000);});return this.p;}};
+    setTimeout(()=>{if(!(window.YT&&YT.Player)){this.p=null;rej(new Error('timeout'));}},8000);});return this.p;}};
 const YT_ERR={2:'This link doesn’t point to a playable video.',5:'This video can’t play here.',100:'This video was removed or made private.',101:'The owner doesn’t allow this video to play inside other apps.',150:'The owner doesn’t allow this video to play inside other apps.'};
+function ytWhy(){const preview=window.top!==window&&!/fretopia\.vercel\.app$/.test(location.hostname);
+  return preview?'Videos can’t play inside this preview. Open fretopia.vercel.app to play along.':navigator.onLine===false?'You’re offline. Connect to the internet to load the video.':'The video didn’t load. Your network or a content blocker may be stopping YouTube.';}
+/* a plain YouTube embed driven over postMessage, the same messages YouTube's own player script sends */
+function ytBridge(m,host,vid,on){return new Promise((res,rej)=>{const f=document.createElement('iframe'),O='https://www.youtube.com',org=/^https?:$/.test(location.protocol)?location.origin:'';
+  f.src=`${O}/embed/${vid}?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&fs=0&iv_load_policy=3&controls=1&widgetid=1${org?'&origin='+encodeURIComponent(org):''}`;
+  f.allow='autoplay; encrypted-media; picture-in-picture';f.title='YouTube video';f.setAttribute('frameborder','0');host.innerHTML='';host.appendChild(f);
+  const st={t:0,state:-1,rate:1,dur:0,data:{}};let ready=false,dead=false;
+  const post=o=>{try{f.contentWindow.postMessage(JSON.stringify(Object.assign({id:1,channel:'widget'},o)),O);}catch(e){}};
+  const cmd=(func,args=[])=>post({event:'command',func,args});
+  const onMsg=e=>{if(e.source!==f.contentWindow||!/youtube/.test(e.origin))return;let d;try{d=typeof e.data==='string'?JSON.parse(e.data):e.data;}catch(_){return;}if(!d||!d.event)return;
+    const i=d.info||{};
+    if(d.event==='initialDelivery'||d.event==='infoDelivery'){if(i.currentTime!=null)st.t=i.currentTime;if(i.playbackRate)st.rate=i.playbackRate;if(i.duration)st.dur=i.duration;if(i.videoData)st.data=i.videoData;
+      if(i.playerState!=null&&i.playerState!==st.state){st.state=i.playerState;m.state=st.state;m.raw=-1;if(ready)on.state&&on.state(st.state,m);}}
+    if(d.event==='onStateChange'&&typeof d.info==='number'&&d.info!==st.state){st.state=d.info;m.state=d.info;m.raw=-1;on.state&&on.state(d.info,m);}
+    if((d.event==='onReady'||d.event==='initialDelivery')&&!ready){ready=true;clearInterval(hello);clearTimeout(to);['onReady','onStateChange','onError','onPlaybackRateChange'].forEach(ev=>post({event:'addEventListener',args:[ev]}));m.ready=true;res(m);on.ready&&on.ready(m);}
+    if(d.event==='onError'){m.err=YT_ERR[d.info]||'This video can’t play here.';on.error&&on.error(m.err,m);}};
+  addEventListener('message',onMsg);
+  const hello=setInterval(()=>post({event:'listening'}),250);f.addEventListener('load',()=>post({event:'listening'}));
+  const to=setTimeout(()=>{if(!ready){clearInterval(hello);removeEventListener('message',onMsg);dead=true;rej(new Error('nobridge'));}},15000);
+  m.p={getCurrentTime:()=>st.t,getPlayerState:()=>st.state,getPlaybackRate:()=>st.rate,getDuration:()=>st.dur,getVideoData:()=>st.data||{},
+    playVideo:()=>cmd('playVideo'),pauseVideo:()=>cmd('pauseVideo'),seekTo:(t,a)=>{st.t=t;cmd('seekTo',[t,a!==false]);},setPlaybackRate:r=>{st.rate=r;cmd('setPlaybackRate',[r]);},
+    mute:()=>cmd('mute'),unMute:()=>cmd('unMute'),destroy:()=>{clearInterval(hello);clearTimeout(to);removeEventListener('message',onMsg);f.remove();}};});}
 function ytMedia(host,vid,on={}){const m={kind:'yt',vid,ready:false,err:null,p:null,base:0,wall:0,raw:-1,rate:1,
-  load(){host.innerHTML='<div class="vload">Loading video…</div>';return YTM.load().then(YT=>new Promise(res=>{const d=document.createElement('div');host.innerHTML='';host.appendChild(d);
-    const pv={playsinline:1,rel:0,modestbranding:1,controls:1,fs:0,iv_load_policy:3};if(/^https?:$/.test(location.protocol))pv.origin=location.origin;
-    m.p=new YT.Player(d,{videoId:vid,width:'100%',height:'100%',playerVars:pv,events:{onReady:()=>{m.ready=true;res(m);on.ready&&on.ready(m);},
-      onStateChange:e=>{m.state=e.data;m.raw=-1;on.state&&on.state(e.data,m);},onError:e=>{m.err=YT_ERR[e.data]||'This video can’t play here.';res(m);on.error&&on.error(m.err,m);}}});
-    setTimeout(()=>{if(!m.ready&&!m.err){m.err='The video didn’t load. Check your connection.';res(m);on.error&&on.error(m.err,m);}},20000);})).catch(()=>{m.err='YouTube didn’t load. Check your connection.';host.innerHTML=`<div class="vload">${m.err}</div>`;on.error&&on.error(m.err,m);return m;});},
+  /* YouTube's player script first; if it can't load, talk to a plain embed directly */
+  load(){host.innerHTML='<div class="vload">Loading video…</div>';
+    const viaApi=()=>YTM.load().then(YT=>new Promise((res,rej)=>{const d=document.createElement('div');host.innerHTML='';host.appendChild(d);
+      const pv={playsinline:1,rel:0,modestbranding:1,controls:1,fs:0,iv_load_policy:3};if(/^https?:$/.test(location.protocol))pv.origin=location.origin;
+      const to=setTimeout(()=>{if(!m.ready&&!m.err){try{m.p&&m.p.destroy();}catch(e){}m.p=null;rej(new Error('noplayer'));}},12000);
+      m.p=new YT.Player(d,{videoId:vid,width:'100%',height:'100%',playerVars:pv,events:{onReady:()=>{clearTimeout(to);m.ready=true;res(m);on.ready&&on.ready(m);},
+        onStateChange:e=>{m.state=e.data;m.raw=-1;on.state&&on.state(e.data,m);},onError:e=>{clearTimeout(to);m.err=YT_ERR[e.data]||'This video can’t play here.';res(m);on.error&&on.error(m.err,m);}}});}));
+    return viaApi().catch(()=>ytBridge(m,host,vid,on)).catch(()=>{m.err=ytWhy();host.innerHTML=`<div class="vload">${esc(m.err)}</div>`;on.error&&on.error(m.err,m);return m;});},
   playing(){return m.p&&m.p.getPlayerState&&m.p.getPlayerState()===1;},
   /* a smooth clock from YouTube's coarse position reports */
   now(){if(!m.p||!m.p.getCurrentTime)return 0;const r=m.p.getCurrentTime(),w=performance.now()/1000;if(!m.playing()){m.base=r;m.wall=w;m.raw=r;return r;}
@@ -143,24 +168,26 @@ function screenLoop(){const top=PUI.stack[PUI.stack.length-1];if(top&&top.tick&&
 
 /* ================= home tabs ================= */
 const Parts={};
-Parts.tabs=fam=>fam==='guitar'?[['lessons','Lessons'],['parts','Song parts'],['chal','Challenges']]:[['lessons','Lessons'],['chal','Challenges']];
-Parts.renderTab=function(tab,box,fam){if(tab==='parts')return renderPartsHome(box);if(tab==='chal')return renderChallenges(box,fam);};
-
-function renderPartsHome(box){const q=PS.q||'',ql=q.trim().toLowerCase();
+/* Songs tab (guitar): where you left off, saved parts, and real recordings */
+Parts.songsTop=function(box){const ql=(HV.sq||'').trim().toLowerCase(),q=HV.sq||'';
   const recs=allRecs().filter(r=>!ql||(r.song+' '+r.artist+' '+r.kind).toLowerCase().includes(ql));
   const last=PS.last&&arrOf(PS.last.arr),lr=last&&recOf(last.rec),la=last&&lastAttempt(last.id);
-  const nSaved=Object.keys(PS.saved).filter(id=>arrOf(id)).length,nDraft=Object.keys(PS.drafts).length;
-  box.innerHTML=`<label class="search">${ICS}<input id="pq" type="search" inputmode="search" autocomplete="off" placeholder="Search songs and artists" value="${esc(q)}"></label>
-    ${!ql&&last&&lr?`<button class="next" data-resume><span class="eyebrow">Pick up where you left off</span><b>${esc(lr.song)} · ${esc(last.section)}</b><span class="meta">${esc(last.part)} · ${esc(last.level)}${la?' · '+attemptLine(la):''}</span><span class="go">${IC.play}</span></button>`:''}
-    ${!ql?`<div class="list qrows"><button class="row" data-go="practice"><span class="t"><b>My practice</b><small>${nSaved?nSaved+' saved part'+(nSaved>1?'s':''):'Parts you save after playing'}</small></span><span class="r">${PIC.chev}</span></button>
-      <button class="row" data-go="create"><span class="t"><b>Create arrangement</b><small>Chart a part of any YouTube recording</small></span><span class="r">${PIC.chev}</span></button>
-      <button class="row" data-go="drafts"><span class="t"><b>My drafts</b><small>${nDraft?nDraft+' unpublished':'Nothing in progress'}</small></span><span class="r">${PIC.chev}</span></button></div>`:''}
-    <h3 class="sh">${ql?'Recordings':'Songs'}</h3>
-    <div class="list" id="precs">${recs.map(r=>{const n=arrsFor(r.id).length;return `<button class="row rrow" data-rec="${esc(r.id)}">${thumb(r)}<span class="t"><b>${esc(r.song)}</b><small>${esc(r.artist)} · ${esc(r.kind)}${recDur(r)?' · '+fmtT(recDur(r)):''}</small></span><span class="r">${n?n+' part'+(n>1?'s':''):'New'}</span></button>`;}).join('')||`<p class="empty">No recordings match “${esc(q)}”.<br>Chart it yourself with Create arrangement.</p>`}</div>
-    <p class="fine">Songs marked “timing not checked” scroll at a first guess. Line them up in Sync.</p>`;
-  const inp=$('#pq',box);inp.addEventListener('input',e=>{PS.q=e.target.value;savePS();const pos=e.target.selectionStart;renderPartsHome(box);const n=$('#pq',box);n.focus();try{n.setSelectionRange(pos,pos);}catch(_){}});
-  box.onclick=e=>{const r=e.target.closest('[data-rec]');if(r)return openRecording(r.dataset.rec);const g=e.target.closest('[data-go]');if(g){if(g.dataset.go==='practice')openPractice();if(g.dataset.go==='create')openCreate();if(g.dataset.go==='drafts')openDrafts();return;}
-    if(e.target.closest('[data-resume]')&&last)playArr(last);};}
+  const nSaved=Object.keys(PS.saved).filter(id=>arrOf(id)).length;
+  box.innerHTML=`${!ql&&last&&lr?`<button class="next" data-resume><span class="eyebrow">Pick up where you left off</span><b>${esc(lr.song)} · ${esc(last.section)}</b><span class="meta">${esc(last.part)} · ${esc(last.level)}${la?' · '+attemptLine(la):''}</span><span class="go">${IC.play}</span></button>`:''}
+    ${!ql?`<div class="list qrows"><button class="row" data-go="practice"><span class="t"><b>My practice</b><small>${nSaved?nSaved+' saved part'+(nSaved>1?'s':''):'Parts you save after playing'}</small></span><span class="r">${PIC.chev}</span></button></div>`:''}
+    <h3 class="sh">Real songs</h3><p class="shsub">Play one part along with the original recording</p>
+    <div class="list">${recs.map(r=>{const n=arrsFor(r.id).length;return `<button class="row rrow" data-rec="${esc(r.id)}">${thumb(r)}<span class="t"><b>${esc(r.song)}</b><small>${esc(r.artist)} · ${esc(r.kind)}${recDur(r)?' · '+fmtT(recDur(r)):''}</small></span><span class="r">${n?n+' part'+(n>1?'s':''):'New'}</span></button>`;}).join('')||`<p class="empty">No recordings match “${esc(q)}”.</p>`}</div>`;
+  box.onclick=e=>{const r=e.target.closest('[data-rec]');if(r)return openRecording(r.dataset.rec);if(e.target.closest('[data-go="practice"]'))return openPractice();if(e.target.closest('[data-resume]')&&last)playArr(last);};};
+/* Create tab (guitar) */
+Parts.renderCreate=function(box){const drafts=Object.values(PS.drafts).filter(d=>recOf(d.rec)).sort((x,y)=>y.at-x.at),mine=Object.values(PS.arrs).filter(a=>recOf(a.rec)).sort((x,y)=>(y.publishedAt||0)-(x.publishedAt||0));
+  const row=(a,attr,sub)=>{const r=recOf(a.rec);return `<button class="row rrow" ${attr}>${thumb(r)}<span class="t"><b>${esc(r.song)} · ${esc(a.section)}</b><small>${sub}</small></span><span class="r">${PIC.chev}</span></button>`;};
+  box.innerHTML=`<button class="next" data-go="create"><span class="eyebrow">New arrangement</span><b>Chart a song part</b><span class="meta">Paste a YouTube link, mark the passage, then write chords or tab</span><span class="go">${PIC.plus}</span></button>
+    <h3 class="sh">Drafts</h3><div class="list">${drafts.map(d=>row(d,`data-draft="${d.id}"`,`${esc(d.part)} · ${esc(d.level)} · edited ${ago(d.at)}`)).join('')||'<p class="empty sm">Unfinished arrangements wait here.</p>'}</div>
+    <h3 class="sh">Published by you</h3><div class="list">${mine.map(a=>row(a,`data-mine="${a.id}"`,`${esc(a.part)} · ${esc(a.level)} · version ${a.rev||1}`)).join('')||'<p class="empty sm">Arrangements you publish show up here and under their song.</p>'}</div>
+    <h3 class="sh">Your own melody</h3><button class="import" id="imp">Import a MIDI file</button><input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden>
+    <p class="fine">Everything you make stays on this phone. Use files you have the rights to.</p>`;
+  $('#imp',box).onclick=()=>$('#impf',box).click();$('#impf',box).onchange=e=>importMidi(e.target.files[0]);
+  box.onclick=e=>{if(e.target.closest('[data-go="create"]'))return openCreate();const d=e.target.closest('[data-draft]');if(d)return openEditor(d.dataset.draft);const m=e.target.closest('[data-mine]');if(m){const a=arrOf(m.dataset.mine);return openRecording(a.rec,a.id);}};};
 
 /* ================= recording: choose an arrangement ================= */
 const LEVELS=['Beginner','Intermediate','Advanced'],PARTS=['Rhythm','Lead','Fingerstyle'];
@@ -219,13 +246,17 @@ Parts.decorate=function(P,el){const p=P.part,a=p.a,r=p.r;
   el.querySelector('.pl-meta').innerHTML=`<span>Time <b id="plTime">0:00 / ${fmtT(arrLen(a)/P.speed)}</b></span><span>Accuracy <b id="plAcc">–</b></span>`;
   const prog=el.querySelector('.pl-prog');prog.classList.add('seek');prog.insertAdjacentHTML('beforeend','<span class="knob"></span>');
   if(p.yt){el.classList.add('has-vid');const v=document.createElement('div');v.className='pl-vid';v.id='plVid';prog.after(v);
-    p.media=ytMedia(v,r.vid,{state:(s)=>Parts.ytState(P,s),error:er=>{p.err=er;v.innerHTML=`<div class="vload">${esc(er)}</div>`;P.msg(er);}});
+    p.media=ytMedia(v,r.vid,{state:(s)=>Parts.ytState(P,s),error:er=>Parts.videoFail(P,er)});
     p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(-4));m.pause();}});}
   /* drag to seek inside the passage; the attempt is then marked unscored */
   let drag=null;const at=e=>{const R=prog.getBoundingClientRect(),vert=R.height>R.width;return clamp(vert?(e.clientY-R.top)/R.height:(e.clientX-R.left)/R.width,0,1);};
   prog.addEventListener('pointerdown',e=>{if(P.challenge)return;drag={f:at(e)};prog.setPointerCapture(e.pointerId);$('#plProg').style.width=drag.f*100+'%';});
   prog.addEventListener('pointermove',e=>{if(!drag)return;drag.f=at(e);$('#plProg').style.width=drag.f*100+'%';});
   prog.addEventListener('pointerup',()=>{if(!drag)return;Parts.seekTo(P,drag.f*P.total);drag=null;});};
+Parts.videoFail=function(P,er){const p=P.part,v=$('#plVid');p.err=er;if(!v)return;P.pause();
+  v.innerHTML=`<div class="vfail"><p>${esc(er)}</p><div><button class="vbtn" data-vretry>Try again</button><button class="vbtn pri" data-vnone>Play without video</button></div></div>`;
+  v.querySelector('[data-vretry]').onclick=()=>{p.err=null;p.media&&p.media.destroy();p.media=ytMedia(v,p.r.vid,{state:s=>Parts.ytState(P,s),error:e=>Parts.videoFail(P,e)});p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(Math.max(-4,P.t)));m.pause();}});};
+  v.querySelector('[data-vnone]').onclick=()=>{p.media&&p.media.destroy();p.media=null;p.yt=false;p.novideo=true;v.remove();$('#player').classList.remove('has-vid');P.msg('Timing follows the tempo, not the recording');};};
 Parts.ytState=function(P,s){const p=P.part;if(!p||!$('#player'))return;const mine=performance.now()-(p.own||0)<700;
   if(s===2&&P.running&&!mine){P.running=false;P.btn();}
   if(s===1&&!P.running&&!mine&&!P.ended){P.running=true;P.lastAudio=ctx.currentTime;P.btn();}};
@@ -253,7 +284,7 @@ Parts.resync=function(P,t){P.part.seeked=true;P.notes.forEach(n=>{if(n.rest)retu
 Parts.seekTo=function(P,t){const p=P.part;t=clamp(t,0,P.total-.01);if(p.yt&&p.media){p.own=performance.now();p.media.seek(p.map.t(t));}P.t=t;Parts.resync(P,t);P.ended=false;Parts.timeLabel(P);toast('This run won’t be scored');};
 /* each frame: the demo's own backing, the time label, how much the mic heard */
 Parts.tick=function(P,prev){const p=P.part;if(!p)return;Parts.timeLabel(P);
-  if(!p.yt&&p.song&&P.running&&!P.listen){const D=DEMO_SONGS[p.r.demo],spb=60/D.bpm,off=p.a.start/spb;for(const e of demoEvents(p.r.demo)){const bb=e.b-off;if(bb>=prev&&bb<P.t&&P.t>=-4)playDemoEv(e,spb/P.speed,.85);}}
+  if(!p.yt&&p.r.src==='demo'&&p.song&&P.running&&!P.listen){const D=DEMO_SONGS[p.r.demo],spb=60/D.bpm,off=p.a.start/spb;for(const e of demoEvents(p.r.demo)){const bb=e.b-off;if(bb>=prev&&bb<P.t&&P.t>=-4)playDemoEv(e,spb/P.speed,.85);}}
   if(P.mode==='mic'&&P.t>=0){p.frames++;if(Mic.level>Mic.gate*1.2)p.heard++;}};
 /* the end of the passage: loop or finish */
 Parts.loop=function(P){const p=P.part;if(!p||!p.loop||p.preview||P.challenge)return false;p.passes++;Parts.recordPass(P,false);
@@ -491,8 +522,8 @@ function openReview(id){pushScreen(el=>{el.isRev=true;const d=draftOf(id);if(!d)
     <div class="dock"><button class="cta" data-pub ${miss?'disabled':''}><span class="lbl">${pubA?'Publish update':'Publish arrangement'}</span></button><button class="import" data-leave>Save draft &amp; leave</button></div>`;
   wireBack(el);$('#rgoal',el).addEventListener('input',e=>{d.goal=e.target.value;saveDraft(d);});
   el.onclick=e=>{const t=e.target;if(t.closest('[data-pv]'))return previewDraft(d);if(t.closest('[data-ed]')){popScreen();const top=PUI.stack[PUI.stack.length-1];if(!top||!top.isEd)openEditor(d.id);return;}if(t.closest('[data-tm]')){const top=PUI.stack[PUI.stack.length-2];if(top&&top.isSync){popScreen();return;}return openSync(d.id);}
-    if(t.closest('[data-leave]')){saveDraft(d);toast('Draft saved on this phone');popAll();HV.tab='parts';renderHome();return;}
-    if(t.closest('[data-pub]')&&!missingStep(d)){const b=t.closest('[data-pub]');if(b.disabled)return;b.disabled=true;const arr=publishDraft(d);toast('Published');popAll();HV.tab='parts';renderHome();openRecording(arr.rec,arr.id);}};});}
+    if(t.closest('[data-leave]')){saveDraft(d);toast('Draft saved on this phone');popAll();HV.tab='create';renderHome();return;}
+    if(t.closest('[data-pub]')&&!missingStep(d)){const b=t.closest('[data-pub]');if(b.disabled)return;b.disabled=true;const arr=publishDraft(d);toast('Published');popAll();HV.tab='create';renderHome();openRecording(arr.rec,arr.id);}};});}
 function publishDraft(d){const id=d.pubId||(d.pubId='a'+d.id.slice(1)),prev=PS.arrs[id],a={...draftArr(d),id,rev:(prev&&prev.rev||0)+1,author:PS.me==='You'?'You':PS.me,seed:false,checked:true,publishedAt:Date.now()};
   delete a.cur;delete a.at;delete a.pubId;delete a.click;PS.arrs[id]=a;PS.revs[id+'@'+a.rev]=JSON.parse(JSON.stringify(a));delete PS.drafts[d.id];savePS();return a;}
 function editPublished(a){const d={...JSON.parse(JSON.stringify(a)),id:uid('d'),pubId:a.id,cur:{bar:0,cell:0,s:0},at:Date.now()};PS.drafts[d.id]=d;savePS();openEditor(d.id);}

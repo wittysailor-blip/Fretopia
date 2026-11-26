@@ -426,6 +426,43 @@ svg{display:block}
 .pass{margin:18px 0 0;padding:16px;border-radius:18px;background:var(--line-2)}.pass b{display:block;font-size:16px;font-weight:600}.pass span{display:block;margin-top:4px;font-size:13px;color:var(--ink-2)}
 .duel{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 0}.duel>div{padding:14px;border:1px solid var(--line);border-radius:18px;text-align:center}
 .duel>div.win{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.duel small{display:block;font-size:12px;color:var(--ink-3)}.duel b{display:block;margin-top:4px;font-size:28px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.duel span{font-size:12px;color:var(--ink-2)}
+
+/* ===== first steps: goal and instruments ===== */
+#picker{touch-action:auto}
+#goal,#picker{display:flex;flex-direction:column}
+.scene.enter{animation:psIn .36s var(--ease) both}.scene.leave{animation:psOut .24s ease-in both}
+.stepn{font-size:12px;font-weight:550;color:var(--ink-3);letter-spacing:.01em}.top .sp{width:40px}
+.h-head .lede{margin-top:8px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.goals{display:flex;flex-direction:column;gap:10px}
+.gcard{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 16px 16px 14px;border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:border-color .2s,box-shadow .2s,transform .15s}
+.gcard:active{transform:scale(.99)}
+.gcard[aria-checked="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.gic{width:44px;height:44px;flex:none;border-radius:14px;background:var(--line-2);display:grid;place-items:center;color:var(--ink)}.gic svg{width:22px;height:22px}
+.gcard[aria-checked="true"] .gic{background:var(--ink);color:#fff}
+.gt{flex:1;min-width:0}.gt b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em}.gt small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--ink-2)}
+.gdot{width:20px;height:20px;flex:none;border-radius:50%;border:1.5px solid var(--line);transition:border .2s}
+.gcard[aria-checked="true"] .gdot{border:6px solid var(--ink)}
+.dock .cta[disabled]{opacity:.3}
+.ilist{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.irow{display:flex;align-items:stretch;gap:14px;width:100%;text-align:left;padding:10px 10px 10px 10px;border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:transform .15s,border-color .2s}
+.irow:active{transform:scale(.99);border-color:var(--ink-3)}
+.ith{width:112px;flex:none;align-self:stretch;min-height:104px;border-radius:14px;background:var(--bg);overflow:hidden;position:relative}
+.ith canvas{position:absolute;inset:0;width:100%;height:100%}
+.it{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:4px 0}
+.it .nm{display:flex;align-items:baseline;gap:6px}.it .nm b{font-size:17px;font-weight:600;letter-spacing:-.02em}.it .hi{font-family:var(--deva);font-size:13px;color:var(--ink-3)}
+.it .cat{font-size:11.5px;color:var(--ink-3);margin-top:1px}
+.it .line{margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.35}
+.it .meta{margin-top:3px;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.it .tag{align-self:flex-start;margin:7px 0 0}
+.tag.ok{color:var(--good);background:rgba(31,157,85,.1)}
+.irow .r{display:grid;place-items:center;color:var(--ink-3)}.irow .r svg{width:18px;height:18px}
+.shsub{margin:-2px 4px 2px;font-size:12px;color:var(--ink-3)}
+.empty.sm{padding:14px 4px;text-align:left;font-size:13px}
+/* video couldn't load: say why, offer a way on */
+.vfail{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px;text-align:center;color:rgba(255,255,255,.75);font-size:13px;line-height:1.4}
+.vfail>div{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.vbtn{height:36px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:13px;font-weight:550}
+.vbtn.pri{background:#fff;color:var(--ink);border-color:#fff}
 </style>
 </head>
 <body>
@@ -451,15 +488,11 @@ svg{display:block}
       <button class="cta" id="begin"><span class="lbl">Get started</span></button>
     </section>
 
-    <section class="scene" id="picker" hidden aria-label="Choose an instrument">
-      <div class="top"><button class="ib" id="back" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button></div>
-      <h1 class="ptitle">Choose an instrument</h1>
-      <div class="viewport" id="vp"></div>
-      <div class="pfoot"><div class="dots" id="dots"></div><button class="cta" id="choose"><span class="lbl" id="chooseLbl">Continue with Guitar</span></button></div>
-    </section>
+    <section class="scene" id="goal" hidden aria-label="Choose what to do first"></section>
+    <section class="scene" id="picker" hidden aria-label="Choose your instrument"></section>
 
     <section class="scene" id="home" hidden aria-label="Instrument home">
-      <div class="top"><button class="ib" id="hback" aria-label="Change instrument"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button><span class="stars-top" id="hStars"></span></div>
+      <div class="top"><button class="ib" id="hback" aria-label="All instruments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button><span class="stars-top" id="hStars"></span></div>
       <div class="hscroll" id="hscroll"></div>
     </section>
     <div class="homebar"></div>
@@ -1314,35 +1347,52 @@ const LVL=['','Easy','Medium','Hard'];
 const sk=s=>(S.inst||'guitar')+':'+s.id,starsOf=s=>S.stars[sk(s)]||0;
 const COLLS={guitar:['all','drill','chords','classical','folk','kids','festive','indian','raag','mine'],melodic:['all','drill','raag','indian','classical','folk','kids','festive','mine'],tabla:['all','drill','taal']};
 const COLL_NAME={all:'All',drill:'Technique',classical:'Classical',folk:'Folk',kids:'Rhymes',festive:'Festive',indian:'Indian',raag:'Raag',mine:'My songs',taal:'Taals',chords:'Chords'};
-const HV={coll:'all',q:'',tab:'lessons'};let HOME={cat:[],list:[]};
+const HV={q:'',lc:'all',sc:'all',sq:'',tab:null};let HOME={cat:[],list:[]};
 const ICS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>';
+/* what's under each tab: lessons build skills, songs are things to play */
+const LEARN_C={guitar:['all','drill','chords','raag'],melodic:['all','drill','raag'],tabla:['all','drill','taal']},SONG_C=['all','indian','classical','folk','kids','festive','mine'];
+const HICON={plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'};
+function homeTabs(fam){const t=[['learn','Learn']];if(fam!=='tabla')t.push(['songs','Songs'],['create','Create']);t.push(['chal','Challenges']);return t;}
 function renderHome(){const key=S.inst||'guitar',fam=famOf(key),inst=I[key],cat=catalog(fam);HOME={fam,cat,list:cat};
   const hs=$('#hStars');hs.innerHTML=riyazChip();$('#hRiyaz').onclick=openRiyaz;const st=Game.streak();if(renderHome.shown!=null&&st>renderHome.shown)requestAnimationFrame(()=>refreshChip(true));renderHome.shown=st;
-  if(!COLLS[fam].includes(HV.coll))HV.coll='all';
-  const next=cat.find(s=>s.coll==='drill'&&!starsOf(s))||cat.find(s=>!starsOf(s))||cat.find(s=>starsOf(s)<3)||cat[0];HOME.next=next;
-  const colls=COLLS[fam].filter(c=>c==='all'||c==='mine'||cat.some(s=>s.coll===c));
-  const tabs=Parts.tabs(fam);if(!tabs.some(x=>x[0]===HV.tab))HV.tab='lessons';const head=`<header class="h-head"><h1>${inst.name}</h1><p><span class="hi">${inst.hi}</span> · ${SA_NAME[key]}</p></header>
-    <div class="chips tabs" id="htabs" role="tablist">${tabs.map(([k,l])=>`<button class="opt" role="tab" data-tab="${k}" aria-pressed="${HV.tab===k}" aria-selected="${HV.tab===k}">${l}</button>`).join('')}</div>`;
-  const wireTabs=()=>$('#htabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b||b.dataset.tab===HV.tab)return;HV.tab=b.dataset.tab;renderHome();$('#hscroll').scrollTop=0;});
-  if(HV.tab!=='lessons'){$('#hscroll').innerHTML=head+'<div id="ptab"></div>';wireTabs();Parts.renderTab(HV.tab,$('#ptab'),fam);return;}
-  $('#hscroll').innerHTML=head+`
-    <button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button>
-    <h3 class="sh">Library</h3>
-    <label class="search">${ICS}<input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Search ${cat.length} songs and exercises" value="${HV.q.replace(/"/g,'&quot;')}"></label>
-    <div class="chips" id="colls">${colls.map(c=>`<button class="opt" data-coll="${c}" aria-pressed="${c===HV.coll}">${COLL_NAME[c]}</button>`).join('')}</div>
-    <div class="list" id="songlist"></div>
-    ${fam!=='tabla'?`<button class="import" id="imp">Import a song from a MIDI file</button><input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden><p class="fine">Imported songs stay on this phone. Use files you have the rights to.</p>`:''}`;
-  renderList();wireTabs();
-  $('#q').addEventListener('input',e=>{HV.q=e.target.value;renderList();});
-  $('#colls').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV.coll=b.dataset.coll;$$('#colls .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList();});
-  if($('#imp')){$('#imp').onclick=()=>$('#impf').click();$('#impf').onchange=e=>importMidi(e.target.files[0]);}}
+  const tabs=homeTabs(fam);if(!HV.tab)HV.tab=goalTab();if(!tabs.some(x=>x[0]===HV.tab))HV.tab='learn';
+  $('#hscroll').innerHTML=`<header class="h-head"><h1>${inst.name}</h1><p><span class="hi">${inst.hi}</span> · ${SA_NAME[key]}</p></header>
+    <div class="chips tabs" id="htabs" role="tablist">${tabs.map(([k,l])=>`<button class="opt" role="tab" data-tab="${k}" aria-pressed="${HV.tab===k}" aria-selected="${HV.tab===k}">${l}</button>`).join('')}</div><div id="ptab"></div>`;
+  $('#htabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b||b.dataset.tab===HV.tab)return;HV.tab=b.dataset.tab;renderHome();$('#hscroll').scrollTop=0;});
+  const box=$('#ptab');({learn:renderLearn,songs:renderSongs,create:renderCreate,chal:b=>renderChallenges(b,fam)})[HV.tab](box,fam);}
 const ALL_ORDER=['kids','folk','festive','classical','indian','mine','chords','taal','drill','raag'];
-function renderList(){let L=HOME.cat.filter(s=>HV.coll==='all'||s.coll===HV.coll);if(HV.coll==='all')L=L.map((s,i)=>[s,i]).sort((x,y)=>(ALL_ORDER.indexOf(x[0].coll)-ALL_ORDER.indexOf(y[0].coll))||x[1]-y[1]).map(x=>x[0]);const q=HV.q.trim().toLowerCase();if(q)L=L.filter(s=>(s.title+' '+(s.sub||'')+' '+(COLL_NAME[s.coll]||'')).toLowerCase().includes(q));HOME.list=L;
-  const row=s=>{const st=starsOf(s);return `<button class="row" data-song="${s.id}"><span class="t"><b>${s.title}</b><small>${s.sub} · ${fmtDur(songSecs(s))}</small></span>${st?`<span class="r st">${starStr2(st)}</span>`:`<span class="r">${LVL[s.lvl]||''}</span>`}</button>`;};
-  $('#songlist').innerHTML=L.length?L.map(row).join(''):`<p class="empty">${HV.coll==='mine'&&!q?'Import a MIDI file below to add your own songs.':'No songs match.'}</p>`;}
+function songRow(s){const st=starsOf(s);return `<button class="row" data-song="${s.id}"><span class="t"><b>${s.title}</b><small>${s.sub} · ${fmtDur(songSecs(s))}</small></span>${st?`<span class="r st">${starStr2(st)}</span>`:`<span class="r">${LVL[s.lvl]||''}</span>`}</button>`;}
+/* a searchable list of one tab's collections */
+function libBlock(box,{colls,ck,qk,place,empty,search=true}){const avail=colls.filter(c=>c==='all'||c==='mine'||HOME.cat.some(s=>s.coll===c));if(!avail.includes(HV[ck]))HV[ck]='all';
+  const pool=HOME.cat.filter(s=>avail.includes(s.coll));
+  box.insertAdjacentHTML('beforeend',`${search?searchBox(place(pool.length),HV[qk]):''}
+    <div class="chips lc">${avail.map(c=>`<button class="opt" data-coll="${c}" aria-pressed="${c===HV[ck]}">${COLL_NAME[c]}</button>`).join('')}</div><div class="list lsongs"></div>`);
+  const list=box.querySelector('.lsongs');
+  const fill=()=>{let L=pool.filter(s=>HV[ck]==='all'||s.coll===HV[ck]);if(HV[ck]==='all')L=L.map((s,i)=>[s,i]).sort((x,y)=>(ALL_ORDER.indexOf(x[0].coll)-ALL_ORDER.indexOf(y[0].coll))||x[1]-y[1]).map(x=>x[0]);
+    const q=(HV[qk]||'').trim().toLowerCase();if(q)L=L.filter(s=>(s.title+' '+(s.sub||'')+' '+(COLL_NAME[s.coll]||'')).toLowerCase().includes(q));HOME.list=L;
+    list.innerHTML=L.length?L.map(songRow).join(''):`<p class="empty">${empty(q)}</p>`;};
+  fill();if(search)box.querySelector('.lq').addEventListener('input',e=>{HV[qk]=e.target.value;fill();});
+  box.querySelector('.lc').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV[ck]=b.dataset.coll;box.querySelectorAll('.lc .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));fill();});return fill;}
+function searchBox(place,val){return `<label class="search">${ICS}<input class="lq" type="search" inputmode="search" autocomplete="off" placeholder="${place}" value="${(val||'').replace(/"/g,'&quot;')}"></label>`;}
+function renderLearn(box,fam){const colls=LEARN_C[fam],pool=HOME.cat.filter(s=>colls.includes(s.coll));
+  const next=pool.find(s=>s.coll==='drill'&&!starsOf(s))||pool.find(s=>!starsOf(s))||pool.find(s=>starsOf(s)<3)||pool[0];HOME.next=next;
+  box.innerHTML=next?`<button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button><h3 class="sh">All lessons</h3>`:'';
+  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});}
+function renderSongs(box,fam){const opts={colls:SONG_C,ck:'sc',qk:'sq',place:n=>`Search ${n} songs`,empty:q=>HV.sc==='mine'&&!q?'Songs you add in Create show up here.':'No songs match.'};
+  if(fam!=='guitar'){box.innerHTML='';libBlock(box,opts);return;}
+  box.innerHTML=searchBox('Search songs and artists',HV.sq)+'<div class="ptop"></div><h3 class="sh">Tunes to play</h3><p class="shsub">Melodies and chord songs the app plays with you</p><div class="ltunes"></div>';
+  const top=box.querySelector('.ptop');Parts.songsTop(top);const fill=libBlock(box.querySelector('.ltunes'),{...opts,search:false,empty:q=>q?'No tunes match.':opts.empty(q)});
+  box.querySelector('.lq').addEventListener('input',e=>{HV.sq=e.target.value;Parts.songsTop(top);fill();});}
+function renderCreate(box,fam){if(fam==='guitar')return Parts.renderCreate(box);
+  const mine=HOME.cat.filter(s=>s.coll==='mine');
+  box.innerHTML=`<button class="next" id="impBig"><span class="eyebrow">Add a song</span><b>Import a MIDI file</b><span class="meta">Its melody becomes a song you can play along to</span><span class="go">${HICON.plus}</span></button>
+    <input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden>
+    <h3 class="sh">My songs</h3><div class="list">${mine.map(songRow).join('')||'<p class="empty">Songs you import show up here.</p>'}</div>
+    <p class="fine">Imported songs stay on this phone. Use files you have the rights to.<br>Writing chords and tabs for YouTube songs is on guitar for now.</p>`;
+  HOME.list=mine;$('#impBig').onclick=()=>$('#impf').click();$('#impf').onchange=e=>importMidi(e.target.files[0]);}
 async function importMidi(f){if(!f)return;try{const r=parseMidi(await f.arrayBuffer());const title=f.name.replace(/\.(mid|midi)$/i,'').replace(/[_-]+/g,' ').trim()||'My song';
     const mine=userSongs();mine.push({id:'u'+Date.now().toString(36),title,by:'Imported',coll:'mine',lvl:2,bpm:clamp(r.bpm,40,200),notes:r.notes});localStorage.setItem('fretopia.mysongs',JSON.stringify(mine));
-    buildLibrary();HV.coll='mine';HV.q='';renderHome();toast('Added “'+title+'”');}catch(e){toast('Not a MIDI file');}}
+    buildLibrary();HV.sc='mine';HV.sq='';renderHome();toast('Added “'+title+'”. Find it in Songs.');}catch(e){toast('Not a MIDI file');}}
 $('#hscroll').addEventListener('click',e=>{const b=e.target.closest('[data-song]');if(!b)return;const pool=b.classList.contains('next')?HOME.cat:HOME.list,s=pool.find(x=>x.id===b.dataset.song);if(s)Player.open(s,pool);});
 function parseSong(song){if(song.part)return Parts.notes(song.part);let t=0;const out=[];
   if(song.kind==='bols'){let seq=[],dur=1;if(song.bols)seq=song.bols.split(/\s+/);else{const T=TAALS[song.taal];for(let r=0;r<song.cycles*(song.dugun?2:1);r++)seq.push(...T.bols);dur=song.dugun?.5:1;}
@@ -1533,7 +1583,7 @@ const Player={open(song,list,o){const cont=!!$('#player');if(cont)this.close(tru
   draw(t){const cv=$('#plCv');if(!cv)return;const f=fitCanvas(cv);if(!f)return;const{g,W,H}=f;this._H=H;g.clearRect(0,0,W,H);
     if(this.kind==='tab')this.drawTab(g,W,H,t);else if(this.kind==='chords')this.drawChords(g,W,H,t);else if(this.kind==='sargam')this.drawSargam(g,W,H,t);else this.drawBols(g,W,H,t);
     if(this.t<0&&this.running){g.fillStyle='rgba(250,250,249,.85)';g.fillRect(0,0,W,H);g.fillStyle=INKC;g.font=`600 72px ${FONT}`;g.textAlign='center';g.textBaseline='middle';g.fillText(String(Math.ceil(-this.t)),W/2,H/2);}
-    if(!this.running&&!this.ended&&this.t<=-4){g.fillStyle='#A1A1A6';g.font=`500 12px ${FONT}`;g.textAlign='center';g.textBaseline='alphabetic';g.fillText(this.mode==='mic'?'Press play. Four clicks, then play along.':'Press play. Four clicks, then tap along.',W/2,H-10);}
+    if(!this.running&&!this.ended&&this.t<=-4){g.fillStyle='#A1A1A6';g.font=`500 12px ${FONT}`;g.textAlign='center';g.textBaseline='alphabetic';g.fillText(this.mode==='tap'?'Press play. Four clicks, then tap along.':'Press play. Four clicks, then play along.',W/2,H-10);}
     const tt=now();this.pops=this.pops.filter(p=>tt-p.t<.7);},
   geom(W){const H=this._H||W,wide=W>H*1.5,gut=wide?40:34,nowX=gut+(W-gut)*(wide?.15:.24),ppb=wide?clamp((W-gut)/9.5,56,150):clamp((W-gut)/5.2,46,120);return{gut,nowX,ppb,wide};},
   beatLines(g,W,H,gut,nowX,ppb){for(let b=Math.ceil(this.t-(nowX-gut)/ppb);b<=this.t+(W-nowX)/ppb;b++){const x=nowX+(b-this.t)*ppb;if(x<gut||b<0)continue;g.fillStyle=b%4===0?'rgba(17,17,19,.08)':'rgba(17,17,19,.035)';g.fillRect(x,8,1,H-16);}},
@@ -1691,19 +1741,19 @@ let lastTouchEnd=0;document.addEventListener('touchend',e=>{const t=e.timeStamp;
 
 /* ================= scenes ================= */
 let pickerOpen=false;
-function showScene(id){['landing','picker','home'].forEach(s=>{const el=$('#'+s);el.hidden=s!==id;el.classList.remove('enter','leave');});const el=$('#'+id);void el.offsetWidth;el.classList.add('enter');pickerOpen=id==='picker';}
-function openPicker(){$('#landing').classList.add('leave');setTimeout(()=>{showScene('picker');Car.previewed=-1;Car.settledAt=now();const i=ORDER.indexOf(S.inst);requestAnimationFrame(()=>{Car.layout();if(i>0){Car.i=-1;Car.go(i);Car.pos=Car.target;}});},380);}
+function showScene(id){['landing','goal','picker','home'].forEach(s=>{const el=$('#'+s);el.hidden=s!==id;el.classList.remove('enter','leave');});const el=$('#'+id);void el.offsetWidth;el.classList.add('enter');pickerOpen=false;}
+function openPicker(){Flow.go('picker');}
 function openHome(key){S.inst=key;saveS();showScene('home');renderHome();$('#hscroll').scrollTop=0;}
-$('#begin').onclick=openPicker;$('#back').onclick=()=>{showScene('landing');requestAnimationFrame(()=>Landing.layout());};$('#hback').onclick=()=>{showScene('picker');requestAnimationFrame(()=>Car.layout());};
-$('#choose').onclick=()=>openHome(ORDER[Car.i]);
+if(S.goal&&S.onboarded)$('#begin .lbl').textContent='Continue';
+$('#begin').onclick=()=>Flow.begin();$('#hback').onclick=()=>Flow.go('picker');
 let toastT;function toast(m){chime();$('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.textContent=m;($('#player')||SCREEN).appendChild(t);clearTimeout(toastT);toastT=setTimeout(()=>t.remove(),2600);}
 
 /* ================= loop + layout ================= */
 function loop(){const t=now();runGhosts(t);
-  if(!$('#landing').hidden)Landing.draw(t);if(!$('#picker').hidden){Car.update(Math.min(.05,t-(loop.p||t)));Car.draw(t);}
+  if(!$('#landing').hidden)Landing.draw(t);
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='14';
+const APP_V='15';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
@@ -1711,11 +1761,11 @@ checkUpdate();document.addEventListener('visibilitychange',()=>{if(!document.hid
 requestAnimationFrame(loop);}
 function layout(){const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone,framed=!standalone&&innerWidth>=640&&innerHeight>=560;
   document.documentElement.classList.toggle('framed',framed);$('.device').style.setProperty('--s',framed?Math.min(1,(innerHeight-28)/868,(innerWidth-28)/414):1);
-  Landing.layout();if(!$('#picker').hidden)Car.layout();}
+  Landing.layout();}
 addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
-loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}Car.build();layout();Car.go(0);Car.cards[0].el.classList.add('active');
-(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();Car.cards.forEach(c=>{c.W=0;});});
+loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}layout();
+(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();if(!$('#picker').hidden)Flow.drawThumbs();});
 try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);
 
@@ -1818,14 +1868,39 @@ function tmap(a){const A=(PS.timing[a.id]||a.anchors||[]).slice().sort((x,y)=>x.
 /* ---------- media: a YouTube recording or a demo the app plays itself ---------- */
 const YTM={p:null,load(){if(this.p)return this.p;this.p=new Promise((res,rej)=>{if(window.YT&&YT.Player)return res(YT);const prev=window.onYouTubeIframeAPIReady;
     window.onYouTubeIframeAPIReady=()=>{try{prev&&prev();}catch(e){}res(YT);};const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=()=>{this.p=null;rej(new Error('offline'));};document.head.appendChild(s);
-    setTimeout(()=>{if(!(window.YT&&YT.Player)){this.p=null;rej(new Error('timeout'));}},15000);});return this.p;}};
+    setTimeout(()=>{if(!(window.YT&&YT.Player)){this.p=null;rej(new Error('timeout'));}},8000);});return this.p;}};
 const YT_ERR={2:'This link doesn’t point to a playable video.',5:'This video can’t play here.',100:'This video was removed or made private.',101:'The owner doesn’t allow this video to play inside other apps.',150:'The owner doesn’t allow this video to play inside other apps.'};
+function ytWhy(){const preview=window.top!==window&&!/fretopia\.vercel\.app$/.test(location.hostname);
+  return preview?'Videos can’t play inside this preview. Open fretopia.vercel.app to play along.':navigator.onLine===false?'You’re offline. Connect to the internet to load the video.':'The video didn’t load. Your network or a content blocker may be stopping YouTube.';}
+/* a plain YouTube embed driven over postMessage, the same messages YouTube's own player script sends */
+function ytBridge(m,host,vid,on){return new Promise((res,rej)=>{const f=document.createElement('iframe'),O='https://www.youtube.com',org=/^https?:$/.test(location.protocol)?location.origin:'';
+  f.src=`${O}/embed/${vid}?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&fs=0&iv_load_policy=3&controls=1&widgetid=1${org?'&origin='+encodeURIComponent(org):''}`;
+  f.allow='autoplay; encrypted-media; picture-in-picture';f.title='YouTube video';f.setAttribute('frameborder','0');host.innerHTML='';host.appendChild(f);
+  const st={t:0,state:-1,rate:1,dur:0,data:{}};let ready=false,dead=false;
+  const post=o=>{try{f.contentWindow.postMessage(JSON.stringify(Object.assign({id:1,channel:'widget'},o)),O);}catch(e){}};
+  const cmd=(func,args=[])=>post({event:'command',func,args});
+  const onMsg=e=>{if(e.source!==f.contentWindow||!/youtube/.test(e.origin))return;let d;try{d=typeof e.data==='string'?JSON.parse(e.data):e.data;}catch(_){return;}if(!d||!d.event)return;
+    const i=d.info||{};
+    if(d.event==='initialDelivery'||d.event==='infoDelivery'){if(i.currentTime!=null)st.t=i.currentTime;if(i.playbackRate)st.rate=i.playbackRate;if(i.duration)st.dur=i.duration;if(i.videoData)st.data=i.videoData;
+      if(i.playerState!=null&&i.playerState!==st.state){st.state=i.playerState;m.state=st.state;m.raw=-1;if(ready)on.state&&on.state(st.state,m);}}
+    if(d.event==='onStateChange'&&typeof d.info==='number'&&d.info!==st.state){st.state=d.info;m.state=d.info;m.raw=-1;on.state&&on.state(d.info,m);}
+    if((d.event==='onReady'||d.event==='initialDelivery')&&!ready){ready=true;clearInterval(hello);clearTimeout(to);['onReady','onStateChange','onError','onPlaybackRateChange'].forEach(ev=>post({event:'addEventListener',args:[ev]}));m.ready=true;res(m);on.ready&&on.ready(m);}
+    if(d.event==='onError'){m.err=YT_ERR[d.info]||'This video can’t play here.';on.error&&on.error(m.err,m);}};
+  addEventListener('message',onMsg);
+  const hello=setInterval(()=>post({event:'listening'}),250);f.addEventListener('load',()=>post({event:'listening'}));
+  const to=setTimeout(()=>{if(!ready){clearInterval(hello);removeEventListener('message',onMsg);dead=true;rej(new Error('nobridge'));}},15000);
+  m.p={getCurrentTime:()=>st.t,getPlayerState:()=>st.state,getPlaybackRate:()=>st.rate,getDuration:()=>st.dur,getVideoData:()=>st.data||{},
+    playVideo:()=>cmd('playVideo'),pauseVideo:()=>cmd('pauseVideo'),seekTo:(t,a)=>{st.t=t;cmd('seekTo',[t,a!==false]);},setPlaybackRate:r=>{st.rate=r;cmd('setPlaybackRate',[r]);},
+    mute:()=>cmd('mute'),unMute:()=>cmd('unMute'),destroy:()=>{clearInterval(hello);clearTimeout(to);removeEventListener('message',onMsg);f.remove();}};});}
 function ytMedia(host,vid,on={}){const m={kind:'yt',vid,ready:false,err:null,p:null,base:0,wall:0,raw:-1,rate:1,
-  load(){host.innerHTML='<div class="vload">Loading video…</div>';return YTM.load().then(YT=>new Promise(res=>{const d=document.createElement('div');host.innerHTML='';host.appendChild(d);
-    const pv={playsinline:1,rel:0,modestbranding:1,controls:1,fs:0,iv_load_policy:3};if(/^https?:$/.test(location.protocol))pv.origin=location.origin;
-    m.p=new YT.Player(d,{videoId:vid,width:'100%',height:'100%',playerVars:pv,events:{onReady:()=>{m.ready=true;res(m);on.ready&&on.ready(m);},
-      onStateChange:e=>{m.state=e.data;m.raw=-1;on.state&&on.state(e.data,m);},onError:e=>{m.err=YT_ERR[e.data]||'This video can’t play here.';res(m);on.error&&on.error(m.err,m);}}});
-    setTimeout(()=>{if(!m.ready&&!m.err){m.err='The video didn’t load. Check your connection.';res(m);on.error&&on.error(m.err,m);}},20000);})).catch(()=>{m.err='YouTube didn’t load. Check your connection.';host.innerHTML=`<div class="vload">${m.err}</div>`;on.error&&on.error(m.err,m);return m;});},
+  /* YouTube's player script first; if it can't load, talk to a plain embed directly */
+  load(){host.innerHTML='<div class="vload">Loading video…</div>';
+    const viaApi=()=>YTM.load().then(YT=>new Promise((res,rej)=>{const d=document.createElement('div');host.innerHTML='';host.appendChild(d);
+      const pv={playsinline:1,rel:0,modestbranding:1,controls:1,fs:0,iv_load_policy:3};if(/^https?:$/.test(location.protocol))pv.origin=location.origin;
+      const to=setTimeout(()=>{if(!m.ready&&!m.err){try{m.p&&m.p.destroy();}catch(e){}m.p=null;rej(new Error('noplayer'));}},12000);
+      m.p=new YT.Player(d,{videoId:vid,width:'100%',height:'100%',playerVars:pv,events:{onReady:()=>{clearTimeout(to);m.ready=true;res(m);on.ready&&on.ready(m);},
+        onStateChange:e=>{m.state=e.data;m.raw=-1;on.state&&on.state(e.data,m);},onError:e=>{clearTimeout(to);m.err=YT_ERR[e.data]||'This video can’t play here.';res(m);on.error&&on.error(m.err,m);}}});}));
+    return viaApi().catch(()=>ytBridge(m,host,vid,on)).catch(()=>{m.err=ytWhy();host.innerHTML=`<div class="vload">${esc(m.err)}</div>`;on.error&&on.error(m.err,m);return m;});},
   playing(){return m.p&&m.p.getPlayerState&&m.p.getPlayerState()===1;},
   /* a smooth clock from YouTube's coarse position reports */
   now(){if(!m.p||!m.p.getCurrentTime)return 0;const r=m.p.getCurrentTime(),w=performance.now()/1000;if(!m.playing()){m.base=r;m.wall=w;m.raw=r;return r;}
@@ -1863,24 +1938,26 @@ function screenLoop(){const top=PUI.stack[PUI.stack.length-1];if(top&&top.tick&&
 
 /* ================= home tabs ================= */
 const Parts={};
-Parts.tabs=fam=>fam==='guitar'?[['lessons','Lessons'],['parts','Song parts'],['chal','Challenges']]:[['lessons','Lessons'],['chal','Challenges']];
-Parts.renderTab=function(tab,box,fam){if(tab==='parts')return renderPartsHome(box);if(tab==='chal')return renderChallenges(box,fam);};
-
-function renderPartsHome(box){const q=PS.q||'',ql=q.trim().toLowerCase();
+/* Songs tab (guitar): where you left off, saved parts, and real recordings */
+Parts.songsTop=function(box){const ql=(HV.sq||'').trim().toLowerCase(),q=HV.sq||'';
   const recs=allRecs().filter(r=>!ql||(r.song+' '+r.artist+' '+r.kind).toLowerCase().includes(ql));
   const last=PS.last&&arrOf(PS.last.arr),lr=last&&recOf(last.rec),la=last&&lastAttempt(last.id);
-  const nSaved=Object.keys(PS.saved).filter(id=>arrOf(id)).length,nDraft=Object.keys(PS.drafts).length;
-  box.innerHTML=`<label class="search">${ICS}<input id="pq" type="search" inputmode="search" autocomplete="off" placeholder="Search songs and artists" value="${esc(q)}"></label>
-    ${!ql&&last&&lr?`<button class="next" data-resume><span class="eyebrow">Pick up where you left off</span><b>${esc(lr.song)} · ${esc(last.section)}</b><span class="meta">${esc(last.part)} · ${esc(last.level)}${la?' · '+attemptLine(la):''}</span><span class="go">${IC.play}</span></button>`:''}
-    ${!ql?`<div class="list qrows"><button class="row" data-go="practice"><span class="t"><b>My practice</b><small>${nSaved?nSaved+' saved part'+(nSaved>1?'s':''):'Parts you save after playing'}</small></span><span class="r">${PIC.chev}</span></button>
-      <button class="row" data-go="create"><span class="t"><b>Create arrangement</b><small>Chart a part of any YouTube recording</small></span><span class="r">${PIC.chev}</span></button>
-      <button class="row" data-go="drafts"><span class="t"><b>My drafts</b><small>${nDraft?nDraft+' unpublished':'Nothing in progress'}</small></span><span class="r">${PIC.chev}</span></button></div>`:''}
-    <h3 class="sh">${ql?'Recordings':'Songs'}</h3>
-    <div class="list" id="precs">${recs.map(r=>{const n=arrsFor(r.id).length;return `<button class="row rrow" data-rec="${esc(r.id)}">${thumb(r)}<span class="t"><b>${esc(r.song)}</b><small>${esc(r.artist)} · ${esc(r.kind)}${recDur(r)?' · '+fmtT(recDur(r)):''}</small></span><span class="r">${n?n+' part'+(n>1?'s':''):'New'}</span></button>`;}).join('')||`<p class="empty">No recordings match “${esc(q)}”.<br>Chart it yourself with Create arrangement.</p>`}</div>
-    <p class="fine">Songs marked “timing not checked” scroll at a first guess. Line them up in Sync.</p>`;
-  const inp=$('#pq',box);inp.addEventListener('input',e=>{PS.q=e.target.value;savePS();const pos=e.target.selectionStart;renderPartsHome(box);const n=$('#pq',box);n.focus();try{n.setSelectionRange(pos,pos);}catch(_){}});
-  box.onclick=e=>{const r=e.target.closest('[data-rec]');if(r)return openRecording(r.dataset.rec);const g=e.target.closest('[data-go]');if(g){if(g.dataset.go==='practice')openPractice();if(g.dataset.go==='create')openCreate();if(g.dataset.go==='drafts')openDrafts();return;}
-    if(e.target.closest('[data-resume]')&&last)playArr(last);};}
+  const nSaved=Object.keys(PS.saved).filter(id=>arrOf(id)).length;
+  box.innerHTML=`${!ql&&last&&lr?`<button class="next" data-resume><span class="eyebrow">Pick up where you left off</span><b>${esc(lr.song)} · ${esc(last.section)}</b><span class="meta">${esc(last.part)} · ${esc(last.level)}${la?' · '+attemptLine(la):''}</span><span class="go">${IC.play}</span></button>`:''}
+    ${!ql?`<div class="list qrows"><button class="row" data-go="practice"><span class="t"><b>My practice</b><small>${nSaved?nSaved+' saved part'+(nSaved>1?'s':''):'Parts you save after playing'}</small></span><span class="r">${PIC.chev}</span></button></div>`:''}
+    <h3 class="sh">Real songs</h3><p class="shsub">Play one part along with the original recording</p>
+    <div class="list">${recs.map(r=>{const n=arrsFor(r.id).length;return `<button class="row rrow" data-rec="${esc(r.id)}">${thumb(r)}<span class="t"><b>${esc(r.song)}</b><small>${esc(r.artist)} · ${esc(r.kind)}${recDur(r)?' · '+fmtT(recDur(r)):''}</small></span><span class="r">${n?n+' part'+(n>1?'s':''):'New'}</span></button>`;}).join('')||`<p class="empty">No recordings match “${esc(q)}”.</p>`}</div>`;
+  box.onclick=e=>{const r=e.target.closest('[data-rec]');if(r)return openRecording(r.dataset.rec);if(e.target.closest('[data-go="practice"]'))return openPractice();if(e.target.closest('[data-resume]')&&last)playArr(last);};};
+/* Create tab (guitar) */
+Parts.renderCreate=function(box){const drafts=Object.values(PS.drafts).filter(d=>recOf(d.rec)).sort((x,y)=>y.at-x.at),mine=Object.values(PS.arrs).filter(a=>recOf(a.rec)).sort((x,y)=>(y.publishedAt||0)-(x.publishedAt||0));
+  const row=(a,attr,sub)=>{const r=recOf(a.rec);return `<button class="row rrow" ${attr}>${thumb(r)}<span class="t"><b>${esc(r.song)} · ${esc(a.section)}</b><small>${sub}</small></span><span class="r">${PIC.chev}</span></button>`;};
+  box.innerHTML=`<button class="next" data-go="create"><span class="eyebrow">New arrangement</span><b>Chart a song part</b><span class="meta">Paste a YouTube link, mark the passage, then write chords or tab</span><span class="go">${PIC.plus}</span></button>
+    <h3 class="sh">Drafts</h3><div class="list">${drafts.map(d=>row(d,`data-draft="${d.id}"`,`${esc(d.part)} · ${esc(d.level)} · edited ${ago(d.at)}`)).join('')||'<p class="empty sm">Unfinished arrangements wait here.</p>'}</div>
+    <h3 class="sh">Published by you</h3><div class="list">${mine.map(a=>row(a,`data-mine="${a.id}"`,`${esc(a.part)} · ${esc(a.level)} · version ${a.rev||1}`)).join('')||'<p class="empty sm">Arrangements you publish show up here and under their song.</p>'}</div>
+    <h3 class="sh">Your own melody</h3><button class="import" id="imp">Import a MIDI file</button><input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden>
+    <p class="fine">Everything you make stays on this phone. Use files you have the rights to.</p>`;
+  $('#imp',box).onclick=()=>$('#impf',box).click();$('#impf',box).onchange=e=>importMidi(e.target.files[0]);
+  box.onclick=e=>{if(e.target.closest('[data-go="create"]'))return openCreate();const d=e.target.closest('[data-draft]');if(d)return openEditor(d.dataset.draft);const m=e.target.closest('[data-mine]');if(m){const a=arrOf(m.dataset.mine);return openRecording(a.rec,a.id);}};};
 
 /* ================= recording: choose an arrangement ================= */
 const LEVELS=['Beginner','Intermediate','Advanced'],PARTS=['Rhythm','Lead','Fingerstyle'];
@@ -1939,13 +2016,17 @@ Parts.decorate=function(P,el){const p=P.part,a=p.a,r=p.r;
   el.querySelector('.pl-meta').innerHTML=`<span>Time <b id="plTime">0:00 / ${fmtT(arrLen(a)/P.speed)}</b></span><span>Accuracy <b id="plAcc">–</b></span>`;
   const prog=el.querySelector('.pl-prog');prog.classList.add('seek');prog.insertAdjacentHTML('beforeend','<span class="knob"></span>');
   if(p.yt){el.classList.add('has-vid');const v=document.createElement('div');v.className='pl-vid';v.id='plVid';prog.after(v);
-    p.media=ytMedia(v,r.vid,{state:(s)=>Parts.ytState(P,s),error:er=>{p.err=er;v.innerHTML=`<div class="vload">${esc(er)}</div>`;P.msg(er);}});
+    p.media=ytMedia(v,r.vid,{state:(s)=>Parts.ytState(P,s),error:er=>Parts.videoFail(P,er)});
     p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(-4));m.pause();}});}
   /* drag to seek inside the passage; the attempt is then marked unscored */
   let drag=null;const at=e=>{const R=prog.getBoundingClientRect(),vert=R.height>R.width;return clamp(vert?(e.clientY-R.top)/R.height:(e.clientX-R.left)/R.width,0,1);};
   prog.addEventListener('pointerdown',e=>{if(P.challenge)return;drag={f:at(e)};prog.setPointerCapture(e.pointerId);$('#plProg').style.width=drag.f*100+'%';});
   prog.addEventListener('pointermove',e=>{if(!drag)return;drag.f=at(e);$('#plProg').style.width=drag.f*100+'%';});
   prog.addEventListener('pointerup',()=>{if(!drag)return;Parts.seekTo(P,drag.f*P.total);drag=null;});};
+Parts.videoFail=function(P,er){const p=P.part,v=$('#plVid');p.err=er;if(!v)return;P.pause();
+  v.innerHTML=`<div class="vfail"><p>${esc(er)}</p><div><button class="vbtn" data-vretry>Try again</button><button class="vbtn pri" data-vnone>Play without video</button></div></div>`;
+  v.querySelector('[data-vretry]').onclick=()=>{p.err=null;p.media&&p.media.destroy();p.media=ytMedia(v,p.r.vid,{state:s=>Parts.ytState(P,s),error:e=>Parts.videoFail(P,e)});p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(Math.max(-4,P.t)));m.pause();}});};
+  v.querySelector('[data-vnone]').onclick=()=>{p.media&&p.media.destroy();p.media=null;p.yt=false;p.novideo=true;v.remove();$('#player').classList.remove('has-vid');P.msg('Timing follows the tempo, not the recording');};};
 Parts.ytState=function(P,s){const p=P.part;if(!p||!$('#player'))return;const mine=performance.now()-(p.own||0)<700;
   if(s===2&&P.running&&!mine){P.running=false;P.btn();}
   if(s===1&&!P.running&&!mine&&!P.ended){P.running=true;P.lastAudio=ctx.currentTime;P.btn();}};
@@ -1973,7 +2054,7 @@ Parts.resync=function(P,t){P.part.seeked=true;P.notes.forEach(n=>{if(n.rest)retu
 Parts.seekTo=function(P,t){const p=P.part;t=clamp(t,0,P.total-.01);if(p.yt&&p.media){p.own=performance.now();p.media.seek(p.map.t(t));}P.t=t;Parts.resync(P,t);P.ended=false;Parts.timeLabel(P);toast('This run won’t be scored');};
 /* each frame: the demo's own backing, the time label, how much the mic heard */
 Parts.tick=function(P,prev){const p=P.part;if(!p)return;Parts.timeLabel(P);
-  if(!p.yt&&p.song&&P.running&&!P.listen){const D=DEMO_SONGS[p.r.demo],spb=60/D.bpm,off=p.a.start/spb;for(const e of demoEvents(p.r.demo)){const bb=e.b-off;if(bb>=prev&&bb<P.t&&P.t>=-4)playDemoEv(e,spb/P.speed,.85);}}
+  if(!p.yt&&p.r.src==='demo'&&p.song&&P.running&&!P.listen){const D=DEMO_SONGS[p.r.demo],spb=60/D.bpm,off=p.a.start/spb;for(const e of demoEvents(p.r.demo)){const bb=e.b-off;if(bb>=prev&&bb<P.t&&P.t>=-4)playDemoEv(e,spb/P.speed,.85);}}
   if(P.mode==='mic'&&P.t>=0){p.frames++;if(Mic.level>Mic.gate*1.2)p.heard++;}};
 /* the end of the passage: loop or finish */
 Parts.loop=function(P){const p=P.part;if(!p||!p.loop||p.preview||P.challenge)return false;p.passes++;Parts.recordPass(P,false);
@@ -2211,8 +2292,8 @@ function openReview(id){pushScreen(el=>{el.isRev=true;const d=draftOf(id);if(!d)
     <div class="dock"><button class="cta" data-pub ${miss?'disabled':''}><span class="lbl">${pubA?'Publish update':'Publish arrangement'}</span></button><button class="import" data-leave>Save draft &amp; leave</button></div>`;
   wireBack(el);$('#rgoal',el).addEventListener('input',e=>{d.goal=e.target.value;saveDraft(d);});
   el.onclick=e=>{const t=e.target;if(t.closest('[data-pv]'))return previewDraft(d);if(t.closest('[data-ed]')){popScreen();const top=PUI.stack[PUI.stack.length-1];if(!top||!top.isEd)openEditor(d.id);return;}if(t.closest('[data-tm]')){const top=PUI.stack[PUI.stack.length-2];if(top&&top.isSync){popScreen();return;}return openSync(d.id);}
-    if(t.closest('[data-leave]')){saveDraft(d);toast('Draft saved on this phone');popAll();HV.tab='parts';renderHome();return;}
-    if(t.closest('[data-pub]')&&!missingStep(d)){const b=t.closest('[data-pub]');if(b.disabled)return;b.disabled=true;const arr=publishDraft(d);toast('Published');popAll();HV.tab='parts';renderHome();openRecording(arr.rec,arr.id);}};});}
+    if(t.closest('[data-leave]')){saveDraft(d);toast('Draft saved on this phone');popAll();HV.tab='create';renderHome();return;}
+    if(t.closest('[data-pub]')&&!missingStep(d)){const b=t.closest('[data-pub]');if(b.disabled)return;b.disabled=true;const arr=publishDraft(d);toast('Published');popAll();HV.tab='create';renderHome();openRecording(arr.rec,arr.id);}};});}
 function publishDraft(d){const id=d.pubId||(d.pubId='a'+d.id.slice(1)),prev=PS.arrs[id],a={...draftArr(d),id,rev:(prev&&prev.rev||0)+1,author:PS.me==='You'?'You':PS.me,seed:false,checked:true,publishedAt:Date.now()};
   delete a.cur;delete a.at;delete a.pubId;delete a.click;PS.arrs[id]=a;PS.revs[id+'@'+a.rev]=JSON.parse(JSON.stringify(a));delete PS.drafts[d.id];savePS();return a;}
 function editPublished(a){const d={...JSON.parse(JSON.stringify(a)),id:uid('d'),pubId:a.id,cur:{bar:0,cell:0,s:0},at:Date.now()};PS.drafts[d.id]=d;savePS();openEditor(d.id);}
@@ -2306,6 +2387,91 @@ Parts.recBtn=()=>`<button class="round" id="plRec" aria-label="Record a clip">${
 Parts.chDecorate=function(P,el){const c=P.challenge;el.querySelector('.pl-title b').textContent=c.title;el.querySelector('.pl-title small').textContent=c.player+(c.duel?` · duel, turn ${c.duel.turn} of 2`:'');
   const m=el.querySelector('.pl-meta');m.insertAdjacentHTML('afterbegin',`<span>${c.secs?'Time left':'Points'} <b id="plCh">${c.secs?fmtT(c.secs):'0'}</b></span>`);};
 Parts.chHud=function(P){const c=P.challenge,el=$('#plCh');if(!el)return;const txt=c.secs?fmtT(Math.ceil(Math.max(0,c.secs-P.elapsed))):(c.points+passPoints(P)).toLocaleString();if(el.textContent!==txt)el.textContent=txt;};
+
+/* ================= first steps: what you want to do, then your instrument =================
+   Landing → Goal → Instruments → Instrument home. Back walks the same path.
+   The goal only decides which tab you start on; every tab stays one tap away. */
+const GOALS=[
+  {id:'learn',tab:'learn',t:'Learn to play',d:'Short lessons from your very first note, and a little riyaz every day.',
+    ic:'<path d="M4 6.5 12 3l8 3.5-8 3.5z"/><path d="M7 8v5.2c0 1.6 2.2 2.8 5 2.8s5-1.2 5-2.8V8"/><path d="M20 6.5V12"/>'},
+  {id:'songs',tab:'songs',t:'Play songs I love',d:'Pick a song and a part, choose your level and play along.',
+    ic:'<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>'},
+  {id:'create',tab:'create',t:'Make my own arrangements',d:'Write chords or tab for a song on YouTube, then practise it.',
+    ic:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>'},
+  {id:'chal',tab:'chal',t:'Challenge my friends',d:'Timed runs and duels. Pass the phone and see who tops the board.',
+    ic:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7"/>'}];
+const IMETA={
+  guitar:{cat:'Strings',line:'Chords, tabs and real songs',alias:'gitar acoustic electric chords'},
+  sitar:{cat:'Strings',line:'Melodies, sargam and raags',alias:'sitaar strings'},
+  harmonium:{cat:'Keys',line:'Melodies, sargam and raags',alias:'keyboard piano baaja peti'},
+  tabla:{cat:'Percussion',line:'Bols, thekas and taals',alias:'drums percussion rhythm'},
+  bansuri:{cat:'Wind',line:'Melodies, sargam and raags',alias:'flute basuri wind'},
+  vocals:{cat:'Voice',line:'Sing sargam, raags and melodies',alias:'singing voice vocal gaana'}};
+const ICATS=['All','Strings','Keys','Percussion','Wind','Voice'];
+const goalOf=()=>GOALS.find(g=>g.id===S.goal);
+function goalTab(){const g=goalOf();return g?g.tab:'learn';}
+const FIC={back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg>',
+  chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>'};
+
+const Flow={
+  /* the landing button: first time → goal; afterwards straight back to your instrument */
+  begin(){$('#begin').classList.add('lit');if(S.goal&&S.inst)return this.go('home');this.go('goal');},
+  go(to){const from=['landing','goal','picker','home'].find(id=>!$('#'+id).hidden);if(from)$('#'+from).classList.add('leave');
+    setTimeout(()=>{if(to==='goal')this.renderGoal();if(to==='picker')this.renderPicker();showScene(to);if(to==='home'){renderHome();$('#hscroll').scrollTop=0;}
+      if(to==='picker')requestAnimationFrame(()=>this.drawThumbs());if(to==='landing')requestAnimationFrame(()=>Landing.layout());},from==='landing'?320:120);},
+  onboarding(){return!S.onboarded;},
+
+  /* ---------- goal ---------- */
+  renderGoal(){let pick=S.goal||null;const el=$('#goal');
+    el.innerHTML=`<div class="top"><button class="ib" data-back aria-label="Back">${FIC.back}</button>${this.onboarding()?'<span class="stepn">Step 1 of 2</span>':''}<span class="sp"></span></div>
+      <div class="hscroll"><header class="h-head"><h1>What would you like to do first?</h1><p class="lede">You can do all of it later. This just decides where you start.</p></header>
+      <div class="goals" role="radiogroup" aria-label="Goal">${GOALS.map(g=>`<button class="gcard" role="radio" aria-checked="${pick===g.id}" data-g="${g.id}">
+        <span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g.ic}</svg></span>
+        <span class="gt"><b>${g.t}</b><small>${g.d}</small></span><span class="gdot"></span></button>`).join('')}</div></div>
+      <div class="dock"><button class="cta" id="gnext" ${pick?'':'disabled'}><span class="lbl">Continue</span></button></div>`;
+    el.querySelector('[data-back]').onclick=()=>this.go('landing');
+    el.querySelector('.goals').onclick=e=>{const b=e.target.closest('[data-g]');if(!b)return;pick=b.dataset.g;buzz(4);
+      el.querySelectorAll('.gcard').forEach(x=>x.setAttribute('aria-checked',x===b));$('#gnext').disabled=false;};
+    $('#gnext').onclick=()=>{if(!pick)return;S.goal=pick;saveS();HV.tab=goalTab();this.go('picker');};},
+
+  /* ---------- instruments: everything on one page, like a menu ---------- */
+  F:{q:'',cat:'All'},
+  renderPicker(){const el=$('#picker'),g=goalOf(),F=this.F;
+    const sub={learn:'Every instrument starts from the first note.',songs:'Guitar plays along with real recordings. The others have melodies and raags to play.',
+      create:'Chord and tab charts are on guitar. On the others, bring songs in as MIDI files.',chal:'Challenges work on every instrument.'}[g?g.id:'learn'];
+    el.innerHTML=`<div class="top"><button class="ib" data-back aria-label="Back">${FIC.back}</button>${this.onboarding()?'<span class="stepn">Step 2 of 2</span>':''}<span class="sp"></span></div>
+      <div class="hscroll"><header class="h-head"><h1>Choose your instrument</h1><p class="lede">${sub}</p></header>
+      <label class="search">${ICS}<input id="iq" type="search" inputmode="search" autocomplete="off" placeholder="Search instruments" value="${esc(F.q)}"></label>
+      <div class="chips" id="icats">${ICATS.map(c=>`<button class="opt" data-cat="${c}" aria-pressed="${F.cat===c}">${c}</button>`).join('')}</div>
+      <div class="ilist" id="ilist"></div></div>`;
+    el.querySelector('[data-back]').onclick=()=>this.go('goal');
+    $('#iq').addEventListener('input',e=>{F.q=e.target.value;this.fillPicker();this.drawThumbs();});
+    $('#icats').onclick=e=>{const b=e.target.closest('[data-cat]');if(!b)return;F.cat=b.dataset.cat;$$('#icats .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));this.fillPicker();this.drawThumbs();};
+    $('#ilist').onclick=e=>{const b=e.target.closest('[data-inst]');if(!b)return;this.choose(b.dataset.inst);};
+    this.fillPicker();},
+  tags(key){const g=goalOf(),fam=famOf(key),out=[];
+    if(g&&g.id==='songs'){if(key==='guitar')out.push(['Real songs','ok']);else if(fam==='tabla')out.push(['Taals, no songs yet','mute']);}
+    if(g&&g.id==='create'){if(key==='guitar')out.push(['Chart chords and tab','ok']);else if(fam!=='tabla')out.push(['Import MIDI songs','mute']);}
+    if(S.onboarded&&S.inst===key)out.push(['Last played','mute']);return out;},
+  counts(key){const fam=famOf(key),cat=catalog(fam),L=LEARN_C[fam]||[],nl=cat.filter(s=>L.includes(s.coll)).length,ns=fam==='tabla'?0:cat.filter(s=>SONG_C.includes(s.coll)).length+(fam==='guitar'?allRecs().length:0);
+    return[nl&&`${nl} lessons`,ns&&`${ns} songs`].filter(Boolean).join(' · ');},
+  fillPicker(){const F=this.F,q=F.q.trim().toLowerCase(),keys=ORDER.filter(k=>{const m=IMETA[k],inst=I[k];
+      return(F.cat==='All'||m.cat===F.cat)&&(!q||(inst.name+' '+inst.hi+' '+m.cat+' '+m.line+' '+m.alias).toLowerCase().includes(q));});
+    $('#ilist').innerHTML=keys.map(k=>{const inst=I[k],m=IMETA[k];return `<button class="irow" data-inst="${k}" aria-label="${inst.name}, ${m.line}">
+        <span class="ith${inst.rot?' rot':''}"><canvas data-k="${k}" aria-hidden="true"></canvas></span>
+        <span class="it"><span class="nm"><b>${inst.name}</b><span class="hi">${inst.hi}</span></span><small class="cat">${m.cat}</small>
+          <span class="line">${m.line}</span><span class="meta">${this.counts(k)}</span>
+          ${this.tags(k).map(([t,c])=>`<span class="tag ${c}">${t}</span>`).join('')}</span><span class="r">${FIC.chev}</span></button>`;}).join('')||
+      `<p class="empty">No instrument matches “${esc(F.q)}”.<br>Fretopia teaches guitar, sitar, harmonium, tabla, bansuri and singing for now.</p>`;},
+  /* the same line drawings as before, drawn once as pictures */
+  drawThumbs(){$$('#ilist canvas').forEach(cv=>{const inst=I[cv.dataset.k],f=fitCanvas(cv);if(!f)return;const c={inst,canvas:cv,W:f.W,H:f.H};initInst(c);f.g.clearRect(0,0,f.W,f.H);
+      try{if(inst.rot){f.g.save();f.g.translate(0,f.H);f.g.rotate(-Math.PI/2);inst.draw(f.g,now(),1);f.g.restore();}else inst.draw(f.g,now(),1);}catch(e){}});},
+  choose(key){ac();S.inst=key;S.onboarded=true;saveS();HV.tab=goalTab();HV.q=HV.sq='';HV.lc=HV.sc='all';buzz(6);this.go('home');}};
+
+/* open one part straight from a link: …/#part=<arrangement id> */
+function openFromHash(){const m=/^#part=([\w-]+)/.exec(location.hash||'');if(!m)return;const a=arrOf(m[1]);if(!a)return;
+  S.inst='guitar';if(!S.goal)S.goal='songs';S.onboarded=true;saveS();HV.tab='songs';showScene('home');renderHome();playArr(a);}
+setTimeout(openFromHash,300);
 
 </script>
 </body>

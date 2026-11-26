@@ -426,6 +426,43 @@ svg{display:block}
 .pass{margin:18px 0 0;padding:16px;border-radius:18px;background:var(--line-2)}.pass b{display:block;font-size:16px;font-weight:600}.pass span{display:block;margin-top:4px;font-size:13px;color:var(--ink-2)}
 .duel{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 0}.duel>div{padding:14px;border:1px solid var(--line);border-radius:18px;text-align:center}
 .duel>div.win{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.duel small{display:block;font-size:12px;color:var(--ink-3)}.duel b{display:block;margin-top:4px;font-size:28px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.duel span{font-size:12px;color:var(--ink-2)}
+
+/* ===== first steps: goal and instruments ===== */
+#picker{touch-action:auto}
+#goal,#picker{display:flex;flex-direction:column}
+.scene.enter{animation:psIn .36s var(--ease) both}.scene.leave{animation:psOut .24s ease-in both}
+.stepn{font-size:12px;font-weight:550;color:var(--ink-3);letter-spacing:.01em}.top .sp{width:40px}
+.h-head .lede{margin-top:8px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.goals{display:flex;flex-direction:column;gap:10px}
+.gcard{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 16px 16px 14px;border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:border-color .2s,box-shadow .2s,transform .15s}
+.gcard:active{transform:scale(.99)}
+.gcard[aria-checked="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.gic{width:44px;height:44px;flex:none;border-radius:14px;background:var(--line-2);display:grid;place-items:center;color:var(--ink)}.gic svg{width:22px;height:22px}
+.gcard[aria-checked="true"] .gic{background:var(--ink);color:#fff}
+.gt{flex:1;min-width:0}.gt b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em}.gt small{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:var(--ink-2)}
+.gdot{width:20px;height:20px;flex:none;border-radius:50%;border:1.5px solid var(--line);transition:border .2s}
+.gcard[aria-checked="true"] .gdot{border:6px solid var(--ink)}
+.dock .cta[disabled]{opacity:.3}
+.ilist{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.irow{display:flex;align-items:stretch;gap:14px;width:100%;text-align:left;padding:10px 10px 10px 10px;border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:transform .15s,border-color .2s}
+.irow:active{transform:scale(.99);border-color:var(--ink-3)}
+.ith{width:112px;flex:none;align-self:stretch;min-height:104px;border-radius:14px;background:var(--bg);overflow:hidden;position:relative}
+.ith canvas{position:absolute;inset:0;width:100%;height:100%}
+.it{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:4px 0}
+.it .nm{display:flex;align-items:baseline;gap:6px}.it .nm b{font-size:17px;font-weight:600;letter-spacing:-.02em}.it .hi{font-family:var(--deva);font-size:13px;color:var(--ink-3)}
+.it .cat{font-size:11.5px;color:var(--ink-3);margin-top:1px}
+.it .line{margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.35}
+.it .meta{margin-top:3px;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.it .tag{align-self:flex-start;margin:7px 0 0}
+.tag.ok{color:var(--good);background:rgba(31,157,85,.1)}
+.irow .r{display:grid;place-items:center;color:var(--ink-3)}.irow .r svg{width:18px;height:18px}
+.shsub{margin:-2px 4px 2px;font-size:12px;color:var(--ink-3)}
+.empty.sm{padding:14px 4px;text-align:left;font-size:13px}
+/* video couldn't load: say why, offer a way on */
+.vfail{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px;text-align:center;color:rgba(255,255,255,.75);font-size:13px;line-height:1.4}
+.vfail>div{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.vbtn{height:36px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:13px;font-weight:550}
+.vbtn.pri{background:#fff;color:var(--ink);border-color:#fff}
 </style>
 </head>
 <body>
@@ -451,15 +488,11 @@ svg{display:block}
       <button class="cta" id="begin"><span class="lbl">Get started</span></button>
     </section>
 
-    <section class="scene" id="picker" hidden aria-label="Choose an instrument">
-      <div class="top"><button class="ib" id="back" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button></div>
-      <h1 class="ptitle">Choose an instrument</h1>
-      <div class="viewport" id="vp"></div>
-      <div class="pfoot"><div class="dots" id="dots"></div><button class="cta" id="choose"><span class="lbl" id="chooseLbl">Continue with Guitar</span></button></div>
-    </section>
+    <section class="scene" id="goal" hidden aria-label="Choose what to do first"></section>
+    <section class="scene" id="picker" hidden aria-label="Choose your instrument"></section>
 
     <section class="scene" id="home" hidden aria-label="Instrument home">
-      <div class="top"><button class="ib" id="hback" aria-label="Change instrument"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button><span class="stars-top" id="hStars"></span></div>
+      <div class="top"><button class="ib" id="hback" aria-label="All instruments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button><span class="stars-top" id="hStars"></span></div>
       <div class="hscroll" id="hscroll"></div>
     </section>
     <div class="homebar"></div>

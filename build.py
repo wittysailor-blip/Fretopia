@@ -60,6 +60,6 @@ for a,c in [(".06+.4*Math.pow(vel,1.4)",".12+.7*Math.pow(vel,1.3)"),("lp.frequen
 head=S('head.html')
 mn=S('min.js')
 lib=S('lib.js')+S('listen.js')+S('game.js')
-out=head+"<script>\n'use strict';\nconst GUITAR_D=\""+d+"\";\n"+A+VS+GH+INS+CAR+SHARED+lib+mn+S('parts.js')+"\n</script>\n</body>\n</html>\n"
+out=head+"<script>\n'use strict';\nconst GUITAR_D=\""+d+"\";\n"+A+VS+GH+INS+CAR+SHARED+lib+mn+S('parts.js')+S('flow.js')+"\n</script>\n</body>\n</html>\n"
 open(os.path.join(ROOT,'index.html'),'w',encoding='utf-8').write(out)
 print('built index.html',len(out),'bytes')

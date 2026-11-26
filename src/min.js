@@ -71,35 +71,52 @@ const LVL=['','Easy','Medium','Hard'];
 const sk=s=>(S.inst||'guitar')+':'+s.id,starsOf=s=>S.stars[sk(s)]||0;
 const COLLS={guitar:['all','drill','chords','classical','folk','kids','festive','indian','raag','mine'],melodic:['all','drill','raag','indian','classical','folk','kids','festive','mine'],tabla:['all','drill','taal']};
 const COLL_NAME={all:'All',drill:'Technique',classical:'Classical',folk:'Folk',kids:'Rhymes',festive:'Festive',indian:'Indian',raag:'Raag',mine:'My songs',taal:'Taals',chords:'Chords'};
-const HV={coll:'all',q:'',tab:'lessons'};let HOME={cat:[],list:[]};
+const HV={q:'',lc:'all',sc:'all',sq:'',tab:null};let HOME={cat:[],list:[]};
 const ICS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>';
+/* what's under each tab: lessons build skills, songs are things to play */
+const LEARN_C={guitar:['all','drill','chords','raag'],melodic:['all','drill','raag'],tabla:['all','drill','taal']},SONG_C=['all','indian','classical','folk','kids','festive','mine'];
+const HICON={plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'};
+function homeTabs(fam){const t=[['learn','Learn']];if(fam!=='tabla')t.push(['songs','Songs'],['create','Create']);t.push(['chal','Challenges']);return t;}
 function renderHome(){const key=S.inst||'guitar',fam=famOf(key),inst=I[key],cat=catalog(fam);HOME={fam,cat,list:cat};
   const hs=$('#hStars');hs.innerHTML=riyazChip();$('#hRiyaz').onclick=openRiyaz;const st=Game.streak();if(renderHome.shown!=null&&st>renderHome.shown)requestAnimationFrame(()=>refreshChip(true));renderHome.shown=st;
-  if(!COLLS[fam].includes(HV.coll))HV.coll='all';
-  const next=cat.find(s=>s.coll==='drill'&&!starsOf(s))||cat.find(s=>!starsOf(s))||cat.find(s=>starsOf(s)<3)||cat[0];HOME.next=next;
-  const colls=COLLS[fam].filter(c=>c==='all'||c==='mine'||cat.some(s=>s.coll===c));
-  const tabs=Parts.tabs(fam);if(!tabs.some(x=>x[0]===HV.tab))HV.tab='lessons';const head=`<header class="h-head"><h1>${inst.name}</h1><p><span class="hi">${inst.hi}</span> · ${SA_NAME[key]}</p></header>
-    <div class="chips tabs" id="htabs" role="tablist">${tabs.map(([k,l])=>`<button class="opt" role="tab" data-tab="${k}" aria-pressed="${HV.tab===k}" aria-selected="${HV.tab===k}">${l}</button>`).join('')}</div>`;
-  const wireTabs=()=>$('#htabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b||b.dataset.tab===HV.tab)return;HV.tab=b.dataset.tab;renderHome();$('#hscroll').scrollTop=0;});
-  if(HV.tab!=='lessons'){$('#hscroll').innerHTML=head+'<div id="ptab"></div>';wireTabs();Parts.renderTab(HV.tab,$('#ptab'),fam);return;}
-  $('#hscroll').innerHTML=head+`
-    <button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button>
-    <h3 class="sh">Library</h3>
-    <label class="search">${ICS}<input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Search ${cat.length} songs and exercises" value="${HV.q.replace(/"/g,'&quot;')}"></label>
-    <div class="chips" id="colls">${colls.map(c=>`<button class="opt" data-coll="${c}" aria-pressed="${c===HV.coll}">${COLL_NAME[c]}</button>`).join('')}</div>
-    <div class="list" id="songlist"></div>
-    ${fam!=='tabla'?`<button class="import" id="imp">Import a song from a MIDI file</button><input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden><p class="fine">Imported songs stay on this phone. Use files you have the rights to.</p>`:''}`;
-  renderList();wireTabs();
-  $('#q').addEventListener('input',e=>{HV.q=e.target.value;renderList();});
-  $('#colls').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV.coll=b.dataset.coll;$$('#colls .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList();});
-  if($('#imp')){$('#imp').onclick=()=>$('#impf').click();$('#impf').onchange=e=>importMidi(e.target.files[0]);}}
+  const tabs=homeTabs(fam);if(!HV.tab)HV.tab=goalTab();if(!tabs.some(x=>x[0]===HV.tab))HV.tab='learn';
+  $('#hscroll').innerHTML=`<header class="h-head"><h1>${inst.name}</h1><p><span class="hi">${inst.hi}</span> · ${SA_NAME[key]}</p></header>
+    <div class="chips tabs" id="htabs" role="tablist">${tabs.map(([k,l])=>`<button class="opt" role="tab" data-tab="${k}" aria-pressed="${HV.tab===k}" aria-selected="${HV.tab===k}">${l}</button>`).join('')}</div><div id="ptab"></div>`;
+  $('#htabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b||b.dataset.tab===HV.tab)return;HV.tab=b.dataset.tab;renderHome();$('#hscroll').scrollTop=0;});
+  const box=$('#ptab');({learn:renderLearn,songs:renderSongs,create:renderCreate,chal:b=>renderChallenges(b,fam)})[HV.tab](box,fam);}
 const ALL_ORDER=['kids','folk','festive','classical','indian','mine','chords','taal','drill','raag'];
-function renderList(){let L=HOME.cat.filter(s=>HV.coll==='all'||s.coll===HV.coll);if(HV.coll==='all')L=L.map((s,i)=>[s,i]).sort((x,y)=>(ALL_ORDER.indexOf(x[0].coll)-ALL_ORDER.indexOf(y[0].coll))||x[1]-y[1]).map(x=>x[0]);const q=HV.q.trim().toLowerCase();if(q)L=L.filter(s=>(s.title+' '+(s.sub||'')+' '+(COLL_NAME[s.coll]||'')).toLowerCase().includes(q));HOME.list=L;
-  const row=s=>{const st=starsOf(s);return `<button class="row" data-song="${s.id}"><span class="t"><b>${s.title}</b><small>${s.sub} · ${fmtDur(songSecs(s))}</small></span>${st?`<span class="r st">${starStr2(st)}</span>`:`<span class="r">${LVL[s.lvl]||''}</span>`}</button>`;};
-  $('#songlist').innerHTML=L.length?L.map(row).join(''):`<p class="empty">${HV.coll==='mine'&&!q?'Import a MIDI file below to add your own songs.':'No songs match.'}</p>`;}
+function songRow(s){const st=starsOf(s);return `<button class="row" data-song="${s.id}"><span class="t"><b>${s.title}</b><small>${s.sub} · ${fmtDur(songSecs(s))}</small></span>${st?`<span class="r st">${starStr2(st)}</span>`:`<span class="r">${LVL[s.lvl]||''}</span>`}</button>`;}
+/* a searchable list of one tab's collections */
+function libBlock(box,{colls,ck,qk,place,empty,search=true}){const avail=colls.filter(c=>c==='all'||c==='mine'||HOME.cat.some(s=>s.coll===c));if(!avail.includes(HV[ck]))HV[ck]='all';
+  const pool=HOME.cat.filter(s=>avail.includes(s.coll));
+  box.insertAdjacentHTML('beforeend',`${search?searchBox(place(pool.length),HV[qk]):''}
+    <div class="chips lc">${avail.map(c=>`<button class="opt" data-coll="${c}" aria-pressed="${c===HV[ck]}">${COLL_NAME[c]}</button>`).join('')}</div><div class="list lsongs"></div>`);
+  const list=box.querySelector('.lsongs');
+  const fill=()=>{let L=pool.filter(s=>HV[ck]==='all'||s.coll===HV[ck]);if(HV[ck]==='all')L=L.map((s,i)=>[s,i]).sort((x,y)=>(ALL_ORDER.indexOf(x[0].coll)-ALL_ORDER.indexOf(y[0].coll))||x[1]-y[1]).map(x=>x[0]);
+    const q=(HV[qk]||'').trim().toLowerCase();if(q)L=L.filter(s=>(s.title+' '+(s.sub||'')+' '+(COLL_NAME[s.coll]||'')).toLowerCase().includes(q));HOME.list=L;
+    list.innerHTML=L.length?L.map(songRow).join(''):`<p class="empty">${empty(q)}</p>`;};
+  fill();if(search)box.querySelector('.lq').addEventListener('input',e=>{HV[qk]=e.target.value;fill();});
+  box.querySelector('.lc').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV[ck]=b.dataset.coll;box.querySelectorAll('.lc .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));fill();});return fill;}
+function searchBox(place,val){return `<label class="search">${ICS}<input class="lq" type="search" inputmode="search" autocomplete="off" placeholder="${place}" value="${(val||'').replace(/"/g,'&quot;')}"></label>`;}
+function renderLearn(box,fam){const colls=LEARN_C[fam],pool=HOME.cat.filter(s=>colls.includes(s.coll));
+  const next=pool.find(s=>s.coll==='drill'&&!starsOf(s))||pool.find(s=>!starsOf(s))||pool.find(s=>starsOf(s)<3)||pool[0];HOME.next=next;
+  box.innerHTML=next?`<button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button><h3 class="sh">All lessons</h3>`:'';
+  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});}
+function renderSongs(box,fam){const opts={colls:SONG_C,ck:'sc',qk:'sq',place:n=>`Search ${n} songs`,empty:q=>HV.sc==='mine'&&!q?'Songs you add in Create show up here.':'No songs match.'};
+  if(fam!=='guitar'){box.innerHTML='';libBlock(box,opts);return;}
+  box.innerHTML=searchBox('Search songs and artists',HV.sq)+'<div class="ptop"></div><h3 class="sh">Tunes to play</h3><p class="shsub">Melodies and chord songs the app plays with you</p><div class="ltunes"></div>';
+  const top=box.querySelector('.ptop');Parts.songsTop(top);const fill=libBlock(box.querySelector('.ltunes'),{...opts,search:false,empty:q=>q?'No tunes match.':opts.empty(q)});
+  box.querySelector('.lq').addEventListener('input',e=>{HV.sq=e.target.value;Parts.songsTop(top);fill();});}
+function renderCreate(box,fam){if(fam==='guitar')return Parts.renderCreate(box);
+  const mine=HOME.cat.filter(s=>s.coll==='mine');
+  box.innerHTML=`<button class="next" id="impBig"><span class="eyebrow">Add a song</span><b>Import a MIDI file</b><span class="meta">Its melody becomes a song you can play along to</span><span class="go">${HICON.plus}</span></button>
+    <input type="file" id="impf" accept=".mid,.midi,audio/midi,audio/x-midi" hidden>
+    <h3 class="sh">My songs</h3><div class="list">${mine.map(songRow).join('')||'<p class="empty">Songs you import show up here.</p>'}</div>
+    <p class="fine">Imported songs stay on this phone. Use files you have the rights to.<br>Writing chords and tabs for YouTube songs is on guitar for now.</p>`;
+  HOME.list=mine;$('#impBig').onclick=()=>$('#impf').click();$('#impf').onchange=e=>importMidi(e.target.files[0]);}
 async function importMidi(f){if(!f)return;try{const r=parseMidi(await f.arrayBuffer());const title=f.name.replace(/\.(mid|midi)$/i,'').replace(/[_-]+/g,' ').trim()||'My song';
     const mine=userSongs();mine.push({id:'u'+Date.now().toString(36),title,by:'Imported',coll:'mine',lvl:2,bpm:clamp(r.bpm,40,200),notes:r.notes});localStorage.setItem('fretopia.mysongs',JSON.stringify(mine));
-    buildLibrary();HV.coll='mine';HV.q='';renderHome();toast('Added “'+title+'”');}catch(e){toast('Not a MIDI file');}}
+    buildLibrary();HV.sc='mine';HV.sq='';renderHome();toast('Added “'+title+'”. Find it in Songs.');}catch(e){toast('Not a MIDI file');}}
 $('#hscroll').addEventListener('click',e=>{const b=e.target.closest('[data-song]');if(!b)return;const pool=b.classList.contains('next')?HOME.cat:HOME.list,s=pool.find(x=>x.id===b.dataset.song);if(s)Player.open(s,pool);});
 function parseSong(song){if(song.part)return Parts.notes(song.part);let t=0;const out=[];
   if(song.kind==='bols'){let seq=[],dur=1;if(song.bols)seq=song.bols.split(/\s+/);else{const T=TAALS[song.taal];for(let r=0;r<song.cycles*(song.dugun?2:1);r++)seq.push(...T.bols);dur=song.dugun?.5:1;}
@@ -290,7 +307,7 @@ const Player={open(song,list,o){const cont=!!$('#player');if(cont)this.close(tru
   draw(t){const cv=$('#plCv');if(!cv)return;const f=fitCanvas(cv);if(!f)return;const{g,W,H}=f;this._H=H;g.clearRect(0,0,W,H);
     if(this.kind==='tab')this.drawTab(g,W,H,t);else if(this.kind==='chords')this.drawChords(g,W,H,t);else if(this.kind==='sargam')this.drawSargam(g,W,H,t);else this.drawBols(g,W,H,t);
     if(this.t<0&&this.running){g.fillStyle='rgba(250,250,249,.85)';g.fillRect(0,0,W,H);g.fillStyle=INKC;g.font=`600 72px ${FONT}`;g.textAlign='center';g.textBaseline='middle';g.fillText(String(Math.ceil(-this.t)),W/2,H/2);}
-    if(!this.running&&!this.ended&&this.t<=-4){g.fillStyle='#A1A1A6';g.font=`500 12px ${FONT}`;g.textAlign='center';g.textBaseline='alphabetic';g.fillText(this.mode==='mic'?'Press play. Four clicks, then play along.':'Press play. Four clicks, then tap along.',W/2,H-10);}
+    if(!this.running&&!this.ended&&this.t<=-4){g.fillStyle='#A1A1A6';g.font=`500 12px ${FONT}`;g.textAlign='center';g.textBaseline='alphabetic';g.fillText(this.mode==='tap'?'Press play. Four clicks, then tap along.':'Press play. Four clicks, then play along.',W/2,H-10);}
     const tt=now();this.pops=this.pops.filter(p=>tt-p.t<.7);},
   geom(W){const H=this._H||W,wide=W>H*1.5,gut=wide?40:34,nowX=gut+(W-gut)*(wide?.15:.24),ppb=wide?clamp((W-gut)/9.5,56,150):clamp((W-gut)/5.2,46,120);return{gut,nowX,ppb,wide};},
   beatLines(g,W,H,gut,nowX,ppb){for(let b=Math.ceil(this.t-(nowX-gut)/ppb);b<=this.t+(W-nowX)/ppb;b++){const x=nowX+(b-this.t)*ppb;if(x<gut||b<0)continue;g.fillStyle=b%4===0?'rgba(17,17,19,.08)':'rgba(17,17,19,.035)';g.fillRect(x,8,1,H-16);}},
@@ -448,19 +465,19 @@ let lastTouchEnd=0;document.addEventListener('touchend',e=>{const t=e.timeStamp;
 
 /* ================= scenes ================= */
 let pickerOpen=false;
-function showScene(id){['landing','picker','home'].forEach(s=>{const el=$('#'+s);el.hidden=s!==id;el.classList.remove('enter','leave');});const el=$('#'+id);void el.offsetWidth;el.classList.add('enter');pickerOpen=id==='picker';}
-function openPicker(){$('#landing').classList.add('leave');setTimeout(()=>{showScene('picker');Car.previewed=-1;Car.settledAt=now();const i=ORDER.indexOf(S.inst);requestAnimationFrame(()=>{Car.layout();if(i>0){Car.i=-1;Car.go(i);Car.pos=Car.target;}});},380);}
+function showScene(id){['landing','goal','picker','home'].forEach(s=>{const el=$('#'+s);el.hidden=s!==id;el.classList.remove('enter','leave');});const el=$('#'+id);void el.offsetWidth;el.classList.add('enter');pickerOpen=false;}
+function openPicker(){Flow.go('picker');}
 function openHome(key){S.inst=key;saveS();showScene('home');renderHome();$('#hscroll').scrollTop=0;}
-$('#begin').onclick=openPicker;$('#back').onclick=()=>{showScene('landing');requestAnimationFrame(()=>Landing.layout());};$('#hback').onclick=()=>{showScene('picker');requestAnimationFrame(()=>Car.layout());};
-$('#choose').onclick=()=>openHome(ORDER[Car.i]);
+if(S.goal&&S.onboarded)$('#begin .lbl').textContent='Continue';
+$('#begin').onclick=()=>Flow.begin();$('#hback').onclick=()=>Flow.go('picker');
 let toastT;function toast(m){chime();$('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.textContent=m;($('#player')||SCREEN).appendChild(t);clearTimeout(toastT);toastT=setTimeout(()=>t.remove(),2600);}
 
 /* ================= loop + layout ================= */
 function loop(){const t=now();runGhosts(t);
-  if(!$('#landing').hidden)Landing.draw(t);if(!$('#picker').hidden){Car.update(Math.min(.05,t-(loop.p||t)));Car.draw(t);}
+  if(!$('#landing').hidden)Landing.draw(t);
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='14';
+const APP_V='15';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
@@ -468,10 +485,10 @@ checkUpdate();document.addEventListener('visibilitychange',()=>{if(!document.hid
 requestAnimationFrame(loop);}
 function layout(){const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone,framed=!standalone&&innerWidth>=640&&innerHeight>=560;
   document.documentElement.classList.toggle('framed',framed);$('.device').style.setProperty('--s',framed?Math.min(1,(innerHeight-28)/868,(innerWidth-28)/414):1);
-  Landing.layout();if(!$('#picker').hidden)Car.layout();}
+  Landing.layout();}
 addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
-loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}Car.build();layout();Car.go(0);Car.cards[0].el.classList.add('active');
-(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();Car.cards.forEach(c=>{c.W=0;});});
+loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}layout();
+(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();if(!$('#picker').hidden)Flow.drawThumbs();});
 try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);
