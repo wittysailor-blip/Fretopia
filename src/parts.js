@@ -35,9 +35,9 @@ const DEMO_SONGS={
 const SEED_RECS=[
   {id:'demo:saints',song:'When the Saints Go Marching In',artist:'Traditional',kind:'Played by Fretopia',src:'demo',demo:'saints'},
   {id:'demo:grace',song:'Amazing Grace',artist:'John Newton (traditional tune)',kind:'Played by Fretopia',src:'demo',demo:'grace'},
-  {id:'yt:CGj85pVzRJs',song:'Let It Be',artist:'The Beatles',kind:'Official video',src:'yt',vid:'CGj85pVzRJs',dur:243,noembed:true},
+  {id:'yt:CGj85pVzRJs',song:'Let It Be',artist:'The Beatles',kind:'Official video',src:'yt',vid:'CGj85pVzRJs',dur:243},
   {id:'yt:rm9coqlk8fY',song:"Knockin' On Heaven's Door",artist:'Bob Dylan',kind:'Official audio',src:'yt',vid:'rm9coqlk8fY',dur:152},
-  {id:'yt:IJq0yyWug1k',song:'Tum Hi Ho',artist:'Arijit Singh · Aashiqui 2',kind:'Film song',src:'yt',vid:'IJq0yyWug1k',dur:310,noembed:true},
+  {id:'yt:IJq0yyWug1k',song:'Tum Hi Ho',artist:'Arijit Singh · Aashiqui 2',kind:'Film song',src:'yt',vid:'IJq0yyWug1k',dur:310},
   {id:'yt:PJWemSzExXs',song:'Baarishein',artist:'Anuv Jain',kind:'Studio',src:'yt',vid:'PJWemSzExXs',dur:208},
   {id:'yt:NLKwRW2y-sg',song:'Baarishein',artist:'Anuv Jain',kind:'Acoustic',src:'yt',vid:'NLKwRW2y-sg',dur:215},
   {id:'yt:sFMRqxCexDk',song:'Choo Lo',artist:'The Local Train',kind:'Official audio',src:'yt',vid:'sFMRqxCexDk',dur:234},
@@ -101,7 +101,8 @@ const YTM={p:null,load(){if(this.p)return this.p;this.p=new Promise((res,rej)=>{
     setTimeout(()=>{if(!(window.YT&&YT.Player)){this.p=null;rej(new Error('timeout'));}},8000);});return this.p;}};
 const YT_ERR={2:'This link doesn’t point to a playable video.',5:'This video can’t play here.',100:'This video was removed or made private.',101:'The owner doesn’t allow this video to play inside other apps.',150:'The owner doesn’t allow this video to play inside other apps.'};
 function noteBlocked(vid,code){if(code===101||code===150){PS.blocked[vid]=Date.now();savePS();}}
-const noVideo=r=>r&&r.src==='yt'&&(r.noembed||!!PS.blocked[r.vid]);
+/* a refusal is remembered for three days, then the video is tried again */
+const noVideo=r=>r&&r.src==='yt'&&!!PS.blocked[r.vid]&&Date.now()-PS.blocked[r.vid]<3*864e5;
 const ytLink=r=>`https://www.youtube.com/watch?v=${r.vid}`;
 function ytWhy(){const preview=window.top!==window&&!/fretopia\.vercel\.app$/.test(location.hostname);
   return preview?'Videos can’t play inside this preview. Open fretopia.vercel.app to play along.':navigator.onLine===false?'You’re offline. Connect to the internet to load the video.':'The video didn’t load. Your network or a content blocker may be stopping YouTube.';}
@@ -197,7 +198,7 @@ const LEVELS=['Beginner','Intermediate','Advanced'],PARTS=['Rhythm','Lead','Fing
 function openRecording(rid,selId){const r=recOf(rid);if(!r)return;const F={level:'',section:'',part:''};let media=null,previewing=false,sel=selId||PS.sel[rid]||null;
   return pushScreen(el=>{
     if(!el.built){el.built=true;el.innerHTML=topBar()+`<div class="hscroll"><header class="h-head"><h1>${esc(r.song)}</h1><p>${esc(r.artist)} · ${esc(r.kind)}${recDur(r)?' · '+fmtT(recDur(r)):''}</p></header>
-        ${noVideo(r)?`<div class="demobar"><span class="th demo">${PIC.note}</span><span>The owner of this video doesn’t let it play inside apps, so these parts follow the tempo. <a class="lnk" href="${ytLink(r)}" target="_blank" rel="noopener">Listen on YouTube</a></span></div>`:r.src==='yt'?`<div class="vbox" id="rv"><img alt="" src="https://i.ytimg.com/vi/${r.vid}/hqdefault.jpg"><span class="vplay">${IC.play}</span></div>`:`<div class="demobar"><span class="th demo">${PIC.note}</span><span>Played by Fretopia on guitar and flute. Timing is exact.</span></div>`}
+        ${noVideo(r)?`<div class="demobar"><span class="th demo">${PIC.note}</span><span>This video wouldn’t play inside the app last time, so these parts follow the tempo. <a class="lnk" href="${ytLink(r)}" target="_blank" rel="noopener">Listen on YouTube</a> · <button class="lnk" data-unblock>Try the video again</button></span></div>`:r.src==='yt'?`<div class="vbox" id="rv"><img alt="" src="https://i.ytimg.com/vi/${r.vid}/hqdefault.jpg"><span class="vplay">${IC.play}</span></div>`:`<div class="demobar"><span class="th demo">${PIC.note}</span><span>Played by Fretopia on guitar and flute. Timing is exact.</span></div>`}
         <div id="rdyn"></div></div><div class="dock" id="rdock"></div>`;
       wireBack(el);el.cleanup=()=>{media&&media.destroy();media=null;};
       el.tick=()=>{if(media&&previewing){const t=media.now();if(t>=previewing.end-.02){media.pause();previewing=false;}}};
@@ -227,7 +228,7 @@ function openRecording(rid,selId){const r=recOf(rid);if(!r)return;const F={level
       if(e.target.closest('[data-new]')){media&&media.pause();openMark({rec:r,from:cur});return;}
       if(e.target.closest('[data-sync]')&&cur){media&&media.pause();openSync(null,cur);return;}
       if(e.target.closest('[data-editarr]')&&cur){media&&media.pause();editPublished(cur);return;}
-      if(e.target.closest('[data-other]'))return openSongRecs(r);}});}
+      if(e.target.closest('[data-other]'))return openSongRecs(r);if(e.target.closest('[data-unblock]')){delete PS.blocked[r.vid];savePS();popScreen();openRecording(rid,sel);}}});}
 function sameSong(r){return allRecs().filter(x=>x.id!==r.id&&x.song.toLowerCase()===r.song.toLowerCase());}
 function openSongRecs(r){pushScreen(el=>{el.innerHTML=topBar()+`<div class="hscroll"><header class="h-head"><h1>${esc(r.song)}</h1><p>Every recording has its own timing, so charts never move between them.</p></header><div class="list">${[r,...sameSong(r)].map(x=>{const n=arrsFor(x.id).length;return `<button class="row rrow" data-rec="${esc(x.id)}">${thumb(x)}<span class="t"><b>${esc(x.kind)}</b><small>${esc(x.artist)}${recDur(x)?' · '+fmtT(recDur(x)):''}</small></span><span class="r">${n?n+' part'+(n>1?'s':''):'New'}</span></button>`;}).join('')}</div></div>`;
   wireBack(el);el.onclick=e=>{const b=e.target.closest('[data-rec]');if(b){popScreen();openRecording(b.dataset.rec);}};});}
@@ -248,7 +249,7 @@ Parts.decorate=function(P,el){const p=P.part,a=p.a,r=p.r;if(p.yt&&noVideo(r)){p.
   el.querySelector('.pl-title small').textContent=p.preview?'Preview · not scored':`${a.part} · ${a.level} · ${fmtT(a.start)}–${fmtT(a.end)}`;
   el.querySelector('.pl-meta').innerHTML=`<span>Time <b id="plTime">0:00 / ${fmtT(arrLen(a)/P.speed)}</b></span><span>Accuracy <b id="plAcc">–</b></span>`;
   const prog=el.querySelector('.pl-prog');prog.classList.add('seek');prog.insertAdjacentHTML('beforeend','<span class="knob"></span>');
-  if(p.novideo){const n=document.createElement('div');n.className='pl-note';n.innerHTML=`This video can’t play inside apps, so the chords follow the tempo. <a href="${ytLink(r)}" target="_blank" rel="noopener">Listen on YouTube</a>`;prog.after(n);}
+  if(p.novideo){const n=document.createElement('div');n.className='pl-note';n.innerHTML=`This video wouldn’t play inside the app, so the chords follow the tempo. <a href="${ytLink(r)}" target="_blank" rel="noopener">Listen on YouTube</a>`;prog.after(n);}
   if(p.yt){el.classList.add('has-vid');const v=document.createElement('div');v.className='pl-vid';v.id='plVid';prog.after(v);
     p.media=ytMedia(v,r.vid,{state:(s)=>Parts.ytState(P,s),error:er=>Parts.videoFail(P,er)});
     p.media.load().then(m=>{if(!m.err){m.seek(p.map.t(-4));m.pause();}});}
