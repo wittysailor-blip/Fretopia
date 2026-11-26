@@ -103,7 +103,7 @@ async def main():
         # ---- YouTube recording: unchecked timing tag, then a clear message if YouTube can't load ----
         await pg.evaluate("popAll();HV.sq='';HV.tab='songs';renderHome()"); await pg.wait_for_timeout(200)
         await pg.click('[data-rec="yt:CGj85pVzRJs"]'); await pg.wait_for_timeout(400)
-        check(await pg.locator('.tag', has_text='Timing not checked').count() >= 1, 'real recording flagged timing not checked')
+        check(await pg.locator('.demobar', has_text='Listen on YouTube').count() == 1, 'blocked recording explains itself')
         await pg.screenshot(path=f'{SHOTS}/06-youtube-rec.png')
         await pg.evaluate("popAll()"); await pg.wait_for_timeout(200)
 
@@ -194,6 +194,8 @@ async def main():
         tabs = await pg.locator('#htabs .opt').all_inner_texts(); check(tabs == ['Learn', 'Challenges'], f'tabla tabs {tabs}')
         # a video that can't load says why and offers a way on
         await pg.evaluate("Parts.videoFail&&1"); await pg.evaluate("openHome('guitar');playArr(arrOf('lb-b'))"); await pg.wait_for_timeout(600)
+        check(await pg.locator('.pl-note').count() == 1 and await pg.locator('#plVid').count() == 0, 'a video that refuses apps starts in tempo mode with a note')
+        await pg.evaluate("Player.close(true,true)"); await pg.evaluate("playArr(arrOf('bs-b'))"); await pg.wait_for_timeout(600)
         await pg.evaluate("Parts.videoFail(Player,'The video didn’t load.')"); await pg.wait_for_timeout(150)
         check(await pg.locator('[data-vnone]').count() == 1, 'video failure offers Play without video')
         await pg.click('[data-vnone]'); await pg.wait_for_timeout(150); await pg.click('#plPlay'); await pg.wait_for_timeout(5000)

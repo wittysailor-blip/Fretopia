@@ -197,7 +197,7 @@ const Player={open(song,list,o){const cont=!!$('#player');if(cont)this.close(tru
   opts(){if(this.part&&!this.challenge)return Parts.opts(this);const o=[],b=(c,l,on)=>`<button class="opt" data-c="${c}" aria-pressed="${on}">${l}</button>`;
     o.push(b('mic','Mic',this.mode==='mic'),b('tap','Tap',this.mode==='tap'));if(this.kind!=='bols')o.push(b('wait','Wait for me',this.wait));
     o.push(b('speed',Math.round(this.speed*100)+'%',this.speed!==1),b('guide','Guide',this.guide));$('#plOpts').innerHTML=o.join('');},
-  pad(){const P=$('#plPad');if(this.mode==='off'){P.innerHTML=`<div class="listen-note"><b>Play along with the ${this.part&&this.part.yt?'recording':'song'}</b><span>Turn the mic on to get a score</span></div>`;return;}if(this.kind==='bols'&&this.mode!=='mic'){P.innerHTML=`<div class="drums"><button class="drum" data-l="b">Bayan<small>Left · F</small></button><button class="drum" data-l="d">Dayan<small>Right · J</small></button></div>`;
+  pad(){const P=$('#plPad');if(this.mode==='off'){P.innerHTML=`<div class="listen-note"><b>${this.part&&this.part.novideo?'Play along at the tempo':'Play along with the '+(this.part&&this.part.yt?'recording':'song')}</b><span>Turn the mic on to get a score</span></div>`;return;}if(this.kind==='bols'&&this.mode!=='mic'){P.innerHTML=`<div class="drums"><button class="drum" data-l="b">Bayan<small>Left · F</small></button><button class="drum" data-l="d">Dayan<small>Right · J</small></button></div>`;
       P.querySelectorAll('.drum').forEach(d=>d.addEventListener('pointerdown',e=>{e.preventDefault();this.tap({lane:d.dataset.l});d.classList.add('hit');setTimeout(()=>d.classList.remove('hit'),110);}));return;}
     if(this.mode==='mic'){P.innerHTML=`<div class="listen-note"><b id="plHear">${Mic.active?'Listening':'Press play to start listening'}</b><span>${this.kind==='bols'?'Play each bol as it reaches the line':this.kind==='chords'?'Strum each chord as it reaches the line':'Play each note on your '+(this.key==='vocals'?'voice':I[this.key].name.toLowerCase())+' as it reaches the line'}</span><div class="meter"><i id="plLvl"></i></div></div>`;return;}
     if(this.kind==='tab'||this.kind==='chords'){P.innerHTML=`<button class="tapbig" id="plTap">${this.kind==='chords'?'Tap to strum as each chord reaches the line':'Tap as each note reaches the line'}</button>`;$('#plTap').addEventListener('pointerdown',e=>{e.preventDefault();this.tap({any:true});e.currentTarget.classList.add('hit');setTimeout(()=>$('#plTap')?.classList.remove('hit'),100);});return;}
@@ -477,7 +477,7 @@ function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='15';
+const APP_V='16';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
