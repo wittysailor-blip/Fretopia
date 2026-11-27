@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.playchord.audioinput.AudioInputEngineTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-11-27T12:45:57.686Z" hostname="runnervm3lb7s" time="0.379">
+  <properties/>
+  <testcase name="aStartMadeTheMomentStoppedIsAnnouncedIsAccepted" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.105"/>
+  <testcase name="stopUnblocksAWaitingReadAndReleasesAfterTheWorkerEnds" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.013"/>
+  <testcase name="convertsExactlyAndInOrder" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.008"/>
+  <testcase name="consumerFailureDuringInitAbortsTheStart" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.005"/>
+  <testcase name="unsupportedFormatIsReportedWithTheObservedFormat" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.038"/>
+  <testcase name="restartStartsANewGenerationAtFrameZeroAndIgnoresLateEvents" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.058"/>
+  <testcase name="shortReadDeliversOnlyNewSamples" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.011"/>
+  <testcase name="framesAreContiguousAcrossBlockSizes" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.016"/>
+  <testcase name="firstBlockArrivesWhileStartingThenRunning" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.015"/>
+  <testcase name="rapidStartsCreateOnlyOneSession" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.046"/>
+  <testcase name="zeroReadDeliversNothingAndErrorStopsWithoutStaleAudio" classname="com.playchord.audioinput.AudioInputEngineTest" time="0.062"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
