@@ -125,6 +125,7 @@ jobs:
         run: |
           rm -rf /tmp/pub && mkdir -p /tmp/pub
           cp -r playchord-input-check/app/build/outputs/androidTest-results /tmp/pub/ 2>/dev/null || true
+          mkdir -p /tmp/pub/screens && find playchord-input-check/app/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/ \; 2>/dev/null || true
           echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
           cd /tmp/pub && git init -q -b out && git add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "device tests of ${GITHUB_SHA}"

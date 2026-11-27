@@ -14,6 +14,8 @@ android {
         versionCode = 1
         versionName = "0.1.0-gateA"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // Lets the walkthrough test save screenshots that Gradle copies back after the run.
+        testInstrumentationRunnerArguments["useTestStorageService"] = "true"
     }
     buildTypes {
         release {
@@ -45,4 +47,7 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.6.2")
     androidTestImplementation("androidx.test:rules:1.6.1")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
+    androidTestImplementation("androidx.test.services:storage:1.5.0")
+    androidTestUtil("androidx.test.services:test-services:1.5.0")
 }
