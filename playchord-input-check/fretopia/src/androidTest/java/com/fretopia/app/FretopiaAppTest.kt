@@ -82,6 +82,25 @@ class FretopiaAppTest {
         report.append(label).append(": ").append(page).append(" | ").append(view).append('\n')
     }
 
+    /** Draws the WebView into a software bitmap: shows whether the page content exists even if the screen doesn't. */
+    private fun softwareDraw(s: ActivityScenario<FretopiaActivity>, name: String) {
+        var bmp: Bitmap? = null
+        s.onActivity { a ->
+            val w = a.webView
+            bmp = Bitmap.createBitmap(w.width, w.height, Bitmap.Config.ARGB_8888).also { w.draw(android.graphics.Canvas(it)) }
+        }
+        val b = bmp ?: return
+        TestStorage().openOutputFile("$name.png").use { b.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        var ink = 0
+        var total = 0
+        for (y in 0 until b.height step 4) for (x in 0 until b.width step 4) {
+            val c = b.getPixel(x, y)
+            if ((android.graphics.Color.red(c) * 299 + android.graphics.Color.green(c) * 587 + android.graphics.Color.blue(c) * 114) / 1000 < 180) ink++
+            total++
+        }
+        report.append(name).append(": software-draw ink ").append(String.format(java.util.Locale.US, "%.3f", ink.toDouble() / total)).append('\n')
+    }
+
     @Test
     fun theWholeAppWorksOnTheNativeMicrophone() {
         ActivityScenario.launch(FretopiaActivity::class.java).use { s ->
@@ -129,6 +148,7 @@ class FretopiaAppTest {
             js(s, "Flow.go('home')")
             Thread.sleep(600)
             dims(s, "before-mic-check")
+            softwareDraw(s, "06b-software-before")
             js(s, "openMicCheck()")
             assertTrue("Microphone check did not open", device.wait(Until.hasObject(By.text("Microphone check")), 10_000))
             shot("07-mic-check")
@@ -137,6 +157,7 @@ class FretopiaAppTest {
             Thread.sleep(800)
             shot("07b-returned-home")
             dims(s, "after-mic-check")
+            softwareDraw(s, "07c-software-after-check")
 
             // Back walks the screens: home → instruments.
             device.pressBack()
