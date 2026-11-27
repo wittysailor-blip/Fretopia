@@ -84,7 +84,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        api: [30, 33, 34]
+        include:
+          - { api: 30, gpu: swiftshader_indirect, tag: "30" }
+          - { api: 34, gpu: swiftshader_indirect, tag: "34" }
+          - { api: 34, gpu: swangle_indirect, tag: "34-angle" }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -103,7 +106,7 @@ jobs:
           api-level: ${{ matrix.api }}
           arch: x86_64
           target: google_apis
-          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -no-boot-anim -camera-back none
+          emulator-options: -no-window -gpu ${{ matrix.gpu }} -no-snapshot -no-boot-anim -camera-back none
           disable-animations: true
           working-directory: playchord-input-check
           script: chmod +x gradlew && ./gradlew --no-daemon --stacktrace --continue :app:connectedDebugAndroidTest :fretopia:connectedDebugAndroidTest
@@ -139,11 +142,11 @@ jobs:
           echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
           cd /tmp/pub && git init -q -b out && git add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "device tests of ${GITHUB_SHA}"
-          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" out:playchord-input-check-device-${{ matrix.api }}
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" out:playchord-input-check-device-${{ matrix.tag }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: device-test-results-${{ matrix.api }}
+          name: device-test-results-${{ matrix.tag }}
           path: |
             playchord-input-check/app/build/outputs/androidTest-results/
             playchord-input-check/app/build/reports/androidTests/
