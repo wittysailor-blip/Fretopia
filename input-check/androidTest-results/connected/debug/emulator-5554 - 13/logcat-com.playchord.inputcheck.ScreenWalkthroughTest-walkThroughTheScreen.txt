@@ -1,0 +1,503 @@
+11-27 12:14:51.154  7057  7074 I TestRunner: started: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)
+11-27 12:14:51.168  7057  7074 I UiDevice: Creating a new instance, old instance exists: false
+11-27 12:14:51.170  7057  7074 D UiDevice: Setting accessibility service flags: 65618
+11-27 12:14:51.171  1562  6703 I AiAiEcho: Settings cha with uri: content://settings/secure/accessibility_enabled
+11-27 12:14:51.173  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:14:51.173  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:14:51.174  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:14:51.174  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:14:51.174  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:14:51.174  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:14:51.175  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:14:51.177  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:14:51.195  7057  7074 I UiAutomationPermGranter: Permission: android.permission.RECORD_AUDIO is already granted!
+11-27 12:14:51.196  4630  4630 V SafetyCenterAccessibilityListener: accessibility event occurred, safety center feature not enabled.
+11-27 12:14:51.199  7057  7074 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:14:51.251   756   809 D SplashScreenView: Build android.window.SplashScreenView{9882a V.E...... ......ID 0,0-0,0}
+11-27 12:14:51.251   756   809 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:14:51.251   756   809 D SplashScreenView: Branding: view: android.view.View{607f61b G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:14:51.252   756   810 W Parcel  : Expecting binder but got null!
+11-27 12:14:51.287  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:14:51.288  1562  1562 W ContentCaptureService: writeSessionFlush(): no server callback
+11-27 12:14:51.306  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: PRE_ON_CREATE
+11-27 12:14:51.309  7057  7057 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-27 12:14:51.336  1018  1786 D EGL_emulation: app_time_stats: avg=3618.77ms min=396.48ms max=6841.07ms count=2
+11-27 12:14:51.339   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca848f0
+11-27 12:14:51.340   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca842f0
+11-27 12:14:51.340   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca842f0
+11-27 12:14:51.340   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca848f0
+11-27 12:14:51.354  7057  7111 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:14:51.379  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: CREATED
+11-27 12:14:51.380  7057  7057 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.playchord.inputcheck.InputCheckActivity@5eaf4b7
+11-27 12:14:51.382  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: STARTED
+11-27 12:14:51.384  7057  7057 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.playchord.inputcheck.InputCheckActivity@5eaf4b7
+11-27 12:14:51.386  1018  1018 D MainContentCaptureSession: Flushing 2 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=VIEW_TREE_APPEARING
+11-27 12:14:51.387  1562  1562 W ContentCaptureService: writeSessionFlush(): no server callback
+11-27 12:14:51.388  1018  1018 D MainContentCaptureSession: Flushing 2 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=VIEW_TREE_APPEARED
+11-27 12:14:51.389  1562  1562 W ContentCaptureService: writeSessionFlush(): no server callback
+11-27 12:14:51.415   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:51.415  7057  7111 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:14:51.416   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:51.417   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:14:51.418  7057  7111 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:14:51.437  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: RESUMED
+11-27 12:14:51.442  7057  7057 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.playchord.inputcheck.InputCheckActivity@5eaf4b7
+11-27 12:14:51.448  7057  7057 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10174; state: DISABLED
+11-27 12:14:51.462  7057  7109 W Parcel  : Expecting binder but got null!
+11-27 12:14:51.635  7057  7057 W hord.inputcheck: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:14:51.635  7057  7057 W hord.inputcheck: Common causes for lock verification issues are non-optimized dex code
+11-27 12:14:51.635  7057  7057 W hord.inputcheck: and incorrect proguard optimizations.
+11-27 12:14:51.635  7057  7057 W hord.inputcheck: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:14:51.636  7057  7057 W hord.inputcheck: Method java.lang.Object androidx.compose.runtime.snapshots.SnapshotStateList.mutate(kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:14:51.636  7057  7057 W hord.inputcheck: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:14:51.636  7057  7057 W hord.inputcheck: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:14:51.749   362   370 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10174 pid=0
+11-27 12:14:51.749   362   370 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10174 => denied (140 us)
+11-27 12:14:51.749   362   370 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10174 pid=0
+11-27 12:14:51.749   362   534 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10174 pid=7057
+11-27 12:14:51.749   362   370 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10174 => denied (147 us)
+11-27 12:14:51.749   362   534 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10174 => denied (168 us)
+11-27 12:14:51.749   362   370 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10174 pid=0
+11-27 12:14:51.749   362   370 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10174 => denied (179 us)
+11-27 12:14:51.749   362   534 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10174 pid=7057
+11-27 12:14:51.749   362   534 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10174 => denied (185 us)
+11-27 12:14:51.755  7057  7109 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:14:51.761  7057  7109 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:14:51.762  7057  7109 D EGL_emulation: eglCreateContext: 0x72699d8b2ed0: maj 3 min 0 rcv 3
+11-27 12:14:51.764  7057  7109 D EGL_emulation: eglMakeCurrent: 0x72699d8b2ed0: ver 3 0 (tinfo 0x726bc4730080) (first time)
+11-27 12:14:51.766   756   810 D EGL_emulation: app_time_stats: avg=62.59ms min=2.33ms max=922.56ms count=20
+11-27 12:14:51.773   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca84b30
+11-27 12:14:51.790   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:14:51.790  7057  7109 I Gralloc4: mapper 4.x is not supported
+11-27 12:14:51.799   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+11-27 12:14:51.803   127   127 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+11-27 12:14:51.804  7057  7109 W Gralloc4: allocator 4.x is not supported
+11-27 12:14:51.810  7057  7109 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:14:52.369  7057  7057 I Choreographer: Skipped 51 frames!  The application may be doing too much work on its main thread.
+11-27 12:14:52.376  7057  7110 I OpenGLRenderer: Davey! duration=899ms; Flags=1, FrameTimelineVsyncId=6501, IntendedVsync=265306216124, Vsync=265306216124, InputEventId=0, HandleInputStart=265310117275, AnimationStart=265310119820, PerformTraversalsStart=265310120662, DrawStart=265644695127, FrameDeadline=265322882790, FrameInterval=265310098691, FrameStartTime=16666666, SyncQueued=265656217766, SyncStart=265656471578, IssueDrawCommandsStart=265656607041, SwapBuffers=266067279709, FrameCompleted=266206379252, DequeueBufferDuration=4439, QueueBufferDuration=532644, GpuCompleted=266206379252, SwapBuffersCompleted=266198522196, DisplayPresentTime=0, CommandSubmissionCompleted=266067279709,
+11-27 12:14:52.377   484   503 W ziparchive: Unable to open '/data/app/~~x3wf-fQ5Bw-k0S2zWmrl4g==/com.playchord.inputcheck-XvCW_vrqL6-sR83K3MeXgQ==/base.dm': No such file or directory
+11-27 12:14:52.379   484   503 I ActivityTaskManager: Displayed com.playchord.inputcheck/.InputCheckActivity: +1s163ms
+11-27 12:14:52.385  1018  1018 I ActivityThread: Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+11-27 12:14:52.389   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:52.390   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:52.390   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:14:52.406  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:14:52.408  1018  2113 D OneSearchSuggestProvider: Shut down the binder channel
+11-27 12:14:52.412  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:14:52.412  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.playchord.inputcheck fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:14:52.412  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:14:52.414  7057  7074 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QReady\E']].
+11-27 12:14:52.414  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:14:52.416  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QReady\E'].
+11-27 12:14:52.417  1018  1584 I s.nexuslauncher: oneway function results for code 2 on binder at 0x72692d9042d0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-27 12:14:52.420  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.420  1455  1455 I KeyboardModeManager: KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=true
+11-27 12:14:52.421  1455  1455 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:14:52.421  1455  1455 I KeyboardModeManager: KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=phone_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+11-27 12:14:52.427  1455  1455 I StyledKeyboardTheme: StyledKeyboardTheme.<init>():87 Pref: [], themeName: [silk:], darkMode: [false], cacheKey: [overlay_builtin_dynamic_color_light_base.binarypb:dynamic-light-fff0f0f3-ff76d1ff-ce191c6173d879ea127e4e40bfd70d3c]
+11-27 12:14:52.428  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.428  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.428  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.428  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.428  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.428  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.initializeKeyboardTheme():1343 Apply keyboard theme: theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_refinedkp_materiallight_phone_300_overlay_builtin_dynamic_color_light_base.binarypb:dynamic-light-fff0f0f3-ff76d1ff-ce191c6173d879ea127e4e40bfd70d3c_port
+11-27 12:14:52.429  6208  6286 I FontLog : Updating from directory version 0 to 25 from disk [CONTEXT service_id=132 ]
+11-27 12:14:52.436   484  2086 W InputManager-JNI: Input channel object '7651674 Splash Screen com.playchord.inputcheck (client)' was disposed without first being removed with the input manager!
+11-27 12:14:52.446  6208  6286 I FontLog : Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:14:52.446  6208  6286 I FontLog : Query [emojicompat-emoji-font] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:14:52.448  6208  6286 I FontLog : Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:14:52.459  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onCreateInputView():1768 onCreateInputView()
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82250
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca833f0
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c90
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c90
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c90
+11-27 12:14:52.459   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82250
+11-27 12:14:52.472  6208  6611 I FontLog : Using directory in FlatBuffer format [CONTEXT service_id=132 ]
+11-27 12:14:52.480  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.481  1455  1455 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():189 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+11-27 12:14:52.486  6208  6457 I FontLog : Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-27 12:14:52.529  1455  1455 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:14:52.533  1455  1455 I KeyboardModeManager: KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=true
+11-27 12:14:52.533  1455  1455 I AndroidIME: KeyboardViewManager.updateKeyboardBackgroundFrameVisibility():357 Set background frame visibility. old:8, new:8
+11-27 12:14:52.533  1455  1455 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:14:52.533  1455  1455 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:14:52.534  1455  1455 I KeyboardModeManager: KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=phone_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+11-27 12:14:52.536  1018  1018 D b/254119092: clearActivity
+11-27 12:14:52.536  1018  1018 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-27 12:14:52.538  6208  6457 I FontLog : Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-27 12:14:52.549  1018  1018 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+11-27 12:14:52.549  1018  1018 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-27 12:14:52.554  1690  5117 I PBSessionCacheImpl: Deleted sessionId[7434494385232158] from persistence.
+11-27 12:14:52.577  1690  2258 I A       : Using proto config with mendel
+11-27 12:14:52.580  1690  2258 I A       : Using proto config with mendel
+11-27 12:14:52.581  1690  2258 W SearchServiceCore: Abort, client detached.
+11-27 12:14:52.587  1690  2258 I MicroDetectionState: Should stop hotword detection immediately - true
+11-27 12:14:52.587  1690  2258 I A       : Using proto config with mendel
+11-27 12:14:52.587  1690  2258 I A       : Using proto config with mendel
+11-27 12:14:52.591  7057  7122 D ProfileInstaller: Installing profile for com.playchord.inputcheck
+11-27 12:14:52.617  1018  1018 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-27 12:14:52.622  1018  1018 D DeviceSearchAlg: search timeout = %d200
+11-27 12:14:52.625  1018  1101 I AiAiSuggestUi: Connecting to system intelligence module.
+11-27 12:14:52.629  1562  1562 I AiAiOverview: Created AiAiContentSuggestionsService.
+11-27 12:14:52.632  1018  1030 I AiAiSuggestUi: Successfully connected to system intelligence:
+11-27 12:14:52.636  1018  1018 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:14:52.636  1018  1018 W BcSmartspaceView: Current card is not present in the Adapter; cannot log.
+11-27 12:14:52.639  1018  1018 I OverviewComponentObserver: updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=false, mIsDefaultHome=true
+11-27 12:14:52.666  1562  1562 I AiAiEcho: SearchContextManagerImpl::setSearchContext resultTypes=[141151] extras=[Bundle[mParcelledData.dataSize=608]] sessionId=[com.google.android.apps.nexuslauncher:ffc46e8e-3235-40e2-b7ac-b3a39f9ec433,0]
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: Unable to register Doze Always on content observer.
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: java.lang.SecurityException: No access to content://settings/secure/doze_always_on: Neither user 10153 nor current process has android.permission.INTERACT_ACROSS_USERS_FULL.
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3011)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Parcel.createException(Parcel.java:2995)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Parcel.readException(Parcel.java:2978)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Parcel.readException(Parcel.java:2920)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.content.IContentService$Stub$Proxy.registerContentObserver(IContentService.java:1032)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.content.ContentResolver.registerContentObserver(ContentResolver.java:2712)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.google.android.systemui.smartspace.BcSmartspaceView.onAttachedToWindow(Unknown Source:222)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.View.dispatchAttachedToWindow(View.java:21357)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3491)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.addViewInner(ViewGroup.java:5291)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.addView(ViewGroup.java:5077)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.view.ViewGroup.addView(ViewGroup.java:5049)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.internal.policy.PhoneWindow.setContentView(PhoneWindow.java:507)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.internal.policy.PhoneWindow.setContentView(PhoneWindow.java:488)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.Activity.setContentView(Activity.java:3622)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.launcher3.Launcher.onCreate(Unknown Source:345)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.launcher3.uioverrides.QuickstepLauncher.onCreate(Unknown Source:0)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onCreate(Unknown Source:0)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.Activity.performCreate(Activity.java:8342)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.Activity.performCreate(Activity.java:8321)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3626)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3782)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.handleRelaunchActivityInner(ActivityThread.java:5783)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:5674)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.servertransaction.ActivityRelaunchItem.execute(ActivityRelaunchItem.java:71)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:45)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ClientTransactionHandler.executeTransaction(ClientTransactionHandler.java:61)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.handleRelaunchActivityLocally(ActivityThread.java:5742)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2317)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Looper.loopOnce(Looper.java:201)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.os.Looper.loop(Looper.java:288)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: Caused by: android.os.RemoteException: Remote stack trace:
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ContextImpl.enforce(ContextImpl.java:2240)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2268)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.server.content.ContentService.handleIncomingUser(ContentService.java:1397)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at com.android.server.content.ContentService.registerContentObserver(ContentService.java:369)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView: 	at android.content.IContentService$Stub.onTransact(IContentService.java:486)
+11-27 12:14:52.690  1018  1018 W BcSmartspaceView:
+11-27 12:14:52.720  1018  1018 I ContentCaptureHelper: Setting logging level to DEBUG
+11-27 12:14:52.730  1018  1018 D ContentCaptureManager: setFlushViewTreeAppearingEventDisabled(): setting to false
+11-27 12:14:52.730  1018  1018 D ContentCaptureManager: updateWindowAttributes(): window flags=-2137980672
+11-27 12:14:52.734  1018  1018 D ContentCaptureManager: updateWindowAttributes(): window flags=-2137980672
+11-27 12:14:52.739  1018  1018 D MainContentCaptureSession: Flushing 0 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FINISHED
+11-27 12:14:52.739  1018  1018 D MainContentCaptureSession: Destroying session (ctx=com.google.android.apps.nexuslauncher.NexusLauncherActivity@9217e86, id=759942693) with 0 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false]
+11-27 12:14:52.739  1562  1562 W ContentCaptureService: handleSendEvents() received empty list of events
+11-27 12:14:52.756   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca80bd0
+11-27 12:14:52.765  1018  1018 W BcSmartspaceCard: No title view to update
+11-27 12:14:52.765  1018  1018 I BcSmartspaceCard: setFormattedContentDescription: textView=SUBTITLE, text=null, iconDescription=null, contentDescription=null
+11-27 12:14:52.789  1018  1018 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+11-27 12:14:52.789  1018  1018 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+11-27 12:14:52.790  1018  1018 D TISBindHelper: TIS service connected
+11-27 12:14:52.790  1018  1018 D b/254119092: Set mActivity=com.google.android.apps.nexuslauncher.NexusLauncherActivity@c499294
+11-27 12:14:52.790  1018  1018 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-27 12:14:52.790  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:14:52.790  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:14:52.796  1562  1858 I AiAiStatsd: Successfully logged feature usage for VISUAL_CORTEX.
+11-27 12:14:52.799  1690  2315 W Parcel  : Expecting binder but got null!
+11-27 12:14:52.802  1690  1690 W PhoneWindow: Previously focused view reported id 2131435089 during save, but can't be found during restore.
+11-27 12:14:52.815  1690  2315 W Parcel  : Expecting binder but got null!
+11-27 12:14:52.819   484   826 W InputManager-JNI: Input channel object 'ce89095 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity (client)' was disposed without first being removed with the input manager!
+11-27 12:14:52.826   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81770
+11-27 12:14:52.826   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81770
+11-27 12:14:52.836   484   826 W InputManager-JNI: Input channel object '3dfe482 com.google.android.googlequicksearchbox/android.app.ContextImpl (client)' was disposed without first being removed with the input manager!
+11-27 12:14:52.839   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81530
+11-27 12:14:52.839   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81530
+11-27 12:14:53.081   362   585 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (216 us)
+11-27 12:14:53.084   362   585 W ServiceManager: Permission failure: android.permission.CAPTURE_BLACKOUT_CONTENT from uid=2000 pid=7045
+11-27 12:14:53.084   362   585 D PermissionCache: checking android.permission.CAPTURE_BLACKOUT_CONTENT for uid=2000 => denied (244 us)
+11-27 12:14:53.106   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:14:53.106  7045  7055 I Gralloc4: mapper 4.x is not supported
+11-27 12:14:53.137  7045  7055 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:14:53.143  7045  7135 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:14:53.144  7045  7135 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:14:53.145  7045  7135 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:14:53.160  7045  7135 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:14:53.161  7045  7135 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:14:53.162  7045  7135 D EGL_emulation: eglCreateContext: 0x7e41d31d0cd0: maj 3 min 0 rcv 3
+11-27 12:14:53.164  7045  7135 D EGL_emulation: eglMakeCurrent: 0x7e41d31d0cd0: ver 3 0 (tinfo 0x7e43f8a3d080) (first time)
+11-27 12:14:53.272   289   289 D Zygote  : Forked child process 7136
+11-27 12:14:53.277  7136  7136 I x.test.services: Late-enabling -Xcheck:jni
+11-27 12:14:53.292  7136  7136 I x.test.services: Using CollectorTypeCC GC.
+11-27 12:14:53.293  7136  7136 W x.test.services: Unexpected CPU variant for x86: x86_64.
+11-27 12:14:53.293  7136  7136 W x.test.services: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:14:53.296   373   401 I adbd    : jdwp connection from 7136
+11-27 12:14:53.317  7136  7136 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10175; state: DISABLED
+11-27 12:14:53.321  7136  7136 W ziparchive: Unable to open '/data/app/~~Mif-gsRYkSFVmNdIgAihUQ==/androidx.test.services-rqyTR9EpA2xy6p36_CjnDg==/base.dm': No such file or directory
+11-27 12:14:53.321  7136  7136 W ziparchive: Unable to open '/data/app/~~Mif-gsRYkSFVmNdIgAihUQ==/androidx.test.services-rqyTR9EpA2xy6p36_CjnDg==/base.dm': No such file or directory
+11-27 12:14:53.345  7136  7136 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~Mif-gsRYkSFVmNdIgAihUQ==/androidx.test.services-rqyTR9EpA2xy6p36_CjnDg==/base.apk. target_sdk_version=30, uses_libraries=, library_path=/data/app/~~Mif-gsRYkSFVmNdIgAihUQ==/androidx.test.services-rqyTR9EpA2xy6p36_CjnDg==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/androidx.test.services
+11-27 12:14:53.351  7136  7136 V GraphicsEnvironment: ANGLE Developer option for 'androidx.test.services' set to: 'default'
+11-27 12:14:53.351  7136  7136 V GraphicsEnvironment: ANGLE GameManagerService for androidx.test.services: false
+11-27 12:14:53.351  7136  7136 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:14:53.354  7136  7136 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:14:53.354  7136  7136 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:14:53.356  7136  7136 I MultiDex: VM with version 2.1.0 has multidex support
+11-27 12:14:53.356  7136  7136 I MultiDex: Installing application
+11-27 12:14:53.356  7136  7136 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+11-27 12:14:53.358  7136  7136 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10175; state: DISABLED
+11-27 12:14:53.399  7136  7149 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/01-ready.png': found
+11-27 12:14:53.420  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStart mic\E'].
+11-27 12:14:53.433  7057  7074 W hord.inputcheck: Accessing hidden method Landroid/view/MotionEvent;->setDisplayId(I)V (blocked,test-api, reflection, allowed)
+11-27 12:14:53.438  7057  7074 D UiObject2: Clicking on (160, 272).
+11-27 12:14:53.439  7057  7074 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@85b9; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(126, 260 - 195, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Start mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:14:53.466  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=267274, downTime=267274, deviceId=-1, source=0x1002, displayId=0, eventId=-466713305 }
+11-27 12:14:53.472  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=267301, downTime=267274, deviceId=-1, source=0x1002, displayId=0, eventId=-425398352 }
+11-27 12:14:53.483  7057  7074 W GestureController: Gestures took longer than expected (42ms >> 16ms), device might be in a busy state.
+11-27 12:14:53.483  7057  7074 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QListening\E']].
+11-27 12:14:53.483  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QListening\E'].
+11-27 12:14:53.486   358  7155 I AudioFlinger: AudioFlinger's thread 0x7484e9f17bb0 tid=7155 ready to run
+11-27 12:14:53.495   291   320 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:14:53.497   291  7094 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:428 failure: Result::NOT_SUPPORTED
+11-27 12:14:53.507   291  7094 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:433 failure: Result::NOT_SUPPORTED
+11-27 12:14:53.549  7057  7109 D EGL_emulation: app_time_stats: avg=291.89ms min=2.96ms max=806.22ms count=4
+11-27 12:14:53.592   291  7156 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:14:53.675  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QListening\E'].
+11-27 12:14:54.581  7057  7109 D EGL_emulation: app_time_stats: avg=79.30ms min=6.47ms max=117.41ms count=13
+11-27 12:14:55.581  7057  7109 D EGL_emulation: app_time_stats: avg=100.00ms min=98.32ms max=102.72ms count=10
+11-27 12:14:56.581  7057  7109 D EGL_emulation: app_time_stats: avg=100.03ms min=98.35ms max=101.19ms count=10
+11-27 12:14:56.623  7136  7149 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/02-listening.png': found
+11-27 12:14:56.640  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStop mic\E'].
+11-27 12:14:56.654  7057  7074 D UiObject2: Clicking on (160, 272).
+11-27 12:14:56.654  7057  7074 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8e14; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(127, 260 - 193, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Stop mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:14:56.659  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=270488, downTime=270488, deviceId=-1, source=0x1002, displayId=0, eventId=-205110608 }
+11-27 12:14:56.668  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=270500, downTime=270488, deviceId=-1, source=0x1002, displayId=0, eventId=-625304760 }
+11-27 12:14:56.681  7057  7074 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QStopped\E']].
+11-27 12:14:56.682  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:56.684   291  7094 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:14:56.853  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:56.960  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.065  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.170  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.274  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.378  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.484  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.588  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.696  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.781  1690  1778 W earchbox:search: Cleared Reference was only reachable from finalizer (only reported once)
+11-27 12:14:57.801  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:14:57.816  7136  7149 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/03-stopped.png': found
+11-27 12:14:57.828  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:57.835  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:57.836  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:14:57.843  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=271669, downTime=271669, deviceId=-1, source=0x1002, displayId=0, eventId=-583266062 }
+11-27 12:14:57.863  7057  7109 D EGL_emulation: app_time_stats: avg=319.81ms min=7.21ms max=1120.31ms count=4
+11-27 12:14:57.917  7057  7063 I hord.inputcheck: Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+11-27 12:14:58.385  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=272218, downTime=271669, deviceId=-1, source=0x1002, displayId=0, eventId=-780876091 }
+11-27 12:14:58.407  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:58.599   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:58.599   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:14:58.599   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:14:58.668  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:58.668  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:14:58.677  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=272501, downTime=272501, deviceId=-1, source=0x1002, displayId=0, eventId=-399264928 }
+11-27 12:14:58.865  7057  7109 D EGL_emulation: app_time_stats: avg=17.08ms min=2.89ms max=130.66ms count=43
+11-27 12:14:59.282  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=273115, downTime=272501, deviceId=-1, source=0x1002, displayId=0, eventId=-387944593 }
+11-27 12:14:59.290  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:59.297  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:59.297  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:14:59.307  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=273130, downTime=273130, deviceId=-1, source=0x1002, displayId=0, eventId=-585909584 }
+11-27 12:14:59.411  6208  6208 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+11-27 12:14:59.427  7057  7057 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10174; state: ENABLED
+11-27 12:14:59.549  6219  6219 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-27 12:14:59.798  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=273631, downTime=273130, deviceId=-1, source=0x1002, displayId=0, eventId=-841932990 }
+11-27 12:14:59.806  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:59.814  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:14:59.814  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:14:59.825  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=273647, downTime=273647, deviceId=-1, source=0x1002, displayId=0, eventId=-702121960 }
+11-27 12:14:59.878  7057  7109 D EGL_emulation: app_time_stats: avg=12.08ms min=2.58ms max=49.70ms count=57
+11-27 12:15:00.002  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:00.003  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:00.003  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:00.004  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:00.011   756   810 D EGL_emulation: app_time_stats: avg=4122.69ms min=721.39ms max=7524.00ms count=2
+11-27 12:15:00.027  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:00.028  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:00.029  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:00.030  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:00.315  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=274147, downTime=273647, deviceId=-1, source=0x1002, displayId=0, eventId=-248630247 }
+11-27 12:15:00.605  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:15:00.610  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:15:00.611  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:00.626  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=274444, downTime=274444, deviceId=-1, source=0x1002, displayId=0, eventId=-250218295 }
+11-27 12:15:00.896  7057  7109 D EGL_emulation: app_time_stats: avg=23.63ms min=13.36ms max=284.67ms count=43
+11-27 12:15:01.067  1444  6114 I DialerOmtpVvmCarrierConfigHelper: com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_STATUS_SMS_TIME_OUT PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.071  1444  1444 I DialerRetryPolicy: com.android.voicemail.impl.scheduling.RetryPolicy.onCompleted:118 discarding deferred status [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.077  1444  1444 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor.prepareStop:371 no more tasks, stopping service if no task are added in 5000 millis [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.080  1444  1444 I DialerLogcatLoggingBindings: com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_AUTO_RETRY_ACTIVATION
+11-27 12:15:01.082  1444  1444 I DialerTaskReceiver: com.android.voicemail.impl.scheduling.TaskReceiver.onReceive:68 task received [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.083  1444  1444 I DialerTaskReceiver: com.android.voicemail.impl.scheduling.TaskReceiver.onReceive:73 TaskExecutor already running [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.084  1444  1444 I DialerTasks: com.android.voicemail.impl.scheduling.Tasks.createTask:59 Task.createTask create task:com.android.voicemail.impl.ActivationTask [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.085  1444  1444 I DialerRetryPolicy: com.android.voicemail.impl.scheduling.RetryPolicy.onCreate:81 retry #3 for com.android.voicemail.impl.ActivationTask@5481dc1 queued, executing in 5000 [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.088  1444  1444 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor.addTask:299 com.android.voicemail.impl.ActivationTask@5481dc1 added [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.088  1444  1444 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor.runNextTask:345 minimal wait time:4997 [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.088  1444  1444 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor.sleep:355 sleep for 4997 millis [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:01.115  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=274947, downTime=274444, deviceId=-1, source=0x1002, displayId=0, eventId=-288689965 }
+11-27 12:15:01.125  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:15:01.147  7136  7149 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/04-stopped-diagnostics.png': found
+11-27 12:15:01.163  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:15:01.166  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:15:01.172  7057  7074 D UiObject2: Clicking on (160, 572).
+11-27 12:15:01.172  7057  7074 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8db7; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(113, 560 - 208, 584); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Run self-test; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:15:01.192  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=572.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=275006, downTime=275006, deviceId=-1, source=0x1002, displayId=0, eventId=-460249569 }
+11-27 12:15:01.201  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=572.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=275033, downTime=275006, deviceId=-1, source=0x1002, displayId=0, eventId=-516595469 }
+11-27 12:15:01.215  7057  7074 W GestureController: Gestures took longer than expected (42ms >> 16ms), device might be in a busy state.
+11-27 12:15:01.215  7057  7074 D UiDevice: Waiting 20000ms for SearchCondition[hasObject=BySelector [TEXT='\QPassed: 9 of 9\E']].
+11-27 12:15:01.215  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:01.562  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:01.669  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:01.772  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:01.876  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:01.979  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.074   338   338 E android.hardware.power.stats@1.0-service-mock: Failed to getEnergyData
+11-27 12:15:02.082  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.186  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.290  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.393  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.477  1690  2258 I WorkerManager: dispose()
+11-27 12:15:02.478  1690  2258 W A       : Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+11-27 12:15:02.497  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.601  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.704  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.808  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:02.911  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:03.014  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:03.117  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:03.221  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:03.324  7057  7074 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:15:03.329  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:03.332  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:03.332  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:03.343  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=277166, downTime=277166, deviceId=-1, source=0x1002, displayId=0, eventId=-112315692 }
+11-27 12:15:03.361  7057  7109 D EGL_emulation: app_time_stats: avg=121.70ms min=2.74ms max=1836.15ms count=20
+11-27 12:15:03.832  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=277664, downTime=277166, deviceId=-1, source=0x1002, displayId=0, eventId=-179167860 }
+11-27 12:15:03.840  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:03.848  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:03.849  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:03.858  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=277683, downTime=277683, deviceId=-1, source=0x1002, displayId=0, eventId=-21536103 }
+11-27 12:15:04.347  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=278179, downTime=277683, deviceId=-1, source=0x1002, displayId=0, eventId=-942315972 }
+11-27 12:15:04.359  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:04.363  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:04.363  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:04.375  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=278197, downTime=278197, deviceId=-1, source=0x1002, displayId=0, eventId=-132410504 }
+11-27 12:15:04.394  7057  7109 D EGL_emulation: app_time_stats: avg=17.49ms min=13.34ms max=48.82ms count=59
+11-27 12:15:04.865  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=278698, downTime=278197, deviceId=-1, source=0x1002, displayId=0, eventId=-448074399 }
+11-27 12:15:04.873  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:04.879  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:04.879  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:04.893  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=278712, downTime=278712, deviceId=-1, source=0x1002, displayId=0, eventId=-27715615 }
+11-27 12:15:05.382  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=279215, downTime=278712, deviceId=-1, source=0x1002, displayId=0, eventId=-686790231 }
+11-27 12:15:05.393  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:05.396  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:05.396  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:05.408  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=279230, downTime=279230, deviceId=-1, source=0x1002, displayId=0, eventId=-372261089 }
+11-27 12:15:05.428  7057  7109 D EGL_emulation: app_time_stats: avg=17.81ms min=13.82ms max=48.96ms count=58
+11-27 12:15:05.899  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=279731, downTime=279230, deviceId=-1, source=0x1002, displayId=0, eventId=-1016705539 }
+11-27 12:15:05.909  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:05.912  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:05.912  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:05.927  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=279745, downTime=279745, deviceId=-1, source=0x1002, displayId=0, eventId=-75369508 }
+11-27 12:15:06.089  1444  6114 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor$WorkerThreadHandler.handleMessage:221 executing task com.android.voicemail.impl.ActivationTask@5481dc1 [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.089  1444  1444 I DialerLogcatLoggingBindings: com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_ACTIVATION_STARTED
+11-27 12:15:06.094  1444  6114 I DialerPreOMigrationHandler: com.android.voicemail.impl.PreOMigrationHandler.migrate:76 ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} already migrated [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.097  1444  6114 I DialerOmtpVvmCarrierConfigHelper: com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.isCarrierAppInstalled:637 carrier app not installed in this device [CONTEXT ratelimit_period="1 MINUTES [skipped: 4]" ]
+11-27 12:15:06.097  1444  6114 I DialerVoicemailStatus: com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+11-27 12:15:06.098  1444  6114 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+11-27 12:15:06.108  1444  7186 I DialerRestVoicemailEnabledFn: com.android.dialer.voicemail.service.impl.vvmclients.rest.RestVoicemailEnabledFn.isEnabled:51 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 23]" ]
+11-27 12:15:06.108  1444  7186 I DialerCvvmEnabledFn: com.android.dialer.voicemail.service.impl.vvmclients.omtp.protocol.cvvm.CvvmEnabledFn.isEnabled:37 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 11]" ]
+11-27 12:15:06.134  1444  7186 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:15:06.135  1444  7186 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+11-27 12:15:06.136  1444  6114 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:292 VVM content provider configured - vvm_type_cvvm PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.136  1444  6114 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.updateVoicemailsWithIccId:477 conversion disabled [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.137  1444  6114 I DialerOmtpVvmCarrierConfigHelper: com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_ACTIVATING PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.137  1444  6114 I DialerVoicemailStatus: com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+11-27 12:15:06.138  1444  6114 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+11-27 12:15:06.153  1444  7186 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:15:06.153  1444  7186 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+11-27 12:15:06.159  1444  6114 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:339 sending an activation request [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.168   983  3623 D SmsNumberUtils: enter filterDestAddr. destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+11-27 12:15:06.168   983  3623 D SmsNumberUtils: destAddr is not formatted.
+11-27 12:15:06.169   983  3623 D SmsNumberUtils: leave filterDestAddr, new destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+11-27 12:15:06.180  1444  6114 I DialerLogcatLoggingBindings: com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:46 Impression: CVVM_SEND_VVM_SMS
+11-27 12:15:06.198  1444  1444 I DialerStatusSmsFetcher: com.android.voicemail.impl.sms.StatusSmsFetcher.onReceive:106 Request SMS successfully sent [CONTEXT enable_persistent_logger=true ]
+11-27 12:15:06.429  7057  7109 D EGL_emulation: app_time_stats: avg=17.55ms min=14.00ms max=50.26ms count=57
+11-27 12:15:06.433  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=280265, downTime=279745, deviceId=-1, source=0x1002, displayId=0, eventId=-166755701 }
+11-27 12:15:06.444  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:06.447  7057  7074 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:06.447  7057  7074 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:15:06.460  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=280281, downTime=280281, deviceId=-1, source=0x1002, displayId=0, eventId=-54415419 }
+11-27 12:15:06.949  1018  1018 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=280781, downTime=280281, deviceId=-1, source=0x1002, displayId=0, eventId=-340078348 }
+11-27 12:15:06.956  7057  7074 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:15:06.981  7136  7149 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/05-self-test.png': found
+11-27 12:15:07.003   756   809 D SplashScreenView: Build android.window.SplashScreenView{bf13d6e V.E...... ......ID 0,0-0,0}
+11-27 12:15:07.003   756   809 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:15:07.003   756   809 D SplashScreenView: Branding: view: android.view.View{782dc0f G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:15:07.006   756   810 W Parcel  : Expecting binder but got null!
+11-27 12:15:07.006  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: PAUSED
+11-27 12:15:07.006  7057  7057 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.playchord.inputcheck.InputCheckActivity@5eaf4b7
+11-27 12:15:07.014   289   289 D Zygote  : Forked child process 7188
+11-27 12:15:07.024  7188  7188 I inputcheck.test: Late-enabling -Xcheck:jni
+11-27 12:15:07.144  7188  7188 I inputcheck.test: Using CollectorTypeCC GC.
+11-27 12:15:07.145  7188  7188 W inputcheck.test: Unexpected CPU variant for x86: x86_64.
+11-27 12:15:07.145  7188  7188 W inputcheck.test: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:15:07.150   373   401 I adbd    : jdwp connection from 7188
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83030
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca857f0
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca857f0
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca857f0
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83030
+11-27 12:15:07.156   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83030
+11-27 12:15:07.170   484  7196 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:07.171   484  7196 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:15:07.176   484  7196 D EGL_emulation: eglCreateContext: 0x72699d8e10d0: maj 3 min 0 rcv 3
+11-27 12:15:07.178   484  7196 D EGL_emulation: eglMakeCurrent: 0x72699d8e10d0: ver 3 0 (tinfo 0x726bae33f100) (first time)
+11-27 12:15:07.205  7188  7188 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10176; state: ENABLED
+11-27 12:15:07.222  7188  7188 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:15:07.228  7188  7188 D nativeloader: Configuring classloader-namespace for other apk /system/framework/android.test.mock.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:15:07.239  7188  7188 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:15:07.241  7188  7188 W inputcheck.test: ClassLoaderContext shared library size mismatch. Expected=0, found=2 (PCL[] | PCL[]{PCL[/system/framework/android.test.base.jar*2876549756]#PCL[/system/framework/android.test.mock.jar*4109917914]})
+11-27 12:15:07.242  7188  7188 D nativeloader: Configuring classloader-namespace for other apk /system/framework/android.test.runner.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:15:07.244  7188  7188 W ziparchive: Unable to open '/data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/base.dm': No such file or directory
+11-27 12:15:07.244  7188  7188 W ziparchive: Unable to open '/data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/base.dm': No such file or directory
+11-27 12:15:07.262  7188  7188 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~PIC7EjYnvQzYt9IAvDcC6Q==/com.playchord.inputcheck.test-CzcuMVekfOzE7vr7Aw5Y6A==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:15:07.269  7188  7188 V GraphicsEnvironment: ANGLE Developer option for 'com.playchord.inputcheck.test' set to: 'default'
+11-27 12:15:07.270  7188  7188 V GraphicsEnvironment: ANGLE GameManagerService for com.playchord.inputcheck.test: false
+11-27 12:15:07.271  7188  7188 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:15:07.273  7188  7188 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:07.273  7188  7188 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:07.283  7188  7208 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:15:07.286  7188  7208 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:15:07.290  7188  7208 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:15:07.302  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: STOPPED
+11-27 12:15:07.303  7057  7057 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.playchord.inputcheck.InputCheckActivity@5eaf4b7
+11-27 12:15:07.311  7188  7188 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10176; state: DISABLED
+11-27 12:15:07.319  7188  7206 W Parcel  : Expecting binder but got null!
+11-27 12:15:07.330  7057  7057 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@5eaf4b7 in: DESTROYED
+11-27 12:15:07.331  7057  7057 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-27 12:15:07.338   362   585 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10176 pid=0
+11-27 12:15:07.338   362   585 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10176 => denied (245 us)
+11-27 12:15:07.339   362   370 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10176 pid=7188
+11-27 12:15:07.339   362   370 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10176 => denied (78 us)
+11-27 12:15:07.340  7057  7074 I TestRunner: finished: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)

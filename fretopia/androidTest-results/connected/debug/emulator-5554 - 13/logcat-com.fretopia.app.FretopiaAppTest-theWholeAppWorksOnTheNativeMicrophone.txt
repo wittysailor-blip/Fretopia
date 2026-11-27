@@ -1,0 +1,959 @@
+11-27 12:15:18.854  7566  7582 I TestRunner: started: theWholeAppWorksOnTheNativeMicrophone(com.fretopia.app.FretopiaAppTest)
+11-27 12:15:18.857  7566  7582 I UiDevice: Creating a new instance, old instance exists: false
+11-27 12:15:18.862  7566  7584 V UiAutomation: Init UiAutomation@e030de7[id=2, flags=0]
+11-27 12:15:18.862  1562  2219 I AiAiEcho: Settings cha with uri: content://settings/secure/accessibility_enabled
+11-27 12:15:18.863  7566  7582 D UiDevice: Setting accessibility service flags: 65618
+11-27 12:15:18.863  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:18.863  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:18.864  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:18.864  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:18.864  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:18.865  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:18.869  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:18.869  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:18.878  7566  7582 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.fretopia.app
+11-27 12:15:18.883  1562  6703 I AiAiEcho: Settings cha with uri: content://settings/secure/accessibility_enabled
+11-27 12:15:18.885  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:18.885  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:18.885  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:18.885  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:18.886  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:18.886  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:18.886  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:18.887  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:18.887  4630  4630 V SafetyCenterAccessibilityListener: accessibility event occurred, safety center feature not enabled.
+11-27 12:15:18.887  1690  2077 I A       : NGA disabled due to not being eligible.
+11-27 12:15:18.888  7566  7582 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:15:18.914   756   809 D SplashScreenView: Build android.window.SplashScreenView{2f63ccc V.E...... ......ID 0,0-0,0}
+11-27 12:15:18.914   756   809 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:15:18.914   756   809 D SplashScreenView: Branding: view: android.view.View{b263b15 G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:15:18.918   756   810 W Parcel  : Expecting binder but got null!
+11-27 12:15:18.923  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:15:18.932  7566  7588 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:15:18.933  7566  7588 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:15:18.953  7566  7588 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:15:18.955  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: PRE_ON_CREATE
+11-27 12:15:18.969  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-27 12:15:18.971   484   751 W Binder  : Caught a RuntimeException from the binder stub implementation.
+11-27 12:15:18.971   484   751 W Binder  : java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 0
+11-27 12:15:18.971   484   751 W Binder  : 	at android.util.ArraySet.valueAt(ArraySet.java:422)
+11-27 12:15:18.971   484   751 W Binder  : 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.updateContentCaptureOptions(ContentCapturePerUserService.java:733)
+11-27 12:15:18.971   484   751 W Binder  : 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.setContentCaptureWhitelist(ContentCapturePerUserService.java:646)
+11-27 12:15:18.971   484   751 W Binder  : 	at android.service.contentcapture.IContentCaptureServiceCallback$Stub.onTransact(IContentCaptureServiceCallback.java:115)
+11-27 12:15:18.971   484   751 W Binder  : 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+11-27 12:15:18.971   484   751 W Binder  : 	at android.os.Binder.execTransact(Binder.java:1244)
+11-27 12:15:18.972  1018  1786 D EGL_emulation: app_time_stats: avg=1013.80ms min=200.71ms max=1826.88ms count=2
+11-27 12:15:18.976   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca846b0
+11-27 12:15:18.976   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82b50
+11-27 12:15:18.999  7566  7566 I WebViewFactory: Loading com.google.android.webview version 109.0.5414.123 (code 541412337)
+11-27 12:15:19.001  7566  7566 W ziparchive: Unable to open '/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.dm': No such file or directory
+11-27 12:15:19.001  7566  7566 W ziparchive: Unable to open '/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.dm': No such file or directory
+11-27 12:15:19.001  7566  7566 W om.fretopia.app: Entry not found
+11-27 12:15:19.002  7566  7566 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk. target_sdk_version=33, uses_libraries=ALL, library_path=/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/lib/x86_64:/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-27 12:15:19.005  7566  7566 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk. target_sdk_version=33, uses_libraries=, library_path=/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/lib/x86_64:/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-27 12:15:19.037  7566  7566 W om.fretopia.app: Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (unsupported, reflection, allowed)
+11-27 12:15:19.037  7566  7566 W om.fretopia.app: Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (unsupported, reflection, allowed)
+11-27 12:15:19.037  7566  7566 W om.fretopia.app: Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (unsupported, reflection, allowed)
+11-27 12:15:19.037  7566  7566 W om.fretopia.app: Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+11-27 12:15:19.038  7566  7566 W om.fretopia.app: Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+11-27 12:15:19.041  7566  7566 I cr_WVCFactoryProvider: Loaded version=109.0.5414.123 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+11-27 12:15:19.051  7566  7594 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.fretopia.app/app_webview/variations_seed_new"
+11-27 12:15:19.051  7566  7594 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.fretopia.app/app_webview/variations_seed"
+11-27 12:15:19.052  7566  7594 I cr_VariationsUtils: Requesting new seed from IVariationsSeedServer
+11-27 12:15:19.056  7566  7566 I cr_LibraryLoader: Successfully loaded native library
+11-27 12:15:19.057  7566  7566 I cr_CachingUmaRecorder: Flushed 9 samples from 9 histograms.
+11-27 12:15:19.073   917   917 I Zygote  : Entering forkRepeatedly native zygote loop
+11-27 12:15:19.091   917   917 D Zygote  : Forked child process 7599
+11-27 12:15:19.094  6219  6219 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-27 12:15:19.094  6219  6219 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-27 12:15:19.096  7599  7599 I ocessService0:0: Using CollectorTypeCC GC.
+11-27 12:15:19.099  7599  7599 W ocessService0:0: Unexpected CPU variant for x86: x86_64.
+11-27 12:15:19.099  7599  7599 W ocessService0:0: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:15:19.102  7566  7566 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10177; state: ENABLED
+11-27 12:15:19.112   373   401 I adbd    : jdwp connection from 7599
+11-27 12:15:19.126  7599  7599 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 99000; state: ENABLED
+11-27 12:15:19.134  7599  7599 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+11-27 12:15:19.135  7599  7599 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:19.141  7599  7599 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:19.142  7599  7599 I cr_WebViewApkApp: Launched version=109.0.5414.123 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+11-27 12:15:19.144  7599  7599 I cr_ChildProcessService: Creating new ChildProcessService pid=7599
+11-27 12:15:19.152  7566  7614 W chromium: [WARNING:dns_config_service_android.cc(115)] Failed to read DnsConfig.
+11-27 12:15:19.186  7566  7610 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/com.fretopia.app/cache/WebView/Default/HTTP Cache/Code Cache/wasm: No such file or directory (2)
+11-27 12:15:19.186  7566  7610 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
+11-27 12:15:19.187  7566  7615 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/com.fretopia.app/cache/WebView/Default/HTTP Cache/Code Cache/js: No such file or directory (2)
+11-27 12:15:19.187  7566  7615 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
+11-27 12:15:19.206   289   289 D Zygote  : Forked child process 7634
+11-27 12:15:19.211  7634  7634 I iew:webview_apk: Using CollectorTypeCC GC.
+11-27 12:15:19.211  7634  7634 W iew:webview_apk: Unexpected CPU variant for x86: x86_64.
+11-27 12:15:19.211  7634  7634 W iew:webview_apk: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:15:19.214   373   401 I adbd    : jdwp connection from 7634
+11-27 12:15:19.219  7566  7566 D CompatibilityChangeReporter: Compat change id reported: 214741472; UID 10177; state: ENABLED
+11-27 12:15:19.226  7566  7566 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10177; state: ENABLED
+11-27 12:15:19.251  7634  7634 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10124; state: ENABLED
+11-27 12:15:19.252  7634  7634 W ziparchive: Unable to open '/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.dm': No such file or directory
+11-27 12:15:19.252  7634  7634 W ziparchive: Unable to open '/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.dm': No such file or directory
+11-27 12:15:19.252  7634  7634 W iew:webview_apk: Entry not found
+11-27 12:15:19.253  7634  7634 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk. target_sdk_version=33, uses_libraries=ALL, library_path=/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/lib/x86_64:/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-27 12:15:19.255  7634  7634 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk. target_sdk_version=33, uses_libraries=, library_path=/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/lib/x86_64:/data/app/~~CPb8yPuxoSfdyavf13C_AA==/com.google.android.webview-_GpR9baGk1BlfQ6syLK6qw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~RgQTnUSpSWWSUs957hL0Ug==/com.google.android.trichromelibrary_541412337-ClipNR7LU6-bpQB-wzFRVA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-27 12:15:19.263  7634  7634 V GraphicsEnvironment: ANGLE Developer option for 'com.google.android.webview' set to: 'default'
+11-27 12:15:19.263  7634  7634 V GraphicsEnvironment: ANGLE GameManagerService for com.google.android.webview: false
+11-27 12:15:19.263  7634  7634 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:15:19.264  7634  7634 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+11-27 12:15:19.264  7634  7634 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:19.264  7634  7634 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:19.265  7634  7634 I cr_WebViewApkApp: Launched version=109.0.5414.123 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_apk
+11-27 12:15:19.287  7634  7634 I cr_LibraryLoader: Successfully loaded native library
+11-27 12:15:19.304  7566  7620 W om.fretopia.app: Accessing hidden method Landroid/media/AudioManager;->getOutputLatency(I)I (unsupported, reflection, allowed)
+11-27 12:15:19.308  7566  7620 W cr_media: BLUETOOTH_CONNECT permission is missing.
+11-27 12:15:19.314  7599  7623 I cr_LibraryLoader: Successfully loaded native library
+11-27 12:15:19.314  7599  7623 I cr_CachingUmaRecorder: Flushed 3 samples from 3 histograms.
+11-27 12:15:19.316   285  7659 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10124 0}
+11-27 12:15:19.317  7599  7623 W SystemServiceRegistry: No service published for: uimode
+11-27 12:15:19.323   285  7660 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:19.323  7566  7620 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+11-27 12:15:19.327   285  7661 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:19.330   285  7660 I resolv  : res_nsend: used send_dg 67 terrno: 0
+11-27 12:15:19.331   285  7660 I resolv  : doQuery: rcode=0, ancount=1, return value=67
+11-27 12:15:19.332   285  7661 I resolv  : res_nsend: used send_dg 55 terrno: 0
+11-27 12:15:19.333   285  7661 I resolv  : doQuery: rcode=0, ancount=1, return value=55
+11-27 12:15:19.334  7634  7656 D TrafficStats: tagSocket(84) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:19.352  6208  6255 I FontLog : Received query name=Google Sans&weight=700&besteffort=false, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:15:19.354  6208  6255 I FontLog : Query [name=Google Sans&weight=700&besteffort=false] resolved to {Google Sans, wdth 100.0, wght 700, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.355  6208  6255 I FontLog : Fetch {Google Sans, wdth 100.0, wght 700, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:15:19.367  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: CREATED
+11-27 12:15:19.367  7566  7566 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:19.369  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: STARTED
+11-27 12:15:19.370  7566  7566 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:19.371  6208  6255 I FontLog : Pulling font file for id = 4, cache size = 4 [CONTEXT service_id=132 ]
+11-27 12:15:19.373  7566  7566 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+11-27 12:15:19.373  7566  7566 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-27 12:15:19.375  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: RESUMED
+11-27 12:15:19.375  7566  7566 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:19.377  7566  7566 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10177; state: DISABLED
+11-27 12:15:19.380  7566  7586 W Parcel  : Expecting binder but got null!
+11-27 12:15:19.386  6208  6255 I FontLog : Received query name=Noto Color Emoji Compat&weight=400&besteffort=false, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:15:19.387  6208  6255 I FontLog : Query [name=Noto Color Emoji Compat&weight=400&besteffort=false] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.398  6208  6255 I FontLog : Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:15:19.400  6208  6255 I FontLog : Pulling font file for id = 5, cache size = 5 [CONTEXT service_id=132 ]
+11-27 12:15:19.403  6208  6255 I FontLog : Received query name=Google Sans&weight=400&besteffort=false, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:15:19.403  6208  6255 I FontLog : Query [name=Google Sans&weight=400&besteffort=false] resolved to {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.404  6208  6255 I FontLog : Font PFD returned from cache for {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.404  6208  6255 I FontLog : Fetch {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:15:19.412  6208  6255 I FontLog : Pulling font file for id = 6, cache size = 6 [CONTEXT service_id=132 ]
+11-27 12:15:19.419  6208  6255 I FontLog : Received query name=Google Sans&weight=500&besteffort=false, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:15:19.419  6208  6255 I FontLog : Query [name=Google Sans&weight=500&besteffort=false] resolved to {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.420  6208  6255 I FontLog : Font PFD returned from cache for {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.420  6208  6255 I FontLog : Fetch {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:15:19.431  6208  6255 I FontLog : Pulling font file for id = 7, cache size = 7 [CONTEXT service_id=132 ]
+11-27 12:15:19.442  2795  3060 I cr_VariationsUtils: Throttling seed download job
+11-27 12:15:19.442  2795  3060 I cr_VariationsUtils: Writing new seed to app's data directory
+11-27 12:15:19.453  7566  7658 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:19.458  7566  7658 D EGL_emulation: eglCreateContext: 0x72699d8b3ad0: maj 3 min 0 rcv 3
+11-27 12:15:19.463  7566  7566 D CompatibilityChangeReporter: Compat change id reported: 193247900; UID 10177; state: ENABLED
+11-27 12:15:19.471  7566  7658 D EGL_emulation: eglMakeCurrent: 0x72699d8b3ad0: ver 3 0 (tinfo 0x726bc46f0080) (first time)
+11-27 12:15:19.492   362   585 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10177 pid=0
+11-27 12:15:19.492   362   585 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10177 => denied (154 us)
+11-27 12:15:19.492   362   585 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10177 pid=0
+11-27 12:15:19.492   362   585 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10177 => denied (515 us)
+11-27 12:15:19.492   362   585 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10177 pid=0
+11-27 12:15:19.492   362   585 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10177 => denied (129 us)
+11-27 12:15:19.506   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca80a50
+11-27 12:15:19.518   756   810 D EGL_emulation: app_time_stats: avg=5885.25ms min=15.46ms max=11755.05ms count=2
+11-27 12:15:19.528  7566  7586 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:19.529  7566  7586 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:15:19.530  7566  7586 D EGL_emulation: eglCreateContext: 0x72699d8b3950: maj 3 min 0 rcv 3
+11-27 12:15:19.535  7566  7586 D EGL_emulation: eglMakeCurrent: 0x72699d8b3950: ver 3 0 (tinfo 0x726bc46f0100) (first time)
+11-27 12:15:19.542   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:15:19.542  7566  7586 I Gralloc4: mapper 4.x is not supported
+11-27 12:15:19.549   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+11-27 12:15:19.549   127   127 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+11-27 12:15:19.550  7566  7586 W Gralloc4: allocator 4.x is not supported
+11-27 12:15:19.555  7566  7586 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:19.767  7566  7658 D EGL_emulation: eglCreateContext: 0x72699d8b1790: maj 3 min 0 rcv 3
+11-27 12:15:19.772   484   503 W ziparchive: Unable to open '/data/app/~~KjW-9y4tIvSc6K3yXaZQ1w==/com.fretopia.app-Sq83nwPNKljwIhzLuKPR8g==/base.dm': No such file or directory
+11-27 12:15:19.777   484   503 I ActivityTaskManager: Displayed com.fretopia.app/.FretopiaActivity: +871ms
+11-27 12:15:19.798   484   751 W InputManager-JNI: Input channel object '80bd0e6 Splash Screen com.fretopia.app (client)' was disposed without first being removed with the input manager!
+11-27 12:15:19.805  1018  2113 D OneSearchSuggestProvider: Shut down the binder channel
+11-27 12:15:19.811  1018  1038 I s.nexuslauncher: oneway function results for code 2 on binder at 0x72692d926410 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-27 12:15:19.816  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83570
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca855b0
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca836f0
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca836f0
+11-27 12:15:19.823   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:19.827  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:15:19.827  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.fretopia.app fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:15:19.827  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:15:19.828  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:15:19.840   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82fd0
+11-27 12:15:19.858  7566  7658 D EGL_emulation: eglCreateContext: 0x72699d8b2150: maj 3 min 0 rcv 3
+11-27 12:15:19.862  1690  2282 I PBSessionCacheImpl: Deleted sessionId[7434494385232469] from persistence.
+11-27 12:15:19.905  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:19.907  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:19.908  1690  2258 W SearchServiceCore: Abort, client detached.
+11-27 12:15:19.912  1690  2258 I MicroDetectionState: Should stop hotword detection immediately - true
+11-27 12:15:19.913  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:19.913  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: IOException during downloadToFile.
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: java.io.IOException: Cleartext HTTP traffic to edgedl.me.gvt1.com not permitted
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:127)
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:462)
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:411)
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:542)
+11-27 12:15:19.925  7634  7656 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-541412337:48)
+11-27 12:15:19.928  6208  6476 I FontLog : Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:15:19.928  6208  6476 I FontLog : Query [emojicompat-emoji-font] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:15:19.928  6208  6476 I FontLog : Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:15:19.939   285  7682 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10124 0}
+11-27 12:15:19.942   285  7683 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:19.942   285  7684 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:19.946   285  7683 I resolv  : res_nsend: used send_dg 64 terrno: 0
+11-27 12:15:19.946   285  7683 I resolv  : doQuery: rcode=0, ancount=1, return value=64
+11-27 12:15:19.948   285  7684 I resolv  : res_nsend: used send_dg 52 terrno: 0
+11-27 12:15:19.948   285  7684 I resolv  : doQuery: rcode=0, ancount=1, return value=52
+11-27 12:15:19.949  7634  7656 D TrafficStats: tagSocket(87) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:19.949  6208  6476 I FontLog : Pulling font file for id = 8, cache size = 8 [CONTEXT service_id=132 ]
+11-27 12:15:19.957  6208  6476 I FontLog : Pulling font file for id = 8, cache size = 8 [CONTEXT service_id=132 ]
+11-27 12:15:20.023  7599  7623 I chromium: [INFO:audio_latency.cc(179)] audioHardwareBufferSize = 2116
+11-27 12:15:20.037  7566  7620 I AAudio  : AAudioStreamBuilder_openStream() called ----------------------------------------
+11-27 12:15:20.037  7566  7620 I AudioStreamBuilder: rate   =  48000, channels  = 2, channelMask = 0x80000003, format   = 5, sharing = SH, dir = OUTPUT
+11-27 12:15:20.037  7566  7620 I AudioStreamBuilder: device =      0, sessionId = -1, perfMode = 12, callback: ON with frames = 2116
+11-27 12:15:20.037  7566  7620 I AudioStreamBuilder: usage  =      1, contentType = 0, inputPreset = 0, allowedCapturePolicy = 0
+11-27 12:15:20.037  7566  7620 I AudioStreamBuilder: privacy sensitive = false, opPackageName = (null), attributionTag = (null)
+11-27 12:15:20.037  7566  7620 D om.fretopia.app: PlayerBase::PlayerBase()
+11-27 12:15:20.038  7566  7620 D AudioStreamTrack: open(), request notificationFrames = -8, frameCount = 0
+11-27 12:15:20.040   358   459 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000104) and output flags (00000002)
+11-27 12:15:20.040   358   459 D AudioFlinger: Client defaulted notificationFrames to 960 for frameCount 2116
+11-27 12:15:20.053   358   459 D AF::TrackHandle: OpPlayAudio: track:58 usage:1 not muted
+11-27 12:15:20.058  7566  7620 D AudioStreamTrack: open() flags changed from 0x00000104 to 0x00000000
+11-27 12:15:20.058  7566  7620 D AudioStreamTrack: open() perfMode changed from 12 to 10
+11-27 12:15:20.058  7566  7620 D AAudioStream: setState(s#1) from 0 to 2
+11-27 12:15:20.066  7566  7620 I AAudio  : AAudioStreamBuilder_openStream() returns 0 = AAUDIO_OK for s#1 ----------------
+11-27 12:15:20.067  7566  7620 D AAudio  : AAudioStream_requestStart(s#1) called --------------
+11-27 12:15:20.067  7566  7620 D AAudioStream: setState(s#1) from 2 to 3
+11-27 12:15:20.070  7566  7620 D AAudio  : AAudioStream_requestStart(s#1) returned 0 ---------
+11-27 12:15:20.071  7566  7585 D AudioStreamLegacy: onAudioDeviceUpdate(deviceId = 2)
+11-27 12:15:20.082  7566  7687 D AAudioStream: setState(s#1) from 3 to 4
+11-27 12:15:20.140  7566  7658 D EGL_emulation: eglCreateContext: 0x72699d8b6e90: maj 3 min 0 rcv 3
+11-27 12:15:20.147   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(33)
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: IOException during downloadToFile.
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: java.io.IOException: Cleartext HTTP traffic to edgedl.me.gvt1.com not permitted
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:127)
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:462)
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:411)
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:542)
+11-27 12:15:20.539  7634  7657 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-541412337:48)
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: IOException during downloadToFile.
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: java.io.IOException: Cleartext HTTP traffic to redirector.gvt1.com not permitted
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:127)
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:462)
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:411)
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:542)
+11-27 12:15:20.540  7634  7657 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-541412337:48)
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: IOException during downloadToFile.
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: java.io.IOException: Cleartext HTTP traffic to edgedl.me.gvt1.com not permitted
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:127)
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:462)
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:411)
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:542)
+11-27 12:15:20.628  7634  7654 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-541412337:48)
+11-27 12:15:20.815  7566  7586 D EGL_emulation: app_time_stats: avg=99.93ms min=3.57ms max=892.81ms count=10
+11-27 12:15:21.119   128   128 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:15:21.119  7555  7565 I Gralloc4: mapper 4.x is not supported
+11-27 12:15:21.150  7555  7565 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:21.165  7555  7696 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:15:21.167  7555  7696 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:15:21.168  7555  7696 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:15:21.191  7555  7696 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:21.196  7555  7696 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:15:21.199  7555  7696 D EGL_emulation: eglCreateContext: 0x72e922fe0110: maj 3 min 0 rcv 3
+11-27 12:15:21.201  7555  7696 D EGL_emulation: eglMakeCurrent: 0x72e922fe0110: ver 3 0 (tinfo 0x72eb52101080) (first time)
+11-27 12:15:21.345   289   289 D Zygote  : Forked child process 7697
+11-27 12:15:21.360  7697  7697 I x.test.services: Late-enabling -Xcheck:jni
+11-27 12:15:21.465  7697  7697 I x.test.services: Using CollectorTypeCC GC.
+11-27 12:15:21.466  7697  7697 W x.test.services: Unexpected CPU variant for x86: x86_64.
+11-27 12:15:21.466  7697  7697 W x.test.services: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:15:21.469   373   401 I adbd    : jdwp connection from 7697
+11-27 12:15:21.511  7697  7697 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10178; state: DISABLED
+11-27 12:15:21.516  7697  7697 W ziparchive: Unable to open '/data/app/~~nSzQMk3eYI3IKI4gGC2wXQ==/androidx.test.services-hwBUOgRtgcAgQvlZFoKVow==/base.dm': No such file or directory
+11-27 12:15:21.516  7697  7697 W ziparchive: Unable to open '/data/app/~~nSzQMk3eYI3IKI4gGC2wXQ==/androidx.test.services-hwBUOgRtgcAgQvlZFoKVow==/base.dm': No such file or directory
+11-27 12:15:21.552  7697  7697 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~nSzQMk3eYI3IKI4gGC2wXQ==/androidx.test.services-hwBUOgRtgcAgQvlZFoKVow==/base.apk. target_sdk_version=30, uses_libraries=, library_path=/data/app/~~nSzQMk3eYI3IKI4gGC2wXQ==/androidx.test.services-hwBUOgRtgcAgQvlZFoKVow==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/androidx.test.services
+11-27 12:15:21.565  7697  7697 V GraphicsEnvironment: ANGLE Developer option for 'androidx.test.services' set to: 'default'
+11-27 12:15:21.569  7697  7697 V GraphicsEnvironment: ANGLE GameManagerService for androidx.test.services: false
+11-27 12:15:21.572  7697  7697 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:15:21.578  7697  7697 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:21.579  7697  7697 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:21.580  7697  7697 I MultiDex: VM with version 2.1.0 has multidex support
+11-27 12:15:21.583  7697  7697 I MultiDex: Installing application
+11-27 12:15:21.583  7697  7697 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+11-27 12:15:21.585  7697  7697 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10178; state: DISABLED
+11-27 12:15:21.627  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/01-landing.png': found
+11-27 12:15:21.660  7566  7573 I om.fretopia.app: Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+11-27 12:15:22.116   484  2089 D ConnectivityService: requestNetwork for uid/pid:10110/1444 activeRequest: null callbackRequest: 154 [NetworkRequest [ REQUEST id=155, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10110 RequestorUid: 10110 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-27 12:15:22.121   484   697 D ConnectivityService: NetReassign [155 : null → 100] [c 2] [a 0] [i 3]
+11-27 12:15:22.123   484   690 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=155, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10110 RequestorUid: 10110 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+11-27 12:15:22.124   484   690 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=155, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10110 RequestorUid: 10110 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+11-27 12:15:22.124   484   690 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=155, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10110 RequestorUid: 10110 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+11-27 12:15:22.124   484   690 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=155, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10110 RequestorUid: 10110 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+11-27 12:15:22.148  1444  1444 I DialerConstellationSyncWorker: com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker.startWork:66 starting work
+11-27 12:15:22.154  1444  1578 I DialerCountryCodeProvider: com.android.dialer.businessvoice.verifiedcall.impl.i18n.CountryCodeProvider.getSimCountryCodeInternal:85 returning Redacted-2-chars
+11-27 12:15:22.154  1444  1578 I DialerCachedVerifiedNumberProvider: com.android.dialer.businessvoice.verifiedcall.impl.constellation.CachedVerifiedNumberProvider.refreshConstellationInfo:190 Retrieving constellation info and refreshing the cache.
+11-27 12:15:22.172  6219  6219 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.constellation.service.START pkg=com.google.android.gms }
+11-27 12:15:22.172  6219  6219 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.constellation.service.START pkg=com.google.android.gms }
+11-27 12:15:22.210  6219  6219 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-27 12:15:22.212  6219  6219 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-27 12:15:22.216  6219  6219 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-27 12:15:22.220  6219  7360 E constellation: [api_verify_phone_operation] Failed to generate Client Signature
+11-27 12:15:22.220  6219  7360 E constellation: acwp: Stored private key deleted
+11-27 12:15:22.220  6219  7360 E constellation: 	at acos.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-27 12:15:22.220  6219  7360 E constellation: 	at acos.d(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-27 12:15:22.220  6219  7360 E constellation: 	at acoa.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):22)
+11-27 12:15:22.220  6219  7360 E constellation: 	at acoa.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):12)
+11-27 12:15:22.220  6219  7360 E constellation: 	at avsy.eo(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-27 12:15:22.220  6219  7360 E constellation: 	at avtf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):14)
+11-27 12:15:22.220  6219  7360 E constellation: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-27 12:15:22.220  6219  7360 E constellation: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-27 12:15:22.220  6219  7360 E constellation: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+11-27 12:15:22.220  6219  7360 E constellation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+11-27 12:15:22.220  6219  7360 E constellation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+11-27 12:15:22.220  6219  7360 E constellation: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-27 12:15:22.220  6219  7360 E constellation: 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: com.android.dialer.businessvoice.verifiedcall.impl.constellation.VerifiedNumberProvider.lambda$getConstellationResponse$1:155 Failed to get constellation token.
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: nkq: 5004:
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at nov.au(PG:1)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at nnf.g(PG:2)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at npo.a(Unknown Source:2)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at npy.dm(PG:9)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at ncz.onTransact(PG:4)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+11-27 12:15:22.223  1444  1621 W DialerVerifiedNumberProvider: 	at android.os.Binder.execTransact(Binder.java:1244)
+11-27 12:15:22.225  1444  1621 W DialerConstellationSyncWorker: com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker.lambda$syncConstellation$2:110 Constellation api request failed, status code: 5004
+11-27 12:15:22.226  1444  1579 I WM-WorkerWrapper: Worker result RETRY for Work [ id=ed9770b9-3e41-45a2-b7e4-f3b446bdaaea, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker, TikTokWorker#com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker } ]
+11-27 12:15:22.823  7566  7586 D EGL_emulation: app_time_stats: avg=35.68ms min=1.42ms max=1064.16ms count=44
+11-27 12:15:22.828  7566  7566 I Choreographer: Skipped 43 frames!  The application may be doing too much work on its main thread.
+11-27 12:15:22.843  7566  7585 I OpenGLRenderer: Davey! duration=757ms; Flags=0, FrameTimelineVsyncId=14667, IntendedVsync=295906214900, Vsync=295906214900, InputEventId=0, HandleInputStart=295906562633, AnimationStart=295906564737, PerformTraversalsStart=295906887308, DrawStart=295906972286, FrameDeadline=295922881566, FrameInterval=295906555339, FrameStartTime=16666666, SyncQueued=295907124170, SyncStart=295907140460, IssueDrawCommandsStart=295907194972, SwapBuffers=296574415825, FrameCompleted=296663350848, DequeueBufferDuration=4018, QueueBufferDuration=292795, GpuCompleted=296663350848, SwapBuffersCompleted=296656899202, DisplayPresentTime=0, CommandSubmissionCompleted=296574415825,
+11-27 12:15:23.061  6208  6208 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.account.data.service.START pkg=com.google.android.gms }
+11-27 12:15:23.116  6219  6219 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-27 12:15:23.839  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/02-goal.png': found
+11-27 12:15:23.863  7566  7566 W cr_VibrationManagerImpl: Failed to use vibrate API, requires VIBRATE permission.
+11-27 12:15:23.863  7566  7566 D Fretopia: web: Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216. (https://appassets.androidplatform.net/assets/web/index.html:585)
+11-27 12:15:23.945  7566  7586 D EGL_emulation: app_time_stats: avg=274.13ms min=6.37ms max=1029.47ms count=4
+11-27 12:15:24.277  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/03-goal-chosen.png': found
+11-27 12:15:24.304  6208  7370 I GMS_MM_Logger: Memory Metric Logging not allowed. Stopping.
+11-27 12:15:24.336  6219  7715 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+11-27 12:15:24.381  6219  7715 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2640104055100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+11-27 12:15:24.386  7566  7717 D ProfileInstaller: Installing profile for com.fretopia.app
+11-27 12:15:24.403  6219  7715 I GmsDebugLogger: [73] 1801
+11-27 12:15:24.405  6219  7715 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+11-27 12:15:24.412  6219  7715 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:264010405100800],[MlkitOcrCommon.optional:231818100800]
+11-27 12:15:24.416  6219  7715 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+11-27 12:15:24.417  6219  7715 I GmsDebugLogger: [83] 1 [vision.ocr]
+11-27 12:15:24.419  6219  7456 W Vision  : Request for optional module download of ocr failed. Request again.
+11-27 12:15:24.424  6219  7456 W Vision  : Would have logged:
+11-27 12:15:24.424  6219  7456 W Vision  : # dsae@37884fe7
+11-27 12:15:24.424  6219  7456 I Vision  : Schedule retrying download ocr at 298257 with backoff 80 seconds
+11-27 12:15:25.072  7566  7586 D EGL_emulation: app_time_stats: avg=118.31ms min=4.24ms max=728.22ms count=9
+11-27 12:15:25.080  7566  7566 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+11-27 12:15:25.083   285  7718 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10177 0}
+11-27 12:15:25.084   285  7720 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:25.085   285  7719 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:25.092   285  7720 I resolv  : res_nsend: used send_dg 177 terrno: 0
+11-27 12:15:25.092   285  7720 I resolv  : doQuery: rcode=0, ancount=8, return value=177
+11-27 12:15:25.108   285  7719 I resolv  : res_nsend: used send_dg 273 terrno: 0
+11-27 12:15:25.108   285  7719 I resolv  : doQuery: rcode=0, ancount=8, return value=273
+11-27 12:15:25.418  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/04-instruments.png': found
+11-27 12:15:25.437  7566  7566 D Fretopia: web: Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216. (https://appassets.androidplatform.net/assets/web/index.html:585)
+11-27 12:15:25.609   285  7722 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10177 0}
+11-27 12:15:25.609   285  7723 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:25.613   285  7724 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:25.614   285  7723 I resolv  : res_nsend: used send_dg 253 terrno: 0
+11-27 12:15:25.615   285  7723 I resolv  : doQuery: rcode=0, ancount=8, return value=253
+11-27 12:15:25.619   285  7724 I resolv  : res_nsend: used send_dg 157 terrno: 0
+11-27 12:15:25.619   285  7724 I resolv  : doQuery: rcode=0, ancount=8, return value=157
+11-27 12:15:25.823   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(6)
+11-27 12:15:26.073  7566  7586 D EGL_emulation: app_time_stats: avg=66.02ms min=5.37ms max=335.09ms count=14
+11-27 12:15:26.109   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(15)
+11-27 12:15:26.820  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/05-home-songs.png': found
+11-27 12:15:26.847   358   560 W ServiceManager: Permission failure: android.permission.CALL_AUDIO_INTERCEPTION from uid=10177 pid=7566
+11-27 12:15:26.847   358   560 D PermissionCache: checking android.permission.CALL_AUDIO_INTERCEPTION for uid=10177 => denied (111 us)
+11-27 12:15:26.851   358  7728 I AudioFlinger: AudioFlinger's thread 0x7484e9f17bb0 tid=7728 ready to run
+11-27 12:15:26.860   291   320 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:15:26.863   291   320 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:428 failure: Result::NOT_SUPPORTED
+11-27 12:15:26.864   291  7094 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:433 failure: Result::NOT_SUPPORTED
+11-27 12:15:26.895   756   810 D EGL_emulation: app_time_stats: avg=7376.97ms min=7376.97ms max=7376.97ms count=1
+11-27 12:15:27.010   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:29.847  1690  2258 I WorkerManager: dispose()
+11-27 12:15:29.847  1690  2258 W A       : Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+11-27 12:15:30.008   756   810 D EGL_emulation: app_time_stats: avg=115.55ms min=1.35ms max=2532.31ms count=25
+11-27 12:15:30.248   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.251   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.252  7566  7586 D EGL_emulation: app_time_stats: avg=1385.65ms min=7.31ms max=4141.36ms count=3
+11-27 12:15:30.260   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.283   285  6498 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.92ms>
+11-27 12:15:30.284   285  6498 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.02ms>
+11-27 12:15:30.284   285  6498 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.03ms>
+11-27 12:15:30.284   285  6498 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.02ms>
+11-27 12:15:30.370   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.405   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.408   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.418   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.422   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.434   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.499   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.515   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.530   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.545   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.560   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.576   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.652   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:30.667   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:31.021   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:31.033   291  7729 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:15:31.103   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(43)
+11-27 12:15:31.265  7566  7586 D EGL_emulation: app_time_stats: avg=28.15ms min=5.05ms max=350.84ms count=29
+11-27 12:15:32.283  7566  7586 D EGL_emulation: app_time_stats: avg=8.66ms min=4.61ms max=25.20ms count=60
+11-27 12:15:33.289  7566  7586 D EGL_emulation: app_time_stats: avg=13.37ms min=5.13ms max=25.15ms count=59
+11-27 12:15:33.888  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/06-player-listening.png': found
+11-27 12:15:33.959   291   320 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:15:34.108   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82fd0
+11-27 12:15:34.623  6219  6219 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-27 12:15:34.626   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:34.626   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:34.626   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:15:34.776  7566  7586 D EGL_emulation: app_time_stats: avg=27.52ms min=4.81ms max=800.32ms count=41
+11-27 12:15:35.362  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/06b-software-before.png': found
+11-27 12:15:35.405  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: PAUSED
+11-27 12:15:35.405  7566  7566 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:35.416  7566  7582 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QMicrophone check\E']].
+11-27 12:15:35.416  7566  7582 D UiDevice: Searching for node with selector: BySelector [TEXT='\QMicrophone check\E'].
+11-27 12:15:35.420  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: PRE_ON_CREATE
+11-27 12:15:35.420  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:35.441  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: CREATED
+11-27 12:15:35.441  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:35.442  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: STARTED
+11-27 12:15:35.442  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:35.479  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: RESUMED
+11-27 12:15:35.479  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:35.482  7566  7586 W Parcel  : Expecting binder but got null!
+11-27 12:15:35.566  7566  7566 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: Common causes for lock verification issues are non-optimized dex code
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: and incorrect proguard optimizations.
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: Method java.lang.Object androidx.compose.runtime.snapshots.SnapshotStateList.mutate(kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:15:35.643  7566  7566 W om.fretopia.app: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:15:35.644  7566  7566 W om.fretopia.app: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:15:36.150  7566  7566 I Choreographer: Skipped 39 frames!  The application may be doing too much work on its main thread.
+11-27 12:15:36.154   484   503 I ActivityTaskManager: Displayed com.fretopia.app/com.playchord.inputcheck.InputCheckActivity: +771ms
+11-27 12:15:36.161  7566  7580 I OpenGLRenderer: Davey! duration=733ms; Flags=1, FrameTimelineVsyncId=20071, IntendedVsync=309256214366, Vsync=309306214364, InputEventId=0, HandleInputStart=309319720694, AnimationStart=309319723168, PerformTraversalsStart=309321559230, DrawStart=309605590801, FrameDeadline=309272881032, FrameInterval=309319708290, FrameStartTime=16666666, SyncQueued=309617402569, SyncStart=309617626768, IssueDrawCommandsStart=309617687371, SwapBuffers=309839418425, FrameCompleted=309989686224, DequeueBufferDuration=2996, QueueBufferDuration=162362, GpuCompleted=309989686224, SwapBuffersCompleted=309980581291, DisplayPresentTime=288234774265332736, CommandSubmissionCompleted=309839418425,
+11-27 12:15:36.173   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83870
+11-27 12:15:36.173   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83e70
+11-27 12:15:36.173   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83870
+11-27 12:15:36.185  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:15:36.186  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:15:36.186  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.fretopia.app fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:15:36.186  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:15:36.187  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:15:36.195   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca86090
+11-27 12:15:36.202  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@154d9; boundsInParent: Rect(0, 221 - 280, 266); boundsInScreen: Rect(20, 429 - 300, 474); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null]; isTextSelectable: false
+11-27 12:15:36.202  7566  7582 W ByMatcher: Skipping null child (0 of 2)
+11-27 12:15:36.202  7566  7582 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:15:36.203  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@154f8; boundsInParent: Rect(-20, 275 - 300, 316); boundsInScreen: Rect(0, 483 - 320, 524); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: true; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_SCROLL_FORWARD - null, AccessibilityAction: ACTION_SCROLL_RIGHT - null, AccessibilityAction: ACTION_PAGE_RIGHT - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:15:36.203  7566  7582 W ByMatcher: Skipping null child (0 of 4)
+11-27 12:15:36.203  7566  7582 W ByMatcher: Skipping null child (1 of 4)
+11-27 12:15:36.204  7566  7582 W ByMatcher: Skipping null child (2 of 4)
+11-27 12:15:36.204  7566  7582 W ByMatcher: Skipping null child (3 of 4)
+11-27 12:15:36.205  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@152e9; boundsInParent: Rect(20, 132 - 300, 6526); boundsInScreen: Rect(20, 208 - 300, 640); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: ptab; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null]; isTextSelectable: false
+11-27 12:15:36.205  7566  7582 W ByMatcher: Skipping null child (21 of 86)
+11-27 12:15:36.205  7566  7582 W ByMatcher: Skipping null child (22 of 86)
+11-27 12:15:36.205  7566  7582 W ByMatcher: Skipping null child (23 of 86)
+11-27 12:15:36.206  7566  7582 W ByMatcher: Skipping null child (24 of 86)
+11-27 12:15:36.207  7566  7582 W ByMatcher: Skipping null child (25 of 86)
+11-27 12:15:36.207  7566  7582 W ByMatcher: Skipping null child (26 of 86)
+11-27 12:15:36.207  7566  7582 W ByMatcher: Skipping null child (27 of 86)
+11-27 12:15:36.207  7566  7582 W ByMatcher: Skipping null child (28 of 86)
+11-27 12:15:36.207  7566  7582 W ByMatcher: Skipping null child (29 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (30 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (31 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (32 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (33 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (34 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (35 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (36 of 86)
+11-27 12:15:36.208  7566  7582 W ByMatcher: Skipping null child (37 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (38 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (39 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (40 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (41 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (42 of 86)
+11-27 12:15:36.209  7566  7582 W ByMatcher: Skipping null child (43 of 86)
+11-27 12:15:36.210  7566  7582 W ByMatcher: Skipping null child (44 of 86)
+11-27 12:15:36.210  7566  7582 W ByMatcher: Skipping null child (45 of 86)
+11-27 12:15:36.210  7566  7582 W ByMatcher: Skipping null child (46 of 86)
+11-27 12:15:36.210  7566  7582 W ByMatcher: Skipping null child (47 of 86)
+11-27 12:15:36.211  7566  7582 W ByMatcher: Skipping null child (48 of 86)
+11-27 12:15:36.211  7566  7582 W ByMatcher: Skipping null child (49 of 86)
+11-27 12:15:36.211  7566  7582 W ByMatcher: Skipping null child (50 of 86)
+11-27 12:15:36.211  7566  7582 W ByMatcher: Skipping null child (51 of 86)
+11-27 12:15:36.211  7566  7582 W ByMatcher: Skipping null child (52 of 86)
+11-27 12:15:36.212  7566  7582 W ByMatcher: Skipping null child (53 of 86)
+11-27 12:15:36.212  7566  7582 W ByMatcher: Skipping null child (54 of 86)
+11-27 12:15:36.212  7566  7582 W ByMatcher: Skipping null child (55 of 86)
+11-27 12:15:36.212  7566  7582 W ByMatcher: Skipping null child (56 of 86)
+11-27 12:15:36.213  7566  7582 W ByMatcher: Skipping null child (57 of 86)
+11-27 12:15:36.213  7566  7582 W ByMatcher: Skipping null child (58 of 86)
+11-27 12:15:36.213  7566  7582 W ByMatcher: Skipping null child (59 of 86)
+11-27 12:15:36.214  7566  7582 W ByMatcher: Skipping null child (60 of 86)
+11-27 12:15:36.215  7566  7582 W ByMatcher: Skipping null child (61 of 86)
+11-27 12:15:36.215  7566  7582 W ByMatcher: Skipping null child (62 of 86)
+11-27 12:15:36.220  7566  7582 W ByMatcher: Skipping null child (63 of 86)
+11-27 12:15:36.220  7566  7582 W ByMatcher: Skipping null child (64 of 86)
+11-27 12:15:36.221  7566  7582 W ByMatcher: Skipping null child (65 of 86)
+11-27 12:15:36.222  7566  7582 W ByMatcher: Skipping null child (66 of 86)
+11-27 12:15:36.222  7566  7582 W ByMatcher: Skipping null child (67 of 86)
+11-27 12:15:36.223  7566  7582 W ByMatcher: Skipping null child (68 of 86)
+11-27 12:15:36.224  7566  7582 W ByMatcher: Skipping null child (69 of 86)
+11-27 12:15:36.224  7566  7582 W ByMatcher: Skipping null child (70 of 86)
+11-27 12:15:36.225  7566  7582 W ByMatcher: Skipping null child (71 of 86)
+11-27 12:15:36.225  7566  7582 W ByMatcher: Skipping null child (72 of 86)
+11-27 12:15:36.227  7566  7582 W ByMatcher: Skipping null child (73 of 86)
+11-27 12:15:36.227  7566  7582 W ByMatcher: Skipping null child (74 of 86)
+11-27 12:15:36.228  7566  7582 W ByMatcher: Skipping null child (75 of 86)
+11-27 12:15:36.229  7566  7582 W ByMatcher: Skipping null child (76 of 86)
+11-27 12:15:36.229  7566  7582 W ByMatcher: Skipping null child (77 of 86)
+11-27 12:15:36.229  7566  7582 W ByMatcher: Skipping null child (78 of 86)
+11-27 12:15:36.230  7566  7582 W ByMatcher: Skipping null child (79 of 86)
+11-27 12:15:36.230  7566  7582 W ByMatcher: Skipping null child (80 of 86)
+11-27 12:15:36.231  7566  7582 W ByMatcher: Skipping null child (81 of 86)
+11-27 12:15:36.231  7566  7582 W ByMatcher: Skipping null child (82 of 86)
+11-27 12:15:36.231  7566  7582 W ByMatcher: Skipping null child (83 of 86)
+11-27 12:15:36.231  7566  7582 W ByMatcher: Skipping null child (84 of 86)
+11-27 12:15:36.232  7566  7582 W ByMatcher: Skipping null child (85 of 86)
+11-27 12:15:36.235  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@154d9; boundsInParent: Rect(0, 221 - 280, 266); boundsInScreen: Rect(20, 429 - 300, 474); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null]; isTextSelectable: false
+11-27 12:15:36.235  7566  7582 W ByMatcher: Skipping null child (0 of 2)
+11-27 12:15:36.236  7566  7582 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:15:36.236  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@154f8; boundsInParent: Rect(-20, 275 - 300, 316); boundsInScreen: Rect(0, 483 - 320, 524); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: true; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_SCROLL_FORWARD - null, AccessibilityAction: ACTION_SCROLL_RIGHT - null, AccessibilityAction: ACTION_PAGE_RIGHT - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:15:36.237  7566  7582 W ByMatcher: Skipping null child (0 of 4)
+11-27 12:15:36.237  7566  7582 W ByMatcher: Skipping null child (1 of 4)
+11-27 12:15:36.237  7566  7582 W ByMatcher: Skipping null child (2 of 4)
+11-27 12:15:36.238  7566  7582 W ByMatcher: Skipping null child (3 of 4)
+11-27 12:15:36.238  7566  7582 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@152e9; boundsInParent: Rect(20, 132 - 300, 6526); boundsInScreen: Rect(20, 208 - 300, 640); packageName: com.fretopia.app; className: android.view.View; text: ; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: ptab; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: true; actions: [AccessibilityAction: ACTION_NEXT_HTML_ELEMENT - null, AccessibilityAction: ACTION_PREVIOUS_HTML_ELEMENT - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null, AccessibilityAction: ACTION_CONTEXT_CLICK - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null]; isTextSelectable: false
+11-27 12:15:36.239  7566  7582 W ByMatcher: Skipping null child (21 of 86)
+11-27 12:15:36.239  7566  7582 W ByMatcher: Skipping null child (22 of 86)
+11-27 12:15:36.239  7566  7582 W ByMatcher: Skipping null child (23 of 86)
+11-27 12:15:36.239  7566  7582 W ByMatcher: Skipping null child (24 of 86)
+11-27 12:15:36.239  7566  7582 W ByMatcher: Skipping null child (25 of 86)
+11-27 12:15:36.240  7566  7582 W ByMatcher: Skipping null child (26 of 86)
+11-27 12:15:36.240  7566  7582 W ByMatcher: Skipping null child (27 of 86)
+11-27 12:15:36.240  7566  7582 W ByMatcher: Skipping null child (28 of 86)
+11-27 12:15:36.241  7566  7582 W ByMatcher: Skipping null child (29 of 86)
+11-27 12:15:36.241  7566  7582 W ByMatcher: Skipping null child (30 of 86)
+11-27 12:15:36.241  7566  7582 W ByMatcher: Skipping null child (31 of 86)
+11-27 12:15:36.242  7566  7582 W ByMatcher: Skipping null child (32 of 86)
+11-27 12:15:36.242  7566  7582 W ByMatcher: Skipping null child (33 of 86)
+11-27 12:15:36.242  7566  7582 W ByMatcher: Skipping null child (34 of 86)
+11-27 12:15:36.243  7566  7582 W ByMatcher: Skipping null child (35 of 86)
+11-27 12:15:36.243  7566  7582 W ByMatcher: Skipping null child (36 of 86)
+11-27 12:15:36.244  7566  7582 W ByMatcher: Skipping null child (37 of 86)
+11-27 12:15:36.244  7566  7582 W ByMatcher: Skipping null child (38 of 86)
+11-27 12:15:36.244  7566  7582 W ByMatcher: Skipping null child (39 of 86)
+11-27 12:15:36.244  7566  7582 W ByMatcher: Skipping null child (40 of 86)
+11-27 12:15:36.245  7566  7582 W ByMatcher: Skipping null child (41 of 86)
+11-27 12:15:36.245  7566  7582 W ByMatcher: Skipping null child (42 of 86)
+11-27 12:15:36.245  7566  7582 W ByMatcher: Skipping null child (43 of 86)
+11-27 12:15:36.246  7566  7582 W ByMatcher: Skipping null child (44 of 86)
+11-27 12:15:36.246  7566  7582 W ByMatcher: Skipping null child (45 of 86)
+11-27 12:15:36.246  7566  7582 W ByMatcher: Skipping null child (46 of 86)
+11-27 12:15:36.247  7566  7582 W ByMatcher: Skipping null child (47 of 86)
+11-27 12:15:36.247  7566  7582 W ByMatcher: Skipping null child (48 of 86)
+11-27 12:15:36.247  7566  7582 W ByMatcher: Skipping null child (49 of 86)
+11-27 12:15:36.248  7566  7582 W ByMatcher: Skipping null child (50 of 86)
+11-27 12:15:36.248  7566  7582 W ByMatcher: Skipping null child (51 of 86)
+11-27 12:15:36.248  7566  7582 W ByMatcher: Skipping null child (52 of 86)
+11-27 12:15:36.249  7566  7582 W ByMatcher: Skipping null child (53 of 86)
+11-27 12:15:36.249  7566  7582 W ByMatcher: Skipping null child (54 of 86)
+11-27 12:15:36.249  7566  7582 W ByMatcher: Skipping null child (55 of 86)
+11-27 12:15:36.249  7566  7582 W ByMatcher: Skipping null child (56 of 86)
+11-27 12:15:36.250  7566  7582 W ByMatcher: Skipping null child (57 of 86)
+11-27 12:15:36.250  7566  7582 W ByMatcher: Skipping null child (58 of 86)
+11-27 12:15:36.251  7566  7582 W ByMatcher: Skipping null child (59 of 86)
+11-27 12:15:36.251  7566  7582 W ByMatcher: Skipping null child (60 of 86)
+11-27 12:15:36.251  7566  7582 W ByMatcher: Skipping null child (61 of 86)
+11-27 12:15:36.252  7566  7582 W ByMatcher: Skipping null child (62 of 86)
+11-27 12:15:36.252  7566  7582 W ByMatcher: Skipping null child (63 of 86)
+11-27 12:15:36.252  7566  7582 W ByMatcher: Skipping null child (64 of 86)
+11-27 12:15:36.253  7566  7582 W ByMatcher: Skipping null child (65 of 86)
+11-27 12:15:36.253  7566  7582 W ByMatcher: Skipping null child (66 of 86)
+11-27 12:15:36.253  7566  7582 W ByMatcher: Skipping null child (67 of 86)
+11-27 12:15:36.253  7566  7582 W ByMatcher: Skipping null child (68 of 86)
+11-27 12:15:36.253  7566  7582 W ByMatcher: Skipping null child (69 of 86)
+11-27 12:15:36.254  7566  7582 W ByMatcher: Skipping null child (70 of 86)
+11-27 12:15:36.254  7566  7582 W ByMatcher: Skipping null child (71 of 86)
+11-27 12:15:36.254  7566  7582 W ByMatcher: Skipping null child (72 of 86)
+11-27 12:15:36.254  7566  7582 W ByMatcher: Skipping null child (73 of 86)
+11-27 12:15:36.254  7566  7582 W ByMatcher: Skipping null child (74 of 86)
+11-27 12:15:36.255  7566  7582 W ByMatcher: Skipping null child (75 of 86)
+11-27 12:15:36.257  7566  7582 W ByMatcher: Skipping null child (76 of 86)
+11-27 12:15:36.257  7566  7582 W ByMatcher: Skipping null child (77 of 86)
+11-27 12:15:36.257  7566  7582 W ByMatcher: Skipping null child (78 of 86)
+11-27 12:15:36.257  7566  7582 W ByMatcher: Skipping null child (79 of 86)
+11-27 12:15:36.258  7566  7582 W ByMatcher: Skipping null child (80 of 86)
+11-27 12:15:36.258  7566  7582 W ByMatcher: Skipping null child (81 of 86)
+11-27 12:15:36.258  7566  7582 W ByMatcher: Skipping null child (82 of 86)
+11-27 12:15:36.258  7566  7582 W ByMatcher: Skipping null child (83 of 86)
+11-27 12:15:36.259  7566  7582 W ByMatcher: Skipping null child (84 of 86)
+11-27 12:15:36.259  7566  7582 W ByMatcher: Skipping null child (85 of 86)
+11-27 12:15:37.255  6219  6219 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.constellation.service.START pkg=com.google.android.gms }
+11-27 12:15:37.284  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07-mic-check.png': found
+11-27 12:15:37.300  7566  7582 D UiDevice: Pressing back button.
+11-27 12:15:37.320  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onKeyDown():2444 Received KEYCODE_BACK. isAllViewsInvisible=false
+11-27 12:15:37.339  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: PAUSED
+11-27 12:15:37.339  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:37.352   484  7196 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:15:37.355  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: RESUMED
+11-27 12:15:37.355  7566  7566 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:37.361   484  7196 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:15:37.363   484  7196 D EGL_emulation: eglCreateContext: 0x72699d8b3ad0: maj 3 min 0 rcv 3
+11-27 12:15:37.364   484  7196 D EGL_emulation: eglMakeCurrent: 0x72699d8b3ad0: ver 3 0 (tinfo 0x726bae33f100) (first time)
+11-27 12:15:37.377   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca86690
+11-27 12:15:37.378   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca86690
+11-27 12:15:37.378   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81110
+11-27 12:15:37.380  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: STOPPED
+11-27 12:15:37.381  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:37.388  7566  7566 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@a2c0b92 in: DESTROYED
+11-27 12:15:37.389  7566  7566 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@a2c0b92
+11-27 12:15:37.449   484   837 W InputManager-JNI: Input channel object '7d144cd com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (client)' was disposed without first being removed with the input manager!
+11-27 12:15:37.495   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81230
+11-27 12:15:37.495   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca84c50
+11-27 12:15:37.495   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82d30
+11-27 12:15:37.495   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca80ab0
+11-27 12:15:37.495   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82d30
+11-27 12:15:37.496   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(22)
+11-27 12:15:37.498  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:15:37.499  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:15:37.499  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.fretopia.app fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:15:37.499  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:15:37.499  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:15:37.512   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca80c90
+11-27 12:15:37.549   358   465 D AudioFlinger: mixer(0x7484e9f9c9a0) throttle end: throttle time(9)
+11-27 12:15:38.345  7566  7582 W InteractionController: Timed out waiting 1000ms for command and events.
+11-27 12:15:39.558  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07b-returned-home.png': found
+11-27 12:15:39.574  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07c-software-after-check.png': found
+11-27 12:15:39.589  7566  7582 D UiDevice: Pressing back button.
+11-27 12:15:39.610  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onKeyDown():2444 Received KEYCODE_BACK. isAllViewsInvisible=false
+11-27 12:15:39.643  7566  7586 D EGL_emulation: app_time_stats: avg=194.69ms min=7.40ms max=4331.57ms count=25
+11-27 12:15:40.521  7566  7574 W om.fretopia.app: Cleared Reference was only reachable from finalizer (only reported once)
+11-27 12:15:40.565  6219  6344 I ContentMaintenance: Internal cache bytes used: 0; limit: 100000000; download size: 0
+11-27 12:15:40.567  6219  6344 I RealtimeCacheCleanup: Beginning Realtime garbage collection.
+11-27 12:15:40.568  6219  6344 I RealtimeCacheCleanup: Finished Realtime garbage collection.
+11-27 12:15:41.462  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/08-back-to-instruments.png': found
+11-27 12:15:41.479  7566  7582 D UiDevice: Pressing home button.
+11-27 12:15:41.503   756   756 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+11-27 12:15:41.519  1018  1018 D TaplTarget: Launcher.onNewIntent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10400100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity (has extras) }
+11-27 12:15:41.523  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:15:41.528   756   756 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+11-27 12:15:41.528   756   756 D vol.VolumeDialogImpl: dismissH: skipping dismiss because isAnimatingDismiss is true and showingStateInconsistent is false
+11-27 12:15:41.529  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: PAUSED
+11-27 12:15:41.529  7566  7566 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:41.536   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:41.537   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:41.537   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:15:41.583   484  1615 W AppSearchIcing: icing-search-engine.cc:217: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+11-27 12:15:41.588  1018  2113 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=Q0{delegate=L0{logId=9, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=y1.J@ba04ee0
+11-27 12:15:41.604  1562  1846 I AiAiEcho: Predicting[0]:
+11-27 12:15:41.605  1562  1846 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:15:41.644  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:15:41.644   756   810 D EGL_emulation: app_time_stats: avg=545.58ms min=3.23ms max=11049.92ms count=21
+11-27 12:15:41.646  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:15:41.646  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.google.android.apps.nexuslauncher fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:15:41.646  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:15:41.649  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:15:41.655  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: STOPPED
+11-27 12:15:41.655  7566  7566 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:41.664  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:15:41.665  1562  1846 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:15:41.818  1690  1690 I A       : Created gRPC endpoint to "search" for service class com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService
+11-27 12:15:41.821  1690  1690 I BgTaskExecutorImpl: Starting EXCLUSIVE background task UPLOAD_ASSISTANT_DEVICE_SETTINGS.
+11-27 12:15:41.822  1690  1690 W A       : Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+11-27 12:15:41.844  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.847  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.867  6219  6280 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.googlequicksearchbox componentName=null serviceId=36
+11-27 12:15:41.867  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.868  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.870  1690  2282 W LocationOracle: getBestLocation(): no location is available
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: Invalid input from icing corpus JSON flag.
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at android.util.JsonReader.syntaxError(JsonReader.java:1162)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at android.util.JsonReader.checkLenient(JsonReader.java:840)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at android.util.JsonReader.nextInArray(JsonReader.java:615)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at android.util.JsonReader.peek(JsonReader.java:345)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at android.util.JsonReader.hasNext(JsonReader.java:321)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.searchbox.c.b.b.k.c(PG:7)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.searchbox.c.b.b.k.<init>(PG:5)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.staticplugins.searchboxroot.features.n.a.c.<init>(PG:16)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.staticplugins.searchboxroot.b.a(PG:14)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.staticplugins.searchboxroot.x.<init>(PG:7)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.binaries.velvet.app.akd.b(PG:15)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at dagger.a.e.b(PG:1)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.staticplugins.searchboxroot.a.a.a(PG:3)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.binaries.velvet.app.ok.f(Unknown Source:2541)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.binaries.velvet.app.ok.b(PG:1)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.apps.gsa.search.core.service.g.a.c.a(PG:2)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.libraries.gsa.k.a.f.a(PG:2)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.common.util.concurrent.dx.a(PG:1)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.common.util.concurrent.cv.run(PG:4)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.common.util.concurrent.dz.run(PG:1)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.libraries.i.ae.run(PG:1)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.libraries.i.k.run(PG:2)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at com.google.android.libraries.i.p.run(PG:4)
+11-27 12:15:41.871  1690  2218 W CorpusConfigHelper: 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:15:41.873  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.873  1690  2258 I A       : Merging legacy hotword config map with new proto.
+11-27 12:15:41.874  1690  2258 I A       : Adding from config to map. Locale: cmn-Hant-TW modelPrefix: x_google Location:4e7cae00daee30ec565c34e3aa67a51f isSpeakerIdSupported: true
+11-27 12:15:41.882  1690  2258 I A       : Adding from config to map. Locale: id-ID modelPrefix: x_google Location:cfffcc1a4c1c084c003c8eb27f73d770 isSpeakerIdSupported: true
+11-27 12:15:41.882  1690  2258 I A       : Adding from config to map. Locale: ko-KR modelPrefix: x_google Location:0b132163a2eb2c1194b202067475724b isSpeakerIdSupported: true
+11-27 12:15:41.882  1690  2258 I A       : Skipping. Expected model: 2 Found: 1
+11-27 12:15:41.882  1690  2258 I A       : Adding from config to map. Locale: zh-TW modelPrefix: x_google Location:4e7cae00daee30ec565c34e3aa67a51f isSpeakerIdSupported: true
+11-27 12:15:41.883  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.884  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.889  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.896  1690  7255 I NetworkRecognitionRnr: Using pair HTTP connection
+11-27 12:15:41.905  6219  6219 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-27 12:15:41.905  6219  6219 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-27 12:15:41.930  1690  2258 I MicroDetectionState: Should stop hotword detection immediately - true
+11-27 12:15:41.931  1690  2258 I MicroDetectionState: Should stop hotword detection immediately - true
+11-27 12:15:41.931  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.932  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:41.948  1690  1777 I earchbox:search: JIT allocated 79KB for compiled code of java.lang.Object com.google.android.apps.gsa.binaries.velvet.app.akj.a()
+11-27 12:15:41.949  1690  5117 I A       : [Upload] Connected
+11-27 12:15:41.950  6219  6344 I Icing   : Usage reports ok 1, Failed Usage reports 0, indexed 0, rejected 0
+11-27 12:15:41.951  1690  1777 I earchbox:search: Compiler allocated 4258KB to compile java.lang.Object com.google.android.apps.gsa.binaries.velvet.app.akj.a()
+11-27 12:15:41.952  1690  2216 I A       : group apa_head_suggest present without account in *
+11-27 12:15:41.954  1690  2218 I A       : incrementApaDataDownloadStoreStatus(latency = PT0.055S, appVersion = 13.17.16.23, status = OK, locale = *, fileGroupnames = apa_head_suggest, accountScoped = false, localGroupsAvailable = false, timeSinceSearchBoot = Optional[PT4M38.521S] (ONE_TO_FIVE_MINUTES), timeSinceDataDownloadInit = PT33.765S (THIRTY_SECONDS_TO_ONE_MINUTE))
+11-27 12:15:41.975  6219  6280 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+11-27 12:15:41.982  1690  2075 W LocationOracle: No location returned by GMS core getLastLocation()
+11-27 12:15:41.984  1690  1690 E A       : onError
+11-27 12:15:41.984  1690  1690 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.staticplugins.dc.a.e.a(PG:3)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.cd.g.a.f.e(PG:2)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+11-27 12:15:41.984  1690  1690 E A       : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463)
+11-27 12:15:41.984  1690  1690 E A       : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+11-27 12:15:41.984  1690  1690 E A       : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+11-27 12:15:41.984  1690  1690 E A       : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+11-27 12:15:41.984  1690  1690 E A       : 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+11-27 12:15:41.984  1690  1690 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+11-27 12:15:41.984  1690  1690 E A       : 	... 15 more
+11-27 12:15:41.984  1690  1690 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.assistant.shared.n.h.a(PG:5)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.s3.producers.j.hE(PG:2)
+11-27 12:15:41.984  1690  1690 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:16)
+11-27 12:15:41.984  1690  1690 E A       : 	... 12 more
+11-27 12:15:41.986  1690  5117 I NetworkRecognitionRnr: Using pair HTTP connection
+11-27 12:15:41.996  1690  2282 I A       : [Upload] Connected
+11-27 12:15:41.998  1690  1690 W A       : Failed to sync device settings.
+11-27 12:15:41.998  1690  1690 I A       : Retrying to sync device settings.
+11-27 12:15:42.002  6219  6344 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+11-27 12:15:43.086  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: RESTARTED
+11-27 12:15:43.087  7566  7566 V ActivityScenario: Update currentActivityStage to RESTARTED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:43.087  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: STARTED
+11-27 12:15:43.087  7566  7566 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:43.088  7566  7566 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+11-27 12:15:43.088  7566  7566 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-27 12:15:43.089  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: RESUMED
+11-27 12:15:43.091  1018  1018 D MainContentCaptureSession: Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+11-27 12:15:43.094  7566  7566 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:43.116  1018  1786 D EGL_emulation: app_time_stats: avg=385.52ms min=9.75ms max=1302.94ms count=4
+11-27 12:15:43.118   484   503 W ziparchive: Unable to open '/data/app/~~KjW-9y4tIvSc6K3yXaZQ1w==/com.fretopia.app-Sq83nwPNKljwIhzLuKPR8g==/base.dm': No such file or directory
+11-27 12:15:43.134  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:15:43.135   756   810 D EGL_emulation: app_time_stats: avg=1490.04ms min=1490.04ms max=1490.04ms count=1
+11-27 12:15:43.137  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:15:43.138  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.fretopia.app fieldId=-1 fieldName=null extras=null}, false)
+11-27 12:15:43.138  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:15:43.138  1455  1455 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:15:43.139   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca862d0
+11-27 12:15:43.139   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81e30
+11-27 12:15:43.139   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca81e30
+11-27 12:15:43.139   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca862d0
+11-27 12:15:43.142   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:43.143   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode -1
+11-27 12:15:43.143   955  1274 D BtGatt.ScanManager: uid 10120 isForeground true scanMode 1
+11-27 12:15:43.169  1690  2282 I PBSessionCacheImpl: Deleted sessionId[7434494385232470] from persistence.
+11-27 12:15:43.177  1018  2113 D OneSearchSuggestProvider: Shut down the binder channel
+11-27 12:15:43.178  1018  1205 I s.nexuslauncher: oneway function results for code 2 on binder at 0x72692d90acf0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-27 12:15:43.180  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:43.180  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:43.180  1690  2258 W SearchServiceCore: Abort, client detached.
+11-27 12:15:43.181  1690  2258 I MicroDetectionState: Should stop hotword detection immediately - true
+11-27 12:15:43.181  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:43.181  1690  2258 I A       : Using proto config with mendel
+11-27 12:15:43.189   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca84290
+11-27 12:15:43.189   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca82d90
+11-27 12:15:43.199  1018  1018 W FrameTracker: Missed App frame:UNKNOWN: 88, 22598, 160518691, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-27 12:15:43.199  1018  1018 W FrameTracker: Missed SF frame:UNKNOWN: 88, 22598, 160518691, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-27 12:15:43.199  1018  1018 W FrameTracker: Missed SF frame:UNKNOWN: 80, 22613, 157826905, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-27 12:15:43.199  1018  1018 W FrameTracker: Missing SF jank callback for vsyncId: 22727, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-27 12:15:43.219   484  2238 W InputManager-JNI: Input channel object '4905013 SnapshotStartingWindow for taskId=11 (client)' was disposed without first being removed with the input manager!
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83f90
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca807b0
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca807b0
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:43.239   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca807b0
+11-27 12:15:43.995   484  2238 D ConnectivityService: requestNetwork for uid/pid:10119/1690 activeRequest: null callbackRequest: 156 [NetworkRequest [ REQUEST id=156, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10119 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-27 12:15:43.999   285  6498 I netd    : networkSetPermissionForNetwork(101, 0) <3.84ms>
+11-27 12:15:44.012   484   697 D ConnectivityService: NetReassign [156 : null → 101] [c 1] [a 16] [i 0]
+11-27 12:15:44.012   484   697 D ConnectivityService: reportNetworkConnectivity(100, false) by 10119
+11-27 12:15:44.013   932  2149 D NetworkMonitor/100: Forcing reevaluation for UID 10119. Dns signal count: 0
+11-27 12:15:44.028   932  7756 D TrafficStats: tagSocket(69) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.029   932  7755 D TrafficStats: tagSocket(99) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.034   932  7756 D TrafficStats: tagSocket(69) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.035   932  7755 D TrafficStats: tagSocket(69) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.039   285  7757 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+11-27 12:15:44.040   285  7757 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd25726c0f0
+11-27 12:15:44.043   285  7758 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+11-27 12:15:44.044   285  7759 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+11-27 12:15:44.044   285  7759 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd25726ecb0
+11-27 12:15:44.045   932   932 D TrafficStats: tagSocket(77) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.045   932   932 D TrafficStats: tagSocket(77) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.046   932  7756 D NetworkMonitor/100: PROBE_DNS connectivitycheck.gstatic.com 18ms OK 142.251.150.120,2001:4860:4826:7800::
+11-27 12:15:44.048   285  7758 I resolv  : res_nsend: used send_dg 256 terrno: 0
+11-27 12:15:44.051   285  7760 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+11-27 12:15:44.051   285  7760 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd26726c070
+11-27 12:15:44.051   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.052   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.052   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.052   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.053   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.053   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.053   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.053   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.054   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.054   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.055   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.055   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.056   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.056   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.057   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.057   932   932 D TrafficStats: tagSocket(69) with statsTag=0xffffffff, statsUid=-1
+11-27 12:15:44.058   932  7755 D NetworkMonitor/100: PROBE_DNS www.google.com 28ms OK 142.251.152.119,142.251.156.119,142.251.157.119,142.251.151.119,142.251.153.119,142.251.154.119,142.251.155.119,142.251.150.119,2001:4860:4829:7700::,2001:4860:482c:7700::,2001:4860:4827:7700::,2001:4860:482a:7700::,2001:4860:4826:7700::,2001:4860:482d:7700::,2001:4860:482b:7700::,2001:4860:4828:7700::
+11-27 12:15:44.060   285  7762 I resolv  : GetAddrInfoHandler::run: {100 983140 100 983140 1073 1}
+11-27 12:15:44.066   285  7761 I resolv  : GetAddrInfoHandler::run: {100 983140 100 983140 1073 1}
+11-27 12:15:44.066   285  7763 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:44.066   285  7763 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd28726ba90
+11-27 12:15:44.066   285  7763 I resolv  : doQuery: rcode=0, ancount=8, return value=256
+11-27 12:15:44.066   285  7764 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:44.066   285  7764 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd26726c070
+11-27 12:15:44.066   285  7764 I resolv  : doQuery: rcode=0, ancount=8, return value=160
+11-27 12:15:44.066   285  7766 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-27 12:15:44.066   285  7766 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd25726ecb0
+11-27 12:15:44.066   285  7766 I resolv  : doQuery: rcode=0, ancount=1, return value=63
+11-27 12:15:44.067   932  7755 D TrafficStats: tagSocket(69) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.066   285  7765 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-27 12:15:44.067   285  7765 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7bd25726c0f0
+11-27 12:15:44.067   285  7765 I resolv  : doQuery: rcode=0, ancount=1, return value=75
+11-27 12:15:44.068   932  7756 D TrafficStats: tagSocket(77) with statsTag=0xffffff81, statsUid=-1
+11-27 12:15:44.260   932  7756 D NetworkMonitor/100: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=213ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Fri, 27 Nov 2026 12:15:44 GMT], X-Android-Received-Millis=[1795781744260], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1795781744073]}
+11-27 12:15:44.268   932  7755 D NetworkMonitor/100: PROBE_HTTPS https://www.google.com/generate_204 time=209ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Fri, 27 Nov 2026 12:15:44 GMT], X-Android-Received-Millis=[1795781744265], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1795781744263]}
+11-27 12:15:44.268   932  7754 D NetworkMonitor/100: isCaptivePortal: isSuccessful()=true isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=242ms
+11-27 12:15:44.271   484   697 D ConnectivityService: [100 WIFI] validation passed
+11-27 12:15:44.692  7566  7586 D EGL_emulation: app_time_stats: avg=262.70ms min=4.69ms max=883.48ms count=6
+11-27 12:15:45.569  1690  2512 W A       : [Download] response code: 400
+11-27 12:15:45.790  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/09-after-home.png': found
+11-27 12:15:45.805  7697  7710 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/paint-report.txt': found
+11-27 12:15:45.817  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: PAUSED
+11-27 12:15:45.817  7566  7566 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:45.819   756   809 D SplashScreenView: Build android.window.SplashScreenView{8fda535 V.E...... ......ID 0,0-0,0}
+11-27 12:15:45.819   756   809 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:15:45.819   756   809 D SplashScreenView: Branding: view: android.view.View{853adca G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:15:45.819   756   810 W Parcel  : Expecting binder but got null!
+11-27 12:15:45.829   289   289 D Zygote  : Forked child process 7769
+11-27 12:15:45.842  7769  7769 I etopia.app.test: Late-enabling -Xcheck:jni
+11-27 12:15:45.856   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c30
+11-27 12:15:45.857   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:45.857   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c30
+11-27 12:15:45.857   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca83c30
+11-27 12:15:45.857   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:45.857   362   374 W TransactionTracing: Could not find layer handle 0x7e06aca85a30
+11-27 12:15:45.878  7769  7769 I etopia.app.test: Using CollectorTypeCC GC.
+11-27 12:15:45.879  7769  7769 W etopia.app.test: Unexpected CPU variant for x86: x86_64.
+11-27 12:15:45.879  7769  7769 W etopia.app.test: Known variants: atom, sandybridge, silvermont, kabylake, default
+11-27 12:15:45.889   373   401 I adbd    : jdwp connection from 7769
+11-27 12:15:45.900  7769  7769 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10179; state: ENABLED
+11-27 12:15:45.905  7769  7769 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:15:45.907  7769  7769 D nativeloader: Configuring classloader-namespace for other apk /system/framework/android.test.mock.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.fretopia.app.test
+11-27 12:15:45.907  7769  7769 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:15:45.908  7769  7769 W etopia.app.test: ClassLoaderContext shared library size mismatch. Expected=0, found=2 (PCL[] | PCL[]{PCL[/system/framework/android.test.base.jar*2876549756]#PCL[/system/framework/android.test.mock.jar*4109917914]})
+11-27 12:15:45.909  7769  7769 D nativeloader: Configuring classloader-namespace for other apk /system/framework/android.test.runner.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.fretopia.app.test
+11-27 12:15:45.910  7769  7769 W ziparchive: Unable to open '/data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/base.dm': No such file or directory
+11-27 12:15:45.910  7769  7769 W ziparchive: Unable to open '/data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/base.dm': No such file or directory
+11-27 12:15:45.920  7769  7769 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~vV6VjQCRlp3gqcLVhgOo2Q==/com.fretopia.app.test-7eBvmnrLV7ld-b7StFG8JQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.fretopia.app.test
+11-27 12:15:45.924  7769  7769 V GraphicsEnvironment: ANGLE Developer option for 'com.fretopia.app.test' set to: 'default'
+11-27 12:15:45.924  7769  7769 V GraphicsEnvironment: ANGLE GameManagerService for com.fretopia.app.test: false
+11-27 12:15:45.924  7769  7769 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:15:45.926  7769  7769 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:45.927  7769  7769 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:15:45.931  7769  7788 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:15:45.933  7769  7788 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:15:45.934  7769  7788 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:15:45.948  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: STOPPED
+11-27 12:15:45.949  7769  7769 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10179; state: DISABLED
+11-27 12:15:45.949  7566  7566 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.fretopia.app.FretopiaActivity@7fb73c4
+11-27 12:15:45.951  7566  7566 W cr_AwContents: WebView.destroy() called while WebView is still attached to window.
+11-27 12:15:45.954  7566  7566 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@7fb73c4 in: DESTROYED
+11-27 12:15:45.954  7566  7566 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-27 12:15:45.958  7769  7786 W Parcel  : Expecting binder but got null!
+11-27 12:15:45.959  7566  7582 E TestRunner: failed: theWholeAppWorksOnTheNativeMicrophone(com.fretopia.app.FretopiaAppTest)
+11-27 12:15:45.961  7566  7582 E TestRunner: ----- begin exception -----
+11-27 12:15:45.961  7566  7582 E TestRunner: java.lang.AssertionError: the page is blank after returning from Microphone check (ink 0.0)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.Assert.fail(Assert.java:89)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.Assert.assertTrue(Assert.java:42)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone(FretopiaAppTest.kt:178)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at androidx.test.rule.GrantPermissionRule$RequestPermissionStatement.evaluate(GrantPermissionRule.java:150)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-27 12:15:45.961  7566  7582 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2361)
+11-27 12:15:45.961  7566  7582 E TestRunner: ----- end exception -----
+11-27 12:15:45.962  7566  7582 I TestRunner: finished: theWholeAppWorksOnTheNativeMicrophone(com.fretopia.app.FretopiaAppTest)

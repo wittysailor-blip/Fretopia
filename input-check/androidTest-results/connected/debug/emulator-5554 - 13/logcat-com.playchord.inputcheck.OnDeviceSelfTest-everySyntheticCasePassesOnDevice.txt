@@ -1,0 +1,2 @@
+11-27 12:14:46.817  7057  7074 I TestRunner: started: everySyntheticCasePassesOnDevice(com.playchord.inputcheck.OnDeviceSelfTest)
+11-27 12:14:47.008  7057  7074 I TestRunner: finished: everySyntheticCasePassesOnDevice(com.playchord.inputcheck.OnDeviceSelfTest)
