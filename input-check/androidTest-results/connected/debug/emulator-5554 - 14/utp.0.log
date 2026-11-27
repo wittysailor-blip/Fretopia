@@ -1,0 +1,61 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "com.playchord.inputcheck"
+    test_package: "com.playchord.inputcheck.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/com.playchord.inputcheck/additional_test_output"
+    }
+    args_map {
+      key: "useTestStorageService"
+      value: "true"
+    }
+    use_test_storage_service: true
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/apk/debug/app-debug.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "/home/runner/.gradle/caches/modules-2/files-2.1/androidx.test.services/test-services/1.5.0/ec3d249c3ca1d08fa0108f6e2ea72d4c882e3f6b/test-services-1.5.0.apk"
+  install_options {
+    install_as_test_service: true
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/apk/debug/app-debug.apk] on device emulator-5554.
+INFO: Installing [/home/runner/.gradle/caches/modules-2/files-2.1/androidx.test.services/test-services/1.5.0/ec3d249c3ca1d08fa0108f6e2ea72d4c882e3f6b/test-services-1.5.0.apk] on device emulator-5554.
+INFO: Installing [/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Copying files from device to host: /sdcard/Android/media/com.playchord.inputcheck/additional_test_output to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Copying files from device to host: /sdcard/googletest/test_outputfiles to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Copying /sdcard/googletest/test_outputfiles/01-ready.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/01-ready.png
+INFO: Copying /sdcard/googletest/test_outputfiles/02-listening.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/02-listening.png
+INFO: Copying /sdcard/googletest/test_outputfiles/03-stopped.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/03-stopped.png
+INFO: Copying /sdcard/googletest/test_outputfiles/04-stopped-diagnostics.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/04-stopped-diagnostics.png
+INFO: Copying /sdcard/googletest/test_outputfiles/05-self-test.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/05-self-test.png
+INFO: Stop logcat streaming.
+INFO: Uninstalling com.playchord.inputcheck for device emulator-5554.
+INFO: Uninstalling androidx.test.services for device emulator-5554.
+INFO: Uninstalling com.playchord.inputcheck.test for device emulator-5554.
+INFO: Execute com.playchord.inputcheck.OnDeviceSelfTest.everySyntheticCasePassesOnDevice: PASSED
+INFO: Execute com.playchord.inputcheck.RecorderCaptureTest.capturesOrderedBlocksStopsAndRestartsCleanly: PASSED
+INFO: Execute com.playchord.inputcheck.ScreenWalkthroughTest.walkThroughTheScreen: PASSED

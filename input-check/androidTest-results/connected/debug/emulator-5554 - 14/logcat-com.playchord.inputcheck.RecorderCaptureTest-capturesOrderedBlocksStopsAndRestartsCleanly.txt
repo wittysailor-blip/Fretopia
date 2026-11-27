@@ -1,0 +1,78 @@
+11-27 12:51:46.365  5983  6005 I TestRunner: started: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)
+11-27 12:51:46.369  5983  6005 I UiAutomation: Initialized for user 0 on display 0
+11-27 12:51:46.399  1656  5985 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-27 12:51:46.400  1656  1942 I AiAiEcho: Predicting[0]:
+11-27 12:51:46.400  1656  1942 I AiAiEcho: EchoTargets:
+11-27 12:51:46.400  1656  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:51:46.400  1656  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:51:46.401  1656  1942 I AiAiEcho: Predicting[0]:
+11-27 12:51:46.401  1656  1942 I AiAiEcho: EchoTargets:
+11-27 12:51:46.401  1656  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:51:46.401  1656  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:51:46.407  5983  6005 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.playchord.inputcheck
+11-27 12:51:46.408  1656  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-27 12:51:46.409  1656  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-27 12:51:46.414  1729  2249 I A       : NGA disabled since it's running Panthera and at least one a11y feature is on.
+11-27 12:51:46.414  1729  2249 I A       : Nga state changed to NgaStateDetails{state=DISABLED, isSpecialExperience=false}
+11-27 12:51:46.418  1657  2050 I A       : Unsubscribed to apa or classic variant change.
+11-27 12:51:46.420   826   826 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:51:46.423  1657  1695 I A       : APA or Classic session decision: SessionDecision(sessionVariance=CLASSIC, platformVariance=CLASSIC, justification=CURRENT_PLATFORM_VARIANCE).
+11-27 12:51:46.423  1657  1695 I A       : [Memory] eligibility: StashEligibility{4}
+11-27 12:51:46.427  5983  6023 V UiAutomation: Init UiAutomation@8de91ba[id=1, displayId=0, flags=0]
+11-27 12:51:46.446   394   394 W ServiceManagerCppClient: Permission failure: android.permission.CALL_AUDIO_INTERCEPTION from uid=10192 pid=5983
+11-27 12:51:46.446   394   394 D PermissionCache: checking android.permission.CALL_AUDIO_INTERCEPTION for uid=10192 => denied (86 us)
+11-27 12:51:46.468   394  6026 I AudioFlinger: AudioFlinger's thread 0x7430cabdfbb0 tid=6026 ready to run
+11-27 12:51:46.485   394  6026 D audioserver: FGS Logger Transaction failed
+11-27 12:51:46.485   394  6026 D audioserver: -129
+11-27 12:51:46.486   394  6026 D audioserver: FGS Logger Transaction failed
+11-27 12:51:46.486   394  6026 D audioserver: -129
+11-27 12:51:46.487   339   339 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:51:46.488   394   394 D audioserver: FGS Logger Transaction failed
+11-27 12:51:46.488   394   394 D audioserver: -129
+11-27 12:51:46.600   826   901 D EGL_emulation: app_time_stats: avg=3658.45ms min=3658.45ms max=3658.45ms count=1
+11-27 12:51:46.609   339  6028 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:51:46.865   339  6028 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:51:46.880   339  6028 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:51:47.458   826   826 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-27 12:51:49.559   394  6026 D audioserver: FGS Logger Transaction failed
+11-27 12:51:49.559   394  6026 D audioserver: -129
+11-27 12:51:49.560   339   339 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:51:49.576   394  1106 D audioserver: FGS Logger Transaction failed
+11-27 12:51:49.576   394  1106 D audioserver: -129
+11-27 12:51:49.812  2781  3498 I DialerTaskExecutor: com.android.voicemail.impl.scheduling.TaskExecutor$WorkerThreadHandler.handleMessage:221 executing task com.android.voicemail.impl.ActivationTask@362f38d [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.813  2781  2781 I DialerLogcatLoggingBindings: com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_ACTIVATION_STARTED
+11-27 12:51:49.814  2781  3498 I DialerPreOMigrationHandler: com.android.voicemail.impl.PreOMigrationHandler.migrate:76 ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} already migrated [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.817  2781  3498 I DialerOmtpVvmCarrierConfigHelper: com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.isCarrierAppInstalled:637 carrier app not installed in this device [CONTEXT ratelimit_period="1 MINUTES [skipped: 4]" ]
+11-27 12:51:49.817  2781  3498 I DialerVoicemailStatus: com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+11-27 12:51:49.818  2781  3498 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+11-27 12:51:49.822  2781  6033 I DialerRestVoicemailEnabledFn: com.android.dialer.voicemail.service.impl.vvmclients.rest.RestVoicemailEnabledFn.isEnabled:51 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 23]" ]
+11-27 12:51:49.822  2781  6033 I DialerCvvmEnabledFn: com.android.dialer.voicemail.service.impl.vvmclients.omtp.protocol.cvvm.CvvmEnabledFn.isEnabled:37 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 11]" ]
+11-27 12:51:49.830  2781  6033 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:51:49.830  2781  6033 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+11-27 12:51:49.831  2781  3498 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:292 VVM content provider configured - vvm_type_cvvm PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.832  2781  3498 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.updateVoicemailsWithIccId:477 conversion disabled [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.833  2781  3498 I DialerOmtpVvmCarrierConfigHelper: com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_ACTIVATING PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.833  2781  3498 I DialerVoicemailStatus: com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+11-27 12:51:49.834  2781  3498 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+11-27 12:51:49.845  2781  6033 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:51:49.845  2781  6033 I DialerVoicemailStatusDataServiceImpl: com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+11-27 12:51:49.848  2781  3498 I DialerActivationTask: com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:339 sending an activation request [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:49.851  1048  2589 D SmsNumberUtils: enter filterDestAddr. destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+11-27 12:51:49.852  1048  2589 D SmsNumberUtils: destAddr is not formatted.
+11-27 12:51:49.852  1048  2589 D SmsNumberUtils: leave filterDestAddr, new destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+11-27 12:51:49.856  2781  3498 I DialerLogcatLoggingBindings: com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:46 Impression: CVVM_SEND_VVM_SMS
+11-27 12:51:49.875   394  6035 I AudioFlinger: AudioFlinger's thread 0x7430cabdfbb0 tid=6035 ready to run
+11-27 12:51:49.879   394  6035 D audioserver: FGS Logger Transaction failed
+11-27 12:51:49.879   394  6035 D audioserver: -129
+11-27 12:51:49.879   394  6035 D audioserver: FGS Logger Transaction failed
+11-27 12:51:49.880   394  6035 D audioserver: -129
+11-27 12:51:49.880   339   339 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:51:49.881   394  1106 D audioserver: FGS Logger Transaction failed
+11-27 12:51:49.882   394  1106 D audioserver: -129
+11-27 12:51:50.123   826   901 D EGL_emulation: app_time_stats: avg=384.42ms min=1.28ms max=3048.18ms count=9
+11-27 12:51:50.359  2781  2781 I DialerStatusSmsFetcher: com.android.voicemail.impl.sms.StatusSmsFetcher.onReceive:106 Request SMS successfully sent [CONTEXT enable_persistent_logger=true ]
+11-27 12:51:50.394   339  6037 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:51:50.437   394  6035 D audioserver: FGS Logger Transaction failed
+11-27 12:51:50.437   394  6035 D audioserver: -129
+11-27 12:51:50.439   339   339 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:51:50.445  5983  6005 I TestRunner: finished: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)

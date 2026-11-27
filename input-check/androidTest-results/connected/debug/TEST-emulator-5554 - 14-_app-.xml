@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.playchord.inputcheck.OnDeviceSelfTest" tests="3" failures="0" errors="0" skipped="0" time="39.045" timestamp="2026-11-27T12:52:25" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 14" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="everySyntheticCasePassesOnDevice" classname="com.playchord.inputcheck.OnDeviceSelfTest" time="0.154" />
+  <testcase name="capturesOrderedBlocksStopsAndRestartsCleanly" classname="com.playchord.inputcheck.RecorderCaptureTest" time="4.071" />
+  <testcase name="walkThroughTheScreen" classname="com.playchord.inputcheck.ScreenWalkthroughTest" time="32.956" />
+</testsuite>
