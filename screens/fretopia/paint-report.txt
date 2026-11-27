@@ -1,0 +1,13 @@
+01-landing: ink 0.106
+02-goal: ink 0.046
+03-goal-chosen: ink 0.143
+04-instruments: ink 0.067
+05-home-songs: ink 0.051
+06-player-listening: ink 0.050
+before-mic-check: {"iw":320,"ih":616,"hidden":false,"vs":"visible","bodyH":616} | webView 320x616 shown=true vis=0 alpha=1.0 layer=0 root pad=0,24,0,0 root 320x640 hasFocus=true
+07-mic-check: ink 0.102
+07b-returned-home: ink 0.000
+after-mic-check: {"iw":320,"ih":616,"hidden":false,"vs":"visible","bodyH":616} | webView 320x616 shown=true vis=0 alpha=1.0 layer=0 root pad=0,24,0,0 root 320x640 hasFocus=true
+08-back-to-instruments: ink 0.000
+09-after-home: ink 0.000
+after-home: {"iw":320,"ih":616,"hidden":false,"vs":"visible","bodyH":616} | webView 320x616 shown=true vis=0 alpha=1.0 layer=0 root pad=0,24,0,0 root 320x640 hasFocus=true

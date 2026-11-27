@@ -1,0 +1,40 @@
+11-27 12:04:28.143  7389  7405 I TestRunner: started: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)
+11-27 12:04:28.178  1570  3292 I AiAiEcho: Settings cha with uri: content://settings/secure/accessibility_enabled
+11-27 12:04:28.182  1570  1912 I AiAiEcho: Predicting[0]:
+11-27 12:04:28.182  1570  1912 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:04:28.183  1570  1912 I AiAiEcho: Predicting[0]:
+11-27 12:04:28.184  7389  7424 V UiAutomation: Init UiAutomation@4c43502[id=1, flags=0]
+11-27 12:04:28.184  1570  1912 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:04:28.185  1570  1912 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:04:28.185  1570  1912 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:04:28.186  1570  1912 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+11-27 12:04:28.186  1570  1912 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0
+11-27 12:04:28.187  7389  7405 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.playchord.inputcheck
+11-27 12:04:28.224  1729  2251 I A       : NGA disabled due to not being eligible.
+11-27 12:04:28.267   328  1242 W ServiceManager: Permission failure: android.permission.CALL_AUDIO_INTERCEPTION from uid=10174 pid=7389
+11-27 12:04:28.267   328  1242 D PermissionCache: checking android.permission.CALL_AUDIO_INTERCEPTION for uid=10174 => denied (145 us)
+11-27 12:04:28.293   328  7427 I AudioFlinger: AudioFlinger's thread 0x772d0cd23bb0 tid=7427 ready to run
+11-27 12:04:28.319   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:04:28.327   293  1163 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:428 failure: Result::NOT_SUPPORTED
+11-27 12:04:28.327   293  1163 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:433 failure: Result::NOT_SUPPORTED
+11-27 12:04:28.356   293  7429 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:28.357   756   812 D EGL_emulation: app_time_stats: avg=18479.81ms min=18479.81ms max=18479.81ms count=1
+11-27 12:04:28.471   350   379 W TransactionTracing: Could not find layer handle 0x7223aeac9c30
+11-27 12:04:28.736   293  7429 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:28.740   293  7429 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:28.743   293  7429 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:28.890   293  7429 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:30.662   284  6647 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.07ms>
+11-27 12:04:30.662   284  6647 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.01ms>
+11-27 12:04:30.662   284  6647 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.03ms>
+11-27 12:04:30.663   284  6647 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.02ms>
+11-27 12:04:31.386   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:04:31.472   756   812 D EGL_emulation: app_time_stats: avg=273.59ms min=1.02ms max=2530.97ms count=11
+11-27 12:04:31.697   328  7436 I AudioFlinger: AudioFlinger's thread 0x772d0cd23bb0 tid=7436 ready to run
+11-27 12:04:31.700   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:04:31.710   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:428 failure: Result::NOT_SUPPORTED
+11-27 12:04:31.710   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:433 failure: Result::NOT_SUPPORTED
+11-27 12:04:31.807   293  7438 W android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:04:31.971   350   379 W TransactionTracing: Could not find layer handle 0x7223aeacc630
+11-27 12:04:32.262   293   349 E android.hardware.audio@7.1-impl.ranchu: device/generic/goldfish/audio/stream_in.cpp:updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:04:32.265  7389  7405 I TestRunner: finished: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)
