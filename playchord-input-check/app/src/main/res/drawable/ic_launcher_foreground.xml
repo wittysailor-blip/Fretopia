@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- a simple level meter: three bars -->
+    <path android:fillColor="#FFFFFF" android:pathData="M36,62h8v12h-8z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M50,48h8v26h-8z" />
+    <path android:fillColor="#E8572A" android:pathData="M64,34h8v40h-8z" />
+</vector>
