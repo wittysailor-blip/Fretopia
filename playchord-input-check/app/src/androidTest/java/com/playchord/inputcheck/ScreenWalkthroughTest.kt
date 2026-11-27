@@ -9,8 +9,6 @@ import androidx.test.rule.GrantPermissionRule
 import androidx.test.services.storage.TestStorage
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.UiScrollable
-import androidx.test.uiautomator.UiSelector
 import androidx.test.uiautomator.Until
 import org.junit.Assert.assertTrue
 import org.junit.Rule
@@ -31,6 +29,16 @@ class ScreenWalkthroughTest {
         TestStorage().openOutputFile("$name.png").use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
+    /** Swipes up until [text] is on screen (Compose scroll containers don't answer UiScrollable). */
+    private fun scrollTo(text: String) {
+        repeat(10) {
+            val o = device.findObject(By.text(text))
+            if (o != null && o.visibleBounds.bottom < device.displayHeight - 40) return
+            device.swipe(device.displayWidth / 2, device.displayHeight * 3 / 4, device.displayWidth / 2, device.displayHeight / 4, 30)
+            device.waitForIdle()
+        }
+    }
+
     @Test
     fun walkThroughTheScreen() {
         ActivityScenario.launch(MainActivity::class.java).use {
@@ -41,16 +49,22 @@ class ScreenWalkthroughTest {
             assertTrue("Listening not shown", device.wait(Until.hasObject(By.text("Listening")), 10_000))
             Thread.sleep(2_500)
             shot("02-listening")
+            scrollTo("Consumer continuity")
+            Thread.sleep(500)
+            shot("03-listening-diagnostics")
+            device.swipe(device.displayWidth / 2, device.displayHeight / 4, device.displayWidth / 2, device.displayHeight * 3 / 4, 20)
+            device.swipe(device.displayWidth / 2, device.displayHeight / 4, device.displayWidth / 2, device.displayHeight * 3 / 4, 20)
+            device.waitForIdle()
 
             device.findObject(By.text("Stop mic")).click()
             assertTrue("Stopped not shown", device.wait(Until.hasObject(By.text("Stopped")), 10_000))
-            shot("03-stopped")
+            shot("04-stopped")
 
-            UiScrollable(UiSelector().scrollable(true)).scrollTextIntoView("Run self-test")
+            scrollTo("Run self-test")
             device.findObject(By.text("Run self-test")).click()
             assertTrue("self-test did not pass", device.wait(Until.hasObject(By.text("Passed: 9 of 9")), 20_000))
-            UiScrollable(UiSelector().scrollable(true)).scrollToEnd(5)
-            shot("04-self-test")
+            scrollTo("Unsupported format is reported")
+            shot("05-self-test")
         }
     }
 }

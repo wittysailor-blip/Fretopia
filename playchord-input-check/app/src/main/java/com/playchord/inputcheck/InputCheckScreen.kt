@@ -110,11 +110,8 @@ fun InputCheckScreen(
                 Text("−30", style = MaterialTheme.typography.labelSmall, color = Neutral)
                 Text("0 dBFS", style = MaterialTheme.typography.labelSmall, color = Neutral)
             }
-            Row(verticalAlignment = Alignment.Bottom) {
-                Text(dbText(live.peakDbfs), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
-                Spacer(Modifier.width(8.dp))
-                Text("peak, last 0.1 s", style = MaterialTheme.typography.bodyMedium, color = Neutral, modifier = Modifier.padding(bottom = 6.dp))
-            }
+            Text(dbText(live.peakDbfs), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+            Text("Peak over the last 0.1 s", style = MaterialTheme.typography.bodyMedium, color = Neutral)
             Text("Loudest this session: ${dbText(live.loudestDbfs)}", style = MaterialTheme.typography.bodyMedium, color = Neutral)
             Text(
                 "Measured from the samples the test consumer received, not from the recorder.",
