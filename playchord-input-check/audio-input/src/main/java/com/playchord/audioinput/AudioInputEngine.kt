@@ -118,8 +118,9 @@ class AudioInputEngine(
 
     private fun failBeforeCapture(generation: Long, error: CaptureError, info: SessionInfo? = null) {
         publish(EngineState.FAILED, generation, info, error)
-        publish(EngineState.STOPPED, generation, info, error)
+        // Release the claim before announcing STOPPED, so a start made in reaction to STOPPED is accepted.
         busy.set(false)
+        publish(EngineState.STOPPED, generation, info, error)
     }
 
     private fun doStart(consumer: InputConsumer) {
@@ -235,8 +236,10 @@ class AudioInputEngine(
         }
         retiredProcessor = s.processor
         session = null
-        publish(EngineState.STOPPED, s.generation, s.info, s.error)
+        // Release the claim before announcing STOPPED, so a start made in reaction to STOPPED is accepted.
+        // A new start still runs after this method, because the control thread is serial.
         busy.set(false)
+        publish(EngineState.STOPPED, s.generation, s.info, s.error)
     }
 
     // ---------------------------------------------------------------- capture thread

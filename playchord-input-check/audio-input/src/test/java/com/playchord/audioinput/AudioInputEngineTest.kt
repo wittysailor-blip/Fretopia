@@ -163,6 +163,23 @@ class AudioInputEngineTest {
     }
 
     @Test
+    fun aStartMadeTheMomentStoppedIsAnnouncedIsAccepted() {
+        val a = ScriptedPcmSource(listOf(ScriptedPcmSource.samples(1, 2, 3, 4)), 4)
+        val b = ScriptedPcmSource(listOf(ScriptedPcmSource.samples(5, 6, 7, 8)), 4)
+        lateinit var e: AudioInputEngine
+        val c1 = Collector({ e }, 1)
+        val c2 = Collector({ e }, 1)
+        e = engineFor(a, b)
+        val restarted = java.util.concurrent.atomic.AtomicBoolean(false)
+        e.addListener { s -> if (s.state == EngineState.STOPPED && s.generation == 1L && !restarted.getAndSet(true)) assertTrue(e.start(c2)) }
+        e.start(c1)
+        c1.await()
+        e.stop()
+        c2.await()
+        awaitState(e, EngineState.RUNNING, 2)
+    }
+
+    @Test
     fun rapidStartsCreateOnlyOneSession() {
         val a = ScriptedPcmSource(listOf(ScriptedPcmSource.samples(1, 2, 3, 4)), 4)
         val b = ScriptedPcmSource(listOf(ScriptedPcmSource.samples(1, 2, 3, 4)), 4)

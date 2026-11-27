@@ -49,7 +49,7 @@ class RecorderCaptureTest {
         val consumer = DiagnosticConsumer()
         try {
             assertTrue(engine.start(consumer))
-            val reached = waitFor(engine, 5_000) { engine.snapshot.state == EngineState.RUNNING || engine.snapshot.state == EngineState.STOPPED }
+            val reached = waitFor(engine, 5_000) { val st = engine.snapshot; st.generation > 0 && (st.state == EngineState.RUNNING || st.state == EngineState.STOPPED) }
             val first = engine.snapshot
             assumeFalse("this device does not offer 44,100 Hz mono PCM16: ${first.error}", first.error is CaptureError.UnsupportedFormat)
             assertTrue("never reached RUNNING: $first", reached && first.state == EngineState.RUNNING)
@@ -70,7 +70,7 @@ class RecorderCaptureTest {
             assertEquals("counters kept moving after stop", frozen, consumer.snapshot().totalFrames)
 
             assertTrue(engine.start(consumer))
-            assertTrue(waitFor(engine, 5_000) { engine.snapshot.state == EngineState.RUNNING })
+            assertTrue(waitFor(engine, 5_000) { engine.snapshot.generation == first.generation + 1 && engine.snapshot.state == EngineState.RUNNING })
             assertEquals(first.generation + 1, engine.snapshot.generation)
             Thread.sleep(500)
             val d2 = consumer.snapshot()

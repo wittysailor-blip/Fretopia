@@ -6,6 +6,9 @@ on:
     paths: ["playchord-input-check/**", ".github/workflows/playchord-input-check.yml"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,6 +28,36 @@ jobs:
           ./gradlew --no-daemon --stacktrace :audio-input:testDebugUnitTest :app:testDebugUnitTest :app:assembleDebug
       - name: APK checksum
         run: sha256sum app/build/outputs/apk/debug/app-debug.apk | tee app/build/outputs/apk/debug/app-debug.apk.sha256
+      - name: Test summary
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import glob, xml.etree.ElementTree as ET
+          files = sorted(glob.glob("**/test-results/**/TEST-*.xml", recursive=True) + glob.glob("**/androidTest-results/**/TEST-*.xml", recursive=True))
+          total = bad = 0
+          for f in files:
+              root = ET.parse(f).getroot()
+              for tc in root.iter("testcase"):
+                  total += 1
+                  failed = any(ch.tag in ("failure", "error") for ch in tc)
+                  skipped = any(ch.tag == "skipped" for ch in tc)
+                  bad += failed
+                  print("RESULT", "FAIL" if failed else "SKIP" if skipped else "PASS", tc.get("classname"), tc.get("name"), tc.get("time"))
+          print(f"RESULT-TOTAL {total} tests, {bad} failed")
+          PY
+      - name: Publish APK and results to a branch
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/pub && mkdir -p /tmp/pub/unit
+          cp app/build/outputs/apk/debug/app-debug.apk* /tmp/pub/ 2>/dev/null || true
+          cp -r audio-input/build/test-results /tmp/pub/unit/audio-input 2>/dev/null || true
+          cp -r app/build/test-results /tmp/pub/unit/app 2>/dev/null || true
+          echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
+          cd /tmp/pub && git init -q -b out && git add -A
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "build of ${GITHUB_SHA}"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" out:playchord-input-check-build
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
@@ -67,6 +100,35 @@ jobs:
           disable-animations: true
           working-directory: playchord-input-check
           script: chmod +x gradlew && ./gradlew --no-daemon --stacktrace :app:connectedDebugAndroidTest
+      - name: Device test summary
+        if: always()
+        working-directory: playchord-input-check
+        run: |
+          python3 - <<'PY'
+          import glob, xml.etree.ElementTree as ET
+          files = sorted(glob.glob("**/test-results/**/TEST-*.xml", recursive=True) + glob.glob("**/androidTest-results/**/TEST-*.xml", recursive=True))
+          total = bad = 0
+          for f in files:
+              root = ET.parse(f).getroot()
+              for tc in root.iter("testcase"):
+                  total += 1
+                  failed = any(ch.tag in ("failure", "error") for ch in tc)
+                  skipped = any(ch.tag == "skipped" for ch in tc)
+                  bad += failed
+                  print("RESULT", "FAIL" if failed else "SKIP" if skipped else "PASS", tc.get("classname"), tc.get("name"), tc.get("time"))
+          print(f"RESULT-TOTAL {total} tests, {bad} failed")
+          PY
+      - name: Publish device results to a branch
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/pub && mkdir -p /tmp/pub
+          cp -r playchord-input-check/app/build/outputs/androidTest-results /tmp/pub/ 2>/dev/null || true
+          echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
+          cd /tmp/pub && git init -q -b out && git add -A
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "device tests of ${GITHUB_SHA}"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" out:playchord-input-check-device
       - uses: actions/upload-artifact@v4
         if: always()
         with:
