@@ -160,7 +160,7 @@ class FretopiaActivity : ComponentActivity(), NativeBridge.Host {
     override fun requestMicPermission() = micPermission.launch(Manifest.permission.RECORD_AUDIO)
 
     override fun openMicCheck() {
-        startActivity(Intent(this, InputCheckActivity::class.java).putExtra(InputCheckActivity.EXTRA_TITLE, "Microphone check"))
+        startActivity(Intent(this, InputCheckActivity::class.java).putExtra(InputCheckActivity.EXTRA_TITLE, "Microphone check").putExtra(InputCheckActivity.EXTRA_APP_NAME, "Fretopia"))
     }
 
     override fun clips() = clipHandler

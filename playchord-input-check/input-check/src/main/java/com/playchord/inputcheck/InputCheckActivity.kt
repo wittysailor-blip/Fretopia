@@ -29,6 +29,7 @@ class InputCheckActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_TITLE = "com.playchord.inputcheck.TITLE"
+        const val EXTRA_APP_NAME = "com.playchord.inputcheck.APP_NAME"
     }
 
     private val vm: InputCheckViewModel by viewModels()
@@ -51,6 +52,7 @@ class InputCheckActivity : ComponentActivity() {
                     val bg by vm.stoppedForBackground.collectAsStateWithLifecycle()
                     InputCheckScreen(
                         title = intent.getStringExtra(EXTRA_TITLE) ?: "PlayChord Input Check",
+                        appName = intent.getStringExtra(EXTRA_APP_NAME) ?: "PlayChord",
                         session = session,
                         live = live,
                         permission = permission,

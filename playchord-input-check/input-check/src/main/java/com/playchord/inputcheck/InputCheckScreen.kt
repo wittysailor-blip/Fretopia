@@ -47,6 +47,7 @@ private val Neutral = Color(0xFF5F5F64)
 @Composable
 fun InputCheckScreen(
     title: String = "PlayChord Input Check",
+    appName: String = "PlayChord",
     session: SessionSnapshot,
     live: LiveUi,
     permission: PermissionUi,
@@ -69,7 +70,7 @@ fun InputCheckScreen(
         Column {
             Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
             Spacer(Modifier.height(4.dp))
-            Text("Pluck a string to check what reaches PlayChord.", style = MaterialTheme.typography.bodyLarge, color = Neutral)
+            Text("Pluck a string to check what reaches $appName.", style = MaterialTheme.typography.bodyLarge, color = Neutral)
         }
 
         // B. Session status and main button
