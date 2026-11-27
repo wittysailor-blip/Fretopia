@@ -157,6 +157,23 @@ class FretopiaAppTest {
             Thread.sleep(800)
             shot("07b-returned-home")
             dims(s, "after-mic-check")
+            // Experiments: which way of waking the WebView brings the pixels back?
+            if (shot("x0-blank-check") < 0.01) {
+                s.onActivity { act -> act.webView.visibility = android.view.View.INVISIBLE; act.webView.post { act.webView.visibility = android.view.View.VISIBLE } }
+                Thread.sleep(1_000)
+                if (shot("x1-visibility-toggle") < 0.01) {
+                    s.onActivity { act -> val p = act.webView.parent as android.view.ViewGroup; val lp = act.webView.layoutParams; p.removeView(act.webView); p.addView(act.webView, lp) }
+                    Thread.sleep(1_000)
+                    if (shot("x2-reattach") < 0.01) {
+                        s.onActivity { act -> act.webView.setLayerType(android.view.View.LAYER_TYPE_SOFTWARE, null) }
+                        Thread.sleep(1_000)
+                        shot("x3-software-layer")
+                        s.onActivity { act -> act.webView.setLayerType(android.view.View.LAYER_TYPE_NONE, null) }
+                        Thread.sleep(600)
+                        shot("x4-back-to-hardware")
+                    }
+                }
+            }
             softwareDraw(s, "07c-software-after-check")
 
             // Back walks the screens: home → instruments.
