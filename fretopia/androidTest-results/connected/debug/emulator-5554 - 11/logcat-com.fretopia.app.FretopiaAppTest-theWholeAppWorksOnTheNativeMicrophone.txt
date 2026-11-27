@@ -1,0 +1,371 @@
+11-27 12:50:51.231  6547  6567 I TestRunner: started: theWholeAppWorksOnTheNativeMicrophone(com.fretopia.app.FretopiaAppTest)
+11-27 12:50:51.235  6547  6567 I UiDevice: Creating a new instance, old instance exists: false
+11-27 12:50:51.239  6547  6569 V UiAutomation: Init UiAutomation@8b16574[id=2, flags=0]
+11-27 12:50:51.240  6547  6567 D UiDevice: Setting accessibility service flags: 65618
+11-27 12:50:51.249   909  2011 E FrameEvents: updateAcquireFence: Did not find frame.
+11-27 12:50:51.254  6547  6567 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.fretopia.app
+11-27 12:50:51.259  6547  6567 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:50:51.268   493   526 D EventSequenceValidator: Transition from ACTIVITY_CANCELLED to INTENT_STARTED
+11-27 12:50:51.269   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 7, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+11-27 12:50:51.269   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=7)
+11-27 12:50:51.280   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:50:51.295   427   427 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+11-27 12:50:51.312  6547  6579 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:51.314  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: PRE_ON_CREATE
+11-27 12:50:51.314  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-27 12:50:51.323  6547  6579 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:51.329  6547  6579 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:51.330  6547  6547 I WebViewFactory: Loading com.google.android.webview version 83.0.4103.106 (code 410410686)
+11-27 12:50:51.332  6547  6547 I om.fretopia.ap: The ClassLoaderContext is a special shared library.
+11-27 12:50:51.332  6547  6547 D nativeloader: classloader namespace configured for unbundled product apk. library_path=/product/app/WebViewGoogle/lib/x86_64:/product/app/WebViewGoogle/WebViewGoogle.apk!/lib/x86_64:/product/app/TrichromeLibrary/TrichromeLibrary.apk!/lib/x86_64:/product/lib64:/system/product/lib64
+11-27 12:50:51.348  6547  6547 I om.fretopia.ap: The ClassLoaderContext is a special shared library.
+11-27 12:50:51.349  6547  6547 D nativeloader: classloader namespace configured for unbundled product apk. library_path=/product/app/WebViewGoogle/lib/x86_64:/product/app/WebViewGoogle/WebViewGoogle.apk!/lib/x86_64:/product/app/TrichromeLibrary/TrichromeLibrary.apk!/lib/x86_64:/product/lib64:/system/product/lib64
+11-27 12:50:51.447  6547  6584 I cr_VariationsUtils: Requesting new seed from IVariationsSeedServer
+11-27 12:50:51.451   289   289 D Zygote  : Forked child process 6585
+11-27 12:50:51.453  6547  6547 I cr_LibraryLoader: Loaded native library version number "83.0.4103.106"
+11-27 12:50:51.455  6547  6547 I cr_CachingUmaRecorder: Flushed 3 samples from 3 histograms.
+11-27 12:50:51.456  6585  6585 W webview_servic: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:50:51.461   398   406 I adbd    : jdwp connection from 6585
+11-27 12:50:51.473   919   919 D Zygote  : Forked child process 6607
+11-27 12:50:51.476  6547  6547 E chromium: [ERROR:filesystem_posix.cc(62)] mkdir /data/user/0/com.fretopia.app/cache/WebView/Crashpad: No such file or directory (2)
+11-27 12:50:51.477  6585  6585 I webview_servic: The ClassLoaderContext is a special shared library.
+11-27 12:50:51.478  6585  6585 D nativeloader: classloader namespace configured for unbundled product apk. library_path=/product/app/WebViewGoogle/lib/x86:/product/app/WebViewGoogle/WebViewGoogle.apk!/lib/x86:/product/app/TrichromeLibrary/TrichromeLibrary.apk!/lib/x86:/product/lib:/system/product/lib
+11-27 12:50:51.480  6607  6607 W ocessService0:: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:50:51.483  6585  6585 I webview_servic: The ClassLoaderContext is a special shared library.
+11-27 12:50:51.485   398   406 I adbd    : jdwp connection from 6607
+11-27 12:50:51.490  6547  6547 I TetheringManager: registerTetheringEventCallback:com.fretopia.app
+11-27 12:50:51.494  6585  6585 D nativeloader: classloader namespace configured for unbundled product apk. library_path=/product/app/WebViewGoogle/lib/x86:/product/app/WebViewGoogle/WebViewGoogle.apk!/lib/x86:/product/app/TrichromeLibrary/TrichromeLibrary.apk!/lib/x86:/product/lib:/system/product/lib
+11-27 12:50:51.499  6547  6630 W chromium: [WARNING:dns_config_service_posix.cc(341)] Failed to read DnsConfig.
+11-27 12:50:51.504  6585  6585 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:51.504  6585  6585 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:51.514  6607  6607 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:51.515  6607  6607 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:51.527  6607  6607 I cr_ChildProcessService: Creating new ChildProcessService pid=6607
+11-27 12:50:51.550  6547  6628 W om.fretopia.ap: Accessing hidden method Landroid/media/AudioManager;->getOutputLatency(I)I (greylist, reflection, allowed)
+11-27 12:50:51.553  6547  6628 W cr_media: Requires BLUETOOTH permission
+11-27 12:50:51.583  6547  6644 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eac890, tid 6644
+11-27 12:50:51.588  6547  6644 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:51.590   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+11-27 12:50:51.592  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: CREATED
+11-27 12:50:51.592  6547  6547 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:50:51.592  6547  6644 D EGL_emulation: eglCreateContext: 0x746e33f0b550: maj 3 min 0 rcv 3
+11-27 12:50:51.593  6547  6644 D EGL_emulation: eglMakeCurrent: 0x746e33f0b550: ver 3 0 (tinfo 0x746dd3f3c400) (first time)
+11-27 12:50:51.594  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: STARTED
+11-27 12:50:51.594  6547  6547 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:50:51.596  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: RESUMED
+11-27 12:50:51.596  6547  6547 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:50:51.604  6607  6642 I cr_LibraryLoader: Loaded native library version number "83.0.4103.106"
+11-27 12:50:51.606  6607  6642 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-27 12:50:51.637  6547  6577 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eae8d0, tid 6577
+11-27 12:50:51.654  6547  6577 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:51.655  6547  6577 D EGL_emulation: eglCreateContext: 0x746e33f10930: maj 3 min 0 rcv 3
+11-27 12:50:51.656  6547  6577 D EGL_emulation: eglMakeCurrent: 0x746e33f10930: ver 3 0 (tinfo 0x746dd3f79db0) (first time)
+11-27 12:50:51.673   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+11-27 12:50:51.673  6547  6577 I Gralloc4: mapper 4.x is not supported
+11-27 12:50:51.673  6547  6577 D HostConnection: createUnique: call
+11-27 12:50:51.674  6547  6577 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eae690, tid 6577
+11-27 12:50:51.692  6547  6577 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:51.700  6585  6656 I cr_VariationsUtils: Throttling seed download job
+11-27 12:50:51.716  6585  6656 I cr_VariationsUtils: Writing new seed to app's data directory
+11-27 12:50:51.729  6547  6644 I VideoCapabilities: Unsupported profile 4 for video/mp4v-es
+11-27 12:50:51.731  6547  6644 W cr_MediaCodecUtil: HW encoder for video/avc is not available on this device.
+11-27 12:50:51.732  6547  6644 D EGL_emulation: eglCreateContext: 0x746e33f1e7f0: maj 3 min 0 rcv 3
+11-27 12:50:51.838   493   531 D ArtManagerInternalImpl: /data/misc/iorapd/com.fretopia.app/19/com.fretopia.app.FretopiaActivity/compiled_traces/compiled_trace.pb doesn't exist
+11-27 12:50:51.839   493   526 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+11-27 12:50:51.848   362   377 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10170 pid=6547
+11-27 12:50:51.848   362   377 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10170 => denied (163 us)
+11-27 12:50:51.848   493   531 I ActivityTaskManager: Displayed com.fretopia.app/.FretopiaActivity: +570ms
+11-27 12:50:51.880  1726  2620 I PBSessionCacheImpl: Deleted sessionId[7592824061850380] from persistence.
+11-27 12:50:51.884  1726  2053 W SearchServiceCore: Abort, client detached.
+11-27 12:50:51.969   493  1199 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:51.969   493  1199 I chatty  : uid=1000(system) Binder:493_C identical 2 lines
+11-27 12:50:51.969   493  1199 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:51.970  6607  6642 I chromium: [INFO:audio_latency.cc(143)] audioHardwareBufferSize = 2048
+11-27 12:50:51.973  6547  6628 D om.fretopia.ap: PlayerBase::PlayerBase()
+11-27 12:50:51.973  6547  6628 D om.fretopia.ap: TrackPlayerBase::TrackPlayerBase()
+11-27 12:50:51.973  6547  6628 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+11-27 12:50:51.974   366  1542 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000104) and output flags (00000002)
+11-27 12:50:51.975   366  1542 D AudioFlinger: Client defaulted notificationFrames to 882 for frameCount 1956
+11-27 12:50:51.975   366  1542 D AF::TrackHandle: OpPlayAudio: track:58 usage:1 not muted
+11-27 12:50:51.976  6547  6628 D AudioTrack: createTrack_l(0): AUDIO_OUTPUT_FLAG_FAST denied by server; frameCount 0 -> 1956
+11-27 12:50:51.979   366  1542 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+11-27 12:50:51.979   366  1542 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+11-27 12:50:52.002   493  1351 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:52.003   294   339 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:52.003   294   339 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:52.005   366   456 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:52.005   366   456 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:52.088   366   456 D AudioFlinger: mixer(0x7ff01204c040) throttle end: throttle time(33)
+11-27 12:50:52.842   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+11-27 12:50:52.842  6535  6546 I Gralloc4: mapper 4.x is not supported
+11-27 12:50:52.848  6535  6546 D HostConnection: createUnique: call
+11-27 12:50:52.849  6535  6546 D HostConnection: HostConnection::get() New Host Connection established 0x7dbd688c2d50, tid 6546
+11-27 12:50:52.865  6535  6546 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:52.868  6535  6670 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:52.869  6535  6670 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:52.870  6535  6670 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:52.880  6535  6670 D HostConnection: HostConnection::get() New Host Connection established 0x7dbd688c16d0, tid 6670
+11-27 12:50:52.884  6535  6670 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:52.885   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+11-27 12:50:52.886  6535  6670 D EGL_emulation: eglCreateContext: 0x7dbd588e1df0: maj 3 min 0 rcv 3
+11-27 12:50:52.886  6535  6670 D EGL_emulation: eglMakeCurrent: 0x7dbd588e1df0: ver 3 0 (tinfo 0x7dbcf88e7cf0) (first time)
+11-27 12:50:52.950   287   287 D Zygote  : Forked child process 6671
+11-27 12:50:52.954  6671  6671 I x.test.service: Late-enabling -Xcheck:jni
+11-27 12:50:52.965  6671  6671 I x.test.service: Unquickening 12 vdex files!
+11-27 12:50:52.966  6671  6671 W x.test.service: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:50:52.968   398   406 I adbd    : jdwp connection from 6671
+11-27 12:50:53.027  6671  6671 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:53.028  6671  6671 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:53.028  6671  6671 I MultiDex: VM with version 2.1.0 has multidex support
+11-27 12:50:53.028  6671  6671 I MultiDex: Installing application
+11-27 12:50:53.028  6671  6671 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+11-27 12:50:53.036  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/01-landing.png': found
+11-27 12:50:53.881   366   456 D AudioFlinger: mixer(0x7ff01204c040) throttle end: throttle time(33)
+11-27 12:50:54.308  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/02-goal.png': found
+11-27 12:50:54.323  6547  6547 D Fretopia: web: Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216. (https://appassets.androidplatform.net/assets/web/index.html:585)
+11-27 12:50:54.734  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/03-goal-chosen.png': found
+11-27 12:50:54.973   493  1351 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:55.375  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/04-instruments.png': found
+11-27 12:50:55.395  6547  6547 D Fretopia: web: Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216. (https://appassets.androidplatform.net/assets/web/index.html:585)
+11-27 12:50:55.408   366   456 D AudioFlinger: mixer(0x7ff01204c040) throttle end: throttle time(15)
+11-27 12:50:55.536  6547  6547 D Fretopia: web: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323 (https://appassets.androidplatform.net/assets/web/index.html:0)
+11-27 12:50:56.018  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/05-home-songs.png': found
+11-27 12:50:56.038   366   366 W ServiceManager: Permission failure: android.permission.CAPTURE_AUDIO_OUTPUT from uid=10170 pid=6547
+11-27 12:50:56.038   366   366 D PermissionCache: checking android.permission.CAPTURE_AUDIO_OUTPUT for uid=10170 => denied (45 us)
+11-27 12:50:56.039   366   366 W ServiceManager: Permission failure: android.permission.CAPTURE_AUDIO_HOTWORD from uid=10170 pid=6547
+11-27 12:50:56.039   366   366 D PermissionCache: checking android.permission.CAPTURE_AUDIO_HOTWORD for uid=10170 => denied (40 us)
+11-27 12:50:56.041   366  6694 I AudioFlinger: AudioFlinger's thread 0x7ff0112b5040 tid=6694 ready to run
+11-27 12:50:56.042   493  1351 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:56.044   493  1351 I chatty  : uid=1000(system) Binder:493_D identical 3 lines
+11-27 12:50:56.044   493  1351 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:56.045   493  1199 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](true)
+11-27 12:50:56.046   294   339 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:56.046   294   339 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:56.046   294   294 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:454 failure: Result::NOT_SUPPORTED
+11-27 12:50:56.046   294   294 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:459 failure: Result::NOT_SUPPORTED
+11-27 12:50:56.047   366  6694 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:56.047   366  6694 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:56.066   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.249   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 11 lines
+11-27 12:50:56.264   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.269   427   427 I perfetto: probes_producer.cc:329  Producer stop (id=7)
+11-27 12:50:56.270   429   429 E libc    : The property "ro.build.fingerprint" has a value with length 92 that is too large for __system_property_get()/__system_property_read(); use __system_property_read_callback() instead.
+11-27 12:50:56.272   427   427 I perfetto: ftrace_procfs.cc:183    disabled ftrace
+11-27 12:50:56.272   429   429 I perfetto: ng_service_impl.cc:1948 Tracing session 7 ended, total sessions:0
+11-27 12:50:56.294   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.675   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 22 lines
+11-27 12:50:56.691   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.719  6547  6698 D ProfileInstaller: Installing profile for com.fretopia.app
+11-27 12:50:56.721   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.873   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 9 lines
+11-27 12:50:56.889   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:56.890  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():180 call()
+11-27 12:50:56.891  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():184 No submit PeriodicStats since input started.
+11-27 12:50:56.904   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:00.012   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 174 lines
+11-27 12:51:00.028   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:00.039   711   711 D KeyguardClockSwitch: Updating clock: 1251
+11-27 12:51:00.043   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:00.363   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 18 lines
+11-27 12:51:00.378   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:00.383  1426  6700 I Vision  : Requesting optional module download of ocr.
+11-27 12:51:00.383  1426  6700 I Vision  : Checking for download completion for 213042 -- ocr
+11-27 12:51:00.409   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:04.919   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 254 lines
+11-27 12:51:04.934   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:04.943   287   287 I Zygote  : Process 5567 exited due to signal 9 (Killed)
+11-27 12:51:04.950   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:04.969   493   534 I libprocessgroup: Successfully killed process cgroup uid 10151 pid 5567 in 34ms
+11-27 12:51:04.980   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:05.788   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 46 lines
+11-27 12:51:05.818   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:05.825   287   287 I Zygote  : Process 5639 exited due to signal 9 (Killed)
+11-27 12:51:05.833   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:05.849   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:05.857   493   534 I libprocessgroup: Successfully killed process cgroup uid 10085 pid 5639 in 43ms
+11-27 12:51:05.864   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:07.372   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 85 lines
+11-27 12:51:07.388   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:07.396   287   287 I Zygote  : Process 2319 exited due to signal 9 (Killed)
+11-27 12:51:07.418   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:07.433   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:07.433   493   534 I libprocessgroup: Successfully killed process cgroup uid 10116 pid 2319 in 43ms
+11-27 12:51:07.449   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:08.927   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 83 lines
+11-27 12:51:08.942   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:08.945  1426  2105 I ContentMaintenance: Internal cache bytes used: 0; limit: 100000000; download size: 0
+11-27 12:51:08.955  1426  2105 I RealtimeCacheCleanup: Beginning Realtime garbage collection.
+11-27 12:51:08.957  1426  2105 I RealtimeCacheCleanup: Finished Realtime garbage collection.
+11-27 12:51:08.957   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:10.390   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 80 lines
+11-27 12:51:10.405   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:10.407  1426  6702 I Vision  : Requesting optional module download of ocr.
+11-27 12:51:10.408  1426  6702 I Vision  : Checking for download completion for 223066 -- ocr
+11-27 12:51:10.420   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:11.136   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 40 lines
+11-27 12:51:11.151   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:11.154  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/06-player-listening.png': found
+11-27 12:51:11.167   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:11.197   294  6695 I chatty  : uid=1041(audioserver) HwBinder:294_2 identical 2 lines
+11-27 12:51:11.228   294  6695 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:51:11.228   493  1795 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:51:11.230   493  1801 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:51:11.230   493  1795 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:51:11.232   493  1351 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:51:11.233   493  1801 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:51:11.233   493  1801 I chatty  : uid=1000(system) Binder:493_17 identical 1 line
+11-27 12:51:11.233   493  1801 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:51:12.637  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/06b-software-before.png': found
+11-27 12:51:12.766   493   526 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+11-27 12:51:12.767   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 8, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+11-27 12:51:12.768   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=8)
+11-27 12:51:12.770  6547  6567 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QMicrophone check\E']].
+11-27 12:51:12.770  6547  6567 D UiDevice: Searching for node with selector: BySelector [TEXT='\QMicrophone check\E'].
+11-27 12:51:12.771  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: PAUSED
+11-27 12:51:12.771  6547  6547 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:12.772   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to INTENT_FAILED
+11-27 12:51:12.777  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: PRE_ON_CREATE
+11-27 12:51:12.777  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:12.783   427   427 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+11-27 12:51:12.793  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: CREATED
+11-27 12:51:12.794  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:12.795  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: STARTED
+11-27 12:51:12.795  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:12.812  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: RESUMED
+11-27 12:51:12.813  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:12.936  6547  6547 W om.fretopia.ap: Class androidx.compose.runtime.snapshots.SnapshotStateList failed lock verification and will run slower.
+11-27 12:51:12.936  6547  6547 W om.fretopia.ap: Common causes for lock verification issues are non-optimized dex code
+11-27 12:51:12.936  6547  6547 W om.fretopia.ap: and incorrect proguard optimizations.
+11-27 12:51:13.248   493   531 I ActivityTaskManager: Displayed com.fretopia.app/com.playchord.inputcheck.InputCheckActivity: +482ms
+11-27 12:51:14.290  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07-mic-check.png': found
+11-27 12:51:14.310  6547  6567 D UiDevice: Pressing back button.
+11-27 12:51:14.372  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: PAUSED
+11-27 12:51:14.372  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:14.374   493  6012 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eb3e50, tid 6012
+11-27 12:51:14.379   493  6012 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:51:14.381   493  6012 D EGL_emulation: eglCreateContext: 0x746e33f763d0: maj 3 min 0 rcv 3
+11-27 12:51:14.381   493  6012 D EGL_emulation: eglMakeCurrent: 0x746e33f763d0: ver 3 0 (tinfo 0x746dd3fe2c30) (first time)
+11-27 12:51:14.398  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: RESUMED
+11-27 12:51:14.398  6547  6547 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:14.402  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: STOPPED
+11-27 12:51:14.403  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:14.417  6547  6547 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@2b98e52 in: DESTROYED
+11-27 12:51:14.418  6547  6547 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.fretopia.app/.FretopiaActivity }, activity.getIntent()=Intent { cmp=com.fretopia.app/com.playchord.inputcheck.InputCheckActivity (has extras) }, activity=com.playchord.inputcheck.InputCheckActivity@2b98e52
+11-27 12:51:14.529   366   456 D AudioFlinger: mixer(0x7ff01204c040) throttle end: throttle time(33)
+11-27 12:51:15.488  6547  6567 W InteractionController: Timed out waiting 1000ms for command and events.
+11-27 12:51:16.701  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07b-returned-home.png': found
+11-27 12:51:16.726  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/07c-software-after-check.png': found
+11-27 12:51:16.750  6547  6567 D UiDevice: Pressing back button.
+11-27 12:51:17.460   289   289 I Zygote  : Process 2565 exited due to signal 9 (Killed)
+11-27 12:51:17.464   711   711 V KeyguardUpdateMonitor: onSubscriptionInfoChanged()
+11-27 12:51:17.464   711   711 V KeyguardUpdateMonitor: SubInfo:{id=1 iccId=89014103211118510720 simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=T-Mobile nameSource=3 iconTint=-16746133 number=+15555215554 dataRoaming=0 iconBitmap=android.graphics.Bitmap@8fce941 mcc=310 mnc=260 countryIso=us isEmbedded=false nativeAccessRules=null cardString=89014103211118510720 cardId=-1 isOpportunistic=false groupUUID=null isGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 groupOwner=null carrierConfigAccessRules=null areUiccApplicationsEnabled=true}
+11-27 12:51:17.465  1049  1049 D Telephony: isEmergencyPreferredAccount: subId=1, activeData=1
+11-27 12:51:17.465  1049  1049 D Telephony: isEmergencyPreferredAccount: Device does not require preference.
+11-27 12:51:17.500   493   534 I libprocessgroup: Successfully killed process cgroup uid 10146 pid 2565 in 42ms
+11-27 12:51:17.769   427   427 I perfetto: probes_producer.cc:329  Producer stop (id=8)
+11-27 12:51:17.771   427   427 I perfetto: ftrace_procfs.cc:183    disabled ftrace
+11-27 12:51:17.771   429   429 E libc    : The property "ro.build.fingerprint" has a value with length 92 that is too large for __system_property_get()/__system_property_read(); use __system_property_read_callback() instead.
+11-27 12:51:17.771   429   429 I perfetto: ng_service_impl.cc:1948 Tracing session 8 ended, total sessions:0
+11-27 12:51:18.306  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():180 call()
+11-27 12:51:18.306  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():184 No submit PeriodicStats since input started.
+11-27 12:51:18.823  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/08-back-to-instruments.png': found
+11-27 12:51:18.847  6547  6567 D UiDevice: Pressing home button.
+11-27 12:51:18.862   711   711 V ShadeControllerImpl: NotificationShadeWindow: com.android.systemui.statusbar.phone.NotificationShadeWindowView{3274936 I.E...... ......ID 0,0-320,640} canPanelBeCollapsed(): false
+11-27 12:51:18.865   493   526 D EventSequenceValidator: Transition from INTENT_FAILED to INTENT_STARTED
+11-27 12:51:18.869   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 9, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+11-27 12:51:18.869   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=9)
+11-27 12:51:18.871  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: PAUSED
+11-27 12:51:18.871  6547  6547 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:18.873   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:51:18.880   909   909 D TaplTarget: Launcher.onNewIntent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10400100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity (has extras) }
+11-27 12:51:18.895   427   427 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+11-27 12:51:18.924   287   287 I Zygote  : Process 5514 exited due to signal 9 (Killed)
+11-27 12:51:18.924   493   534 I libprocessgroup: Successfully killed process cgroup uid 10079 pid 5514 in 45ms
+11-27 12:51:18.936   711   711 V ShadeControllerImpl: NotificationShadeWindow: com.android.systemui.statusbar.phone.NotificationShadeWindowView{3274936 I.E...... ......ID 0,0-320,640} canPanelBeCollapsed(): false
+11-27 12:51:18.945   493   526 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+11-27 12:51:18.957   362   362 E Layer   : [Surface(name=Task=11)/@0x758ce24 - animation-leash#0] No local sync point found
+11-27 12:51:18.957   362   362 E Layer   : [Surface(name=Task=11)/@0x758ce24 - animation-leash#0] No local sync point found
+11-27 12:51:18.957   362   362 E Layer   : [Surface(name=Task=1)/@0x969e763 - animation-leash#0] No local sync point found
+11-27 12:51:18.957   362   362 E Layer   : [Surface(name=Task=1)/@0x969e763 - animation-leash#0] No local sync point found
+11-27 12:51:18.971   493   531 D ArtManagerInternalImpl: /data/misc/iorapd/com.google.android.apps.nexuslauncher/821/com.google.android.apps.nexuslauncher.NexusLauncherActivity/compiled_traces/compiled_trace.pb doesn't exist
+11-27 12:51:18.979  1726  2053 W ThreadPoolDumper: Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+11-27 12:51:18.981  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: STOPPED
+11-27 12:51:18.981  6547  6547 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:18.983  1726  2073 W LocationOracle: No location history returned by ContextManager
+11-27 12:51:18.986  1155  2635 W GCoreFlp: No location to return for getLastLocation()
+11-27 12:51:19.015  1726  1726 I BgTaskExecutorImpl: Starting EXCLUSIVE background task TNG_MINUS_ONE_SYNC.
+11-27 12:51:19.016  1726  2070 E MDD     : DownloadProgressMonitor: Can't find file group for uri: android://com.google.android.googlequicksearchbox/files/sharedminusonemodule/shared/SharedMinusOneData.pb.tmp
+11-27 12:51:19.020  1726  2053 I TngMinusOneSync: Syncing TNG:-1
+11-27 12:51:19.469  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():180 call()
+11-27 12:51:19.470  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():184 No submit PeriodicStats since input started.
+11-27 12:51:20.413  1426  6720 I Vision  : Requesting optional module download of ocr.
+11-27 12:51:20.413  1426  6720 I Vision  : Checking for download completion for 233071 -- ocr
+11-27 12:51:20.507   493   526 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+11-27 12:51:20.507   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to INTENT_FAILED
+11-27 12:51:21.702  1694  2973 I Dialer  : OmtpVvmCarrierCfgHlpr - OmtpEvent:CONFIG_STATUS_SMS_TIME_OUT
+11-27 12:51:21.702  1694  1694 I Dialer  : RetryPolicy - discarding deferred status: configuration_state=4
+11-27 12:51:21.702  1694  1694 I Dialer  : VvmTaskExecutor - no more tasks, stopping service if no task are added in 5000 millis
+11-27 12:51:21.703  1694  1694 I Dialer  : VvmTaskReceiver - task received
+11-27 12:51:21.703  1694  1694 I Dialer  : VvmTaskReceiver - TaskExecutor already running
+11-27 12:51:21.703  1694  1694 I Dialer  : Task.createTask - create task:com.android.voicemail.impl.ActivationTask
+11-27 12:51:21.703  1694  1694 I Dialer  : RetryPolicy - retry #3 for com.android.voicemail.impl.ActivationTask@90fa279 queued, executing in 5000
+11-27 12:51:21.703  1694  1694 I Dialer  : VvmTaskExecutor - com.android.voicemail.impl.ActivationTask@90fa279 added
+11-27 12:51:21.703  1694  1694 I Dialer  : VvmTaskExecutor - minimal wait time:5000
+11-27 12:51:21.703  1694  1694 I Dialer  : VvmTaskExecutor - sleep for 5000 millis
+11-27 12:51:21.729   493   613 D WifiNl80211Manager: Scan result ready event
+11-27 12:51:21.729   493   613 D WifiNative: Scan result ready event
+11-27 12:51:23.867   493   526 D EventSequenceValidator: Transition from INTENT_FAILED to INTENT_STARTED
+11-27 12:51:23.868   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:51:23.868   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 10, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:2, uid:1071 session name: ""
+11-27 12:51:23.868   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=10)
+11-27 12:51:23.871   427   427 I perfetto: probes_producer.cc:329  Producer stop (id=9)
+11-27 12:51:23.871   429   429 E libc    : The property "ro.build.fingerprint" has a value with length 92 that is too large for __system_property_get()/__system_property_read(); use __system_property_read_callback() instead.
+11-27 12:51:23.872   429   429 I perfetto: ng_service_impl.cc:1948 Tracing session 9 ended, total sessions:1
+11-27 12:51:23.879  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: RESTARTED
+11-27 12:51:23.880  6547  6547 V ActivityScenario: Update currentActivityStage to RESTARTED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:23.883  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: STARTED
+11-27 12:51:23.883  6547  6547 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:23.884  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: RESUMED
+11-27 12:51:23.884  6547  6547 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:23.935   493   526 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+11-27 12:51:23.945  1726  2620 I PBSessionCacheImpl: Deleted sessionId[7592824061850383] from persistence.
+11-27 12:51:23.949  1726  2053 W SearchServiceCore: Abort, client detached.
+11-27 12:51:23.965   493   531 D ArtManagerInternalImpl: /data/misc/iorapd/com.fretopia.app/19/com.fretopia.app.FretopiaActivity/compiled_traces/compiled_trace.pb doesn't exist
+11-27 12:51:24.002  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():180 call()
+11-27 12:51:24.002  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():184 No submit PeriodicStats since input started.
+11-27 12:51:24.501  6547  6559 I om.fretopia.ap: NativeAlloc concurrent copying GC freed 81404(4578KB) AllocSpace objects, 1(24KB) LOS objects, 49% free, 6118KB/11MB, paused 13us total 247.521ms
+11-27 12:51:24.602  6547  6561 W System  : A resource failed to call release.
+11-27 12:51:26.534  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/09-after-home.png': found
+11-27 12:51:26.558  6671  6689 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/paint-report.txt': found
+11-27 12:51:26.562   493   526 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+11-27 12:51:26.565   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 11, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:2, uid:1071 session name: ""
+11-27 12:51:26.566   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=11)
+11-27 12:51:26.569  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: PAUSED
+11-27 12:51:26.569  6547  6547 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:26.571   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:51:26.599   287   287 D Zygote  : Forked child process 6732
+11-27 12:51:26.603  6732  6732 I etopia.app.tes: Late-enabling -Xcheck:jni
+11-27 12:51:26.619  6732  6732 I etopia.app.tes: Unquickening 12 vdex files!
+11-27 12:51:26.620  6732  6732 W etopia.app.tes: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:51:26.622   398   406 I adbd    : jdwp connection from 6732
+11-27 12:51:26.640  6732  6732 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:51:26.640  6732  6732 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:51:26.642  6732  6732 I etopia.app.tes: The ClassLoaderContext is a special shared library.
+11-27 12:51:26.643  6732  6732 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:51:26.643  6732  6732 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:51:26.645  6732  6732 I etopia.app.tes: The ClassLoaderContext is a special shared library.
+11-27 12:51:26.665  6732  6732 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:51:26.665  6732  6732 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:51:26.679  6732  6755 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:51:26.681  6732  6755 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:51:26.686  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: STOPPED
+11-27 12:51:26.687  6547  6547 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.fretopia.app.FretopiaActivity@129f237
+11-27 12:51:26.688  6547  6547 W cr_AwContents: WebView.destroy() called while WebView is still attached to window.
+11-27 12:51:26.697  6547  6547 D LifecycleMonitor: Lifecycle status change: com.fretopia.app.FretopiaActivity@129f237 in: DESTROYED
+11-27 12:51:26.697  6547  6547 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-27 12:51:26.701  6732  6755 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:51:26.703  6547  6628 D om.fretopia.ap: PlayerBase::stop() from IPlayer
+11-27 12:51:26.703  6547  6628 D AudioTrack: stop(24): called with 1533798 frames delivered
+11-27 12:51:26.712   493   534 I libprocessgroup: Successfully killed process cgroup uid 99000 pid 6607 in 0ms
+11-27 12:51:26.712  6547  6547 E chromium: [ERROR:aw_browser_terminator.cc(125)] Renderer process (6607) crash detected (code -1).
+11-27 12:51:26.716  6547  6567 I TestRunner: finished: theWholeAppWorksOnTheNativeMicrophone(com.fretopia.app.FretopiaAppTest)

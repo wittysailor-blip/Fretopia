@@ -1,0 +1,54 @@
+11-27 12:50:23.467  5870  5890 I TestRunner: started: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)
+11-27 12:50:23.486  5870  5908 V UiAutomation: Init UiAutomation@47fef0c[id=1, flags=0]
+11-27 12:50:23.487  5870  5890 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.playchord.inputcheck
+11-27 12:50:23.502   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:23.502   493   612 I chatty  : uid=1000(system) Binder:493_4 identical 2 lines
+11-27 12:50:23.502   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:23.524   366   366 W ServiceManager: Permission failure: android.permission.CAPTURE_AUDIO_OUTPUT from uid=10167 pid=5870
+11-27 12:50:23.524   366   366 D PermissionCache: checking android.permission.CAPTURE_AUDIO_OUTPUT for uid=10167 => denied (54 us)
+11-27 12:50:23.524   366   366 W ServiceManager: Permission failure: android.permission.CAPTURE_AUDIO_HOTWORD from uid=10167 pid=5870
+11-27 12:50:23.524   366   366 D PermissionCache: checking android.permission.CAPTURE_AUDIO_HOTWORD for uid=10167 => denied (26 us)
+11-27 12:50:23.534   366  5912 I AudioFlinger: AudioFlinger's thread 0x7ff0112b5040 tid=5912 ready to run
+11-27 12:50:23.537   493  2309 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:23.537   493  2309 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:23.539   493  1012 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](true)
+11-27 12:50:23.540   294   294 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:454 failure: Result::NOT_SUPPORTED
+11-27 12:50:23.540   909  2011 E FrameEvents: updateAcquireFence: Did not find frame.
+11-27 12:50:23.541   294   294 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:459 failure: Result::NOT_SUPPORTED
+11-27 12:50:23.544   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:23.544   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:23.550   366  5912 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:23.550   366  5912 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:23.569   294  5914 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:26.479   294  5914 I chatty  : uid=1041(audioserver) audio.service.r identical 164 lines
+11-27 12:50:26.494   294  5914 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:26.506   493  2309 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.506   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.509   294  5914 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:26.586   294  5914 I chatty  : uid=1041(audioserver) audio.service.r identical 4 lines
+11-27 12:50:26.601   294  5914 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:26.601   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.603   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.603   493   612 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:50:26.604   493  1012 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:50:26.605   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.605   493   612 I chatty  : uid=1000(system) Binder:493_4 identical 1 line
+11-27 12:50:26.605   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.915   366  5920 I AudioFlinger: AudioFlinger's thread 0x7ff0112b5040 tid=5920 ready to run
+11-27 12:50:26.916   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.917   493  1012 I chatty  : uid=1000(system) Binder:493_9 identical 3 lines
+11-27 12:50:26.917   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:26.918   493  1012 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](true)
+11-27 12:50:26.918   294   294 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:454 failure: Result::NOT_SUPPORTED
+11-27 12:50:26.918   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:26.918   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:26.919   294   339 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:459 failure: Result::NOT_SUPPORTED
+11-27 12:50:26.920   366  5920 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:26.920   366  5920 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:26.938   294  5921 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:27.441   294  5921 I chatty  : uid=1041(audioserver) audio.service.r identical 29 lines
+11-27 12:50:27.471   294  5921 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:27.472   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:27.473   493  1012 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:27.474   493   612 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:50:27.476  5870  5890 I TestRunner: finished: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)

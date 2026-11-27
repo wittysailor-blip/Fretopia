@@ -1,0 +1,68 @@
+# 2026-11-27T12:51:28.486251043Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "FretopiaAppTest"
+    test_package: "com.fretopia.app"
+    test_method: "theWholeAppWorksOnTheNativeMicrophone"
+    start_time {
+      seconds: 1795783851
+      nanos: 502000000
+    }
+    end_time {
+      seconds: 1795783886
+      nanos: 986000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 11/logcat-com.fretopia.app.FretopiaAppTest-theWholeAppWorksOnTheNativeMicrophone.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 11/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

@@ -1,0 +1,192 @@
+11-27 12:50:27.478  5870  5890 I TestRunner: started: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)
+11-27 12:50:27.481  5870  5890 I UiDevice: Creating a new instance, old instance exists: false
+11-27 12:50:27.482  5870  5890 D UiDevice: Setting accessibility service flags: 65618
+11-27 12:50:27.487  5870  5890 I UiAutomationPermGranter: Permission: android.permission.RECORD_AUDIO is already granted!
+11-27 12:50:27.490  5870  5890 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:50:27.494   493   526 D EventSequenceValidator: Transition from INIT to INTENT_STARTED
+11-27 12:50:27.506   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:50:27.512   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 5, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+11-27 12:50:27.513   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=5)
+11-27 12:50:27.529   427   427 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+11-27 12:50:27.553  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: PRE_ON_CREATE
+11-27 12:50:27.563  5870  5870 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-27 12:50:27.571  5870  5932 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:27.572  5870  5932 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:27.579  5870  5932 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:27.591  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: CREATED
+11-27 12:50:27.591  5870  5870 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.playchord.inputcheck.InputCheckActivity@d50496
+11-27 12:50:27.594  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: STARTED
+11-27 12:50:27.594  5870  5870 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.playchord.inputcheck.InputCheckActivity@d50496
+11-27 12:50:27.612  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: RESUMED
+11-27 12:50:27.612  5870  5870 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.playchord.inputcheck.InputCheckActivity@d50496
+11-27 12:50:27.737  5870  5870 W hord.inputchec: Class androidx.compose.runtime.snapshots.SnapshotStateList failed lock verification and will run slower.
+11-27 12:50:27.737  5870  5870 W hord.inputchec: Common causes for lock verification issues are non-optimized dex code
+11-27 12:50:27.737  5870  5870 W hord.inputchec: and incorrect proguard optimizations.
+11-27 12:50:27.815  5870  5930 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eb03d0, tid 5930
+11-27 12:50:27.819  5870  5930 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:27.820   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+11-27 12:50:27.821  5870  5930 D EGL_emulation: eglCreateContext: 0x746e33ede4d0: maj 3 min 0 rcv 3
+11-27 12:50:27.822  5870  5930 D EGL_emulation: eglMakeCurrent: 0x746e33ede4d0: ver 3 0 (tinfo 0x746dd3eeef40) (first time)
+11-27 12:50:27.832   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+11-27 12:50:27.832  5870  5930 I Gralloc4: mapper 4.x is not supported
+11-27 12:50:27.833  5870  5930 D HostConnection: createUnique: call
+11-27 12:50:27.833  5870  5930 D HostConnection: HostConnection::get() New Host Connection established 0x746e43ea8390, tid 5930
+11-27 12:50:27.850  5870  5930 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:28.154  5870  5870 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+11-27 12:50:28.156   493   526 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+11-27 12:50:28.156   362  1265 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10167 pid=5870
+11-27 12:50:28.156   362  1265 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10167 => denied (750 us)
+11-27 12:50:28.156   493   531 D ArtManagerInternalImpl: /data/misc/iorapd/com.playchord.inputcheck/1/com.playchord.inputcheck.InputCheckActivity/compiled_traces/compiled_trace.pb doesn't exist
+11-27 12:50:28.161   493   531 I ActivityTaskManager: Displayed com.playchord.inputcheck/.InputCheckActivity: +660ms
+11-27 12:50:28.177  5870  5890 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QReady\E']].
+11-27 12:50:28.177  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QReady\E'].
+11-27 12:50:28.179  1726  2620 I PBSessionCacheImpl: Deleted sessionId[7592824061850030] from persistence.
+11-27 12:50:28.187  1726  2053 W SearchServiceCore: Abort, client detached.
+11-27 12:50:28.190  1726  2053 I MicroDetectionState: Should stop hotword detection immediately - false
+11-27 12:50:28.948  5870  5934 D ProfileInstaller: Installing profile for com.playchord.inputcheck
+11-27 12:50:28.972   362   377 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (157 us)
+11-27 12:50:29.078   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+11-27 12:50:29.078  5858  5869 I Gralloc4: mapper 4.x is not supported
+11-27 12:50:29.087  5858  5869 D HostConnection: createUnique: call
+11-27 12:50:29.088  5858  5869 D HostConnection: HostConnection::get() New Host Connection established 0x71bb5e127210, tid 5869
+11-27 12:50:29.102  5858  5869 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:29.108  5858  5935 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:29.109  5858  5935 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:29.110  5858  5935 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:29.120  5858  5935 D HostConnection: HostConnection::get() New Host Connection established 0x71bb5e127a50, tid 5935
+11-27 12:50:29.124  5858  5935 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:29.125   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+11-27 12:50:29.127  5858  5935 D EGL_emulation: eglCreateContext: 0x71bb4e1440b0: maj 3 min 0 rcv 3
+11-27 12:50:29.128  5858  5935 D EGL_emulation: eglMakeCurrent: 0x71bb4e1440b0: ver 3 0 (tinfo 0x71baee14ae90) (first time)
+11-27 12:50:29.197   287   287 D Zygote  : Forked child process 5936
+11-27 12:50:29.200  5936  5936 I x.test.service: Late-enabling -Xcheck:jni
+11-27 12:50:29.211  5936  5936 I x.test.service: Unquickening 12 vdex files!
+11-27 12:50:29.212  5936  5936 W x.test.service: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:50:29.214   398   406 I adbd    : jdwp connection from 5936
+11-27 12:50:29.251  5936  5936 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:29.251  5936  5936 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:29.252  5936  5936 I MultiDex: VM with version 2.1.0 has multidex support
+11-27 12:50:29.252  5936  5936 I MultiDex: Installing application
+11-27 12:50:29.252  5936  5936 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+11-27 12:50:29.258  5936  5954 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/01-ready.png': found
+11-27 12:50:29.306  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStart mic\E'].
+11-27 12:50:29.316  5870  5890 W hord.inputchec: Accessing hidden method Landroid/view/MotionEvent;->setDisplayId(I)V (blacklist,test-api, reflection, allowed)
+11-27 12:50:29.318  5870  5890 D UiObject2: Clicking on (160, 272).
+11-27 12:50:29.318  5870  5890 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@85b7; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(126, 260 - 195, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Start mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]
+11-27 12:50:29.400  5870  5890 W GestureController: Gestures took longer than expected (83ms >> 16ms), device might be in a busy state.
+11-27 12:50:29.401  5870  5890 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QListening\E']].
+11-27 12:50:29.401  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QListening\E'].
+11-27 12:50:29.408   366  5959 I AudioFlinger: AudioFlinger's thread 0x7ff0112b5040 tid=5959 ready to run
+11-27 12:50:29.410   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:29.414   493   612 I chatty  : uid=1000(system) Binder:493_4 identical 3 lines
+11-27 12:50:29.414   493   612 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:29.415   493   612 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](true)
+11-27 12:50:29.417   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:29.417   294   294 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:29.417   294   339 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneDirection:454 failure: Result::NOT_SUPPORTED
+11-27 12:50:29.417   294   339 E android.hardware.audio.service.ranchu: device/generic/goldfish/audio/stream_in.cpp:setMicrophoneFieldDimension:459 failure: Result::NOT_SUPPORTED
+11-27 12:50:29.418   366  5959 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:29.418   366  5959 E FMQ     : grantorIdx must be less than 3
+11-27 12:50:29.436   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:29.527   294  5960 I chatty  : uid=1041(audioserver) audio.service.r identical 6 lines
+11-27 12:50:29.543   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:29.552  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QListening\E'].
+11-27 12:50:29.573   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:30.335   294  5960 I chatty  : uid=1041(audioserver) audio.service.r identical 43 lines
+11-27 12:50:30.350   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:30.360  1426  5964 I Vision  : Requesting optional module download of ocr.
+11-27 12:50:30.360  1426  5964 I Vision  : Checking for download completion for 183018 -- ocr
+11-27 12:50:30.366   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:32.484   294  5960 I chatty  : uid=1041(audioserver) audio.service.r identical 119 lines
+11-27 12:50:32.499   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:32.514   427   427 I perfetto: probes_producer.cc:329  Producer stop (id=5)
+11-27 12:50:32.515   427   427 I perfetto: ftrace_procfs.cc:183    disabled ftrace
+11-27 12:50:32.516  5936  5953 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/02-listening.png': found
+11-27 12:50:32.517   429   429 E libc    : The property "ro.build.fingerprint" has a value with length 92 that is too large for __system_property_get()/__system_property_read(); use __system_property_read_callback() instead.
+11-27 12:50:32.517   429   429 I perfetto: ng_service_impl.cc:1948 Tracing session 5 ended, total sessions:0
+11-27 12:50:32.529   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:32.530  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStop mic\E'].
+11-27 12:50:32.540  5870  5890 D UiObject2: Clicking on (160, 272).
+11-27 12:50:32.540  5870  5890 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8e12; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(127, 260 - 193, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Stop mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]
+11-27 12:50:32.545   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:32.560   294  5960 I chatty  : uid=1041(audioserver) audio.service.r identical 1 line
+11-27 12:50:32.576   294  5960 W android.hardware.audio.service.ranchu: TinyalsaSource::read:147 pcm_read was late delivering frames, inserting 15238 us of silence
+11-27 12:50:32.577   493   612 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:50:32.578   493  2309 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:32.578   493  2309 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:32.581   493  2033 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:32.581   493  2033 I chatty  : uid=1000(system) Binder:493_19 identical 1 line
+11-27 12:50:32.581   493  2033 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-27 12:50:32.581   493  2309 I SoundTriggerMiddlewareLogging: setCaptureState[this=com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareImpl@cc04d3c, caller=1041/366](false)
+11-27 12:50:32.586  5870  5890 W GestureController: Gestures took longer than expected (47ms >> 16ms), device might be in a busy state.
+11-27 12:50:32.587  5870  5890 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QStopped\E']].
+11-27 12:50:32.587  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:50:32.631  5936  5953 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/03-stopped.png': found
+11-27 12:50:32.710  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:50:32.717  5870  5890 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:50:32.717  5870  5890 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:50:33.211  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():180 call()
+11-27 12:50:33.211  1392  1424 I PeriodicStatsRunner: PeriodicStatsRunner.call():184 No submit PeriodicStats since input started.
+11-27 12:50:33.259  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:50:33.268  5870  5890 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:50:33.268  5870  5890 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:50:33.793  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:50:33.815  5936  5953 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/04-stopped-diagnostics.png': found
+11-27 12:50:33.910  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:50:33.944  5870  5890 D UiDevice: Node not found with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:50:33.944  5870  5890 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:50:34.459  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:50:34.493  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:50:34.543  5870  5890 D UiObject2: Clicking on (160, 572).
+11-27 12:50:34.543  5870  5890 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8db5; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(113, 560 - 208, 584); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Run self-test; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]
+11-27 12:50:34.584  5870  5890 W GestureController: Gestures took longer than expected (40ms >> 16ms), device might be in a busy state.
+11-27 12:50:34.584  5870  5890 D UiDevice: Waiting 20000ms for SearchCondition[hasObject=BySelector [TEXT='\QPassed: 9 of 9\E']].
+11-27 12:50:34.584  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:50:34.801  5870  5890 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:50:34.836  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:50:34.860  5870  5890 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:50:34.860  5870  5890 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:50:35.426  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:50:35.434  5870  5890 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:50:35.434  5870  5890 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:50:35.941  5870  5890 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:50:35.988  5936  5953 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/05-self-test.png': found
+11-27 12:50:36.579   493   526 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+11-27 12:50:36.583  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: PAUSED
+11-27 12:50:36.583  5870  5870 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.playchord.inputcheck.InputCheckActivity@d50496
+11-27 12:50:36.584   429   429 I perfetto: ing_service_impl.cc:758 Configured tracing session 6, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+11-27 12:50:36.584   427   427 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=6)
+11-27 12:50:36.587   493   526 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+11-27 12:50:36.593   427   427 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+11-27 12:50:36.594   287   287 D Zygote  : Forked child process 5993
+11-27 12:50:36.603  5993  5993 I inputcheck.tes: Late-enabling -Xcheck:jni
+11-27 12:50:36.614  5993  5993 I inputcheck.tes: Unquickening 12 vdex files!
+11-27 12:50:36.615  5993  5993 W inputcheck.tes: Unexpected CPU variant for X86 using defaults: x86_64
+11-27 12:50:36.617   398   406 I adbd    : jdwp connection from 5993
+11-27 12:50:36.626   362   377 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (36 us)
+11-27 12:50:36.703  5993  5993 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:50:36.703  5993  5993 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:50:36.704  5993  5993 I inputcheck.tes: The ClassLoaderContext is a special shared library.
+11-27 12:50:36.704  5993  5993 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:50:36.704  5993  5993 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:50:36.704  5993  5993 I inputcheck.tes: The ClassLoaderContext is a special shared library.
+11-27 12:50:36.706   493  6012 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:36.710   493  6012 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:36.712   493  6012 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:36.718  5993  5993 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:36.718  5993  5993 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+11-27 12:50:36.727   493  6012 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eb1c90, tid 6012
+11-27 12:50:36.731   493  6012 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform ANDROID_EMU_hwc_display_power_mode GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+11-27 12:50:36.732   166   166 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+11-27 12:50:36.734   493  6012 D EGL_emulation: eglCreateContext: 0x746e33f72960: maj 3 min 0 rcv 3
+11-27 12:50:36.739  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: STOPPED
+11-27 12:50:36.739  5870  5870 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.playchord.inputcheck.InputCheckActivity@d50496
+11-27 12:50:36.740   493  6012 D EGL_emulation: eglMakeCurrent: 0x746e33f72960: ver 3 0 (tinfo 0x746dd3fe2c30) (first time)
+11-27 12:50:36.757   493   526 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_CANCELLED
+11-27 12:50:36.757  5993  6017 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:50:36.761  5993  6017 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:50:36.768  5993  6017 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:50:36.773  5870  5870 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@d50496 in: DESTROYED
+11-27 12:50:36.773  5870  5870 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-27 12:50:36.794  5993  6014 D HostConnection: HostConnection::get() New Host Connection established 0x746e43eaa9d0, tid 6014
+11-27 12:50:36.809  5870  5890 I TestRunner: finished: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)
