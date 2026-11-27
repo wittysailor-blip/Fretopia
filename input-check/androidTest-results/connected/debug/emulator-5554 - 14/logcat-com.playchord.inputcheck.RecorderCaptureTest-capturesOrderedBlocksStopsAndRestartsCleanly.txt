@@ -1,0 +1,56 @@
+11-27 12:23:51.743  5982  6001 I TestRunner: started: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)
+11-27 12:23:51.748  5982  6001 I UiAutomation: Initialized for user 0 on display 0
+11-27 12:23:51.767  1548  2252 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-27 12:23:51.769  1548  1942 I AiAiEcho: Predicting[0]:
+11-27 12:23:51.770  1548  1942 I AiAiEcho: EchoTargets:
+11-27 12:23:51.770  1548  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:23:51.771  1548  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:23:51.772  1548  1942 I AiAiEcho: Predicting[0]:
+11-27 12:23:51.772  1548  1942 I AiAiEcho: EchoTargets:
+11-27 12:23:51.772  1548  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:23:51.772  1548  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:23:51.773  1548  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-27 12:23:51.774  5982  6001 I UiAutomationPermGranter: Attempting to grant android.permission.RECORD_AUDIO to com.playchord.inputcheck
+11-27 12:23:51.774  1643  2139 I A       : NGA disabled since it's running Panthera and at least one a11y feature is on.
+11-27 12:23:51.774  1643  2139 I A       : Nga state changed to NgaStateDetails{state=DISABLED, isSpecialExperience=false}
+11-27 12:23:51.776  5982  6019 V UiAutomation: Init UiAutomation@82769da[id=1, displayId=0, flags=0]
+11-27 12:23:51.780  1555  3119 I A       : APA or Classic session decision: SessionDecision(sessionVariance=CLASSIC, platformVariance=CLASSIC, justification=CURRENT_PLATFORM_VARIANCE).
+11-27 12:23:51.785  1548  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-27 12:23:51.791  1555  3119 I A       : [Memory] eligibility: StashEligibility{4}
+11-27 12:23:51.793  1555  1962 I A       : Unsubscribed to apa or classic variant change.
+11-27 12:23:51.800   833   833 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:23:51.847   396  1006 W ServiceManagerCppClient: Permission failure: android.permission.CALL_AUDIO_INTERCEPTION from uid=10192 pid=5982
+11-27 12:23:51.848   396  1006 D PermissionCache: checking android.permission.CALL_AUDIO_INTERCEPTION for uid=10192 => denied (623 us)
+11-27 12:23:51.858   396  6022 I AudioFlinger: AudioFlinger's thread 0x72d1e1f19bb0 tid=6022 ready to run
+11-27 12:23:51.884   396  6022 D audioserver: FGS Logger Transaction failed
+11-27 12:23:51.884   396  6022 D audioserver: -129
+11-27 12:23:51.886   396  6022 D audioserver: FGS Logger Transaction failed
+11-27 12:23:51.886   396  6022 D audioserver: -129
+11-27 12:23:51.887   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:23:51.888   396  1006 D audioserver: FGS Logger Transaction failed
+11-27 12:23:51.888   396  1006 D audioserver: -129
+11-27 12:23:51.997   833   912 D EGL_emulation: app_time_stats: avg=51920.86ms min=51920.86ms max=51920.86ms count=1
+11-27 12:23:52.088   341  6024 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:23:52.187   341  6024 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:23:53.057  3021  3021 W JobService: onNetworkChanged() not implemented in com.android.voicemail.impl.scheduling.TaskSchedulerJobService. Must override in a subclass.
+11-27 12:23:53.061   833   833 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-27 12:23:54.958   396  6022 D audioserver: FGS Logger Transaction failed
+11-27 12:23:54.958   396  6022 D audioserver: -129
+11-27 12:23:54.959   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:23:54.975   396  1623 D audioserver: FGS Logger Transaction failed
+11-27 12:23:54.975   396  1623 D audioserver: -129
+11-27 12:23:55.267   396  6030 I AudioFlinger: AudioFlinger's thread 0x72d1e1f19bb0 tid=6030 ready to run
+11-27 12:23:55.272   396  6030 D audioserver: FGS Logger Transaction failed
+11-27 12:23:55.272   396  6030 D audioserver: -129
+11-27 12:23:55.272   396  6030 D audioserver: FGS Logger Transaction failed
+11-27 12:23:55.272   396  6030 D audioserver: -129
+11-27 12:23:55.273   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:23:55.273   396  1623 D audioserver: FGS Logger Transaction failed
+11-27 12:23:55.274   396  1623 D audioserver: -129
+11-27 12:23:55.513   833   912 D EGL_emulation: app_time_stats: avg=130.80ms min=1.26ms max=3045.68ms count=25
+11-27 12:23:55.535   341  6032 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:23:55.656   833   912 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-27 12:23:55.822   396  6030 D audioserver: FGS Logger Transaction failed
+11-27 12:23:55.822   396  6030 D audioserver: -129
+11-27 12:23:55.823   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:23:55.832  5982  6001 I TestRunner: finished: capturesOrderedBlocksStopsAndRestartsCleanly(com.playchord.inputcheck.RecorderCaptureTest)

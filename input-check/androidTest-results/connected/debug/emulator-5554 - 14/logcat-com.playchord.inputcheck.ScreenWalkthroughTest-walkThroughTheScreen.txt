@@ -1,0 +1,719 @@
+11-27 12:23:55.836  5982  6001 I TestRunner: started: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)
+11-27 12:23:55.842   396  1623 D audioserver: FGS Logger Transaction failed
+11-27 12:23:55.842   396  1623 D audioserver: -129
+11-27 12:23:55.844  5982  6001 I UiDevice: Creating a new instance, old instance exists: false
+11-27 12:23:55.848  5982  6001 D UiDevice: Setting accessibility service flags: 65618
+11-27 12:23:55.854  1548  2252 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-27 12:23:55.854  1548  1942 I AiAiEcho: Predicting[0]:
+11-27 12:23:55.855  1548  1942 I AiAiEcho: EchoTargets:
+11-27 12:23:55.855  1548  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:23:55.856  1548  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:23:55.856  1548  1942 I AiAiEcho: Predicting[0]:
+11-27 12:23:55.856  1548  1942 I AiAiEcho: EchoTargets:
+11-27 12:23:55.856  1548  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:23:55.857  1548  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:23:55.860   519  2753 D SafetySourceDataValidator: No cert check requested for package com.google.android.permissioncontroller
+11-27 12:23:55.863  5982  6001 I UiAutomationPermGranter: Permission: android.permission.RECORD_AUDIO is already granted!
+11-27 12:23:55.867  5982  6001 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-27 12:23:55.870  1548  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-27 12:23:55.870  1548  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-27 12:23:55.889   833   833 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:23:55.909   833   899 D SplashScreenView: Build android.window.SplashScreenView{73a6b87 V.E...... ......ID 0,0-0,0}
+11-27 12:23:55.909   833   899 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:23:55.909   833   899 D SplashScreenView: Branding: view: android.view.View{20d1ab4 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:23:55.916  5982  6039 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:23:55.917  5982  6039 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:23:55.918  5982  6039 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:23:55.928   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-27 12:23:55.961  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: PRE_ON_CREATE
+11-27 12:23:55.962  5982  5982 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-27 12:23:56.004  1072  1848 D EGL_emulation: app_time_stats: avg=2013.49ms min=64.36ms max=5906.91ms count=3
+11-27 12:23:56.017  5448  6044 W AllowlistedPackageIdentifiers: Is debuggable: false
+11-27 12:23:56.018  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: CREATED
+11-27 12:23:56.019  5982  5982 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.playchord.inputcheck.InputCheckActivity@6184f63
+11-27 12:23:56.023  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: STARTED
+11-27 12:23:56.024  5982  5982 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.playchord.inputcheck.InputCheckActivity@6184f63
+11-27 12:23:56.042  5032  5032 D BoundBrokerSvc: onBind: Intent { act=com.google.android.contextmanager.service.ContextManagerService.START pkg=com.google.android.gms }
+11-27 12:23:56.042  5032  5032 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.contextmanager.service.ContextManagerService.START pkg=com.google.android.gms }
+11-27 12:23:56.060  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: RESUMED
+11-27 12:23:56.061  5982  5982 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.playchord.inputcheck.InputCheckActivity@6184f63
+11-27 12:23:56.080  5982  5982 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10192; state: DISABLED
+11-27 12:23:56.085  5982  5982 W OpenGLRenderer: Unknown dataspace 0
+11-27 12:23:56.108   833   912 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-27 12:23:56.204  5448  5448 W rules.WifiRx: FenceState currentState is not true
+11-27 12:23:56.207  5448  5448 W rules.WifiRx: FenceState currentState is not true
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837916
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837985
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838179
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837907
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838300
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838299
+11-27 12:23:56.232  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838322
+11-27 12:23:56.233  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838089
+11-27 12:23:56.234  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837972
+11-27 12:23:56.234  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838186
+11-27 12:23:56.234  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837941
+11-27 12:23:56.235  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838032
+11-27 12:23:56.235  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838049
+11-27 12:23:56.235  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837940
+11-27 12:23:56.248  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130838115
+11-27 12:23:56.250  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837993
+11-27 12:23:56.251  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837988
+11-27 12:23:56.251  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837994
+11-27 12:23:56.251  5448  6044 W CursorConverter: Cannot get icon, pkg/id :com.android.settings/2130837905
+11-27 12:23:56.276  1042  1071 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.278  1042  1071 D SettingsSliceProvider: Allowlisting 13 uris to 3 pkgs.
+11-27 12:23:56.281  1042  1071 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.281  1042  1071 D SettingsSliceProvider: Allowlisting 5 uris to 3 pkgs.
+11-27 12:23:56.286  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.289  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.289  1042  1071 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.289  1042  4202 D VolumeSliceHelper: Registering uri for broadcast relay: content://com.android.settings.slices/action/media_volume
+11-27 12:23:56.289  1042  4202 D SliceBroadcastRelay: Registering Uri for broadcast relay: content://com.android.settings.slices/action/volume_slices
+11-27 12:23:56.290  1042  1042 D SettingsSliceProvider: Starting background worker for: content://com.android.settings.slices/action/media_volume
+11-27 12:23:56.290  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/media_volume) in: 2
+11-27 12:23:56.291  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.291  1042  3621 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.292  1042  4202 D VolumeSliceHelper: Registering uri for broadcast relay: content://com.android.settings.slices/action/call_volume
+11-27 12:23:56.292  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/call_volume) in: 1
+11-27 12:23:56.293  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.293  1042  4202 D VolumeSliceHelper: Registering uri for broadcast relay: content://com.android.settings.slices/action/separate_ring_volume
+11-27 12:23:56.294  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/separate_ring_volume) in: 2
+11-27 12:23:56.294  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.294  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.295  1042  3059 W LocalMediaManager: BluetoothAdapter is null or muting expected device not exist
+11-27 12:23:56.296  1042  4202 D VolumeSliceHelper: Registering uri for broadcast relay: content://com.android.settings.slices/action/notification_volume
+11-27 12:23:56.296  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/notification_volume) in: 2
+11-27 12:23:56.297  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.298  1042  3059 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.298  1042  3059 D VolumeSliceHelper: Registering uri for broadcast relay: content://com.android.settings.slices/action/alarm_volume
+11-27 12:23:56.299  1042  1071 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.299  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.300  1042  3059 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/alarm_volume) in: 3
+11-27 12:23:56.300  1042  4202 W SliceData: Highlight menu key res is empty: com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController
+11-27 12:23:56.300  1042  1071 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.301  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/os_firmware_version) in: 2
+11-27 12:23:56.301  1042  3059 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.302  1042  3059 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/gesture_double_tap_power) in: 1
+11-27 12:23:56.302  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.302  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.303  1042  4202 W SliceData: Highlight menu key res is empty: com.android.settings.deviceinfo.hardwareinfo.DeviceModelPreferenceController
+11-27 12:23:56.303  1042  4202 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/hardware_info_device_model) in: 1
+11-27 12:23:56.303  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.303  1042  3059 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.304  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.304  1042  6054 D SliceBroadcastRelay: Registering Uri for broadcast relay: content://com.android.settings.slices/action/mobile_data
+11-27 12:23:56.304  1042  1042 D SettingsSliceProvider: Starting background worker for: content://com.android.settings.slices/action/mobile_data
+11-27 12:23:56.304  1042  1042 D SliceBackgroundWorker: create instance: class com.android.settings.network.telephony.MobileDataSlice$MobileDataWorker
+11-27 12:23:56.305  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.305  1042  3059 D SettingsSliceProvider: Built slice (content://com.android.settings.slices/action/screen_magnification_gestures_preference_screen) in: 2
+11-27 12:23:56.305  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: Could not create slicedata for uri: content://com.android.settings.slices/intent/wifi_calling
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: java.lang.IllegalStateException: Invalid Slices key from path: wifi_calling
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SlicesDatabaseAccessor.getIndexedSliceData(SlicesDatabaseAccessor.java:132)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SlicesDatabaseAccessor.getSliceDataFromUri(SlicesDatabaseAccessor.java:75)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SettingsSliceProvider.loadSlice(SettingsSliceProvider.java:404)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SettingsSliceProvider.lambda$loadSliceInBackground$5(SettingsSliceProvider.java:435)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SettingsSliceProvider.$r8$lambda$DuOQmiIacKr39-rTKxFwLhyIlOo(SettingsSliceProvider.java:0)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at com.android.settings.slices.SettingsSliceProvider$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-27 12:23:56.305  1042  4202 D SettingsSliceProvider: 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:23:56.306  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.306  1042  6054 D SliceBroadcastRelay: Registering Uri for broadcast relay: content://com.android.settings.slices/action/zen_mode_toggle
+11-27 12:23:56.307  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.307  1042  3059 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.308  1042  3059 D SettingsSliceProvider: Built slice (content://android.settings.slices/action/airplane_mode) in: 1
+11-27 12:23:56.309  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.309  1042  4202 D SlicesIndexer: Slices already indexed - returning.
+11-27 12:23:56.310  1042  4202 D SettingsSliceProvider: Built slice (content://android.settings.slices/action/battery_saver) in: 1
+11-27 12:23:56.310  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.311  1042  6054 D SliceBroadcastRelay: Registering Uri for broadcast relay: content://android.settings.slices/action/bluetooth
+11-27 12:23:56.312  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.320  1042  6054 W ElapsedTimeUtils: getElapsedTime: sSuwFinishedTimeStamp is null
+11-27 12:23:56.320  1042  1042 D SettingsSliceProvider: Starting background worker for: content://android.settings.slices/action/wifi
+11-27 12:23:56.320  1042  1042 D SliceBackgroundWorker: create instance: class com.android.settings.wifi.slice.WifiScanWorker
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Common causes for lock verification issues are non-optimized dex code
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: and incorrect proguard optimizations.
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Method java.lang.Object androidx.compose.runtime.snapshots.SnapshotStateList.mutate(kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+11-27 12:23:56.321  5982  5982 W hord.inputcheck: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+11-27 12:23:56.325  1042  1042 D WsuServiceClient: Binding to com.google.android.apps.carrier.carrierwifi
+11-27 12:23:56.326  1042  1042 D WsuServiceClient: the specified wsu service is not installed.
+11-27 12:23:56.332  1042  6054 D SliceBuilder: Creating slice for: com.android.settings.notification.MediaVolumePreferenceController
+11-27 12:23:56.334   519   763 D ConnectivityService: NetReassign [no changes] [c 0] [a 0] [i 1]
+11-27 12:23:56.335   519  2753 D ConnectivityService: requestNetwork for uid/pid:1000/1042 activeRequest: null callbackRequest: 147 [NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 1000 RequestorUid: 1000 RequestorPkg: com.android.settings UnderlyingNetworks: Null] ]] callback flags: 1 order: 2147483647
+11-27 12:23:56.336   519   756 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 1000 RequestorUid: 1000 RequestorPkg: com.android.settings UnderlyingNetworks: Null] ]
+11-27 12:23:56.337   519   756 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 1000 RequestorUid: 1000 RequestorPkg: com.android.settings UnderlyingNetworks: Null] ]
+11-27 12:23:56.337   519   756 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 1000 RequestorUid: 1000 RequestorPkg: com.android.settings UnderlyingNetworks: Null] ]
+11-27 12:23:56.338   519   756 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=148, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 1000 RequestorUid: 1000 RequestorPkg: com.android.settings UnderlyingNetworks: Null] ]
+11-27 12:23:56.338   519   763 D ConnectivityService: NetReassign [148 : null → 100] [c 0] [a 0] [i 2]
+11-27 12:23:56.338  1042  6054 D MediaVolumePreCtrl: The slice doesn't support end item
+11-27 12:23:56.341  1042  1071 D VolumeSliceHelper: Unregistering uri broadcast relay: content://com.android.settings.slices/action/media_volume
+11-27 12:23:56.344  1042  1042 D SettingsSliceProvider: Stopping background worker for: content://com.android.settings.slices/action/media_volume
+11-27 12:23:56.344  1042  3621 D SliceBuilder: Creating slice for: com.android.settings.notification.CallVolumePreferenceController
+11-27 12:23:56.355  1042  1071 D SliceBuilder: Creating slice for: com.android.settings.notification.SeparateRingVolumePreferenceController
+11-27 12:23:56.360   519  1652 W ScanResultUtil: Empty or null ScanResult list
+11-27 12:23:56.360  1042  1071 D VolumeSliceHelper: Unregistering uri broadcast relay: content://com.android.settings.slices/action/call_volume
+11-27 12:23:56.361   519  1652 W WifiService: Attempt to retrieve WifiConfiguration with invalid scanResult List
+11-27 12:23:56.361  1042  1071 D VolumeSliceHelper: Unregistering uri broadcast relay: content://com.android.settings.slices/action/separate_ring_volume
+11-27 12:23:56.362  1042  3621 D SliceBuilder: Creating slice for: com.android.settings.notification.NotificationVolumePreferenceController
+11-27 12:23:56.364  1042  6054 D VolumeSliceHelper: Unregistering uri broadcast relay: content://com.android.settings.slices/action/notification_volume
+11-27 12:23:56.365  1042  1071 D SliceBuilder: Creating slice for: com.android.settings.notification.AlarmVolumePreferenceController
+11-27 12:23:56.367  1042  6054 D VolumeSliceHelper: Unregistering uri broadcast relay: content://com.android.settings.slices/action/alarm_volume
+11-27 12:23:56.367  1042  6054 D SliceBroadcastRelay: Unregistering uri broadcast relay: content://com.android.settings.slices/action/volume_slices
+11-27 12:23:56.368  1042  3621 D SliceBuilder: Creating slice for: com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController
+11-27 12:23:56.370  1042  6054 D SliceBuilder: Creating slice for: com.android.settings.gestures.DoubleTapPowerPreferenceController
+11-27 12:23:56.372  1042  4829 D SliceBuilder: Creating slice for: com.android.settings.deviceinfo.hardwareinfo.DeviceModelPreferenceController
+11-27 12:23:56.373  1042  4690 D SliceBuilder: Creating slice for: com.android.settings.accessibility.MagnificationGesturesPreferenceController
+11-27 12:23:56.375   519  2239 W ScanResultUtil: Empty or null ScanResult list
+11-27 12:23:56.375   519  2239 W WifiService: Attempt to retrieve WifiConfiguration with invalid scanResult List
+11-27 12:23:56.376  1042  4823 D SubscriptionUtil: getSelectableSubscriptionInfoList: [[SubscriptionInfo: id=1 iccId=89860318640220133897 simSlotIndex=0 portIndex=0 isEmbedded=false carrierId=1 displayName=T-Mobile carrierName=T-Mobile isOpportunistic=false groupUuid=null groupOwner= isGroupDisabled=false displayNameSource=CARRIER iconTint=-15502541 number=+15551234567 dataRoaming=0 mcc=310 mnc=260 ehplmns=[] hplmns=[] cardString=89860318640220133897 cardId=0 nativeAccessRules=null carrierConfigAccessRules=[cert: 92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920 pkg: null access: 0, cert: 3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562 pkg: null access: 0, cert: 6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93 pkg: null access: 0, cert: 7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC pkg: null access: 0] countryIso=us profileClass=-1 mType=LOCAL_SIM areUiccApplicationsEnabled=true usageSetting=DEFAULT]]
+11-27 12:23:56.377  1042  4823 D SubscriptionUtil: getSelectableSubscriptionInfoList: [[SubscriptionInfo: id=1 iccId=89860318640220133897 simSlotIndex=0 portIndex=0 isEmbedded=false carrierId=1 displayName=T-Mobile carrierName=T-Mobile isOpportunistic=false groupUuid=null groupOwner= isGroupDisabled=false displayNameSource=CARRIER iconTint=-15502541 number=+15551234567 dataRoaming=0 mcc=310 mnc=260 ehplmns=[] hplmns=[] cardString=89860318640220133897 cardId=0 nativeAccessRules=null carrierConfigAccessRules=[cert: 92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920 pkg: null access: 0, cert: 3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562 pkg: null access: 0, cert: 6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93 pkg: null access: 0, cert: 7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC pkg: null access: 0] countryIso=us profileClass=-1 mType=LOCAL_SIM areUiccApplicationsEnabled=true usageSetting=DEFAULT]]
+11-27 12:23:56.378  1042  4823 D SubscriptionUtil: getSelectableSubscriptionInfoList: [[SubscriptionInfo: id=1 iccId=89860318640220133897 simSlotIndex=0 portIndex=0 isEmbedded=false carrierId=1 displayName=T-Mobile carrierName=T-Mobile isOpportunistic=false groupUuid=null groupOwner= isGroupDisabled=false displayNameSource=CARRIER iconTint=-15502541 number=+15551234567 dataRoaming=0 mcc=310 mnc=260 ehplmns=[] hplmns=[] cardString=89860318640220133897 cardId=0 nativeAccessRules=null carrierConfigAccessRules=[cert: 92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920 pkg: null access: 0, cert: 3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562 pkg: null access: 0, cert: 6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93 pkg: null access: 0, cert: 7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC pkg: null access: 0] countryIso=us profileClass=-1 mType=LOCAL_SIM areUiccApplicationsEnabled=true usageSetting=DEFAULT]]
+11-27 12:23:56.378  1042  4823 D SubscriptionUtil: getSelectableSubscriptionInfoList: [[SubscriptionInfo: id=1 iccId=89860318640220133897 simSlotIndex=0 portIndex=0 isEmbedded=false carrierId=1 displayName=T-Mobile carrierName=T-Mobile isOpportunistic=false groupUuid=null groupOwner= isGroupDisabled=false displayNameSource=CARRIER iconTint=-15502541 number=+15551234567 dataRoaming=0 mcc=310 mnc=260 ehplmns=[] hplmns=[] cardString=89860318640220133897 cardId=0 nativeAccessRules=null carrierConfigAccessRules=[cert: 92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920 pkg: null access: 0, cert: 3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562 pkg: null access: 0, cert: 6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93 pkg: null access: 0, cert: 7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC pkg: null access: 0] countryIso=us profileClass=-1 mType=LOCAL_SIM areUiccApplicationsEnabled=true usageSetting=DEFAULT]]
+11-27 12:23:56.378   519  2239 W ScanResultUtil: Empty or null ScanResult list
+11-27 12:23:56.378   519  2239 E WifiService: Attempt to retrieve passpoint with invalid scanResult List
+11-27 12:23:56.379   519  2239 W ScanResultUtil: Empty or null ScanResult list
+11-27 12:23:56.379   519  2239 W WifiService: Attempt to retrieve OsuProviders with invalid scanResult List
+11-27 12:23:56.381  1042  1071 D SliceBroadcastRelay: Unregistering uri broadcast relay: content://com.android.settings.slices/action/mobile_data
+11-27 12:23:56.382  1042  1042 D SettingsSliceProvider: Stopping background worker for: content://com.android.settings.slices/action/mobile_data
+11-27 12:23:56.386  1042  6055 D CompatibilityChangeReporter: Compat change id reported: 186082280; UID 1000; state: ENABLED
+11-27 12:23:56.386  1042  6055 I WifiPickerTracker: Scanning started
+11-27 12:23:56.387  1042  6055 E WifiScanner: listener does not exist
+11-27 12:23:56.434  1042  3621 D WifiCallingSliceHelper: Wifi calling is either not provisioned or not enabled by Platform
+11-27 12:23:56.438  1042  1071 D SliceBroadcastRelay: Unregistering uri broadcast relay: content://com.android.settings.slices/action/zen_mode_toggle
+11-27 12:23:56.439  1042  3621 D SliceBuilder: Creating slice for: com.android.settings.network.AirplaneModePreferenceController
+11-27 12:23:56.441  1042  4823 D SliceBuilder: Creating slice for: com.android.settings.fuelgauge.batterysaver.BatterySaverButtonPreferenceController
+11-27 12:23:56.444  1042  6054 D SliceBroadcastRelay: Unregistering uri broadcast relay: content://android.settings.slices/action/bluetooth
+11-27 12:23:56.446  1042  6054 D WifiSlice: calling uid name : com.google.android.settings.intelligence
+11-27 12:23:56.452   400   620 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10192 pid=0
+11-27 12:23:56.452   400   620 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10192 => denied (76 us)
+11-27 12:23:56.452   400   421 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10192 pid=5982
+11-27 12:23:56.452   400   421 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10192 => denied (47 us)
+11-27 12:23:56.452   400   421 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10192 pid=5982
+11-27 12:23:56.452   400   421 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10192 => denied (30 us)
+11-27 12:23:56.456  1042  1042 D SettingsSliceProvider: Stopping background worker for: content://android.settings.slices/action/wifi
+11-27 12:23:56.456   400   620 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10192 pid=0
+11-27 12:23:56.456   400   620 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10192 => denied (4487 us)
+11-27 12:23:56.457  1042  6055 I WifiPickerTracker: Scanning stopped
+11-27 12:23:56.459  5982  6038 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-27 12:23:56.459  5982  6038 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:23:56.484   135   135 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:23:56.484  5982  6038 I Gralloc4: mapper 4.x is not supported
+11-27 12:23:56.501  5982  6038 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-27 12:23:56.592   519  1652 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10192 pid=0
+11-27 12:23:56.592   519  1652 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10192 => denied (109 us)
+11-27 12:23:56.592   519  1652 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10192 pid=0
+11-27 12:23:56.592   519  1652 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10192 => denied (11 us)
+11-27 12:23:56.592   519  1652 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10192 pid=0
+11-27 12:23:56.592   519  1652 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10192 => denied (8 us)
+11-27 12:23:56.595   519   539 W ziparchive: Unable to open '/data/app/~~R_ZchibOS4obRg1ocNbEGg==/com.playchord.inputcheck-tr6e87tqzsjuZRFjZ9ydOA==/base.dm': No such file or directory
+11-27 12:23:56.600   519   539 I ActivityTaskManager: Displayed com.playchord.inputcheck/.InputCheckActivity for user 0: +711ms
+11-27 12:23:56.604   833   898 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@3c83923
+11-27 12:23:56.608   519  2239 W InputManager-JNI: Input channel object '99c670 Splash Screen com.playchord.inputcheck (client)' was disposed without first being removed with the input manager!
+11-27 12:23:56.621   833   912 D EGL_emulation: app_time_stats: avg=34.39ms min=1.16ms max=453.12ms count=26
+11-27 12:23:56.621  1072  1072 I ActivityThread: Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+11-27 12:23:56.623  1072  1118 I ImeTracker: com.google.android.apps.nexuslauncher:14a8ffa9: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-27 12:23:56.624   519   969 I ImeTracker: com.google.android.apps.nexuslauncher:14a8ffa9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-27 12:23:56.624  1072  2063 D OneSearchSuggestProvider: Shut down the binder channel
+11-27 12:23:56.625  1072  1102 I IPCThreadState: oneway function results for code 2 on binder at 0x777af242a0a0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-27 12:23:56.626  5982  6061 D ProfileInstaller: Installing profile for com.playchord.inputcheck
+11-27 12:23:56.629  1643  2269 I PBSessionCacheImpl: Deleted sessionId[7227786199798869] from persistence.
+11-27 12:23:56.636   519  1652 I ImeTracker: com.playchord.inputcheck:2f2a8380: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-27 12:23:56.636   519  1652 I ImeTracker: com.playchord.inputcheck:2f2a8380: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-27 12:23:56.644  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:23:56.644  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:23:56.644  1858  1872 D StrictMode: StrictMode policy violation: android.os.strictmode.SqliteObjectLeakedViolation: Finalizing a Cursor that has not been deactivated or closed. database = /data/user/0/com.android.providers.contacts/databases/contacts2.db, table = raw_contacts, query = SELECT contacts_view._id AS _id, contacts_view.display_name AS display_name, contacts_view.photo_thumb_uri AS photo_thumb_uri, data1 AS number, data2 AS type, data3 AS label, contacts_view.lookup AS lookup FROM raw_contacts JOIN view_contacts as contacts_view ON (contacts_view._id = raw_contacts.contact_id) JOIN (SELECT data_id,normalized_number FROM phone_lookup WHERE (phone_lookup.min_match = '7654321')) AS lookup ON lookup.data_id=data._id JOIN data ON data.raw_contact_id=raw_contacts._id WHERE (PHONE_NUMBERS_EQUAL(data.data1, '+15551234567', 0, 7)) ORDER BY  length(lookup.normalized_number) DESC
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at android.os.StrictMode.onSqliteObjectLeaked(StrictMode.java:2222)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:282)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+11-27 12:23:56.644  1858  1872 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:23:56.644  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode 1
+11-27 12:23:56.650  1858  1872 D StrictMode: StrictMode policy violation: android.os.strictmode.LeakedClosableViolation: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.os.StrictMode$AndroidCloseGuardReporter.report(StrictMode.java:1994)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at dalvik.system.CloseGuard.warnIfOpen(CloseGuard.java:336)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.AbstractCursor.finalize(AbstractCursor.java:531)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:291)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+11-27 12:23:56.650  1858  1872 D StrictMode: Caused by: java.lang.Throwable: Explicit termination method 'AbstractCursor.close' not called
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.AbstractCursor.<init>(AbstractCursor.java:227)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.AbstractWindowedCursor.<init>(AbstractWindowedCursor.java:39)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteCursor.<init>(SQLiteCursor.java:98)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteDirectCursorDriver.query(SQLiteDirectCursorDriver.java:52)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteDatabase.rawQueryWithFactory(SQLiteDatabase.java:1714)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.database.sqlite.SQLiteQueryBuilder.query(SQLiteQueryBuilder.java:592)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.doQuery(ContactsProvider2.java:7543)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7249)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryCorpLookupIfNecessary(ContactsProvider2.java:7728)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLookupEnterprise(ContactsProvider2.java:7867)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryPhoneLookupEnterprise(ContactsProvider2.java:7838)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7172)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryDirectoryIfNecessary(ContactsProvider2.java:5883)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryInternal(ContactsProvider2.java:5728)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.query(ContactsProvider2.java:5673)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.content.ContentProvider.query(ContentProvider.java:1692)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.content.ContentProvider$Transport.query(ContentProvider.java:292)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:107)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.os.Binder.execTransactInternal(Binder.java:1339)
+11-27 12:23:56.650  1858  1872 D StrictMode: 	at android.os.Binder.execTransact(Binder.java:1275)
+11-27 12:23:56.655  5982  6001 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QReady\E']].
+11-27 12:23:56.655  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QReady\E'].
+11-27 12:23:56.658  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-27 12:23:56.659  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-27 12:23:56.659  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.playchord.inputcheck fieldId=0 fieldName=null extras=null}, false)
+11-27 12:23:56.659  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-27 12:23:56.659  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-27 12:23:56.660  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.660  1470  1470 I KeyboardModeManager: KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=true
+11-27 12:23:56.661  1470  1470 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:23:56.661  1470  1470 I KeyboardModeManager: KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=phone_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+11-27 12:23:56.669  1072  1072 D b/254119092: clearActivity
+11-27 12:23:56.669  1072  1072 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-27 12:23:56.669  1643  2266 I A       : Using proto config with mendel
+11-27 12:23:56.672  1643  2266 I A       : Using proto config with mendel
+11-27 12:23:56.672  1643  2266 W SearchServiceCore: Abort, client detached.
+11-27 12:23:56.672  1470  1470 I StyledKeyboardTheme: StyledKeyboardTheme.<init>():87 Pref: [], themeName: [silk:], darkMode: [false], cacheKey: [overlay_builtin_dynamic_color_light_base.binarypb:dynamic-light-fff1f0f7-ffb2c5ff-734dbefe1e6f4840c010420f35e14fb0]
+11-27 12:23:56.672  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.672  1072  1072 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@118f9f7
+11-27 12:23:56.672  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.672  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.673  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.673  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.673  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.initializeKeyboardTheme():1343 Apply keyboard theme: theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_refinedkp_materiallight_phone_300_overlay_builtin_dynamic_color_light_base.binarypb:dynamic-light-fff1f0f7-ffb2c5ff-734dbefe1e6f4840c010420f35e14fb0_port
+11-27 12:23:56.673  1072  1072 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-27 12:23:56.673  1072  1072 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-27 12:23:56.677  1470  1470 I GoogleInputMethodService: GoogleInputMethodService.onCreateInputView():1768 onCreateInputView()
+11-27 12:23:56.682  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.682  1470  1470 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():189 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+11-27 12:23:56.684  1470  1470 I DeviceModeUtil: DeviceModeUtil.getDeviceMode():122 Get device mode phone by ui mode:1 and smallestScreenWidthDp:320
+11-27 12:23:56.685  1470  1470 I KeyboardModeManager: KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=true
+11-27 12:23:56.685  1470  1470 I AndroidIME: KeyboardViewManager.updateKeyboardBackgroundFrameVisibility():357 Set background frame visibility. old:8, new:8
+11-27 12:23:56.685  1470  1470 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:23:56.685  1470  1470 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-27 12:23:56.685  1470  1470 I KeyboardModeManager: KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=phone_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+11-27 12:23:56.690  1072  1118 I AiAiSuggestUi: Connecting to system intelligence module.
+11-27 12:23:56.692  1548  1548 I AiAiOverview: Created AiAiContentSuggestionsService.
+11-27 12:23:56.699  1072  1102 I AiAiSuggestUi: Successfully connected to system intelligence:
+11-27 12:23:56.702  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:23:56.703  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:23:56.703  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode 1
+11-27 12:23:56.704  5032  5930 W ctxmgr  : [NetworkStateProducer] No state change for network connection context [CONTEXT service_id=47 ]
+11-27 12:23:56.706  5032  5043 I FontLog : Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-27 12:23:56.707  5032  5043 I FontLog : Query [emojicompat-emoji-font] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-27 12:23:56.707  5032  5043 I FontLog : Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-27 12:23:56.715  5032  5043 I FontLog : Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-27 12:23:56.719  5032  5043 I FontLog : Pulling font file for id = 1, cache size = 1 [CONTEXT service_id=132 ]
+11-27 12:23:56.760  1072  1072 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-27 12:23:56.762  1072  1072 D DeviceSearchAlg: search timeout = %d200
+11-27 12:23:56.762  1072  1072 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:23:56.762  1072  1072 W BcSmartspaceView: Current card is not present in the Adapter; cannot log.
+11-27 12:23:56.780  1072  1072 I OverviewComponentObserver: updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=false, mIsDefaultHome=true
+11-27 12:23:56.806  1548  1548 I AiAiEcho: SearchContextManagerImpl::setSearchContext resultTypes=[141151] extras=[Bundle[mParcelledData.dataSize=684]] sessionId=[com.google.android.apps.nexuslauncher:7a416998-2743-4458-90d1-63e40c0f8440,0]
+11-27 12:23:56.808  1072  1072 D AutofillManager: view is not autofillable - activity denied for autofill
+11-27 12:23:56.810  1072  1118 D SearchTargetUtil:  query= size=1
+11-27 12:23:56.810  1072  1118 D SearchTargetUtil: layoutType=icon_row resultType=4096 packageName= extras=Bundle{icon_container_enabled=true,zero_state_all_apps_web_suggest_count=3,rank=1.0,key_ipc_start=212160,hide_subtitle=true,zero_state_qsb_web_suggest_count=10,}ParentID: null targetID: SESSION_INFO:0::zero_state_flags
+11-27 12:23:56.820  1072  1072 I ContentCaptureHelper: Setting logging level to DEBUG
+11-27 12:23:56.820  1072  1072 D ContentCaptureManager: setFlushViewTreeAppearingEventDisabled(): setting to false
+11-27 12:23:56.820  1072  1072 D ContentCaptureManager: updateWindowAttributes(): window flags=-2137980672
+11-27 12:23:56.822  1072  1072 D ContentCaptureManager: updateWindowAttributes(): window flags=-2137980672
+11-27 12:23:56.833  1548  2112 I AiAiStatsd: Successfully logged feature usage for VISUAL_CORTEX.
+11-27 12:23:56.851  1072  1118 I ImeTracker: com.google.android.apps.nexuslauncher:e764daa6: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-27 12:23:56.851  1072  1118 I ImeTracker: com.google.android.apps.nexuslauncher:e764daa6: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-27 12:23:56.854  1072  1118 I ImeTracker: com.google.android.apps.nexuslauncher:906ada75: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-27 12:23:56.854  1072  1118 I ImeTracker: com.google.android.apps.nexuslauncher:906ada75: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-27 12:23:56.869  1072  1072 W BcSmartspaceCard: No title view to update
+11-27 12:23:56.869  1072  1072 I BcSmartspaceCard: setFormattedContentDescription: text=null, iconDescription=null, contentDescription=null
+11-27 12:23:56.900  1643  1643 I ImeTracker: com.google.android.googlequicksearchbox:search:fc1529bf: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-27 12:23:56.901  1643  1643 I ImeTracker: com.google.android.googlequicksearchbox:search:fc1529bf: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-27 12:23:56.914  1643  1643 W PhoneWindow: Previously focused view reported id 2131435089 during save, but can't be found during restore.
+11-27 12:23:56.920  1072  1072 D TISBindHelper: TIS service connected
+11-27 12:23:56.920  1072  1072 D b/254119092: Set mActivity=com.google.android.apps.nexuslauncher.NexusLauncherActivity@9850daf
+11-27 12:23:56.920  1072  1072 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-27 12:23:56.920  1072  1072 D MainContentCaptureSession: handleScheduleFlush(act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=1 (WAITING_FOR_SERVER), disabled=false], reason=FORCE_FLUSH): not a timeout reason because mDirectServiceInterface is not ready yet
+11-27 12:23:56.924  1643  1643 I ImeTracker: com.google.android.googlequicksearchbox:search:46313b2: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-27 12:23:56.924  1643  1643 I ImeTracker: com.google.android.googlequicksearchbox:search:46313b2: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-27 12:23:56.926  1643  1643 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@89d3b8b
+11-27 12:23:56.927   519   969 W InputManager-JNI: Input channel object '4a36a2a com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity (client)' was disposed without first being removed with the input manager!
+11-27 12:23:56.949  1470  1515 I putmethod.latin: Background concurrent copying GC freed 261714(9312KB) AllocSpace objects, 16(832KB) LOS objects, 49% free, 11MB/23MB, paused 33us,20us total 185.506ms
+11-27 12:23:56.950  1470  1517 W SP      : File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[6]
+11-27 12:23:56.950  1470  1517 W SP      : File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[2]
+11-27 12:23:56.950  1470  1517 W SP      : File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[6]
+11-27 12:23:56.950  1470  1517 W SP      : File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[2]
+11-27 12:23:56.957  1643  1643 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@3f73c62
+11-27 12:23:56.958   519  2753 W InputManager-JNI: Input channel object 'a7513dc com.google.android.googlequicksearchbox/android.app.ContextImpl (client)' was disposed without first being removed with the input manager!
+11-27 12:23:57.175   519  1652 D WifiNl80211Manager: Scan result ready event
+11-27 12:23:57.175   519  1652 D WifiNative: Scan result ready event
+11-27 12:23:57.822   135   135 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-27 12:23:57.822  5968  5980 I Gralloc4: mapper 4.x is not supported
+11-27 12:23:57.854  5968  6077 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:23:57.855  5968  6077 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:23:57.857  5968  6077 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:23:57.871  5968  6077 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-27 12:23:57.871  5968  6077 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:23:57.899   336   336 D Zygote  : Forked child process 6078
+11-27 12:23:57.929  6078  6078 I x.test.services: Late-enabling -Xcheck:jni
+11-27 12:23:57.939  6078  6078 I x.test.services: Using CollectorTypeCC GC.
+11-27 12:23:57.940  6078  6078 W x.test.services: Unexpected CPU variant for x86: x86_64.
+11-27 12:23:57.940  6078  6078 W x.test.services: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-27 12:23:57.955   416   428 I adbd    : jdwp connection from 6078
+11-27 12:23:57.964  6078  6078 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10193; state: DISABLED
+11-27 12:23:57.965  6078  6078 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10193; state: DISABLED
+11-27 12:23:57.969  6078  6078 W ziparchive: Unable to open '/data/app/~~BVWzrWS-D6igaC0usRrJEQ==/androidx.test.services-xaDVIi_d-9c_9Y7qIPbCEA==/base.dm': No such file or directory
+11-27 12:23:57.969  6078  6078 W ziparchive: Unable to open '/data/app/~~BVWzrWS-D6igaC0usRrJEQ==/androidx.test.services-xaDVIi_d-9c_9Y7qIPbCEA==/base.dm': No such file or directory
+11-27 12:23:57.986  6078  6078 D nativeloader: Configuring clns-6 for other apk /data/app/~~BVWzrWS-D6igaC0usRrJEQ==/androidx.test.services-xaDVIi_d-9c_9Y7qIPbCEA==/base.apk. target_sdk_version=30, uses_libraries=, library_path=/data/app/~~BVWzrWS-D6igaC0usRrJEQ==/androidx.test.services-xaDVIi_d-9c_9Y7qIPbCEA==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/androidx.test.services
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment: Currently set values for:
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment: ANGLE GameManagerService for androidx.test.services: false
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment: androidx.test.services is not listed in per-application setting
+11-27 12:23:57.993  6078  6078 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:23:57.996  6078  6078 I MultiDex: VM with version 2.1.0 has multidex support
+11-27 12:23:57.996  6078  6078 I MultiDex: Installing application
+11-27 12:23:57.996  6078  6078 I MultiDex: VM has multidex support, MultiDex support library is disabled.
+11-27 12:23:57.997  6078  6078 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10193; state: DISABLED
+11-27 12:23:58.005  6078  6091 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/01-ready.png': found
+11-27 12:23:58.016  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStart mic\E'].
+11-27 12:23:58.027  5982  6001 W hord.inputcheck: Accessing hidden method Landroid/view/MotionEvent;->setDisplayId(I)V (blocked,test-api, reflection, allowed)
+11-27 12:23:58.034  5982  6001 D UiObject2: Clicking on (160, 272).
+11-27 12:23:58.034  5982  6001 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@85b9; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(126, 260 - 195, 284); boundsInWindow: Rect(126, 260 - 195, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Start mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:23:58.035  5982  6001 D CompatibilityChangeReporter: Compat change id reported: 289878283; UID 10192; state: ENABLED
+11-27 12:23:58.051  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=213386, downTime=213386, deviceId=-1, source=0x1002, displayId=0, eventId=-926644017 }
+11-27 12:23:58.060  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=213409, downTime=213386, deviceId=-1, source=0x1002, displayId=0, eventId=-920411262 }
+11-27 12:23:58.073  5982  6001 W GestureController: Gestures took longer than expected (36ms >> 16ms), device might be in a busy state.
+11-27 12:23:58.072   396  6096 I AudioFlinger: AudioFlinger's thread 0x72d1e1f19bb0 tid=6096 ready to run
+11-27 12:23:58.074  5982  6001 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QListening\E']].
+11-27 12:23:58.074  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QListening\E'].
+11-27 12:23:58.078   396  6096 D audioserver: FGS Logger Transaction failed
+11-27 12:23:58.078   396  6096 D audioserver: -129
+11-27 12:23:58.078   396  6096 D audioserver: FGS Logger Transaction failed
+11-27 12:23:58.078   396  6096 D audioserver: -129
+11-27 12:23:58.078   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:23:58.079   396   396 D audioserver: FGS Logger Transaction failed
+11-27 12:23:58.079   396   396 D audioserver: -129
+11-27 12:23:58.162  5982  6038 D EGL_emulation: app_time_stats: avg=315.56ms min=4.94ms max=951.13ms count=5
+11-27 12:23:58.298   341  6097 D android.hardware.audio@7.1-impl.ranchu: TinyalsaSource::read:143 pcm_readi was late delivering frames, inserting 15963 us of silence
+11-27 12:23:59.186  5982  6038 D EGL_emulation: app_time_stats: avg=85.29ms min=20.39ms max=101.56ms count=12
+11-27 12:24:00.014  1548  1942 I AiAiEcho: Predicting[0]:
+11-27 12:24:00.014  1548  1942 I AiAiEcho: EchoTargets:
+11-27 12:24:00.014  1548  1942 I AiAiEcho: Filtered by AiAi flag check:
+11-27 12:24:00.015  1548  1942 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-27 12:24:00.016  1548  1942 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-27 12:24:00.031   833   833 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-27 12:24:00.033   833   912 D EGL_emulation: app_time_stats: avg=1705.75ms min=39.74ms max=3371.76ms count=2
+11-27 12:24:00.202  5982  6038 D EGL_emulation: app_time_stats: avg=101.57ms min=98.71ms max=116.85ms count=10
+11-27 12:24:00.754  6078  6091 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/02-listening.png': found
+11-27 12:24:00.764  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QStop mic\E'].
+11-27 12:24:00.785  5982  6001 D UiObject2: Clicking on (160, 272).
+11-27 12:24:00.786  5982  6001 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8e14; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(127, 260 - 193, 284); boundsInWindow: Rect(127, 260 - 193, 284); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Stop mic; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:24:00.798  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=216137, downTime=216137, deviceId=-1, source=0x1002, displayId=0, eventId=-952772008 }
+11-27 12:24:00.808  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=272.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=216158, downTime=216137, deviceId=-1, source=0x1002, displayId=0, eventId=-49597403 }
+11-27 12:24:00.817   396  6096 D audioserver: FGS Logger Transaction failed
+11-27 12:24:00.817   396  6096 D audioserver: -129
+11-27 12:24:00.817   341   341 E android.hardware.audio@7.1-impl.ranchu: updateSinkMetadata:364 failure: Result::NOT_SUPPORTED
+11-27 12:24:00.823  5982  6001 W GestureController: Gestures took longer than expected (37ms >> 16ms), device might be in a busy state.
+11-27 12:24:00.824  5982  6001 D UiDevice: Waiting 10000ms for SearchCondition[hasObject=BySelector [TEXT='\QStopped\E']].
+11-27 12:24:00.825  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:00.842   396  1006 D audioserver: FGS Logger Transaction failed
+11-27 12:24:00.842   396  1006 D audioserver: -129
+11-27 12:24:00.881   833   833 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-27 12:24:00.892  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:00.893  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:00.919  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:00.919  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.028  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.032  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.032  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.034  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.034  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.137  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.145  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.146  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.148  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.148  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.250  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.255  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.255  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.257  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.257  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.359  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.363  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.363  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.365  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.365  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.468  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.471  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.471  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.473  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.473  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.575  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.579  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.579  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.581  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.581  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.683  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.687  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.688  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.689  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.690  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.792  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.796  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.796  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.798  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.798  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.900  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:01.903  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.904  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:01.905  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:01.905  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.007  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:02.011  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.011  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.013  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.013  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.115  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:02.119  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.119  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.120  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.120  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.222  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:02.226  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.227  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.228  5982  6001 W ByMatcher: Node returned null child: android.view.accessibility.AccessibilityNodeInfo@8dd6; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(36, 244 - 284, 300); boundsInWindow: Rect(36, 244 - 284, 300); packageName: com.playchord.inputcheck; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_FOCUS - null, AccessibilityAction: ACTION_CLICK - null]; isTextSelectable: false
+11-27 12:24:02.229  5982  6001 W ByMatcher: Skipping null child (1 of 2)
+11-27 12:24:02.321   519   763 D ConnectivityService: releasing NetworkRequest [ REQUEST id=145, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+11-27 12:24:02.321   519   763 I ConnectivityService: Update capabilities for net 101 : -FOREGROUND
+11-27 12:24:02.323   335   370 I netd    : networkSetPermissionForNetwork(101, 1) <2.21ms>
+11-27 12:24:02.331  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QStopped\E'].
+11-27 12:24:02.354  6078  6091 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/03-stopped.png': found
+11-27 12:24:02.364  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:02.388  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:02.389  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:02.397  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=217739, downTime=217739, deviceId=-1, source=0x1002, displayId=0, eventId=-895486228 }
+11-27 12:24:02.417  5982  6038 D EGL_emulation: app_time_stats: avg=200.14ms min=6.06ms max=1499.81ms count=11
+11-27 12:24:02.734  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:24:02.734  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode -1
+11-27 12:24:02.734  1016  1302 D BtGatt.ScanManager: uid 10130 isForeground true scanMode 1
+11-27 12:24:02.891  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=218240, downTime=217739, deviceId=-1, source=0x1002, displayId=0, eventId=-621409453 }
+11-27 12:24:02.898  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:02.916  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:02.916  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:02.933  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=218267, downTime=218267, deviceId=-1, source=0x1002, displayId=0, eventId=-94070620 }
+11-27 12:24:03.058   833   833 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-27 12:24:03.419  5982  6038 D EGL_emulation: app_time_stats: avg=14.19ms min=1.57ms max=30.71ms count=55
+11-27 12:24:03.488  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=218837, downTime=218267, deviceId=-1, source=0x1002, displayId=0, eventId=-55960912 }
+11-27 12:24:03.495  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:03.508  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:03.508  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:03.515  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=218859, downTime=218859, deviceId=-1, source=0x1002, displayId=0, eventId=-640490373 }
+11-27 12:24:03.750  5982  5982 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10192; state: ENABLED
+11-27 12:24:03.885   833   833 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-27 12:24:04.038  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=219388, downTime=218859, deviceId=-1, source=0x1002, displayId=0, eventId=-694409274 }
+11-27 12:24:04.051  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:04.061  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:04.062  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:04.079  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=219412, downTime=219412, deviceId=-1, source=0x1002, displayId=0, eventId=-346169292 }
+11-27 12:24:04.434  5982  6038 D EGL_emulation: app_time_stats: avg=18.78ms min=12.92ms max=51.70ms count=54
+11-27 12:24:04.606  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=219956, downTime=219412, deviceId=-1, source=0x1002, displayId=0, eventId=-1067217290 }
+11-27 12:24:04.614  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:04.621  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:04.621  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:04.633  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=219972, downTime=219972, deviceId=-1, source=0x1002, displayId=0, eventId=-344480849 }
+11-27 12:24:05.155  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=220504, downTime=219972, deviceId=-1, source=0x1002, displayId=0, eventId=-542013845 }
+11-27 12:24:05.163  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:05.170  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:05.171  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:05.183  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=220521, downTime=220521, deviceId=-1, source=0x1002, displayId=0, eventId=-471050815 }
+11-27 12:24:05.449  5982  6038 D EGL_emulation: app_time_stats: avg=18.79ms min=12.36ms max=46.50ms count=54
+11-27 12:24:05.540  5032  5032 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+11-27 12:24:05.723  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=221072, downTime=220521, deviceId=-1, source=0x1002, displayId=0, eventId=-997213166 }
+11-27 12:24:05.731  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:05.737  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:05.738  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:05.749  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=221088, downTime=221088, deviceId=-1, source=0x1002, displayId=0, eventId=-500242798 }
+11-27 12:24:06.257  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=221606, downTime=221088, deviceId=-1, source=0x1002, displayId=0, eventId=-1049406005 }
+11-27 12:24:06.266  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:06.272  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:06.273  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:06.282  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=221623, downTime=221623, deviceId=-1, source=0x1002, displayId=0, eventId=-178076758 }
+11-27 12:24:06.452  5982  6038 D EGL_emulation: app_time_stats: avg=17.89ms min=13.67ms max=44.85ms count=56
+11-27 12:24:06.805  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=222153, downTime=221623, deviceId=-1, source=0x1002, displayId=0, eventId=-327439297 }
+11-27 12:24:06.812  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:06.823  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:06.823  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:06.829  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=222174, downTime=222174, deviceId=-1, source=0x1002, displayId=0, eventId=-18763119 }
+11-27 12:24:06.888   833   833 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-27 12:24:07.322  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=222672, downTime=222174, deviceId=-1, source=0x1002, displayId=0, eventId=-507755667 }
+11-27 12:24:07.329  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:07.342  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QConsumer continuity\E'].
+11-27 12:24:07.342  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:07.349  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=222692, downTime=222692, deviceId=-1, source=0x1002, displayId=0, eventId=-366399202 }
+11-27 12:24:07.455  5982  6038 D EGL_emulation: app_time_stats: avg=18.18ms min=12.45ms max=47.72ms count=55
+11-27 12:24:07.873  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=223222, downTime=222692, deviceId=-1, source=0x1002, displayId=0, eventId=-27091543 }
+11-27 12:24:07.894  6078  6091 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/04-stopped-diagnostics.png': found
+11-27 12:24:07.905  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:24:07.923  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QRun self-test\E'].
+11-27 12:24:07.933  5110  6112 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+11-27 12:24:07.934  5982  6001 D UiObject2: Clicking on (160, 572).
+11-27 12:24:07.934  5982  6001 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@8db7; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(113, 560 - 208, 584); boundsInWindow: Rect(113, 560 - 208, 584); packageName: com.playchord.inputcheck; className: android.widget.TextView; text: Run self-test; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+11-27 12:24:07.945  5110  6112 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2640104055100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+11-27 12:24:07.952  5110  6112 I GmsDebugLogger: [73] 1801
+11-27 12:24:07.954  5110  6112 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+11-27 12:24:07.955  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=572.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=223285, downTime=223285, deviceId=-1, source=0x1002, displayId=0, eventId=-1023216122 }
+11-27 12:24:07.956  5110  6112 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:264010405100800],[MlkitOcrCommon.optional:231818100800]
+11-27 12:24:07.958  5110  6112 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+11-27 12:24:07.958  5110  6112 I GmsDebugLogger: [83] 1 [vision.ocr]
+11-27 12:24:07.959  5110  6111 W Vision  : Request for optional module download of ocr failed. Request again.
+11-27 12:24:07.959  5110  6111 W Vision  : Would have logged:
+11-27 12:24:07.959  5110  6111 W Vision  : # dsae@37884fe7
+11-27 12:24:07.959  5110  6111 I Vision  : Schedule retrying download ocr at 223310 with backoff 40 seconds
+11-27 12:24:07.971  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=572.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=223316, downTime=223285, deviceId=-1, source=0x1002, displayId=0, eventId=-424327838 }
+11-27 12:24:07.992  5982  6001 W GestureController: Gestures took longer than expected (57ms >> 16ms), device might be in a busy state.
+11-27 12:24:07.992  5982  6001 D UiDevice: Waiting 20000ms for SearchCondition[hasObject=BySelector [TEXT='\QPassed: 9 of 9\E']].
+11-27 12:24:07.993  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.118  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.223  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.354  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.459  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.564  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.669  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.774  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.879  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:08.984  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.089  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.194  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.299  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.404  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.509  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.613  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.719  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.824  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:09.891   833   833 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-27 12:24:09.929  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.033  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.138  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.243  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.348  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.453  5982  6001 D UiDevice: Searching for node with selector: BySelector [TEXT='\QPassed: 9 of 9\E'].
+11-27 12:24:10.466  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:10.470  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:10.471  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:10.481  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=225822, downTime=225822, deviceId=-1, source=0x1002, displayId=0, eventId=-226367663 }
+11-27 12:24:10.499  5982  6038 D EGL_emulation: app_time_stats: avg=96.48ms min=1.32ms max=2247.80ms count=31
+11-27 12:24:11.005  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=226355, downTime=225822, deviceId=-1, source=0x1002, displayId=0, eventId=-441087147 }
+11-27 12:24:11.018  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:11.023  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:11.023  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:11.033  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=226374, downTime=226374, deviceId=-1, source=0x1002, displayId=0, eventId=-582985018 }
+11-27 12:24:11.151  5032  5032 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.contextmanager.service.ContextManagerService.START pkg=com.google.android.gms }
+11-27 12:24:11.501  5982  6038 D EGL_emulation: app_time_stats: avg=18.20ms min=13.32ms max=33.49ms count=55
+11-27 12:24:11.557  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=226906, downTime=226374, deviceId=-1, source=0x1002, displayId=0, eventId=-902765267 }
+11-27 12:24:11.566  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:11.574  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:11.575  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:11.583  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=226925, downTime=226925, deviceId=-1, source=0x1002, displayId=0, eventId=-377323554 }
+11-27 12:24:12.155  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=227505, downTime=226925, deviceId=-1, source=0x1002, displayId=0, eventId=-469026252 }
+11-27 12:24:12.163  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:12.170  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:12.171  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:12.184  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=227522, downTime=227522, deviceId=-1, source=0x1002, displayId=0, eventId=-767372711 }
+11-27 12:24:12.518  5982  6038 D EGL_emulation: app_time_stats: avg=19.14ms min=13.81ms max=48.65ms count=53
+11-27 12:24:12.689  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=228038, downTime=227522, deviceId=-1, source=0x1002, displayId=0, eventId=-594516119 }
+11-27 12:24:12.699  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:12.704  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:12.704  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:12.716  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=228055, downTime=228055, deviceId=-1, source=0x1002, displayId=0, eventId=-229372951 }
+11-27 12:24:13.057   833   833 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-27 12:24:13.272  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=228621, downTime=228055, deviceId=-1, source=0x1002, displayId=0, eventId=-495282536 }
+11-27 12:24:13.283  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:13.287  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:13.287  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:13.299  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=228638, downTime=228638, deviceId=-1, source=0x1002, displayId=0, eventId=-987266626 }
+11-27 12:24:13.519  5982  6038 D EGL_emulation: app_time_stats: avg=19.20ms min=13.74ms max=47.93ms count=52
+11-27 12:24:13.840  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229190, downTime=228638, deviceId=-1, source=0x1002, displayId=0, eventId=-502277563 }
+11-27 12:24:13.847  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:13.853  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:13.854  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:13.865  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229204, downTime=229204, deviceId=-1, source=0x1002, displayId=0, eventId=-813243959 }
+11-27 12:24:14.422  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229772, downTime=229204, deviceId=-1, source=0x1002, displayId=0, eventId=-598886236 }
+11-27 12:24:14.432  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:14.437  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:14.437  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:14.449  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229788, downTime=229788, deviceId=-1, source=0x1002, displayId=0, eventId=-1045485938 }
+11-27 12:24:14.533  5982  6038 D EGL_emulation: app_time_stats: avg=19.11ms min=12.00ms max=45.14ms count=52
+11-27 12:24:14.972  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230322, downTime=229788, deviceId=-1, source=0x1002, displayId=0, eventId=-379480843 }
+11-27 12:24:14.979  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:14.989  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:14.989  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:15.003  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230340, downTime=230340, deviceId=-1, source=0x1002, displayId=0, eventId=-595445176 }
+11-27 12:24:15.548  5982  6038 D EGL_emulation: app_time_stats: avg=18.45ms min=13.14ms max=46.55ms count=55
+11-27 12:24:15.552  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230902, downTime=230340, deviceId=-1, source=0x1002, displayId=0, eventId=-997528900 }
+11-27 12:24:15.566  5982  6001 D UiDevice: Retrieving node with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:15.571  5982  6001 D UiDevice: Node not found with selector: BySelector [TEXT='\QUnsupported format is reported\E'].
+11-27 12:24:15.571  5982  6001 D UiDevice: Swiping from (160, 480) to (160, 160) in 30 steps.
+11-27 12:24:15.582  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=160.0, y[0]=480.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230922, downTime=230922, deviceId=-1, source=0x1002, displayId=0, eventId=-382574115 }
+11-27 12:24:16.103  1072  1072 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=160.0, y[0]=160.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231452, downTime=230922, deviceId=-1, source=0x1002, displayId=0, eventId=-626349970 }
+11-27 12:24:16.143  6078  6091 I AbstractFileContentProvider: file '/storage/emulated/0/googletest/test_outputfiles/05-self-test.png': found
+11-27 12:24:16.167   833   899 D SplashScreenView: Build android.window.SplashScreenView{4bd1ee4 V.E...... ......ID 0,0-0,0}
+11-27 12:24:16.167   833   899 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-27 12:24:16.167   833   899 D SplashScreenView: Branding: view: android.view.View{c47cf4d G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-27 12:24:16.170  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: PAUSED
+11-27 12:24:16.171  5982  5982 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.playchord.inputcheck.InputCheckActivity@6184f63
+11-27 12:24:16.182   336   336 D Zygote  : Forked child process 6137
+11-27 12:24:16.190   833   912 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-27 12:24:16.195   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-27 12:24:16.222   833   912 D EGL_emulation: app_time_stats: avg=16189.33ms min=16189.33ms max=16189.33ms count=1
+11-27 12:24:16.223  6137  6137 I inputcheck.test: Late-enabling -Xcheck:jni
+11-27 12:24:16.241   519  6139 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-27 12:24:16.241   519  6139 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-27 12:24:16.256  6137  6137 I inputcheck.test: Using CollectorTypeCC GC.
+11-27 12:24:16.257  6137  6137 W inputcheck.test: Unexpected CPU variant for x86: x86_64.
+11-27 12:24:16.257  6137  6137 W inputcheck.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-27 12:24:16.287   416   428 I adbd    : jdwp connection from 6137
+11-27 12:24:16.299  6137  6137 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10194; state: ENABLED
+11-27 12:24:16.300  6137  6137 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10194; state: ENABLED
+11-27 12:24:16.304  6137  6137 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:24:16.305  6137  6137 D nativeloader: Configuring clns-6 for other apk /system/framework/android.test.mock.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:24:16.306  6137  6137 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-27 12:24:16.307  6137  6137 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.runner.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:24:16.308  6137  6137 W ziparchive: Unable to open '/data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/base.dm': No such file or directory
+11-27 12:24:16.308  6137  6137 W ziparchive: Unable to open '/data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/base.dm': No such file or directory
+11-27 12:24:16.317  6137  6137 D nativeloader: Configuring clns-8 for other apk /data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~umkutkDDu72QgY_1_TFbsw==/com.playchord.inputcheck.test-1v81JMJAeXnRywAQBJBQww==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.playchord.inputcheck.test
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment: Currently set values for:
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment: ANGLE GameManagerService for com.playchord.inputcheck.test: false
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment: com.playchord.inputcheck.test is not listed in per-application setting
+11-27 12:24:16.325  6137  6137 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-27 12:24:16.344  6137  6158 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-27 12:24:16.348  6137  6158 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-27 12:24:16.350  6137  6158 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-27 12:24:16.358  6137  6137 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10194; state: DISABLED
+11-27 12:24:16.364  6137  6137 W OpenGLRenderer: Unknown dataspace 0
+11-27 12:24:16.367  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: STOPPED
+11-27 12:24:16.368  5982  5982 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.playchord.inputcheck.InputCheckActivity@6184f63
+11-27 12:24:16.394   400   421 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10194 pid=0
+11-27 12:24:16.394   400   421 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10194 => denied (255 us)
+11-27 12:24:16.394   400   812 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10194 pid=6137
+11-27 12:24:16.394   400   812 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10194 => denied (88 us)
+11-27 12:24:16.395   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-27 12:24:16.399   400   812 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10194 pid=6137
+11-27 12:24:16.399   400   812 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10194 => denied (4955 us)
+11-27 12:24:16.400   400   421 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10194 pid=0
+11-27 12:24:16.400   400   421 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10194 => denied (5387 us)
+11-27 12:24:16.405  5982  5982 D LifecycleMonitor: Lifecycle status change: com.playchord.inputcheck.InputCheckActivity@6184f63 in: DESTROYED
+11-27 12:24:16.405  5982  5982 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-27 12:24:16.406  5982  6001 I TestRunner: finished: walkThroughTheScreen(com.playchord.inputcheck.ScreenWalkthroughTest)

@@ -1,0 +1,172 @@
+# 2026-11-27T12:24:18.321650085Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 3
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "OnDeviceSelfTest"
+    test_package: "com.playchord.inputcheck"
+    test_method: "everySyntheticCasePassesOnDevice"
+    start_time {
+      seconds: 1795782231
+      nanos: 766000000
+    }
+    end_time {
+      seconds: 1795782231
+      nanos: 963000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.playchord.inputcheck.OnDeviceSelfTest-everySyntheticCasePassesOnDevice.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "RecorderCaptureTest"
+    test_package: "com.playchord.inputcheck"
+    test_method: "capturesOrderedBlocksStopsAndRestartsCleanly"
+    start_time {
+      seconds: 1795782231
+      nanos: 989000000
+    }
+    end_time {
+      seconds: 1795782236
+      nanos: 59000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.playchord.inputcheck.RecorderCaptureTest-capturesOrderedBlocksStopsAndRestartsCleanly.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "ScreenWalkthroughTest"
+    test_package: "com.playchord.inputcheck"
+    test_method: "walkThroughTheScreen"
+    start_time {
+      seconds: 1795782236
+      nanos: 64000000
+    }
+    end_time {
+      seconds: 1795782256
+      nanos: 631000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.playchord.inputcheck.ScreenWalkthroughTest-walkThroughTheScreen.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

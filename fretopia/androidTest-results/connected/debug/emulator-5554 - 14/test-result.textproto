@@ -1,0 +1,73 @@
+# 2026-11-27T12:24:58.216894288Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: FAILED
+test_result {
+  test_case {
+    test_class: "FretopiaAppTest"
+    test_package: "com.fretopia.app"
+    test_method: "theWholeAppWorksOnTheNativeMicrophone"
+    start_time {
+      seconds: 1795782272
+      nanos: 508000000
+    }
+    end_time {
+      seconds: 1795782296
+      nanos: 650000000
+    }
+  }
+  test_status: FAILED
+  error {
+    error_message: "java.lang.AssertionError: the page is blank after returning from Microphone check (ink 0.0)\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.assertTrue(Assert.java:42)\nat com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone(FretopiaAppTest.kt:178)\n"
+    error_type: "java.lang.AssertionError"
+    stack_trace: "java.lang.AssertionError: the page is blank after returning from Microphone check (ink 0.0)\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.assertTrue(Assert.java:42)\nat com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone(FretopiaAppTest.kt:178)\n"
+  }
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.fretopia.app.FretopiaAppTest-theWholeAppWorksOnTheNativeMicrophone.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

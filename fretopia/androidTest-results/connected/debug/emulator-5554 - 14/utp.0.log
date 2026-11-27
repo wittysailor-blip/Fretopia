@@ -1,0 +1,76 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "com.fretopia.app"
+    test_package: "com.fretopia.app.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/com.fretopia.app/additional_test_output"
+    }
+    args_map {
+      key: "useTestStorageService"
+      value: "true"
+    }
+    use_test_storage_service: true
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/apk/debug/fretopia-debug.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "/home/runner/.gradle/caches/modules-2/files-2.1/androidx.test.services/test-services/1.5.0/ec3d249c3ca1d08fa0108f6e2ea72d4c882e3f6b/test-services-1.5.0.apk"
+  install_options {
+    install_as_test_service: true
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/apk/androidTest/debug/fretopia-debug-androidTest.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/apk/debug/fretopia-debug.apk] on device emulator-5554.
+INFO: Installing [/home/runner/.gradle/caches/modules-2/files-2.1/androidx.test.services/test-services/1.5.0/ec3d249c3ca1d08fa0108f6e2ea72d4c882e3f6b/test-services-1.5.0.apk] on device emulator-5554.
+INFO: Installing [/home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/apk/androidTest/debug/fretopia-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Copying files from device to host: /sdcard/Android/media/com.fretopia.app/additional_test_output to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Copying files from device to host: /sdcard/googletest/test_outputfiles to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Copying /sdcard/googletest/test_outputfiles/01-landing.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/01-landing.png
+INFO: Copying /sdcard/googletest/test_outputfiles/02-goal.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/02-goal.png
+INFO: Copying /sdcard/googletest/test_outputfiles/03-goal-chosen.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/03-goal-chosen.png
+INFO: Copying /sdcard/googletest/test_outputfiles/04-instruments.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/04-instruments.png
+INFO: Copying /sdcard/googletest/test_outputfiles/05-home-songs.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/05-home-songs.png
+INFO: Copying /sdcard/googletest/test_outputfiles/06-player-listening.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/06-player-listening.png
+INFO: Copying /sdcard/googletest/test_outputfiles/06b-software-before.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/06b-software-before.png
+INFO: Copying /sdcard/googletest/test_outputfiles/07-mic-check.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/07-mic-check.png
+INFO: Copying /sdcard/googletest/test_outputfiles/07b-returned-home.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/07b-returned-home.png
+INFO: Copying /sdcard/googletest/test_outputfiles/07c-software-after-check.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/07c-software-after-check.png
+INFO: Copying /sdcard/googletest/test_outputfiles/08-back-to-instruments.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/08-back-to-instruments.png
+INFO: Copying /sdcard/googletest/test_outputfiles/09-after-home.png to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/09-after-home.png
+INFO: Copying /sdcard/googletest/test_outputfiles/paint-report.txt to /home/runner/work/Fretopia/Fretopia/playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14/paint-report.txt
+INFO: Stop logcat streaming.
+INFO: Uninstalling com.fretopia.app for device emulator-5554.
+INFO: Uninstalling androidx.test.services for device emulator-5554.
+INFO: Uninstalling com.fretopia.app.test for device emulator-5554.
+SEVERE: Execute com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone: FAILED
+java.lang.AssertionError: java.lang.AssertionError: the page is blank after returning from Microphone check (ink 0.0)
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone(FretopiaAppTest.kt:178)
+
+java.lang.AssertionError: the page is blank after returning from Microphone check (ink 0.0)
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.fretopia.app.FretopiaAppTest.theWholeAppWorksOnTheNativeMicrophone(FretopiaAppTest.kt:178)
