@@ -70,6 +70,18 @@ class FretopiaAppTest {
         return false
     }
 
+    private fun dims(s: ActivityScenario<FretopiaActivity>, label: String) {
+        val page = js(s, "JSON.stringify({iw:innerWidth,ih:innerHeight,hidden:document.hidden,vs:document.visibilityState,bodyH:Math.round(document.body.getBoundingClientRect().height)})")
+        var view = ""
+        s.onActivity { a ->
+            val w = a.webView
+            val root = w.parent as android.view.View
+            view = "webView ${w.width}x${w.height} shown=${w.isShown} vis=${w.visibility} alpha=${w.alpha} layer=${w.layerType} " +
+                "root pad=${root.paddingLeft},${root.paddingTop},${root.paddingRight},${root.paddingBottom} root ${root.width}x${root.height} hasFocus=${a.hasWindowFocus()}"
+        }
+        report.append(label).append(": ").append(page).append(" | ").append(view).append('\n')
+    }
+
     @Test
     fun theWholeAppWorksOnTheNativeMicrophone() {
         ActivityScenario.launch(FretopiaActivity::class.java).use { s ->
@@ -116,6 +128,7 @@ class FretopiaAppTest {
             // Microphone check, from the Learn tab.
             js(s, "Flow.go('home')")
             Thread.sleep(600)
+            dims(s, "before-mic-check")
             js(s, "openMicCheck()")
             assertTrue("Microphone check did not open", device.wait(Until.hasObject(By.text("Microphone check")), 10_000))
             shot("07-mic-check")
@@ -123,6 +136,7 @@ class FretopiaAppTest {
             assertTrue(waitJs(s, "!document.querySelector('#home').hidden"))
             Thread.sleep(800)
             shot("07b-returned-home")
+            dims(s, "after-mic-check")
 
             // Back walks the screens: home → instruments.
             device.pressBack()
@@ -138,6 +152,7 @@ class FretopiaAppTest {
             assertTrue(waitJs(s, "!document.hidden && !document.querySelector('#picker').hidden"))
             Thread.sleep(1_500)
             val inkAfterHome = shot("09-after-home")
+            dims(s, "after-home")
             TestStorage().openOutputFile("paint-report.txt").use { it.write(report.toString().toByteArray()) }
             assertTrue("the page is blank after returning from Microphone check (ink $inkAfterCheck)", inkAfterCheck > 0.01)
             // Visible, not just present: the page is shown and the list has finished fading in.
