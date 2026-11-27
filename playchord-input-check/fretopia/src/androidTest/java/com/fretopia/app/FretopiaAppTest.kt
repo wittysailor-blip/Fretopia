@@ -31,11 +31,26 @@ class FretopiaAppTest {
 
     private val device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
-    private fun shot(name: String) {
+    private val report = StringBuilder()
+
+    /** Saves a screenshot and returns the share of pixels clearly darker than the page background (ink). */
+    private fun shot(name: String): Double {
         device.waitForIdle()
         Thread.sleep(400)
-        val bmp = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot() ?: return
+        val bmp = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot() ?: return -1.0
         TestStorage().openOutputFile("$name.png").use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        val top = (bmp.height * 0.06).toInt() // skip the status bar
+        var ink = 0
+        var total = 0
+        for (y in top until bmp.height step 4) for (x in 0 until bmp.width step 4) {
+            val c = bmp.getPixel(x, y)
+            val lum = (android.graphics.Color.red(c) * 299 + android.graphics.Color.green(c) * 587 + android.graphics.Color.blue(c) * 114) / 1000
+            if (lum < 180) ink++
+            total++
+        }
+        val f = ink.toDouble() / total
+        report.append(name).append(": ink ").append(String.format(java.util.Locale.US, "%.3f", f)).append('\n')
+        return f
     }
 
     private fun js(s: ActivityScenario<FretopiaActivity>, expr: String): Any? {
@@ -113,10 +128,18 @@ class FretopiaAppTest {
             device.pressBack()
             assertTrue("back did not go to instruments", waitJs(s, "!document.querySelector('#picker').hidden"))
             Thread.sleep(1_200)
-            shot("08-back-to-instruments")
-            device.swipe(device.displayWidth / 2, device.displayHeight * 2 / 3, device.displayWidth / 2, device.displayHeight / 2, 20)
-            Thread.sleep(600)
-            shot("09-after-swipe")
+            val inkAfterCheck = shot("08-back-to-instruments")
+
+            // Home and back again (the page is hidden by the system, then shown).
+            device.pressHome()
+            Thread.sleep(1_500)
+            val ctx = InstrumentationRegistry.getInstrumentation().targetContext
+            ctx.startActivity(ctx.packageManager.getLaunchIntentForPackage(ctx.packageName)!!.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+            assertTrue(waitJs(s, "!document.hidden && !document.querySelector('#picker').hidden"))
+            Thread.sleep(1_500)
+            val inkAfterHome = shot("09-after-home")
+            TestStorage().openOutputFile("paint-report.txt").use { it.write(report.toString().toByteArray()) }
+            assertTrue("the page is blank after returning from Microphone check (ink $inkAfterCheck)", inkAfterCheck > 0.01)
             // Visible, not just present: the page is shown and the list has finished fading in.
             val vis = js(s, "JSON.stringify({hidden:document.hidden,vs:document.visibilityState,op:getComputedStyle(document.querySelector('#picker')).opacity,rows:document.querySelectorAll('#ilist .irow').length})") as String
             val v = JSONObject(vis)

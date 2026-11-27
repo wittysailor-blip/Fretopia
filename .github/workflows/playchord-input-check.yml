@@ -131,7 +131,7 @@ jobs:
           cp -r playchord-input-check/app/build/outputs/androidTest-results /tmp/pub/input-check/ 2>/dev/null || true
           cp -r playchord-input-check/fretopia/build/outputs/androidTest-results /tmp/pub/fretopia/ 2>/dev/null || true
           find playchord-input-check/app/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/input-check/ \; 2>/dev/null || true
-          find playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/fretopia/ \; 2>/dev/null || true
+          find playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output \( -name "*.png" -o -name "*.txt" \) -exec cp {} /tmp/pub/screens/fretopia/ \; 2>/dev/null || true
           echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
           cd /tmp/pub && git init -q -b out && git add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "device tests of ${GITHUB_SHA}"

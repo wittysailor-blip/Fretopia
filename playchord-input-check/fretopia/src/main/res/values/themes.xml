@@ -6,4 +6,11 @@
         <item name="android:navigationBarColor">@color/fretopia_bg</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="Theme.Fretopia.Overlay" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/fretopia_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>
