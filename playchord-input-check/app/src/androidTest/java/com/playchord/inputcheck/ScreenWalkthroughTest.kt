@@ -59,14 +59,12 @@ class ScreenWalkthroughTest {
             assertTrue("Listening not shown", device.wait(Until.hasObject(By.text("Listening")), 10_000))
             Thread.sleep(2_500)
             shot("02-listening")
-            scrollTo("Consumer continuity")
-            Thread.sleep(500)
-            shot("03-listening-diagnostics")
-            scrollBackTo("Stop mic")
 
             device.findObject(By.text("Stop mic")).click()
             assertTrue("Stopped not shown", device.wait(Until.hasObject(By.text("Stopped")), 10_000))
-            shot("04-stopped")
+            shot("03-stopped")
+            scrollTo("Consumer continuity")
+            shot("04-stopped-diagnostics")
 
             scrollTo("Run self-test")
             device.findObject(By.text("Run self-test")).click()
