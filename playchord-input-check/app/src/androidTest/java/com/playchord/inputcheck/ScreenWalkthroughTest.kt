@@ -39,6 +39,16 @@ class ScreenWalkthroughTest {
         }
     }
 
+    /** Swipes down until [text] is on screen again. */
+    private fun scrollBackTo(text: String) {
+        repeat(10) {
+            val o = device.findObject(By.text(text))
+            if (o != null && o.visibleBounds.top > 40) return
+            device.swipe(device.displayWidth / 2, device.displayHeight / 4, device.displayWidth / 2, device.displayHeight * 3 / 4, 30)
+            device.waitForIdle()
+        }
+    }
+
     @Test
     fun walkThroughTheScreen() {
         ActivityScenario.launch(MainActivity::class.java).use {
@@ -52,9 +62,7 @@ class ScreenWalkthroughTest {
             scrollTo("Consumer continuity")
             Thread.sleep(500)
             shot("03-listening-diagnostics")
-            device.swipe(device.displayWidth / 2, device.displayHeight / 4, device.displayWidth / 2, device.displayHeight * 3 / 4, 20)
-            device.swipe(device.displayWidth / 2, device.displayHeight / 4, device.displayWidth / 2, device.displayHeight * 3 / 4, 20)
-            device.waitForIdle()
+            scrollBackTo("Stop mic")
 
             device.findObject(By.text("Stop mic")).click()
             assertTrue("Stopped not shown", device.wait(Until.hasObject(By.text("Stopped")), 10_000))
