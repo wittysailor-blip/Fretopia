@@ -137,13 +137,14 @@ class FretopiaActivity : ComponentActivity(), NativeBridge.Host {
 
     override fun onStart() {
         super.onStart()
-        webView.onResume()
+        // Coming back from another screen (Microphone check, a share sheet): make sure the page repaints.
+        webView.invalidate()
+        webView.post { webView.invalidate() }
         bridge.onAppVisible()
     }
 
     override fun onStop() {
-        bridge.onAppHidden() // capture stops in the background
-        webView.onPause()
+        bridge.onAppHidden() // capture stops in the background; the page itself is paused by the system
         super.onStop()
     }
 

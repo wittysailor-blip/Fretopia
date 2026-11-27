@@ -106,12 +106,17 @@ class FretopiaAppTest {
             shot("07-mic-check")
             device.pressBack()
             assertTrue(waitJs(s, "!document.querySelector('#home').hidden"))
+            Thread.sleep(800)
+            shot("07b-returned-home")
 
             // Back walks the screens: home → instruments.
             device.pressBack()
             assertTrue("back did not go to instruments", waitJs(s, "!document.querySelector('#picker').hidden"))
             Thread.sleep(1_200)
             shot("08-back-to-instruments")
+            device.swipe(device.displayWidth / 2, device.displayHeight * 2 / 3, device.displayWidth / 2, device.displayHeight / 2, 20)
+            Thread.sleep(600)
+            shot("09-after-swipe")
             // Visible, not just present: the page is shown and the list has finished fading in.
             val vis = js(s, "JSON.stringify({hidden:document.hidden,vs:document.visibilityState,op:getComputedStyle(document.querySelector('#picker')).opacity,rows:document.querySelectorAll('#ilist .irow').length})") as String
             val v = JSONObject(vis)
