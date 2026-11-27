@@ -331,5 +331,5 @@ addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
 Sky.init();loadSamples();Car.build();layout();Car.go(0);Car.cards[0].el.classList.add('active');
 (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();Car.cards.forEach(c=>{c.W=0;});});
-try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
+try{if(!window.FretopiaNative&&'serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);

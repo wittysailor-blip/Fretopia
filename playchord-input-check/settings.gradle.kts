@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PlayChordInputCheck"
-include(":audio-input", ":app")
+include(":audio-input", ":input-check", ":app", ":fretopia")

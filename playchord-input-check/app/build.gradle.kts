@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.playchord.inputcheck"
+    namespace = "com.playchord.inputcheck.app"
     compileSdk = 35
     defaultConfig {
         applicationId = "com.playchord.inputcheck"
@@ -31,12 +31,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":audio-input"))
+    implementation(project(":input-check"))
 
     implementation(platform("androidx.compose:compose-bom:2024.10.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")

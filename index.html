@@ -1378,10 +1378,12 @@ function libBlock(box,{colls,ck,qk,place,empty,search=true}){const avail=colls.f
   fill();if(search)box.querySelector('.lq').addEventListener('input',e=>{HV[qk]=e.target.value;fill();});
   box.querySelector('.lc').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV[ck]=b.dataset.coll;box.querySelectorAll('.lc .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));fill();});return fill;}
 function searchBox(place,val){return `<label class="search">${ICS}<input class="lq" type="search" inputmode="search" autocomplete="off" placeholder="${place}" value="${(val||'').replace(/"/g,'&quot;')}"></label>`;}
+function micCheckRow(){return NATIVE?'<button class="import" data-miccheck>Check your microphone</button>':'';}
 function renderLearn(box,fam){const colls=LEARN_C[fam],pool=HOME.cat.filter(s=>colls.includes(s.coll));
   const next=pool.find(s=>s.coll==='drill'&&!starsOf(s))||pool.find(s=>!starsOf(s))||pool.find(s=>starsOf(s)<3)||pool[0];HOME.next=next;
   box.innerHTML=next?`<button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button><h3 class="sh">All lessons</h3>`:'';
-  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});}
+  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});
+  if(NATIVE){box.insertAdjacentHTML('beforeend',micCheckRow());box.querySelector('[data-miccheck]').onclick=openMicCheck;}}
 function renderSongs(box,fam){const opts={colls:SONG_C,ck:'sc',qk:'sq',place:n=>`Search ${n} songs`,empty:q=>HV.sc==='mine'&&!q?'Songs you add in Create show up here.':'No songs match.'};
   if(fam!=='guitar'){box.innerHTML='';libBlock(box,opts);return;}
   box.innerHTML=searchBox('Search songs and artists',HV.sq)+'<div class="ptop"></div><h3 class="sh">Tunes to play</h3><p class="shsub">Melodies and chord songs the app plays with you</p><div class="ltunes"></div>';
@@ -1710,7 +1712,7 @@ Mic.stop=function(){Ear.detach();try{this.stream&&this.stream.getTracks().forEac
 Mic.read=function(){if(!Ear.active)return null;this.level=Ear.level;const p=Ear.pitch;let f=p&&p.f;
   if(f){this.hist.push(f);if(this.hist.length>3)this.hist.shift();f=[...this.hist].sort((a,b)=>a-b)[this.hist.length>>1];}else this.hist=[];
   return{freq:f||null,rms:Ear.rms||0,onsets:Ear.takeOnsets(),chroma:Ear.chroma};};
-function micWhy(){return{denied:'Mic blocked. Allow it in settings.',inapp:'Open in Safari or Chrome to use the mic.',insecure:'The mic needs https.',unsupported:'Mic not supported here.',nomic:'No mic found.',busy:'Mic in use by another app.',other:'Mic didn’t start. Try again.'}[Mic.err||'other'];}
+function micWhy(){if(NATIVE&&Mic.err==='denied-permanent')return 'Mic blocked. Allow it in Settings, or open Check your microphone.';return{denied:'Mic blocked. Allow it in settings.',inapp:'Open in Safari or Chrome to use the mic.',insecure:'The mic needs https.',unsupported:'Mic not supported here.',nomic:'No mic found.',busy:'Mic in use by another app.',other:'Mic didn’t start. Try again.'}[Mic.err||'other'];}
 
 /* ================= picker: swipe anywhere, sound only when you play ================= */
 I.harmonium.how='Press the keys';
@@ -1757,7 +1759,7 @@ function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='18';
+const APP_V='19';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
@@ -1770,7 +1772,7 @@ addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
 loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}layout();
 (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();if(!$('#picker').hidden)Flow.drawThumbs();});
-try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
+try{if(!window.FretopiaNative&&'serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);
 
 /* ================= Song parts, creator, challenges and clips =================
@@ -2376,7 +2378,7 @@ const Clip={on:false,
     let cam;try{cam=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:720},height:{ideal:960}},audio:Mic.active?false:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});}
     catch(e){toast(e&&e.name==='NotAllowedError'?'Camera blocked. Allow it in settings.':'Camera didn’t start');return;}
     ac();const dest=ctx.createMediaStreamDestination();try{master.connect(dest);}catch(e){}
-    const aTrack=Mic.active&&Mic.stream?Mic.stream.getAudioTracks()[0].clone():cam.getAudioTracks()[0];let src=null;if(aTrack){src=ctx.createMediaStreamSource(new MediaStream([aTrack]));src.connect(dest);}
+    const aTrack=Mic.active&&Mic.stream?Mic.stream.getAudioTracks()[0].clone():Mic.active&&Mic.native&&NATIVE?NATIVE.track():cam.getAudioTracks()[0];let src=null;if(aTrack){src=ctx.createMediaStreamSource(new MediaStream([aTrack]));src.connect(dest);}
     const out=new MediaStream([...cam.getVideoTracks(),...dest.stream.getAudioTracks()]);
     const types=['video/mp4;codecs=avc1,mp4a','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'],mime=types.find(t=>MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t))||'';
     let rec;try{rec=new MediaRecorder(out,mime?{mimeType:mime,videoBitsPerSecond:2500000}:{});}catch(e){toast('Recording didn’t start');cam.getTracks().forEach(t=>t.stop());return;}
@@ -2386,14 +2388,14 @@ const Clip={on:false,
   stop(){if(!this.on)return;this.on=false;clearInterval(this.timer);try{this.ctx.rec.state!=='inactive'&&this.ctx.rec.stop();}catch(e){this.done();}this.btn();},
   done(){const c=this.ctx;if(!c)return;this.ctx=null;c.cam.getTracks().forEach(t=>t.stop());try{c.aTrack&&c.aTrack!==c.cam.getAudioTracks()[0]&&c.aTrack.stop();}catch(e){}try{master.disconnect(c.dest);}catch(e){}try{c.src&&c.src.disconnect();}catch(e){}$('.pl-cam')?.remove();
     if(!c.chunks.length){toast('Nothing was recorded');return;}const ext=/mp4/.test(c.mime)?'mp4':'webm',blob=new Blob(c.chunks,{type:c.mime.split(';')[0]}),url=URL.createObjectURL(blob),name=`fretopia-${(Player.song&&Player.song.title||'take').replace(/[^a-z0-9]+/gi,'-').toLowerCase()}.${ext}`,file=new File([blob],name,{type:blob.type});
-    const canShare=navigator.canShare&&navigator.canShare({files:[file]});Player.pause&&Player.pause();
+    const canShare=!!NATIVE||(navigator.canShare&&navigator.canShare({files:[file]}));Player.pause&&Player.pause();
     sheet(`<span class="grab"></span><p class="eyebrow">Your clip · ${fmtT((Date.now()-c.t0)/1000)}</p><h2>${esc(Player.song?Player.song.title:'Your take')}</h2><video class="clipv" src="${url}" controls playsinline></video>
       <p class="fine">Clips aren’t kept by the app. Share or save it before you close this.</p><div class="btns three"><button class="btn" id="clDel">Delete</button><button class="btn" id="clSave">Save</button><button class="btn pri" id="clShare" ${canShare?'':'hidden'}>Share</button></div>`);
     if(!canShare){$('#clSave').classList.add('pri');$('.btns.three',$('#sheet')).classList.remove('three');}
     const free=()=>setTimeout(()=>URL.revokeObjectURL(url),60000);
     $('#clDel').onclick=()=>{closeSheet();URL.revokeObjectURL(url);};
-    $('#clSave').onclick=()=>{const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();toast('Saved to your downloads');free();};
-    $('#clShare').onclick=()=>{navigator.share({files:[file],title:'My Fretopia take',text:'Played on Fretopia'}).then(()=>{closeSheet();free();}).catch(()=>{});};},
+    $('#clSave').onclick=()=>{if(NATIVE){NATIVE.sendFile(blob,name,'save');free();return;}const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();toast('Saved to your downloads');free();};
+    $('#clShare').onclick=()=>{if(NATIVE){NATIVE.sendFile(blob,name,'share');closeSheet();free();return;}navigator.share({files:[file],title:'My Fretopia take',text:'Played on Fretopia'}).then(()=>{closeSheet();free();}).catch(()=>{});};},
   btn(){const b=$('#plRec');if(b){b.innerHTML=this.on?PIC.stop:PIC.cam;b.classList.toggle('rec',this.on);b.setAttribute('aria-label',this.on?'Stop recording':'Record a clip');}}};
 Parts.recBtn=()=>`<button class="round" id="plRec" aria-label="Record a clip">${PIC.cam}</button>`;
 
@@ -2457,8 +2459,9 @@ const Flow={
       <div class="hscroll"><header class="h-head"><h1>Choose your instrument</h1><p class="lede">${sub}</p></header>
       <label class="search">${ICS}<input id="iq" type="search" inputmode="search" autocomplete="off" placeholder="Search instruments" value="${esc(F.q)}"></label>
       <div class="chips" id="icats">${ICATS.map(c=>`<button class="opt" data-cat="${c}" aria-pressed="${F.cat===c}">${c}</button>`).join('')}</div>
-      <div class="ilist" id="ilist"></div></div>`;
+      <div class="ilist" id="ilist"></div>${NATIVE?'<button class="import" id="micCheck">Check your microphone</button><p class="fine">Plays nothing. Shows whether your guitar reaches the app, with a meter and a self-test.</p>':''}</div>`;
     el.querySelector('[data-back]').onclick=()=>this.go('goal');
+    const mc=el.querySelector('#micCheck');if(mc)mc.onclick=openMicCheck;
     $('#iq').addEventListener('input',e=>{F.q=e.target.value;this.fillPicker();this.drawThumbs();});
     $('#icats').onclick=e=>{const b=e.target.closest('[data-cat]');if(!b)return;F.cat=b.dataset.cat;$$('#icats .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));this.fillPicker();this.drawThumbs();};
     $('#ilist').onclick=e=>{const b=e.target.closest('[data-inst]');if(!b)return;this.choose(b.dataset.inst);};
@@ -2486,6 +2489,135 @@ const Flow={
 function openFromHash(){const m=/^#part=([\w-]+)/.exec(location.hash||'');if(!m)return;const a=arrOf(m[1]);if(!a)return;
   S.inst='guitar';if(!S.goal)S.goal='songs';S.onboarded=true;saveS();HV.tab='songs';showScene('home');renderHome();playArr(a);}
 setTimeout(openFromHash,300);
+
+/* ================= inside the Fretopia Android app =================
+   The Android app injects `FretopiaNative` (a WebView message listener limited to the app's own origin).
+   When it is there, the microphone comes from the native PlayChord audio-input engine (AudioRecord,
+   44,100 Hz mono, ordered blocks numbered from 0 per session) instead of getUserMedia.
+   Blocks arrive as ArrayBuffers: 4 float64 header values [generation, firstOutputFrame, count, discontinuity]
+   followed by `count` float32 samples. Older WebViews get the same bytes as base64 text prefixed "A:". */
+const NATIVE = (() => {
+  const b = window.FretopiaNative;
+  if (!b || typeof b.postMessage !== 'function') return null;
+  const RATE = 44100;
+  const N = {
+    bridge: b, gen: 0, next: -1, gaps: 0, blocks: 0, frames: 0, anchor: null, attached: false,
+    waiters: [], resumeWanted: false, out: null, outDest: null, files: {},
+    send(o) { try { b.postMessage(JSON.stringify(o)); } catch (e) {} },
+    settle(r) { const w = this.waiters; this.waiters = []; w.forEach(f => f(r)); },
+    /* one block of native audio → Ear, with frame-counter timing in AudioContext seconds */
+    audio(buf) {
+      if (buf.byteLength < 32) return;
+      const h = new Float64Array(buf, 0, 4), gen = h[0], first = h[1], count = h[2];
+      if (gen !== this.gen || !this.attached || count <= 0 || 32 + count * 4 > buf.byteLength) return; // stale or malformed
+      const x = new Float32Array(buf, 32, count);
+      if (this.next >= 0 && first !== this.next) { this.gaps++; this.anchor = null; } // a gap: re-anchor time
+      this.next = first + count; this.blocks++; this.frames += count;
+      const endFrame = first + count, cand = ctx.currentTime - endFrame / RATE;
+      // lowest-delay arrival anchors the clock; a slow upward creep follows clock drift
+      this.anchor = this.anchor == null ? cand : Math.min(this.anchor + 0.00002, cand);
+      Ear.push(x, this.anchor + endFrame / RATE);
+      if (this.out) { try { this.out.port.postMessage(x.slice()); } catch (e) {} }
+    },
+    control(m) {
+      if (m.t === 'mic-state') {
+        if (m.state === 'STARTING' || m.state === 'OPENING' || m.state === 'READY') {
+          if (m.gen && m.gen !== this.gen) { this.gen = m.gen; this.next = -1; this.anchor = null; this.gaps = 0; this.blocks = 0; this.frames = 0; }
+          if (!this.attached) { Ear.attachNative(RATE); this.attached = true; }
+        } else if (m.state === 'RUNNING') {
+          this.settle({ ok: true });
+        } else if (m.state === 'STOPPED' || m.state === 'FAILED') {
+          const err = m.error ? m.error : null;
+          if (this.waiters.length) this.settle({ ok: false, err: err || 'other' });
+          if (Mic.active && Mic.native) { // the app stopped capture (e.g. it went to the background)
+            if (document.hidden) this.resumeWanted = true;
+            if (err) Mic.err = err;
+            Mic.release();
+          }
+        }
+      } else if (m.t === 'file-done') {
+        toast(m.ok ? (m.action === 'save' ? 'Saved to Downloads' : 'Shared') : 'That didn’t work. Try again.');
+      } else if (m.t === 'resume') {
+        if (this.resumeWanted) { this.resumeWanted = false; Mic.start().then(ok => { if (ok && $('#player')) Player.msg('Listening'); }); }
+      }
+    },
+    /* a MediaStream track made from the native samples (for clips), resampled to the context rate */
+    track() {
+      if (!this.outDest) {
+        const code = `class S extends AudioWorkletProcessor{constructor(){super();this.N=65536;this.r=new Float32Array(this.N);this.w=0;this.p=-1;this.step=${RATE}/sampleRate;
+          this.port.onmessage=e=>{const d=e.data;for(let k=0;k<d.length;k++)this.r[(this.w+k)%this.N]=d[k];this.w+=d.length;if(this.p<0)this.p=Math.max(0,this.w-2205);if(this.w-this.p>${RATE}*0.4)this.p=this.w-${RATE}*0.1;};}
+          process(_,o){const out=o[0][0];for(let k=0;k<out.length;k++){if(this.p>=0&&this.p+1<this.w){const i=Math.floor(this.p),f=this.p-i;out[k]=this.r[i%this.N]*(1-f)+this.r[(i+1)%this.N]*f;this.p+=this.step;}else out[k]=0;}return true;}}
+          registerProcessor('fretopia-native-src',S);`;
+        this.outDest = ctx.createMediaStreamDestination();
+        ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([code], { type: 'application/javascript' }))).then(() => {
+          this.out = new AudioWorkletNode(ctx, 'fretopia-native-src', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [1] });
+          this.out.connect(this.outDest);
+        }).catch(() => {});
+      }
+      return this.outDest.stream.getAudioTracks()[0];
+    },
+    /* hand a recorded clip to Android to share or save */
+    async sendFile(blob, name, action) {
+      const bytes = new Uint8Array(await blob.arrayBuffer()), id = Date.now().toString(36), CH = 384 * 1024;
+      this.send({ t: 'file-begin', id, name, mime: blob.type || 'video/mp4', size: bytes.length });
+      for (let o = 0; o < bytes.length; o += CH) {
+        let s = ''; const part = bytes.subarray(o, Math.min(bytes.length, o + CH));
+        for (let i = 0; i < part.length; i += 0x8000) s += String.fromCharCode.apply(null, part.subarray(i, i + 0x8000));
+        this.send({ t: 'file-chunk', id, d: btoa(s) });
+      }
+      this.send({ t: 'file-end', id, action });
+    },
+  };
+  const fromB64 = s => { const bin = atob(s), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u.buffer; };
+  const onMsg = ev => {
+    const d = ev.data;
+    if (typeof d === 'string') {
+      if (d.length > 2 && d[0] === 'A' && d[1] === ':') N.audio(fromB64(d.slice(2)));
+      else { try { N.control(JSON.parse(d)); } catch (e) {} }
+    } else if (d instanceof ArrayBuffer) N.audio(d);
+  };
+  try { b.addEventListener('message', onMsg); } catch (e) { b.onmessage = onMsg; }
+  document.documentElement.classList.add('in-app');
+  N.send({ t: 'hello' });
+  return N;
+})();
+
+if (NATIVE) {
+  Ear.attachNative = function (rate) {
+    this.setup(); this.sr = rate; this.w = 0; this.next = 4096; this.endW = 0; this.flux = []; this.fluxT = []; this.bands = []; this.onsets = [];
+    this.pitch = null; this.chroma = null; this.prevL.fill(0); this.hopN = 0; this.src = this.node = this.sink = null; this.active = true;
+  };
+  Mic.start = async function () {
+    if (this.active) return true;
+    this.err = null; ac();
+    try { if (ctx.state !== 'running') await ctx.resume().catch(() => {}); } catch (e) {}
+    if (localStorage.getItem('fretopia.lat') == null) Ear.lat = clamp((ctx.outputLatency || 0) + (ctx.baseLatency || 0) + .02, .02, .25);
+    const r = await new Promise(res => { NATIVE.waiters.push(res); NATIVE.send({ t: 'mic-start' }); setTimeout(() => res({ ok: false, err: 'other' }), 12000); });
+    if (!r.ok) { this.err = r.err || 'other'; this.release(); return false; }
+    this.hist = []; this.active = true; this.native = true; return true;
+  };
+  /* local teardown only (the engine has already stopped or is being told to) */
+  Mic.release = function () {
+    Ear.detach(); NATIVE.attached = false; this.active = false; this.native = false; this.hist = []; this.level = 0; this.stream = null;
+    if (NATIVE.waiters.length) NATIVE.settle({ ok: false, err: this.err || 'other' });
+  };
+  Mic.stop = function () { NATIVE.resumeWanted = false; NATIVE.send({ t: 'mic-stop' }); this.release(); };
+  // the app stops capture in the background; bring it back when it's visible again
+  document.addEventListener('visibilitychange', () => { if (document.hidden && Mic.active) NATIVE.resumeWanted = true; });
+}
+
+/* the system back button inside the app: close what's on top, else step back through the screens */
+function nativeBack() {
+  if ($('#sheet')) { closeSheet(); return true; }
+  if ($('#player')) { Player.close(); return true; }
+  if (typeof PUI !== 'undefined' && PUI.stack.length) { popScreen(); return true; }
+  const vis = ['home', 'picker', 'goal'].find(id => !$('#' + id).hidden);
+  if (vis === 'home') { Flow.go('picker'); return true; }
+  if (vis === 'picker') { Flow.go('goal'); return true; }
+  if (vis === 'goal') { Flow.go('landing'); return true; }
+  return false;
+}
+function openMicCheck() { if (NATIVE) { if (Mic.active) Mic.stop(); NATIVE.send({ t: 'open-mic-check' }); } }
 
 </script>
 </body>

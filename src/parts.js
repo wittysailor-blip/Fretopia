@@ -602,7 +602,7 @@ const Clip={on:false,
     let cam;try{cam=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:720},height:{ideal:960}},audio:Mic.active?false:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});}
     catch(e){toast(e&&e.name==='NotAllowedError'?'Camera blocked. Allow it in settings.':'Camera didn’t start');return;}
     ac();const dest=ctx.createMediaStreamDestination();try{master.connect(dest);}catch(e){}
-    const aTrack=Mic.active&&Mic.stream?Mic.stream.getAudioTracks()[0].clone():cam.getAudioTracks()[0];let src=null;if(aTrack){src=ctx.createMediaStreamSource(new MediaStream([aTrack]));src.connect(dest);}
+    const aTrack=Mic.active&&Mic.stream?Mic.stream.getAudioTracks()[0].clone():Mic.active&&Mic.native&&NATIVE?NATIVE.track():cam.getAudioTracks()[0];let src=null;if(aTrack){src=ctx.createMediaStreamSource(new MediaStream([aTrack]));src.connect(dest);}
     const out=new MediaStream([...cam.getVideoTracks(),...dest.stream.getAudioTracks()]);
     const types=['video/mp4;codecs=avc1,mp4a','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'],mime=types.find(t=>MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t))||'';
     let rec;try{rec=new MediaRecorder(out,mime?{mimeType:mime,videoBitsPerSecond:2500000}:{});}catch(e){toast('Recording didn’t start');cam.getTracks().forEach(t=>t.stop());return;}
@@ -612,14 +612,14 @@ const Clip={on:false,
   stop(){if(!this.on)return;this.on=false;clearInterval(this.timer);try{this.ctx.rec.state!=='inactive'&&this.ctx.rec.stop();}catch(e){this.done();}this.btn();},
   done(){const c=this.ctx;if(!c)return;this.ctx=null;c.cam.getTracks().forEach(t=>t.stop());try{c.aTrack&&c.aTrack!==c.cam.getAudioTracks()[0]&&c.aTrack.stop();}catch(e){}try{master.disconnect(c.dest);}catch(e){}try{c.src&&c.src.disconnect();}catch(e){}$('.pl-cam')?.remove();
     if(!c.chunks.length){toast('Nothing was recorded');return;}const ext=/mp4/.test(c.mime)?'mp4':'webm',blob=new Blob(c.chunks,{type:c.mime.split(';')[0]}),url=URL.createObjectURL(blob),name=`fretopia-${(Player.song&&Player.song.title||'take').replace(/[^a-z0-9]+/gi,'-').toLowerCase()}.${ext}`,file=new File([blob],name,{type:blob.type});
-    const canShare=navigator.canShare&&navigator.canShare({files:[file]});Player.pause&&Player.pause();
+    const canShare=!!NATIVE||(navigator.canShare&&navigator.canShare({files:[file]}));Player.pause&&Player.pause();
     sheet(`<span class="grab"></span><p class="eyebrow">Your clip · ${fmtT((Date.now()-c.t0)/1000)}</p><h2>${esc(Player.song?Player.song.title:'Your take')}</h2><video class="clipv" src="${url}" controls playsinline></video>
       <p class="fine">Clips aren’t kept by the app. Share or save it before you close this.</p><div class="btns three"><button class="btn" id="clDel">Delete</button><button class="btn" id="clSave">Save</button><button class="btn pri" id="clShare" ${canShare?'':'hidden'}>Share</button></div>`);
     if(!canShare){$('#clSave').classList.add('pri');$('.btns.three',$('#sheet')).classList.remove('three');}
     const free=()=>setTimeout(()=>URL.revokeObjectURL(url),60000);
     $('#clDel').onclick=()=>{closeSheet();URL.revokeObjectURL(url);};
-    $('#clSave').onclick=()=>{const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();toast('Saved to your downloads');free();};
-    $('#clShare').onclick=()=>{navigator.share({files:[file],title:'My Fretopia take',text:'Played on Fretopia'}).then(()=>{closeSheet();free();}).catch(()=>{});};},
+    $('#clSave').onclick=()=>{if(NATIVE){NATIVE.sendFile(blob,name,'save');free();return;}const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();toast('Saved to your downloads');free();};
+    $('#clShare').onclick=()=>{if(NATIVE){NATIVE.sendFile(blob,name,'share');closeSheet();free();return;}navigator.share({files:[file],title:'My Fretopia take',text:'Played on Fretopia'}).then(()=>{closeSheet();free();}).catch(()=>{});};},
   btn(){const b=$('#plRec');if(b){b.innerHTML=this.on?PIC.stop:PIC.cam;b.classList.toggle('rec',this.on);b.setAttribute('aria-label',this.on?'Stop recording':'Record a clip');}}};
 Parts.recBtn=()=>`<button class="round" id="plRec" aria-label="Record a clip">${PIC.cam}</button>`;
 

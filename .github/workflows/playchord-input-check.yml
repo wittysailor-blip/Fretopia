@@ -3,7 +3,7 @@ name: playchord-input-check
 on:
   push:
     branches: [playchord-input-check]
-    paths: ["playchord-input-check/**", ".github/workflows/playchord-input-check.yml"]
+    paths: ["playchord-input-check/**", "src/**", "index.html", ".github/workflows/playchord-input-check.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,9 +25,11 @@ jobs:
       - name: Unit tests and debug APK
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon --stacktrace :audio-input:testDebugUnitTest :app:testDebugUnitTest :app:assembleDebug
-      - name: APK checksum
-        run: sha256sum app/build/outputs/apk/debug/app-debug.apk | tee app/build/outputs/apk/debug/app-debug.apk.sha256
+          ./gradlew --no-daemon --stacktrace :audio-input:testDebugUnitTest :input-check:testDebugUnitTest :app:assembleDebug :fretopia:assembleDebug
+      - name: APK checksums
+        run: |
+          sha256sum app/build/outputs/apk/debug/app-debug.apk | tee app/build/outputs/apk/debug/app-debug.apk.sha256
+          sha256sum fretopia/build/outputs/apk/debug/fretopia-debug.apk | tee fretopia/build/outputs/apk/debug/fretopia-debug.apk.sha256
       - name: Test summary
         if: always()
         run: |
@@ -52,8 +54,9 @@ jobs:
         run: |
           rm -rf /tmp/pub && mkdir -p /tmp/pub/unit
           cp app/build/outputs/apk/debug/app-debug.apk* /tmp/pub/ 2>/dev/null || true
+          cp fretopia/build/outputs/apk/debug/fretopia-debug.apk* /tmp/pub/ 2>/dev/null || true
           cp -r audio-input/build/test-results /tmp/pub/unit/audio-input 2>/dev/null || true
-          cp -r app/build/test-results /tmp/pub/unit/app 2>/dev/null || true
+          cp -r input-check/build/test-results /tmp/pub/unit/input-check 2>/dev/null || true
           echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
           cd /tmp/pub && git init -q -b out && git add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "build of ${GITHUB_SHA}"
@@ -70,7 +73,7 @@ jobs:
           name: unit-test-results
           path: |
             playchord-input-check/audio-input/build/test-results/
-            playchord-input-check/app/build/test-results/
+            playchord-input-check/input-check/build/test-results/
             playchord-input-check/audio-input/build/reports/tests/
             playchord-input-check/app/build/reports/tests/
 
@@ -99,7 +102,7 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -no-boot-anim -camera-back none
           disable-animations: true
           working-directory: playchord-input-check
-          script: chmod +x gradlew && ./gradlew --no-daemon --stacktrace :app:connectedDebugAndroidTest
+          script: chmod +x gradlew && ./gradlew --no-daemon --stacktrace --continue :app:connectedDebugAndroidTest :fretopia:connectedDebugAndroidTest
       - name: Device test summary
         if: always()
         working-directory: playchord-input-check
@@ -124,8 +127,11 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           rm -rf /tmp/pub && mkdir -p /tmp/pub
-          cp -r playchord-input-check/app/build/outputs/androidTest-results /tmp/pub/ 2>/dev/null || true
-          mkdir -p /tmp/pub/screens && find playchord-input-check/app/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/ \; 2>/dev/null || true
+          mkdir -p /tmp/pub/input-check /tmp/pub/fretopia /tmp/pub/screens/input-check /tmp/pub/screens/fretopia
+          cp -r playchord-input-check/app/build/outputs/androidTest-results /tmp/pub/input-check/ 2>/dev/null || true
+          cp -r playchord-input-check/fretopia/build/outputs/androidTest-results /tmp/pub/fretopia/ 2>/dev/null || true
+          find playchord-input-check/app/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/input-check/ \; 2>/dev/null || true
+          find playchord-input-check/fretopia/build/outputs/connected_android_test_additional_output -name "*.png" -exec cp {} /tmp/pub/screens/fretopia/ \; 2>/dev/null || true
           echo "${GITHUB_SHA}" > /tmp/pub/SOURCE_COMMIT
           cd /tmp/pub && git init -q -b out && git add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "device tests of ${GITHUB_SHA}"

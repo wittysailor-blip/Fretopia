@@ -21,7 +21,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
-class MainActivity : ComponentActivity() {
+/**
+ * The microphone check screen. Used as the launcher of the standalone PlayChord Input Check app and
+ * opened from inside Fretopia as "Microphone check" (pass [EXTRA_TITLE] to rename it).
+ */
+class InputCheckActivity : ComponentActivity() {
+
+    companion object {
+        const val EXTRA_TITLE = "com.playchord.inputcheck.TITLE"
+    }
 
     private val vm: InputCheckViewModel by viewModels()
 
@@ -42,6 +50,7 @@ class MainActivity : ComponentActivity() {
                     val selfTest by vm.selfTest.collectAsStateWithLifecycle()
                     val bg by vm.stoppedForBackground.collectAsStateWithLifecycle()
                     InputCheckScreen(
+                        title = intent.getStringExtra(EXTRA_TITLE) ?: "PlayChord Input Check",
                         session = session,
                         live = live,
                         permission = permission,

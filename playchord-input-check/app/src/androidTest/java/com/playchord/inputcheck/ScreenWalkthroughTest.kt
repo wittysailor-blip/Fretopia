@@ -51,7 +51,7 @@ class ScreenWalkthroughTest {
 
     @Test
     fun walkThroughTheScreen() {
-        ActivityScenario.launch(MainActivity::class.java).use {
+        ActivityScenario.launch(InputCheckActivity::class.java).use {
             assertTrue("Ready not shown", device.wait(Until.hasObject(By.text("Ready")), 10_000))
             shot("01-ready")
 

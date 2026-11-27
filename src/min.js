@@ -98,10 +98,12 @@ function libBlock(box,{colls,ck,qk,place,empty,search=true}){const avail=colls.f
   fill();if(search)box.querySelector('.lq').addEventListener('input',e=>{HV[qk]=e.target.value;fill();});
   box.querySelector('.lc').addEventListener('click',e=>{const b=e.target.closest('[data-coll]');if(!b)return;HV[ck]=b.dataset.coll;box.querySelectorAll('.lc .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));fill();});return fill;}
 function searchBox(place,val){return `<label class="search">${ICS}<input class="lq" type="search" inputmode="search" autocomplete="off" placeholder="${place}" value="${(val||'').replace(/"/g,'&quot;')}"></label>`;}
+function micCheckRow(){return NATIVE?'<button class="import" data-miccheck>Check your microphone</button>':'';}
 function renderLearn(box,fam){const colls=LEARN_C[fam],pool=HOME.cat.filter(s=>colls.includes(s.coll));
   const next=pool.find(s=>s.coll==='drill'&&!starsOf(s))||pool.find(s=>!starsOf(s))||pool.find(s=>starsOf(s)<3)||pool[0];HOME.next=next;
   box.innerHTML=next?`<button class="next" data-song="${next.id}"><span class="eyebrow">Up next</span><b>${next.title}</b><span class="meta">${next.sub} · ${fmtDur(songSecs(next))}</span><span class="go">${IC.play}</span></button><h3 class="sh">All lessons</h3>`:'';
-  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});}
+  libBlock(box,{colls,ck:'lc',qk:'q',place:n=>`Search ${n} lessons`,empty:()=>'No lessons match.'});
+  if(NATIVE){box.insertAdjacentHTML('beforeend',micCheckRow());box.querySelector('[data-miccheck]').onclick=openMicCheck;}}
 function renderSongs(box,fam){const opts={colls:SONG_C,ck:'sc',qk:'sq',place:n=>`Search ${n} songs`,empty:q=>HV.sc==='mine'&&!q?'Songs you add in Create show up here.':'No songs match.'};
   if(fam!=='guitar'){box.innerHTML='';libBlock(box,opts);return;}
   box.innerHTML=searchBox('Search songs and artists',HV.sq)+'<div class="ptop"></div><h3 class="sh">Tunes to play</h3><p class="shsub">Melodies and chord songs the app plays with you</p><div class="ltunes"></div>';
@@ -430,7 +432,7 @@ Mic.stop=function(){Ear.detach();try{this.stream&&this.stream.getTracks().forEac
 Mic.read=function(){if(!Ear.active)return null;this.level=Ear.level;const p=Ear.pitch;let f=p&&p.f;
   if(f){this.hist.push(f);if(this.hist.length>3)this.hist.shift();f=[...this.hist].sort((a,b)=>a-b)[this.hist.length>>1];}else this.hist=[];
   return{freq:f||null,rms:Ear.rms||0,onsets:Ear.takeOnsets(),chroma:Ear.chroma};};
-function micWhy(){return{denied:'Mic blocked. Allow it in settings.',inapp:'Open in Safari or Chrome to use the mic.',insecure:'The mic needs https.',unsupported:'Mic not supported here.',nomic:'No mic found.',busy:'Mic in use by another app.',other:'Mic didn’t start. Try again.'}[Mic.err||'other'];}
+function micWhy(){if(NATIVE&&Mic.err==='denied-permanent')return 'Mic blocked. Allow it in Settings, or open Check your microphone.';return{denied:'Mic blocked. Allow it in settings.',inapp:'Open in Safari or Chrome to use the mic.',insecure:'The mic needs https.',unsupported:'Mic not supported here.',nomic:'No mic found.',busy:'Mic in use by another app.',other:'Mic didn’t start. Try again.'}[Mic.err||'other'];}
 
 /* ================= picker: swipe anywhere, sound only when you play ================= */
 I.harmonium.how='Press the keys';
@@ -477,7 +479,7 @@ function loop(){const t=now();runGhosts(t);
   if(!$('#landing').hidden)Landing.draw(t);
   if($('#player')){Player.frame(t);Player.draw(t);}loop.p=t;
 /* ================= always the latest version on the same link ================= */
-const APP_V='18';
+const APP_V='19';
 function checkUpdate(){const h=location.hostname;if(!/^https?:$/.test(location.protocol)||/claude|localhost|127\.0\.0\.1/.test(h))return;
   fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.v||j.v===APP_V||$('#player'))return;const k='fretopia.updated.'+j.v;
     try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}location.reload();}).catch(()=>{});}
@@ -490,5 +492,5 @@ addEventListener('resize',layout);
 const clockF=()=>{$('#sbTime').textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true}).replace(/\s?[ap]m/i,'');};clockF();setInterval(clockF,15000);
 loadSamples();try{ctx.addEventListener('statechange',onAudioState);}catch(e){}layout();
 (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{Landing.layout();if(!$('#picker').hidden)Flow.drawThumbs();});
-try{if('serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
+try{if(!window.FretopiaNative&&'serviceWorker' in navigator&&(['localhost','127.0.0.1'].includes(location.hostname)||(location.protocol==='https:'&&window.top===window&&!location.hostname.endsWith('claude.ai'))))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
 requestAnimationFrame(loop);

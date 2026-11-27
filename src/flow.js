@@ -54,8 +54,9 @@ const Flow={
       <div class="hscroll"><header class="h-head"><h1>Choose your instrument</h1><p class="lede">${sub}</p></header>
       <label class="search">${ICS}<input id="iq" type="search" inputmode="search" autocomplete="off" placeholder="Search instruments" value="${esc(F.q)}"></label>
       <div class="chips" id="icats">${ICATS.map(c=>`<button class="opt" data-cat="${c}" aria-pressed="${F.cat===c}">${c}</button>`).join('')}</div>
-      <div class="ilist" id="ilist"></div></div>`;
+      <div class="ilist" id="ilist"></div>${NATIVE?'<button class="import" id="micCheck">Check your microphone</button><p class="fine">Plays nothing. Shows whether your guitar reaches the app, with a meter and a self-test.</p>':''}</div>`;
     el.querySelector('[data-back]').onclick=()=>this.go('goal');
+    const mc=el.querySelector('#micCheck');if(mc)mc.onclick=openMicCheck;
     $('#iq').addEventListener('input',e=>{F.q=e.target.value;this.fillPicker();this.drawThumbs();});
     $('#icats').onclick=e=>{const b=e.target.closest('[data-cat]');if(!b)return;F.cat=b.dataset.cat;$$('#icats .opt').forEach(x=>x.setAttribute('aria-pressed',x===b));this.fillPicker();this.drawThumbs();};
     $('#ilist').onclick=e=>{const b=e.target.closest('[data-inst]');if(!b)return;this.choose(b.dataset.inst);};
